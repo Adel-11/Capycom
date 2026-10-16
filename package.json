@@ -1,0 +1,20 @@
+{
+  "name": "capycom-mcp",
+  "version": "0.1.0",
+  "description": "Serveur MCP distant de Capycom (lettres postales au Canada) sur Cloudflare Workers, avec OAuth 2.0.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "metriques": "node scripts/generer-metriques.mjs",
+    "faux-capycom": "node scripts/faux-capycom.mjs",
+    "essai-local": "node scripts/essai-local.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.149.0",
+    "pdf-lib": "1.17.1"
+  }
+}

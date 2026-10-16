@@ -1,0 +1,20 @@
+name = "capycom-mcp"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Domaine personnalisé : wrangler crée l'enregistrement DNS si la zone capycom.ca est dans le même compte Cloudflare.
+routes = [{ pattern = "mcp.capycom.ca", custom_domain = true }]
+
+# Aucun secret ici. Le seul secret (TOKEN_SECRET) se donne avec : npx wrangler secret put TOKEN_SECRET
+[vars]
+# API Capycom (Bubble). Version-test d'abord. Pour la production : https://capycom.ca/api/1.1/wf
+CAPYCOM_API_BASE = "https://capycom.ca/api/1.1/wf"
+# Adresse publique du serveur (sans barre finale).
+PUBLIC_BASE_URL = "https://mcp.capycom.ca"
+# Redirections OAuth acceptées, séparées par des virgules. {port} = un numéro de port (boucle locale).
+# Vide = la liste par défaut du code (Claude).
+ALLOWED_REDIRECT_URIS = ""
+
+# Ni journaux ni traces : le contenu des lettres ne doit jamais être conservé.
+[observability]
+enabled = false

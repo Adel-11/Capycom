@@ -1,0 +1,3 @@
+# Copier en .dev.vars (ignoré par git) pour wrangler dev. Générer le secret avec :
+#   node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
+TOKEN_SECRET=remplacer-par-une-valeur-aleatoire-de-43-caracteres-ou-plus
