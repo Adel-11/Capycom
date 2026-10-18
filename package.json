@@ -11,7 +11,8 @@
     "deploy": "wrangler deploy",
     "metriques": "node scripts/generer-metriques.mjs",
     "faux-capycom": "node scripts/faux-capycom.mjs",
-    "essai-local": "node scripts/essai-local.mjs"
+    "essai-local": "node scripts/essai-local.mjs",
+    "construire:site": "node modeles/construire-site.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.149.0",

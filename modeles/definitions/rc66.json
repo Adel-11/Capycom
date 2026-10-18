@@ -1,0 +1,2608 @@
+{
+  "version": 1,
+  "id": "rc66",
+  "section": "gouv",
+  "titre": {
+    "fr": "Allocation canadienne pour enfants (RC66)",
+    "en": "Canada child benefit (RC66)"
+  },
+  "description": {
+    "fr": "Demander l’allocation canadienne pour enfants, par exemple en arrivant au Canada avec un enfant. Questionnaire guidé et formulaire RC66 prêt à signer.",
+    "en": "Apply for the Canada child benefit, for example when arriving in Canada with a child. Guided questions and a ready-to-sign RC66 form."
+  },
+  "seo": {
+    "slug": {
+      "fr": "allocation-canadienne-pour-enfants-rc66",
+      "en": "canada-child-benefit-application-rc66"
+    },
+    "titre": {
+      "fr": "Allocation canadienne pour enfants : remplir le formulaire RC66 gratuitement | Capycom",
+      "en": "Canada child benefit: fill in form RC66 for free | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à des questions simples et obtenez le formulaire RC66 de demande d’allocation canadienne pour enfants, prêt à signer. Envoi par la poste possible.",
+      "en": "Free tool: answer simple questions and get form RC66, the Canada child benefit application, ready to sign. Mailing available."
+    },
+    "h1": {
+      "fr": "Demande d’allocation canadienne pour enfants (RC66)",
+      "en": "Canada Child Benefit Application (RC66)"
+    }
+  },
+  "type": "formulaire-officiel",
+  "formulaire": {
+    "nom": {
+      "fr": "Demande d’allocation canadienne pour enfants (RC66)",
+      "en": "Canada child benefit application (RC66)"
+    },
+    "organisme": {
+      "fr": "Agence du revenu du Canada (ARC)",
+      "en": "Canada Revenue Agency (CRA)"
+    },
+    "associes": [
+      "RC66SCH"
+    ],
+    "langues": [
+      "fr",
+      "en"
+    ],
+    "envoi": {
+      "fr": "Par la poste au centre fiscal de la province de résidence (voir destinataires).",
+      "en": "By mail to the tax centre for the province of residence (see recipients)."
+    }
+  },
+  "usage": {
+    "fr": "Demander l’allocation canadienne pour enfants par la poste, par exemple en arrivant au Canada avec un enfant. Le RC66SCH (statut au Canada et revenus) est rempli aussi quand les réponses l’exigent.",
+    "en": "Apply for the Canada child benefit by mail, for example when arriving in Canada with a child. Form RC66SCH (status in Canada and income) is filled in too when the answers require it."
+  },
+  "etapes": [
+    {
+      "id": "intro",
+      "titre": {
+        "fr": "Demande d’allocation canadienne pour enfants (RC66)",
+        "en": "Canada child benefit application (RC66)"
+      },
+      "aide": {
+        "fr": "Un outil gratuit qui remplit le formulaire officiel RC66 pour vous. Vous répondez à des questions simples, étape par étape, puis vous obtenez le formulaire prêt à signer et à envoyer par la poste.",
+        "en": "A free tool that fills in the official RC66 form for you. You answer simple questions, step by step, then you get the form ready to sign and mail."
+      },
+      "notes": [
+        {
+          "titre": {
+            "fr": "À savoir avant de commencer",
+            "en": "Good to know before you start"
+          },
+          "texte": {
+            "fr": [
+              "Ce formulaire sert à demander l’allocation canadienne pour enfants (ACE) par la poste, par exemple quand vous arrivez au Canada avec un enfant. C’est le principal responsable des soins et de l’éducation de l’enfant qui fait la demande.",
+              "Il existe aussi une demande en ligne (Mon dossier de l’ARC) et, pour un nouveau-né, l’inscription à la naissance auprès de votre province. Ne remplissez pas ce formulaire si vous avez déjà fait la demande par ces moyens.",
+              "Capycom n’est pas l’Agence du revenu du Canada (ARC) et n’est affilié à aucun gouvernement. Cet outil ne donne pas de conseil juridique ou fiscal et ne garantit pas l’admissibilité.",
+              "Vos réponses restent dans votre navigateur. Rien n’est transmis à Capycom tant que vous ne choisissez pas l’envoi par la poste à la fin."
+            ],
+            "en": [
+              "This form is used to apply for the Canada child benefit (CCB) by mail, for example when you arrive in Canada with a child. The person mainly responsible for the care and upbringing of the child applies.",
+              "You can also apply online (CRA My Account) and, for a newborn, through your province’s birth registration. Do not use this form if you already applied that way.",
+              "Capycom is not the Canada Revenue Agency (CRA) and is not affiliated with any government. This tool does not give legal or tax advice and does not guarantee eligibility.",
+              "Your answers stay in your browser. Nothing is sent to Capycom unless you choose mailing at the end."
+            ]
+          },
+          "quand": []
+        }
+      ]
+    },
+    {
+      "id": "vous",
+      "titre": {
+        "fr": "Vos renseignements",
+        "en": "About you"
+      },
+      "aide": {
+        "fr": "Étape 1 du formulaire. Écrivez les renseignements comme sur vos documents officiels.",
+        "en": "Step 1 of the form. Write the details as they appear on your official documents."
+      },
+      "champs": [
+        {
+          "id": "rc_nas",
+          "type": "nas",
+          "requis": true,
+          "libelle": {
+            "fr": "Numéro d’assurance sociale (NAS)",
+            "en": "Social insurance number (SIN)"
+          },
+          "max": 11,
+          "exemple": {
+            "fr": "123 456 789",
+            "en": "123 456 789"
+          },
+          "requisSauf": [
+            {
+              "rc_sansnas": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sansnas",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Je n’ai pas encore de NAS. (Si vous avez un numéro d’identification temporaire de l’ARC, écrivez-le ci-dessus à la place.)",
+            "en": "I do not have a SIN yet. (If the CRA gave you a temporary identification number, enter it above instead.)"
+          }
+        },
+        {
+          "id": "rc_prenom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Prénom",
+            "en": "First name"
+          },
+          "max": 60
+        },
+        {
+          "id": "rc_nom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de famille",
+            "en": "Last name"
+          },
+          "max": 60
+        },
+        {
+          "id": "rc_naiss",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de naissance",
+            "en": "Date of birth"
+          }
+        },
+        {
+          "id": "rc_langue",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Langue de correspondance avec l’ARC",
+            "en": "Language of correspondence with the CRA"
+          },
+          "valeurs": [
+            {
+              "valeur": "fr",
+              "fr": "Français",
+              "en": "Français"
+            },
+            {
+              "valeur": "en",
+              "fr": "English",
+              "en": "English"
+            }
+          ]
+        },
+        {
+          "id": "rc_tel1",
+          "type": "tel",
+          "requis": false,
+          "libelle": {
+            "fr": "Téléphone, maison",
+            "en": "Phone, home"
+          },
+          "max": 20,
+          "exemple": {
+            "fr": "613 555 1234",
+            "en": "613 555 1234"
+          }
+        },
+        {
+          "id": "rc_tel3",
+          "type": "tel",
+          "requis": false,
+          "libelle": {
+            "fr": "Téléphone, cellulaire",
+            "en": "Phone, cell"
+          },
+          "max": 20,
+          "exemple": {
+            "fr": "613 555 1234",
+            "en": "613 555 1234"
+          }
+        },
+        {
+          "id": "rc_tel2",
+          "type": "tel",
+          "requis": false,
+          "libelle": {
+            "fr": "Téléphone, travail",
+            "en": "Phone, work"
+          },
+          "max": 20
+        },
+        {
+          "id": "rc_ext",
+          "type": "tel",
+          "requis": false,
+          "libelle": {
+            "fr": "Poste",
+            "en": "Extension"
+          },
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "adresse",
+      "titre": {
+        "fr": "Votre adresse",
+        "en": "Your address"
+      },
+      "aide": {
+        "fr": "Étape 2 du formulaire. L’adresse postale est celle où l’ARC vous écrira.",
+        "en": "Step 2 of the form. The mailing address is where the CRA will write to you."
+      },
+      "champs": [
+        {
+          "id": "rcp_ligne",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Numéro et rue (app. si besoin)",
+            "en": "Street number and name (unit if needed)"
+          },
+          "max": 90,
+          "groupe": {
+            "fr": "Adresse postale",
+            "en": "Mailing address"
+          }
+        },
+        {
+          "id": "rcp_ville",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Ville",
+            "en": "City"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse postale",
+            "en": "Mailing address"
+          }
+        },
+        {
+          "id": "rcp_prov",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province",
+            "en": "Province"
+          },
+          "groupe": {
+            "fr": "Adresse postale",
+            "en": "Mailing address"
+          }
+        },
+        {
+          "id": "rcp_cp",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Code postal",
+            "en": "Postal code"
+          },
+          "max": 7,
+          "exemple": {
+            "fr": "K1A 0B1",
+            "en": "K1A 0B1"
+          },
+          "groupe": {
+            "fr": "Adresse postale",
+            "en": "Mailing address"
+          }
+        },
+        {
+          "id": "rc_memeadr",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon adresse du domicile est la même que mon adresse postale",
+            "en": "My home address is the same as my mailing address"
+          },
+          "groupe": {
+            "fr": "Adresse postale",
+            "en": "Mailing address"
+          }
+        },
+        {
+          "id": "rcd_ligne",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Numéro et rue (app. si besoin)",
+            "en": "Street number and name (unit if needed)"
+          },
+          "max": 90,
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "sauf": [
+            {
+              "rc_memeadr": true
+            }
+          ]
+        },
+        {
+          "id": "rcd_ville",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Ville",
+            "en": "City"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "sauf": [
+            {
+              "rc_memeadr": true
+            }
+          ]
+        },
+        {
+          "id": "rcd_prov",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province",
+            "en": "Province"
+          },
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "sauf": [
+            {
+              "rc_memeadr": true
+            }
+          ]
+        },
+        {
+          "id": "rcd_cp",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Code postal",
+            "en": "Postal code"
+          },
+          "max": 7,
+          "exemple": {
+            "fr": "K1A 0B1",
+            "en": "K1A 0B1"
+          },
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "sauf": [
+            {
+              "rc_memeadr": true
+            }
+          ]
+        },
+        {
+          "id": "rc_chgprov",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Avez-vous changé de province ou de territoire au cours des 12 derniers mois ?",
+            "en": "Have you moved to a different province or territory in the last 12 months?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ],
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          }
+        },
+        {
+          "id": "rc_ancprov",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province ou territoire où vous habitiez",
+            "en": "Province or territory where you lived"
+          },
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "quand": [
+            {
+              "rc_chgprov": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_dateprov",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date du déménagement",
+            "en": "Date of the move"
+          },
+          "groupe": {
+            "fr": "Adresse du domicile",
+            "en": "Home address"
+          },
+          "quand": [
+            {
+              "rc_chgprov": "oui"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "civil",
+      "titre": {
+        "fr": "Votre état civil",
+        "en": "Your marital status"
+      },
+      "aide": {
+        "fr": "Étape 3 du formulaire. Choisissez la situation actuelle.",
+        "en": "Step 3 of the form. Choose your current situation."
+      },
+      "champs": [
+        {
+          "id": "rc_civil",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "État civil actuel",
+            "en": "Current marital status"
+          },
+          "valeurs": [
+            {
+              "valeur": "marie",
+              "fr": "Marié(e) (légalement marié à un époux)",
+              "en": "Married (legally married to a spouse)"
+            },
+            {
+              "valeur": "fait",
+              "fr": "Conjoint(e) de fait",
+              "en": "Common-law partner"
+            },
+            {
+              "valeur": "separe",
+              "fr": "Séparé(e) depuis au moins 90 jours en raison de la rupture de l’union",
+              "en": "Separated for at least 90 days because the relationship broke down"
+            },
+            {
+              "valeur": "veuf",
+              "fr": "Veuf ou veuve",
+              "en": "Widowed"
+            },
+            {
+              "valeur": "divorce",
+              "fr": "Divorcé(e)",
+              "en": "Divorced"
+            },
+            {
+              "valeur": "celib",
+              "fr": "Célibataire",
+              "en": "Single"
+            }
+          ]
+        },
+        {
+          "id": "rc_civildate",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle cet état civil a commencé",
+            "en": "Date this status started"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            },
+            {
+              "rc_civil": "separe"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_nas",
+          "type": "nas",
+          "requis": false,
+          "libelle": {
+            "fr": "Son numéro d’assurance sociale (NAS) ou son numéro d’identification temporaire",
+            "en": "Their SIN or temporary identification number"
+          },
+          "max": 11,
+          "exemple": {
+            "fr": "123 456 789",
+            "en": "123 456 789"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ],
+          "aide": {
+            "fr": "Facultatif, mais 9 chiffres si renseigné.",
+            "en": "Optional, but 9 digits if filled in."
+          }
+        },
+        {
+          "id": "rc_s_prenom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Prénom",
+            "en": "First name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_nom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de famille",
+            "en": "Last name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_naiss",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de naissance",
+            "en": "Date of birth"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_adr",
+          "type": "texte-long",
+          "requis": false,
+          "libelle": {
+            "fr": "Son adresse, seulement si elle est différente de la vôtre",
+            "en": "Their address, only if different from yours"
+          },
+          "max": 200,
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_nonres",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon époux ou conjoint de fait est un non-résident du Canada",
+            "en": "My spouse or common-law partner is a non-resident of Canada"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statut",
+      "titre": {
+        "fr": "Citoyenneté et arrivée au Canada",
+        "en": "Citizenship and arrival in Canada"
+      },
+      "aide": {
+        "fr": "Étapes 4 et 5 du formulaire. Ces réponses déterminent si un formulaire supplémentaire (RC66SCH) est nécessaire.",
+        "en": "Steps 4 and 5 of the form. These answers decide whether an extra form (RC66SCH) is needed."
+      },
+      "champs": [
+        {
+          "id": "rc_cit",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Êtes-vous citoyen canadien depuis plus de 12 mois ?",
+            "en": "Have you been a Canadian citizen for the last 12 months?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ]
+        },
+        {
+          "id": "rc_new",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Au cours des deux dernières années, êtes-vous devenu un nouvel arrivant au Canada, ou revenu après une absence d’au moins six mois ?",
+            "en": "In the last two years, did you become a newcomer to Canada, or return after an absence of at least six months?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_cit",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Votre époux ou conjoint de fait est-il citoyen canadien depuis plus de 12 mois ?",
+            "en": "Has your spouse or common-law partner been a Canadian citizen for the last 12 months?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ],
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        },
+        {
+          "id": "rc_s_new",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Au cours des deux dernières années, votre époux ou conjoint de fait est-il devenu un nouvel arrivant au Canada, ou revenu après une absence d’au moins six mois ?",
+            "en": "In the last two years, did your spouse or common-law partner become a newcomer to Canada, or return after an absence of at least six months?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ],
+          "quand": [
+            {
+              "rc_civil": "marie"
+            },
+            {
+              "rc_civil": "fait"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "titre": {
+            "fr": "Le formulaire RC66SCH sera nécessaire",
+            "en": "Form RC66SCH will be needed"
+          },
+          "texte": {
+            "fr": [
+              "D’après vos réponses, il faut aussi remplir le formulaire RC66SCH, Statut au Canada et renseignements sur les revenus. Capycom le remplit aussi pour vous : quelques questions de plus aux étapes suivantes."
+            ],
+            "en": [
+              "Based on your answers, you also need to fill in form RC66SCH, Status in Canada and income information. Capycom fills it in for you too: a few more questions in the next steps."
+            ]
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schres",
+      "titre": {
+        "fr": "Votre résidence au Canada",
+        "en": "Your residence in Canada"
+      },
+      "aide": {
+        "fr": "Formulaire RC66SCH, étape 2. Capycom reprend votre nom, votre NAS et votre téléphone déjà saisis. Répondez pour chaque personne concernée.",
+        "en": "Form RC66SCH, step 2. Capycom reuses the name, SIN and phone you already entered. Answer for each person concerned."
+      },
+      "quand": [
+        {
+          "rc_new": "oui"
+        },
+        {
+          "rc_civil": "marie",
+          "rc_s_new": "oui"
+        },
+        {
+          "rc_civil": "fait",
+          "rc_s_new": "oui"
+        }
+      ],
+      "champs": [
+        {
+          "id": "rc_sch_y_type",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Situation",
+            "en": "Situation"
+          },
+          "valeurs": [
+            {
+              "valeur": "nouvel",
+              "fr": "Nouvel arrivant au Canada",
+              "en": "Newcomer to Canada"
+            },
+            {
+              "valeur": "retour",
+              "fr": "Résident du Canada de retour au pays",
+              "en": "Resident returning to Canada"
+            }
+          ],
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_type",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Situation",
+            "en": "Situation"
+          },
+          "valeurs": [
+            {
+              "valeur": "nouvel",
+              "fr": "Nouvel arrivant au Canada",
+              "en": "Newcomer to Canada"
+            },
+            {
+              "valeur": "retour",
+              "fr": "Résident du Canada de retour au pays",
+              "en": "Resident returning to Canada"
+            }
+          ],
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_provav",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province ou territoire où vous résidiez avant de couper vos liens de résidence",
+            "en": "Province or territory where you lived before you cut your residential ties"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_new": "oui",
+              "rc_sch_y_type": "retour"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_coupe",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous avez coupé vos liens de résidence au Canada",
+            "en": "Date you cut your residential ties with Canada"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_new": "oui",
+              "rc_sch_y_type": "retour"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_retab",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous avez rétabli vos liens de résidence au Canada",
+            "en": "Date you re-established your residential ties with Canada"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_new": "oui",
+              "rc_sch_y_type": "retour"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_res",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous êtes devenu résident du Canada",
+            "en": "Date you became a resident of Canada"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_new": "oui",
+              "rc_sch_y_type": "nouvel"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_res",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous êtes devenu résident du Canada",
+            "en": "Date you became a resident of Canada"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "nouvel"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "nouvel"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_provav",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province ou territoire où vous résidiez avant de couper vos liens de résidence",
+            "en": "Province or territory where you lived before you cut your residential ties"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_coupe",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous avez coupé vos liens de résidence au Canada",
+            "en": "Date you cut your residential ties with Canada"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_retab",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle vous avez rétabli vos liens de résidence au Canada",
+            "en": "Date you re-established your residential ties with Canada"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui",
+              "rc_sch_s_type": "retour"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "titre": {
+            "fr": "",
+            "en": ""
+          },
+          "texte": {
+            "fr": [
+              "La date à laquelle vous êtes devenu résident du Canada est la date à laquelle vous avez établi des liens de résidence importants au Canada. C’est habituellement la date à laquelle vous êtes venu vivre au Canada (domicile, époux ou conjoint, personnes à charge). En savoir plus sur le statut de résidence"
+            ],
+            "en": [
+              "The date you became a resident of Canada is the date you established significant residential ties in Canada. It is usually the date you came to live in Canada (home, spouse or partner, dependants). Learn more about residency status"
+            ]
+          },
+          "quand": []
+        }
+      ]
+    },
+    {
+      "id": "schstat",
+      "titre": {
+        "fr": "Statut de citoyen ou d’immigrant",
+        "en": "Citizenship or immigration status"
+      },
+      "aide": {
+        "fr": "Formulaire RC66SCH, étape 3. Remplissez la section qui s’applique à chaque personne. Les dates figurent sur vos documents d’Immigration, Réfugiés et Citoyenneté Canada.",
+        "en": "Form RC66SCH, step 3. Fill in the section that applies to each person. The dates are on your Immigration, Refugees and Citizenship Canada documents."
+      },
+      "quand": [
+        {
+          "rc_cit": "non"
+        },
+        {
+          "rc_new": "oui"
+        },
+        {
+          "rc_civil": "marie",
+          "rc_s_cit": "non"
+        },
+        {
+          "rc_civil": "marie",
+          "rc_s_new": "oui"
+        },
+        {
+          "rc_civil": "fait",
+          "rc_s_cit": "non"
+        },
+        {
+          "rc_civil": "fait",
+          "rc_s_new": "oui"
+        }
+      ],
+      "champs": [
+        {
+          "id": "rc_sch_y_stat",
+          "type": "groupe",
+          "requis": true,
+          "libelle": {
+            "fr": "Cochez ce qui s’applique (une ou plusieurs lignes)",
+            "en": "Tick what applies (one or more lines)"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_cit",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Citoyen canadien depuis moins de 12 mois",
+            "en": "Canadian citizen for less than 12 months"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rp",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Résident permanent",
+            "en": "Permanent resident"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_pp",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Personne protégée (réfugié reconnu)",
+            "en": "Protected person (recognized refugee)"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Résident temporaire (visiteur, étudiant, travailleur, permis de séjour temporaire)",
+            "en": "Temporary resident (visitor, student, worker, temporary resident permit)"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_ind",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Inscrit ou ayant le droit d’être inscrit en vertu de la Loi sur les Indiens, et non citoyen canadien",
+            "en": "Registered or entitled to be registered under the Indian Act, and not a Canadian citizen"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non"
+            },
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_stat",
+          "type": "groupe",
+          "requis": true,
+          "libelle": {
+            "fr": "Cochez ce qui s’applique (une ou plusieurs lignes)",
+            "en": "Tick what applies (one or more lines)"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_cit",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Citoyen canadien depuis moins de 12 mois",
+            "en": "Canadian citizen for less than 12 months"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rp",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Résident permanent",
+            "en": "Permanent resident"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_pp",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Personne protégée (réfugié reconnu)",
+            "en": "Protected person (recognized refugee)"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Résident temporaire (visiteur, étudiant, travailleur, permis de séjour temporaire)",
+            "en": "Temporary resident (visitor, student, worker, temporary resident permit)"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_ind",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Inscrit ou ayant le droit d’être inscrit en vertu de la Loi sur les Indiens, et non citoyen canadien",
+            "en": "Registered or entitled to be registered under the Indian Act, and not a Canadian citizen"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_cit": "non"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_citd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé",
+            "en": "Date this status started"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_cit": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rpd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé (sur votre document de confirmation)",
+            "en": "Date this status started (on your confirmation document)"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rp": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_ppd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé (sur votre avis de décision favorable)",
+            "en": "Date this status started (on your notice of favourable decision)"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_pp": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt1n",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Document 1 (nom, ex. permis d’études)",
+            "en": "Document 1 (name, e.g. study permit)"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt1d",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de début",
+            "en": "Start date"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt1f",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date d’expiration",
+            "en": "Expiry date"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt2n",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Document 2 (nom, ex. permis d’études)",
+            "en": "Document 2 (name, e.g. study permit)"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt2d",
+          "type": "date",
+          "requis": false,
+          "libelle": {
+            "fr": "Date de début",
+            "en": "Start date"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rt2f",
+          "type": "date",
+          "requis": false,
+          "libelle": {
+            "fr": "Date d’expiration",
+            "en": "Expiry date"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_indd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date d’inscription auprès de Services aux Autochtones Canada",
+            "en": "Registration date with Indigenous Services Canada"
+          },
+          "groupe": {
+            "fr": "Vous",
+            "en": "You"
+          },
+          "quand": [
+            {
+              "rc_cit": "non",
+              "rc_sch_y_ind": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_citd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé",
+            "en": "Date this status started"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_cit": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rpd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé (sur votre document de confirmation)",
+            "en": "Date this status started (on your confirmation document)"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rp": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_ppd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date à laquelle ce statut a commencé (sur votre avis de décision favorable)",
+            "en": "Date this status started (on your notice of favourable decision)"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_pp": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt1n",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Document 1 (nom, ex. permis d’études)",
+            "en": "Document 1 (name, e.g. study permit)"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt1d",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de début",
+            "en": "Start date"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt1f",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date d’expiration",
+            "en": "Expiry date"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt2n",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Document 2 (nom, ex. permis d’études)",
+            "en": "Document 2 (name, e.g. study permit)"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt2d",
+          "type": "date",
+          "requis": false,
+          "libelle": {
+            "fr": "Date de début",
+            "en": "Start date"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rt2f",
+          "type": "date",
+          "requis": false,
+          "libelle": {
+            "fr": "Date d’expiration",
+            "en": "Expiry date"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_rt": true
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_indd",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date d’inscription auprès de Services aux Autochtones Canada",
+            "en": "Registration date with Indigenous Services Canada"
+          },
+          "groupe": {
+            "fr": "Votre époux ou conjoint de fait",
+            "en": "Your spouse or common-law partner"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_cit": "non",
+              "rc_sch_s_ind": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schrev",
+      "titre": {
+        "fr": "Vos revenus",
+        "en": "Your income"
+      },
+      "aide": {
+        "fr": "Formulaire RC66SCH, étape 4. Indiquez les revenus de toutes sources qui n’ont pas été déclarés dans une déclaration de revenus canadienne, en dollars canadiens (taux de change de la Banque du Canada au moment où vous avez reçu les revenus). Écrivez 0 s’il n’y en avait aucun.",
+        "en": "Form RC66SCH, step 4. Enter income from all sources not reported in a Canadian income tax return, in Canadian dollars (Bank of Canada exchange rate when you received it). Enter 0 if there was none."
+      },
+      "quand": [
+        {
+          "rc_new": "oui"
+        },
+        {
+          "rc_civil": "marie",
+          "rc_s_new": "oui"
+        },
+        {
+          "rc_civil": "fait",
+          "rc_s_new": "oui"
+        }
+      ],
+      "champs": [
+        {
+          "id": "rc_sch_an",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Année où vous êtes devenu résident du Canada",
+            "en": "Year you became a resident of Canada"
+          },
+          "max": 4,
+          "exemple": {
+            "fr": "2026",
+            "en": "2026"
+          }
+        },
+        {
+          "id": "rc_sch_y_ra",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Vous ($ CAD)",
+            "en": "You ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "A. Revenus gagnés en l’année indiquée, du 1er janvier à la date où vous êtes devenu résident",
+            "en": "A. Income earned in the year given, from January 1 to the date you became a resident"
+          },
+          "quand": [
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_y_rb",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Vous ($ CAD)",
+            "en": "You ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "B. Revenus gagnés en l’année précédente",
+            "en": "B. Income earned in the previous year"
+          },
+          "quand": [
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_ra",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Votre époux ou conjoint de fait ($ CAD)",
+            "en": "Your spouse or common-law partner ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "A. Revenus gagnés en l’année indiquée, du 1er janvier à la date où vous êtes devenu résident",
+            "en": "A. Income earned in the year given, from January 1 to the date you became a resident"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rb",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Votre époux ou conjoint de fait ($ CAD)",
+            "en": "Your spouse or common-law partner ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "B. Revenus gagnés en l’année précédente",
+            "en": "B. Income earned in the previous year"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enfants",
+      "titre": {
+        "fr": "Vos enfants",
+        "en": "Your children"
+      },
+      "aide": {
+        "fr": "Étape 6 du formulaire. Le formulaire prévoit deux enfants. Pour plus de deux enfants, une feuille séparée ou le formulaire RC66-1 est joint.",
+        "en": "Step 6 of the form. The form has room for two children. For more than two children, a separate sheet or form RC66-1 is attached."
+      },
+      "champs": [
+        {
+          "id": "rc_e{n}_prenom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Prénom",
+            "en": "First name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_e{n}_nom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de famille",
+            "en": "Last name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_e{n}_sexe",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Sexe",
+            "en": "Sex"
+          },
+          "valeurs": [
+            {
+              "valeur": "f",
+              "fr": "Fille",
+              "en": "Girl"
+            },
+            {
+              "valeur": "g",
+              "fr": "Garçon",
+              "en": "Boy"
+            }
+          ],
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_e{n}_naiss",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de naissance",
+            "en": "Date of birth"
+          },
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_e{n}_ville",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Ville de naissance",
+            "en": "City of birth"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_e{n}_prov",
+          "type": "province-ou-pays",
+          "requis": true,
+          "libelle": {
+            "fr": "Province, territoire ou pays de naissance",
+            "en": "Province, territory or country of birth"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          },
+          "aide": {
+            "fr": "Province ou territoire canadien, ou « Autre pays ».",
+            "en": "Canadian province or territory, or “Other country”."
+          }
+        },
+        {
+          "id": "rc_e{n}_plus60",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "L’enfant habite-t-il avec vous plus de 60 % du temps ?",
+            "en": "Does the child live with you more than 60% of the time?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ],
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          }
+        },
+        {
+          "id": "rc_premiere",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Est-ce la première fois que vous demandez des prestations pour ces enfants au Canada ?",
+            "en": "Is this the first time you are applying for benefits for these children in Canada?"
+          },
+          "valeurs": [
+            {
+              "valeur": "oui",
+              "fr": "Oui",
+              "en": "Yes"
+            },
+            {
+              "valeur": "non",
+              "fr": "Non",
+              "en": "No"
+            }
+          ],
+          "groupe": {
+            "fr": "Pour la liste des documents à joindre",
+            "en": "For the list of documents to attach"
+          }
+        },
+        {
+          "id": "rc_plus2",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Je fais la demande pour plus de deux enfants",
+            "en": "I am applying for more than two children"
+          },
+          "groupe": {
+            "fr": "Pour la liste des documents à joindre",
+            "en": "For the list of documents to attach"
+          }
+        },
+        {
+          "id": "rc_pere",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Je suis un homme et l’autre parent de l’enfant, une femme, vit avec moi",
+            "en": "I am a man and the other parent of the child, a woman, lives with me"
+          },
+          "groupe": {
+            "fr": "Pour la liste des documents à joindre",
+            "en": "For the list of documents to attach"
+          }
+        },
+        {
+          "id": "rc_e{n}_depuis",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Depuis quelle date ? (par exemple, la date de votre arrivée au Canada)",
+            "en": "Since what date? (for example, the date you arrived in Canada)"
+          },
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          },
+          "quand": [
+            {
+              "rc_e{n}_plus60": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_e{n}_depuisnaiss",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "L’enfant habite avec moi depuis sa naissance",
+            "en": "The child has lived with me since birth"
+          },
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          },
+          "quand": [
+            {
+              "rc_e{n}_plus60": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_e{n}_partage",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Si non, quel pourcentage du temps l’enfant habite-t-il avec vous ?",
+            "en": "If not, what share of the time does the child live with you?"
+          },
+          "valeurs": [
+            {
+              "valeur": "40",
+              "fr": "De 40 % à 60 % (garde partagée)",
+              "en": "40% to 60% (shared custody)"
+            },
+            {
+              "valeur": "moins40",
+              "fr": "Moins de 40 %",
+              "en": "Less than 40%"
+            }
+          ],
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          },
+          "quand": [
+            {
+              "rc_e{n}_plus60": "non"
+            }
+          ]
+        },
+        {
+          "id": "rc_e{n}_date40",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Depuis quelle date l’enfant habite-t-il avec vous de 40 % à 60 % du temps ?",
+            "en": "Since what date has the child lived with you 40% to 60% of the time?"
+          },
+          "groupe": {
+            "fr": "Enfant 1",
+            "en": "Child 1"
+          },
+          "quand": [
+            {
+              "rc_e{n}_plus60": "non",
+              "rc_e{n}_partage": "40"
+            }
+          ]
+        }
+      ],
+      "repete": {
+        "variable": "n",
+        "min": 1,
+        "max": 2,
+        "option": "@rc.deux (n = 2 seulement si vrai)",
+        "aide": {
+          "fr": "Le formulaire prévoit deux enfants ; pour plus, joindre le RC66-1 ou une feuille séparée (case rc_plus2).",
+          "en": "The form has room for two children; for more, attach form RC66-1 or a separate sheet (box rc_plus2)."
+        }
+      }
+    },
+    {
+      "id": "signature",
+      "titre": {
+        "fr": "Signature et date",
+        "en": "Signature and date"
+      },
+      "aide": {
+        "fr": "Étape 7 du formulaire. En signant, vous attestez que les renseignements sont exacts et complets. Faire une fausse déclaration est une infraction grave.",
+        "en": "Step 7 of the form. By signing, you certify that the information is accurate and complete. Making a false statement is a serious offence."
+      },
+      "champs": [
+        {
+          "id": "rc_datesign",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de la signature",
+            "en": "Date of signature"
+          }
+        }
+      ],
+      "notes": [
+        {
+          "titre": {
+            "fr": "",
+            "en": ""
+          },
+          "texte": {
+            "fr": [
+              "Vous pouvez signer à la main après avoir imprimé le formulaire. Si vous voulez que Capycom l’imprime et le poste pour vous, ajoutez votre signature ici : dessinez-la ou envoyez une photo de votre signature manuscrite."
+            ],
+            "en": [
+              "You can sign by hand after printing the form. If you want Capycom to print and mail it for you, add your signature here: draw it or upload a photo of your handwritten signature."
+            ]
+          },
+          "quand": []
+        }
+      ]
+    }
+  ],
+  "optionsMoteur": [
+    {
+      "id": "rc.deux",
+      "type": "booleen",
+      "aide": {
+        "fr": "Active le deuxième enfant (rc_e2_*). Le formulaire en prévoit deux ; au-delà, une feuille séparée ou le RC66-1 est jointe.",
+        "en": "Turns on the second child (rc_e2_*). The form has room for two; beyond that a separate sheet or form RC66-1 is attached."
+      }
+    },
+    {
+      "id": "rc.perso",
+      "type": "booleen",
+      "aide": {
+        "fr": "Le RC66 sera fourni par l’utilisateur (téléversé) : le moteur ne le génère pas si tout est faux.",
+        "en": "The user supplies their own RC66 (uploaded): the engine does not generate it when tout is false."
+      }
+    },
+    {
+      "id": "rc.raccourci",
+      "type": "booleen",
+      "aide": {
+        "fr": "Parcours « J’ai déjà rempli mon RC66 » : seulement les pièces à joindre, via les cases rc_f_*.",
+        "en": "Shortcut “I already filled in my RC66”: only the supporting documents, via the rc_f_* boxes."
+      }
+    },
+    {
+      "id": "rc.schPerso",
+      "type": "booleen",
+      "aide": {
+        "fr": "Le RC66SCH est fourni par l’utilisateur : le moteur ne le génère pas.",
+        "en": "The user supplies their own RC66SCH: the engine does not generate it."
+      }
+    },
+    {
+      "id": "tout",
+      "type": "booleen",
+      "defaut": true,
+      "aide": {
+        "fr": "Vrai : génère toujours le RC66 (et le RC66SCH si requis). Faux : respecte rc.perso, rc.raccourci et rc.schPerso.",
+        "en": "True: always generates the RC66 (and the RC66SCH if required). False: respects rc.perso, rc.raccourci and rc.schPerso."
+      }
+    },
+    {
+      "id": "sig",
+      "type": "image",
+      "aide": {
+        "fr": "Signature {url, w, h}, posée sur la dernière page de chaque formulaire.",
+        "en": "Signature {url, w, h}, placed on the last page of each form."
+      }
+    }
+  ],
+  "piecesJointes": [
+    {
+      "id": "naissance",
+      "requis": true,
+      "titre": {
+        "fr": "Preuve de naissance de chaque enfant",
+        "en": "Proof of birth for each child"
+      },
+      "aide": {
+        "fr": "Un des documents suivants avec le prénom, le nom et la date de naissance de l’enfant : certificat de naissance, copie certifiée de l’enregistrement de naissance, dossier de naissance de l’hôpital, passeport. Pour un enfant né à l’extérieur du Canada, un document d’IRCC est aussi accepté (carte de résident permanent, confirmation de résidence permanente, certificat de citoyenneté, permis de séjour temporaire).",
+        "en": "One of these documents showing the child’s first name, last name and date of birth: birth certificate, certified copy of the birth registration, hospital birth record, passport. For a child born outside Canada, an IRCC document is also accepted (permanent resident card, confirmation of permanent residence, citizenship certificate, temporary resident permit)."
+      },
+      "quand": {
+        "fr": "Première demande pour l’enfant (rc_premiere = oui) ou demande rétroactive.",
+        "en": "First application for the child (rc_premiere = oui) or retroactive claim."
+      }
+    },
+    {
+      "id": "sch",
+      "requis": true,
+      "titre": {
+        "fr": "Formulaire RC66SCH rempli et signé",
+        "en": "Completed and signed form RC66SCH"
+      },
+      "aide": {
+        "fr": "Statut au Canada et renseignements sur les revenus. Requis si vous (ou votre conjoint) êtes un nouvel arrivant ou n’êtes pas citoyen canadien depuis 12 mois. Téléchargez-le sur le site de l’ARC, remplissez-le, signez-le et téléversez-le ici.",
+        "en": "Status in Canada and income information. Required if you (or your partner) are a newcomer or have not been a Canadian citizen for 12 months. Download it from the CRA website, fill it in, sign it and upload it here."
+      },
+      "quand": {
+        "fr": "Un RC66SCH est requis et l’utilisateur fournit le sien (rc.schPerso) au lieu de celui du moteur.",
+        "en": "An RC66SCH is required and the user supplies their own (rc.schPerso) instead of the engine’s."
+      },
+      "lien": "sch"
+    },
+    {
+      "id": "residence",
+      "requis": true,
+      "titre": {
+        "fr": "Preuve de résidence au Canada (au moins 3 documents)",
+        "en": "Proof of residence in Canada (at least 3 documents)"
+      },
+      "aide": {
+        "fr": "Par exemple : bail ou reçus de loyer, factures de services publics, relevés bancaires ou de carte de crédit, polices d’assurance, permis de conduire. Ils doivent contenir votre nom complet, votre adresse et une date dans la période visée.",
+        "en": "For example: lease or rent receipts, utility bills, bank or credit card statements, insurance policies, driver’s licence. They must show your full name, your address and a date in the period covered."
+      },
+      "quand": {
+        "fr": "Demande rétroactive : la garde de l’enfant a commencé il y a plus de 11 mois.",
+        "en": "Retroactive claim: custody of the child began more than 11 months ago."
+      }
+    },
+    {
+      "id": "soins",
+      "requis": true,
+      "titre": {
+        "fr": "Preuve que vous êtes le principal responsable de l’enfant (3 documents)",
+        "en": "Proof you are the main caregiver of the child (3 documents)"
+      },
+      "aide": {
+        "fr": "Par exemple : lettre de l’école ou de la garderie, fiche d’inscription scolaire, bulletin de l’enfant, reçu d’une activité, décision de la cour ou entente de séparation, lettre d’une personne en position d’autorité.",
+        "en": "For example: letter from the school or daycare, school registration form, report card, receipt for an activity, court order or separation agreement, letter from a person in authority."
+      },
+      "quand": {
+        "fr": "Demande rétroactive.",
+        "en": "Retroactive claim."
+      }
+    },
+    {
+      "id": "statutdoc",
+      "requis": false,
+      "titre": {
+        "fr": "Preuve de votre statut au Canada (recommandé)",
+        "en": "Proof of your status in Canada (recommended)"
+      },
+      "aide": {
+        "fr": "Carte de résident permanent, confirmation de résidence permanente, permis de travail ou d’études. L’ARC peut vous la demander plus tard : la joindre peut éviter un délai.",
+        "en": "Permanent resident card, confirmation of permanent residence, work or study permit. The CRA may ask for it later: attaching it can avoid a delay."
+      },
+      "quand": {
+        "fr": "Demande rétroactive (obligatoire) ou RC66SCH requis (recommandé).",
+        "en": "Retroactive claim (required) or RC66SCH required (recommended)."
+      }
+    },
+    {
+      "id": "rc661",
+      "requis": true,
+      "titre": {
+        "fr": "Formulaire RC66-1 ou feuille séparée pour les enfants supplémentaires",
+        "en": "Form RC66-1 or separate sheet for additional children"
+      },
+      "aide": {
+        "fr": "Les mêmes renseignements que l’étape 6 pour chaque enfant au-delà de deux.",
+        "en": "The same information as step 6 for each child beyond two."
+      },
+      "quand": {
+        "fr": "Plus de deux enfants (rc_plus2).",
+        "en": "More than two children (rc_plus2)."
+      }
+    },
+    {
+      "id": "lettre",
+      "requis": true,
+      "titre": {
+        "fr": "Lettre signée par le parent de sexe féminin",
+        "en": "Letter signed by the female parent"
+      },
+      "aide": {
+        "fr": "Elle indique que l’autre parent avec lequel elle vit est le principal responsable de tous les enfants du foyer.",
+        "en": "It states that the other parent she lives with is the main caregiver of all the children in the household."
+      },
+      "quand": {
+        "fr": "Lettre du parent de sexe féminin requise (rc_pere).",
+        "en": "Letter from the female parent required (rc_pere)."
+      }
+    },
+    {
+      "id": "autres",
+      "requis": false,
+      "titre": {
+        "fr": "Autres documents (facultatif)",
+        "en": "Other documents (optional)"
+      },
+      "aide": {
+        "fr": "Tout autre document que vous voulez joindre à la demande.",
+        "en": "Any other document you want to attach to the application."
+      },
+      "quand": {
+        "fr": "Toujours proposé, facultatif.",
+        "en": "Always offered, optional."
+      }
+    }
+  ],
+  "destinataires": {
+    "type": "centres-fiscaux",
+    "choix": {
+      "fr": "Selon la province de résidence (adresse postale ou du domicile).",
+      "en": "Depending on the province of residence (mailing or home address)."
+    },
+    "centres": {
+      "winnipeg": {
+        "nom": "Centre fiscal de Winnipeg",
+        "ligne": "Case postale 14005, succursale Main",
+        "ville": "Winnipeg",
+        "prov": "Manitoba",
+        "cp": "R3C 0E3",
+        "zone": {
+          "fr": "Alberta, Colombie-Britannique, Manitoba, Nunavut, Saskatchewan, Territoires du Nord-Ouest et Yukon",
+          "en": "Alberta, British Columbia, Manitoba, Nunavut, Saskatchewan, Northwest Territories and Yukon"
+        }
+      },
+      "sudbury": {
+        "nom": "Centre fiscal de Sudbury",
+        "ligne": "Case postale 20000, succursale A",
+        "ville": "Sudbury",
+        "prov": "Ontario",
+        "cp": "P3A 5C1",
+        "zone": {
+          "fr": "Île-du-Prince-Édouard, Nouveau-Brunswick, Nouvelle-Écosse, Ontario et Terre-Neuve-et-Labrador",
+          "en": "Prince Edward Island, New Brunswick, Nova Scotia, Ontario and Newfoundland and Labrador"
+        }
+      },
+      "jonquiere": {
+        "nom": "Centre fiscal de Jonquière",
+        "ligne": "2251, boulevard René-Lévesque",
+        "ville": "Jonquière",
+        "prov": "Québec",
+        "cp": "G7S 5J2",
+        "zone": {
+          "fr": "Québec",
+          "en": "Quebec"
+        }
+      }
+    },
+    "regles": {
+      "QC": "jonquiere",
+      "PE, NB, NS, ON, NL": "sudbury",
+      "autres provinces et territoires": "winnipeg"
+    }
+  },
+  "liensOfficiels": [
+    {
+      "cle": "comment",
+      "but": {
+        "fr": "Lire comment demander l’allocation canadienne pour enfants et vérifier l’admissibilité",
+        "en": "Read how to apply for the Canada child benefit and check eligibility"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/allocation-canadienne-enfants/comment-demande.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-apply.html"
+    },
+    {
+      "cle": "form",
+      "but": {
+        "fr": "Formulaire officiel RC66 (ARC)",
+        "en": "Official form RC66 (CRA)"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/rc66.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html"
+    },
+    {
+      "cle": "sch",
+      "but": {
+        "fr": "Formulaire officiel RC66SCH (ARC), statut au Canada et revenus",
+        "en": "Official form RC66SCH (CRA), status in Canada and income"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/rc66sch.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66sch.html"
+    },
+    {
+      "cle": "docs",
+      "but": {
+        "fr": "Liste des documents justificatifs acceptés par l’ARC",
+        "en": "List of supporting documents accepted by the CRA"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/documents-justificatifs.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/supporting-documents.html"
+    },
+    {
+      "cle": "resid",
+      "but": {
+        "fr": "Déterminer son statut de résidence (ARC)",
+        "en": "Determine your residency status (CRA)"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/impot/impot-international-non-residents/renseignements-ont-deplaces/determination-votre-statut-residence.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Capycom n’est pas l’Agence du revenu du Canada et n’est affilié à aucun gouvernement. L’outil ne donne pas de conseil juridique ou fiscal et ne garantit pas l’admissibilité.",
+      "en": "Capycom is not the Canada Revenue Agency and is not affiliated with any government. The tool does not give legal or tax advice and does not guarantee eligibility."
+    },
+    {
+      "fr": "Ne pas utiliser ce formulaire si la demande a déjà été faite en ligne (Mon dossier de l’ARC) ou par l’inscription à la naissance de la province.",
+      "en": "Do not use this form if the application was already made online (CRA My Account) or through the province’s birth registration."
+    },
+    {
+      "fr": "Le formulaire doit être imprimé, signé à la main (ou avec la signature fournie) et envoyé avec les pièces justificatives. Faire une fausse déclaration est une infraction grave.",
+      "en": "The form must be printed, signed by hand (or with the supplied signature) and mailed with the supporting documents. Making a false statement is a serious offence."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"rc66\", reponses, options)",
+    "sortie": {
+      "fr": "Un PDF : les 4 pages officielles du RC66 remplies par-dessus l’image du formulaire, suivies des 4 pages du RC66SCH quand il est requis et généré. Format Lettre, positions en points.",
+      "en": "One PDF: the 4 official RC66 pages filled in over the form image, followed by the 4 RC66SCH pages when required and generated. Letter size, positions in points."
+    },
+    "fonds": [
+      "fonds/rc66.json",
+      "fonds/sch.json"
+    ],
+    "verification": "verifier(\"rc66\", reponses, options) ; documentsDe(\"rc66\", reponses, options)",
+    "options": [
+      "rc.deux",
+      "rc.perso",
+      "rc.raccourci",
+      "rc.schPerso",
+      "tout",
+      "sig"
+    ],
+    "aideRedaction": {
+      "fr": "Les dates sont au format AAAA-MM-JJ. Le NAS est écrit avec ou sans espaces. Les identifiants rc_e{n}_ désignent l’enfant n (1 ou 2).",
+      "en": "Dates use the YYYY-MM-DD format. The SIN is written with or without spaces. The rc_e{n}_ ids refer to child n (1 or 2)."
+    }
+  }
+}

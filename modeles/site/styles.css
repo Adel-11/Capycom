@@ -1,0 +1,169 @@
+
+#capy-ml{font-family:'Public Sans',Arial,sans-serif;color:#1c2430;width:100%;max-width:720px;box-sizing:border-box}
+#capy-ml *{box-sizing:border-box}
+#capy-ml .ml-modeles{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px}
+#capy-ml .ml-modele{border:1px solid #e9e3d5;background:#fff;border-radius:999px;padding:10px 18px;font:500 14px 'Public Sans',Arial,sans-serif;color:#5f5a4f;cursor:pointer}
+#capy-ml .ml-modele:hover{border-color:#27406b;color:#27406b}
+#capy-ml .ml-modele.actif{background:#27406b;border-color:#27406b;color:#fff}
+#capy-ml .ml-form{flex:1 1 0;min-width:0}
+#capy-ml .ml-carte{background:#fff;border:1px solid #e9e3d5;border-radius:24px;padding:32px;margin:0 0 24px}
+#capy-ml .ml-carte h3{font:400 24px Newsreader,Georgia,serif;margin:0 0 6px;color:#1c2430}
+#capy-ml .ml-carte h3+.ml-champ,#capy-ml .ml-carte h3+.ml-avert{margin-top:20px}
+#capy-ml .ml-aide{font-size:14px;color:#857f71;margin:0 0 20px;line-height:1.5}
+#capy-ml .ml-ligne{display:flex;gap:16px}
+#capy-ml .ml-ligne>.ml-champ{flex:1 1 0;min-width:0}
+#capy-ml .ml-champ{margin:0 0 16px}
+#capy-ml label{display:block;font-size:13px;font-weight:600;color:#5f5a4f;margin:0 0 5px}
+#capy-ml label .opt{font-weight:400;color:#857f71}
+#capy-ml input,#capy-ml select,#capy-ml textarea{width:100%;font:15px 'Public Sans',Arial,sans-serif;color:#1c2430;background:#fbf8f1;border:1px solid #e1d9c6;border-radius:12px;padding:10px 12px;outline:none}
+#capy-ml textarea{min-height:92px;resize:vertical;line-height:1.45}
+#capy-ml input:focus,#capy-ml select:focus,#capy-ml textarea:focus{border-color:#27406b;background:#fff}
+#capy-ml .ml-err input,#capy-ml .ml-err select,#capy-ml .ml-err textarea{border-color:#b3412e;background:#fff7f5}
+#capy-ml .ml-err::after{content:attr(data-err);display:block;margin-top:5px;color:#b3412e;font-size:.82rem;font-weight:600;line-height:1.3}
+#capy-ml .ml-recherche{display:flex;gap:8px;margin:0 0 6px}
+#capy-ml .ml-recherche input{flex:1 1 auto}
+#capy-ml .ml-btn{border:1px solid rgba(28,36,48,.22);background:#fff;color:#1c2430;border-radius:999px;padding:10px 18px;font:600 14px 'Public Sans',Arial,sans-serif;cursor:pointer;white-space:nowrap}
+#capy-ml .ml-btn:hover{border-color:rgba(28,36,48,.45)}
+#capy-ml .ml-btn-plein{background:#27406b;border-color:#27406b;color:#fff;padding:14px 26px;font-size:15px}
+#capy-ml .ml-btn-plein:hover{background:#1e3256}
+#capy-ml .ml-resultats{list-style:none;margin:0 0 12px;padding:0;border:1px solid #e9e3d5;border-radius:12px;overflow:hidden;display:none}
+#capy-ml .ml-resultats li{padding:10px 12px;font-size:14px;cursor:pointer;border-top:1px solid #f1ece0;background:#fff}
+#capy-ml .ml-resultats li:first-child{border-top:none}
+#capy-ml .ml-resultats li:hover{background:#f3efe7}
+#capy-ml .ml-resultats li.vide{cursor:default;color:#857f71}
+#capy-ml .ml-langue{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#capy-ml .ml-langue button{border:1px solid #e1d9c6;background:#fbf8f1;border-radius:999px;padding:7px 14px;font:500 13px 'Public Sans',Arial,sans-serif;cursor:pointer;color:#5f5a4f}
+#capy-ml .ml-langue button.actif{background:#27406b;color:#fff;border-color:#27406b}
+#capy-ml .ml-telechargement{margin:8px 0 0}
+#capy-ml .ml-titre-tel{font:400 24px Newsreader,Georgia,serif;margin:0 0 14px;color:#1c2430}
+#capy-ml .ml-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#capy-ml .ml-actions .ml-btn{padding:14px 22px;font-size:15px}
+#capy-ml .ml-message{font-size:14px;margin:10px 0 0;color:#b3412e;display:none;line-height:1.45}
+#capy-ml .ml-message.ok{color:#2f6b3a}
+#capy-ml .ml-note{font-size:13px;color:#857f71;line-height:1.55;margin:18px 0 8px}
+#capy-ml .ml-avert{font-size:13px;color:#5f5a4f;background:#f3efe7;border-radius:12px;padding:10px 12px;margin:0 0 18px;line-height:1.45}
+#capy-ml-overlay{display:none;position:fixed;inset:0;background:rgba(251,248,241,.92);z-index:99999;align-items:center;justify-content:center;font:500 18px 'Public Sans',Arial,sans-serif;color:#27406b;text-align:center;padding:20px}
+@media (max-width:560px){#capy-ml .ml-ligne{flex-direction:column;gap:0}#capy-ml .ml-vide{display:none}#capy-ml .ml-carte{padding:20px 16px;border-radius:18px;margin:0 0 16px}#capy-ml .ml-recherche{flex-direction:column}#capy-ml .ml-actions .ml-btn{width:100%}#capy-ml .ml-modeles{margin:0 0 24px}}
+
+/* v25 : signature, aperçu flottant */
+#capy-ml .ml-sig-modes{margin:0 0 16px}
+#capy-ml .ml-sig-zone{position:relative;border:1.5px dashed #cfc6b0;border-radius:14px;background:#fff;margin:0 0 12px;overflow:hidden}
+#capy-ml .ml-sig-zone canvas{display:block;width:100%;aspect-ratio:560/180;height:auto;touch-action:none;cursor:crosshair}
+#capy-ml .ml-sig-ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:14px;color:#a8a08c;pointer-events:none;text-align:center;padding:0 16px}
+#capy-ml .ml-sig-zone.vide .ml-sig-ph{display:flex}
+#capy-ml .ml-couleurs{display:flex;align-items:center;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+#capy-ml .ml-couleurs-lib{font-size:13px;font-weight:600;color:#5f5a4f}
+#capy-ml .ml-coul{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #cfc6b0;cursor:pointer;padding:0}
+#capy-ml .ml-coul.actif{box-shadow:0 0 0 2px #27406b}
+#capy-ml .ml-polices{display:grid;gap:10px;margin:0 0 14px}
+#capy-ml .ml-police{border:1px solid #e1d9c6;background:#fff;border-radius:14px;padding:6px 16px;font-size:34px;line-height:1.5;text-align:left;cursor:pointer;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#capy-ml .ml-police.actif{border-color:#27406b;box-shadow:0 0 0 1px #27406b}
+#capy-ml .ml-check{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:400;color:#5f5a4f;margin:0 0 12px;cursor:pointer}
+#capy-ml .ml-check input{width:18px;height:18px;flex:0 0 18px;padding:0;margin:0}
+#capy-ml .ml-check-lien{font-size:13px;margin:0 0 14px}
+#capy-ml input[type=file]{padding:10px;background:#fff;border-style:dashed;margin:0 0 12px}
+#capy-ml .ml-sig-aide2{margin:0 0 10px}
+#capy-ml .ml-sig-vignette{border:1px solid #e9e3d5;border-radius:12px;padding:10px;background:repeating-conic-gradient(#f3efe7 0 25%,#fff 0 50%) 0 0/16px 16px;display:inline-block;max-width:100%}
+#capy-ml .ml-sig-vignette img{display:block;max-width:100%;max-height:110px}
+#capy-ml-flottant{position:fixed;right:20px;bottom:20px;z-index:99990;display:none;align-items:center;gap:8px;border:none;border-radius:999px;background:#27406b;color:#fff;font:600 15px 'Public Sans',Arial,sans-serif;padding:14px 22px;cursor:pointer;box-shadow:0 12px 28px -10px rgba(28,36,48,.55)}
+#capy-ml-flottant:hover{background:#1e3256}
+#capy-ml-modal{display:none;position:fixed;inset:0;z-index:99999;background:rgba(28,36,48,.6);align-items:center;justify-content:center;padding:16px;font-family:'Public Sans',Arial,sans-serif}
+#capy-ml-modal .pv-boite{background:#fbf8f1;border-radius:20px;width:100%;max-width:900px;max-height:100%;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+#capy-ml-modal .pv-tete{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #e9e3d5;font-size:17px;color:#1c2430}
+#capy-ml-modal .pv-x{border:none;background:none;font-size:30px;line-height:1;cursor:pointer;color:#5f5a4f;padding:0 4px}
+#capy-ml-modal .pv-alerte{background:#fff7f5;color:#b3412e;font-size:13px;padding:10px 20px;border-bottom:1px solid #f0d5cf}
+#capy-ml-modal .pv-zone{flex:1 1 auto;overflow:auto;padding:16px 12px;background:#ece6d8}
+#capy-ml-modal .pv-cadre{margin:0 auto;position:relative}
+#capy-ml-modal .pv-page{position:absolute;left:0;top:0;width:215.9mm;height:279.4mm;background:#fff;transform-origin:0 0;box-shadow:0 10px 30px -12px rgba(28,36,48,.5);font-family:Helvetica,Arial,sans-serif;overflow:hidden}
+#capy-ml-modal .pv-t{position:absolute;white-space:pre;line-height:1;margin:0}
+#capy-ml-modal .pv-l{position:absolute;height:.25mm}
+#capy-ml-modal .pv-i{position:absolute;display:block}
+#capy-ml-modal .pv-pied{display:flex;justify-content:flex-end;gap:10px;padding:12px 20px;border-top:1px solid #e9e3d5}
+#capy-ml-modal .ml-btn{border:1px solid rgba(28,36,48,.22);background:#fff;color:#1c2430;border-radius:999px;padding:10px 18px;font:600 14px 'Public Sans',Arial,sans-serif;cursor:pointer;white-space:nowrap}
+#capy-ml-modal .ml-btn-plein{background:#27406b;border-color:#27406b;color:#fff}
+@media (max-width:560px){#capy-ml-flottant{right:14px;bottom:14px;padding:12px 18px}#capy-ml-modal{padding:8px}#capy-ml .ml-police{font-size:28px}}
+
+/* v26 : sections de modèles, assistant RC66 */
+#capy-ml .ml-sections{display:grid;gap:36px;margin:0 0 8px}
+#capy-ml .ml-sec-tete{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:0 0 14px}
+#capy-ml .ml-sec-tete h2{font:400 28px Newsreader,Georgia,serif;margin:0 0 4px;color:#1c2430}
+#capy-ml .ml-sec-tete p{font-size:14px;color:#857f71;margin:0;line-height:1.5;max-width:560px}
+#capy-ml .ml-sec-seule{margin:6px 0 18px}
+#capy-ml .ml-tuiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+#capy-ml .ml-tuile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;background:#fff;border:1px solid #e9e3d5;border-radius:20px;padding:20px;cursor:pointer;font-family:'Public Sans',Arial,sans-serif;color:#1c2430;transition:border-color .15s,box-shadow .15s,transform .15s}
+#capy-ml .ml-tuile:hover,#capy-ml .ml-tuile:focus-visible{border-color:#27406b;box-shadow:0 10px 24px -14px rgba(39,64,107,.55);transform:translateY(-1px);outline:none}
+#capy-ml .ml-tuile-t{font:400 20px/1.25 Newsreader,Georgia,serif}
+#capy-ml .ml-tuile-d{font-size:13px;line-height:1.5;color:#857f71;flex:1 1 auto}
+#capy-ml .ml-tuile-go{font-size:13px;font-weight:600;color:#27406b}
+#capy-ml .ml-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#e8f0e4;color:#2f6b3a;border-radius:999px;padding:3px 10px}
+#capy-ml .ml-lien{border:none;background:none;color:#27406b;font:600 14px 'Public Sans',Arial,sans-serif;cursor:pointer;padding:4px 0;text-decoration:underline;text-underline-offset:3px;text-align:left}
+#capy-ml .ml-fil{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 22px;font-size:14px;color:#857f71}
+#capy-ml .ml-fil button{border:none;background:none;padding:0;font:500 14px 'Public Sans',Arial,sans-serif;color:#27406b;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#capy-ml .ml-fil-ici{color:#1c2430;font-weight:600}
+#capy-ml .ml-autres{margin:30px 0 8px}
+#capy-ml .ml-autres-t{font-size:13px;font-weight:600;color:#5f5a4f;margin:0 0 12px}
+#capy-ml .ml-rc-tete{margin:0 0 14px}
+#capy-ml .ml-rc h3{font:400 26px/1.2 Newsreader,Georgia,serif}
+#capy-ml .ml-rc h4{font:600 16px 'Public Sans',Arial,sans-serif;margin:0 0 6px;color:#1c2430}
+#capy-ml .ml-prog{margin:0 0 22px}
+#capy-ml .ml-prog-t{font-size:13px;font-weight:600;color:#5f5a4f;margin:0 0 8px}
+#capy-ml .ml-prog-b{height:6px;border-radius:999px;background:#ece6d8;overflow:hidden}
+#capy-ml .ml-prog-b span{display:block;height:100%;background:#27406b;border-radius:999px;transition:width .25s}
+#capy-ml .ml-sous-titre{font:600 15px 'Public Sans',Arial,sans-serif;color:#1c2430;margin:24px 0 12px;padding-top:18px;border-top:1px solid #f1ece0}
+#capy-ml .ml-rc h3+.ml-aide+.ml-sous-titre{border-top:none;padding-top:0;margin-top:8px}
+#capy-ml .ml-info{background:#f3efe7;border-radius:14px;padding:14px 18px;margin:0 0 18px;font-size:14px;line-height:1.55;color:#3b3a35}
+#capy-ml .ml-info ul{margin:8px 0 0;padding-left:20px}
+#capy-ml .ml-info li{margin:0 0 6px}
+#capy-ml .ml-info p{margin:6px 0 0}
+#capy-ml .ml-liens-gouv{font-size:14px;line-height:1.6;margin:0 0 18px;color:#5f5a4f}
+#capy-ml .ml-liens-gouv a,#capy-ml .ml-liste-docs a{color:#27406b;text-underline-offset:3px}
+#capy-ml .ml-radios button{padding:9px 18px;font-size:14px}
+#capy-ml .ml-choix{display:grid;gap:8px}
+#capy-ml .ml-choix-b{text-align:left;border:1px solid #e1d9c6;background:#fbf8f1;border-radius:14px;padding:12px 14px;font:500 14px/1.4 'Public Sans',Arial,sans-serif;color:#3b3a35;cursor:pointer}
+#capy-ml .ml-choix-b.actif{background:#27406b;border-color:#27406b;color:#fff}
+#capy-ml .ml-nav{display:flex;justify-content:space-between;gap:12px;margin:22px 0 0;flex-wrap:wrap}
+#capy-ml .ml-nav .ml-btn{padding:13px 22px;font-size:15px}
+#capy-ml .ml-sig-bloc{margin:0 0 6px}
+#capy-ml .ml-sig-bloc h3{font:600 15px 'Public Sans',Arial,sans-serif;margin:0 0 4px}
+#capy-ml .ml-rec{display:grid;gap:2px;margin:0 0 6px;border:1px solid #f1ece0;border-radius:14px;overflow:hidden}
+#capy-ml .ml-rec-l{display:flex;justify-content:space-between;gap:16px;padding:10px 14px;font-size:14px;background:#fff;border-top:1px solid #f1ece0}
+#capy-ml .ml-rec-l:first-child{border-top:none}
+#capy-ml .ml-rec-l span{color:#857f71;flex:0 0 130px}
+#capy-ml .ml-rec-l strong{font-weight:600;text-align:right;word-break:break-word}
+#capy-ml .ml-rec-modif{margin:6px 0 20px;gap:4px 18px}
+#capy-ml .ml-carte-in{border:1px solid #e9e3d5;border-radius:18px;padding:20px;margin:0 0 16px;background:#fff}
+#capy-ml .ml-poste-offre{background:#f3f6fb;border-color:#d5def0}
+#capy-ml .ml-liste-docs{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:12px}
+#capy-ml .ml-liste-docs li{display:flex;flex-direction:column;gap:3px;font-size:14px;line-height:1.5;color:#3b3a35;padding-left:14px;border-left:3px solid #d5def0}
+#capy-ml .ml-liste-docs li span{color:#857f71;font-size:13px}
+#capy-ml .ml-adresse-envoi{font-style:normal;font-size:15px;line-height:1.6;background:#fbf8f1;border:1px dashed #cfc6b0;border-radius:12px;padding:12px 16px;margin:0 0 10px;color:#1c2430}
+#capy-ml .ml-retour{margin:0 0 10px}
+#capy-ml .ml-slot{border:1px solid #e9e3d5;border-radius:16px;padding:16px 18px;margin:0 0 14px;background:#fff}
+#capy-ml .ml-slot.ok{border-color:#b9d3b3;background:#f7fbf5}
+#capy-ml .ml-slot-t{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px;font-size:15px}
+#capy-ml .ml-pastille{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:2px solid #cfc6b0;font-size:13px;color:#fff;flex:0 0 22px}
+#capy-ml .ml-slot.ok .ml-pastille{background:#2f6b3a;border-color:#2f6b3a}
+#capy-ml .ml-req{margin-left:auto;font-size:12px;color:#857f71}
+#capy-ml .ml-slot .ml-aide{margin:0 0 10px;font-size:13px}
+#capy-ml .ml-fichiers{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:6px}
+#capy-ml .ml-fichiers li{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:14px;background:#fbf8f1;border-radius:10px;padding:8px 12px;word-break:break-all}
+#capy-ml .ml-fichiers em{color:#857f71;font-style:normal;font-size:12px}
+#capy-ml .ml-ajout{display:inline-block;cursor:pointer;margin:0;font-weight:600}
+#capy-ml .ml-prix{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:#27406b;color:#fff;border-radius:18px;padding:18px 22px;margin:18px 0 14px}
+#capy-ml .ml-prix>div:first-child{display:flex;flex-direction:column;gap:2px;min-width:110px}
+#capy-ml .ml-prix-l{font-size:12px;opacity:.8}
+#capy-ml .ml-prix>div:first-child strong{font:400 34px Newsreader,Georgia,serif}
+#capy-ml .ml-prix-d{display:flex;flex-direction:column;gap:4px;flex:1 1 220px}
+#capy-ml .ml-prix-d strong{font-size:18px}
+#capy-ml .ml-prix-d span{font-size:12px;opacity:.85;line-height:1.45}
+#capy-ml .ml-btn[aria-disabled=true]{opacity:.55}
+@media (max-width:560px){#capy-ml .ml-sec-tete{flex-direction:column;align-items:flex-start;gap:6px}#capy-ml .ml-tuiles{grid-template-columns:1fr}#capy-ml .ml-rec-l{flex-direction:column;gap:2px}#capy-ml .ml-rec-l span{flex:0 0 auto}#capy-ml .ml-rec-l strong{text-align:left}#capy-ml .ml-nav .ml-btn{flex:1 1 auto}#capy-ml .ml-carte-in{padding:16px}}
+
+#capy-ml .ml-carte-in .ml-aide{margin:0 0 12px}
+
+#capy-ml .ml-ico{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:#eef1f7;color:#27406b}
+#capy-ml .ml-tuile-tete{display:flex;align-items:center;gap:12px}
+#capy-ml .ml-tuile:hover .ml-ico{background:#27406b;color:#fff}
+#capy-ml .ml-sec-tete h2 .ml-ico{width:34px;height:34px;border-radius:10px;margin-right:10px;vertical-align:middle}
+#capy-ml .ml-sec-tete h2 .ml-ico svg{width:19px;height:19px}
+

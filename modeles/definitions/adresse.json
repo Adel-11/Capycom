@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "id": "adresse",
+  "section": "logement",
+  "titre": {
+    "fr": "Changement d’adresse",
+    "en": "Change of address"
+  },
+  "description": {
+    "fr": "Prévenir un organisme ou une entreprise de votre déménagement.",
+    "en": "Let an organization or a business know you have moved."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-changement-adresse",
+      "en": "change-of-address-letter"
+    },
+    "titre": {
+      "fr": "Lettre de changement d’adresse : modèle gratuit | Capycom",
+      "en": "Free change of address letter template | Capycom"
+    },
+    "description": {
+      "fr": "Utilisez ce modèle gratuit pour informer un organisme ou une entreprise de votre changement d’adresse. Téléchargez la lettre ou faites-la poster au Canada.",
+      "en": "Use this free change of address letter template to notify an organization or business. Download it or have it mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de lettre de changement d’adresse",
+      "en": "Change of Address Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Informer un organisme ou une entreprise de votre nouvelle adresse à partir de la date du déménagement.",
+    "en": "Tell an organization or a business your new address from the moving date."
+  },
+  "champs": [
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Date du déménagement",
+        "en": "Moving date"
+      }
+    },
+    {
+      "id": "ancienne",
+      "type": "texte-long",
+      "requis": true,
+      "max": 200,
+      "libelle": {
+        "fr": "Ancienne adresse",
+        "en": "Previous address"
+      },
+      "exemple": {
+        "fr": "Numéro, rue, ville, province, code postal",
+        "en": "Number, street, city, province, postal code"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Numéro de client, de compte ou de dossier",
+        "en": "Customer, account or file number"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’utilisateur indique l’organisme et son adresse (dest_*).",
+    "en": "Free: the user gives the organization and its address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"adresse\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF d’une page (format Lettre), police Helvetica. La taille du texte est réduite automatiquement (12,5 à 9,5 pt) pour tenir sur une page. Si le texte ne tient pas, plan.tient vaut faux.",
+      "en": "A one-page PDF letter (Letter size), Helvetica. The text size is reduced automatically (12.5 to 9.5 pt) to fit one page. If the text does not fit, tient is false."
+    },
+    "options": [
+      "lettre",
+      "lienPied",
+      "sig"
+    ],
+    "autresFormats": [
+      "docx",
+      "odt (générés par la page seulement, pas par le moteur)"
+    ]
+  }
+}

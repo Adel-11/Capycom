@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "id": "demeure",
+  "section": "argent",
+  "titre": {
+    "fr": "Mise en demeure",
+    "en": "Demand letter"
+  },
+  "description": {
+    "fr": "Exiger qu’une personne ou une entreprise respecte ses obligations dans un délai donné.",
+    "en": "Require a person or a business to meet its obligations within a deadline."
+  },
+  "seo": {
+    "slug": {
+      "fr": "mise-en-demeure",
+      "en": "demand-letter"
+    },
+    "titre": {
+      "fr": "Mise en demeure : modèle de lettre gratuit | Capycom",
+      "en": "Free demand letter template | Capycom"
+    },
+    "description": {
+      "fr": "Préparez une mise en demeure avec ce modèle de lettre gratuit. Téléchargez-la ou faites imprimer et poster votre lettre au Canada.",
+      "en": "Prepare a demand letter with this free template. Download it or have Capycom print and mail your letter in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de mise en demeure",
+      "en": "Demand Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Exiger qu’une personne ou une entreprise respecte ses obligations dans un délai donné. Point de départ à adapter, ne remplace pas l’avis d’un avocat.",
+    "en": "Require a person or a business to meet its obligations within a deadline. A starting point to adapt, not a substitute for a lawyer’s advice."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office."
+  },
+  "champs": [
+    {
+      "id": "faits",
+      "type": "texte-long",
+      "requis": true,
+      "max": 700,
+      "libelle": {
+        "fr": "Les faits, en quelques phrases",
+        "en": "The facts, in a few sentences"
+      },
+      "exemple": {
+        "fr": "ex. Le 1er juillet, je vous ai versé un dépôt de 500 $ pour des travaux qui n’ont jamais commencé.",
+        "en": "e.g. On July 1, I paid you a $500 deposit for work that never started."
+      }
+    },
+    {
+      "id": "demande",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Ce que vous demandez",
+        "en": "What you are asking for"
+      },
+      "exemple": {
+        "fr": "ex. me rembourser le dépôt de 500 $",
+        "en": "e.g. refund my $500 deposit"
+      }
+    },
+    {
+      "id": "delai",
+      "type": "nombre",
+      "requis": true,
+      "max": 3,
+      "libelle": {
+        "fr": "Délai accordé (en jours)",
+        "en": "Deadline (in days)"
+      },
+      "exemple": {
+        "fr": "10",
+        "en": "10"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’utilisateur indique l’organisme et son adresse (dest_*).",
+    "en": "Free: the user gives the organization and its address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"demeure\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF d’une page (format Lettre), police Helvetica. La taille du texte est réduite automatiquement (12,5 à 9,5 pt) pour tenir sur une page. Si le texte ne tient pas, plan.tient vaut faux.",
+      "en": "A one-page PDF letter (Letter size), Helvetica. The text size is reduced automatically (12.5 to 9.5 pt) to fit one page. If the text does not fit, tient is false."
+    },
+    "options": [
+      "lettre",
+      "lienPied",
+      "sig"
+    ],
+    "autresFormats": [
+      "docx",
+      "odt (générés par la page seulement, pas par le moteur)"
+    ]
+  }
+}

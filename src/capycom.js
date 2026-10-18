@@ -26,11 +26,18 @@ async function appeler(cfg, nom, corps) {
   let json = null;
   try { json = JSON.parse(texte); } catch { /* réponse non JSON */ }
   if (!r.ok || !json) {
-    const detail = json && typeof json.message === 'string' ? json.message.slice(0, 300) : '';
+    // Une erreur de lecture du PDF côté Bubble arrive en HTTP 400 avec une trace technique : on ne la relaie jamais.
+    if (nom === 'api_creer_courrier' && r.status === 400 && /pdf|encrypt/i.test(texte)) {
+      return {
+        statut: 'erreur', erreur: 'pdf_invalide',
+        message: 'The PDF cannot be used (it is protected by a password or encrypted, or it is unreadable). Export an unprotected copy and try again.',
+        message_fr: "Le PDF est inutilisable (protégé par un mot de passe, chiffré ou illisible). Exportez une copie sans protection et réessayez."
+      };
+    }
     return {
       statut: 'erreur', erreur: 'api_http_' + r.status,
-      message: `The Capycom API refused the request (HTTP ${r.status}).${detail ? ' ' + detail : ''}`,
-      message_fr: `L'API Capycom a refusé la requête (HTTP ${r.status}).${detail ? ' ' + detail : ''}`
+      message: `The Capycom API refused the request (HTTP ${r.status}).`,
+      message_fr: `L'API Capycom a refusé la requête (HTTP ${r.status}).`
     };
   }
   const rep = json.response && typeof json.response === 'object' ? json.response : {};

@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "id": "remboursement",
+  "section": "argent",
+  "titre": {
+    "fr": "Demande de remboursement",
+    "en": "Refund request"
+  },
+  "description": {
+    "fr": "Réclamer le remboursement d’un achat ou d’un service.",
+    "en": "Ask for a refund for a purchase or a service."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-demande-de-remboursement",
+      "en": "refund-request-letter"
+    },
+    "titre": {
+      "fr": "Lettre de demande de remboursement : modèle gratuit | Capycom",
+      "en": "Free refund request letter template | Capycom"
+    },
+    "description": {
+      "fr": "Préparez une demande de remboursement avec ce modèle de lettre gratuit. Téléchargez le document ou faites-le imprimer et poster au Canada.",
+      "en": "Prepare a refund request with this free letter template. Download the document or have it printed and mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de lettre de demande de remboursement",
+      "en": "Refund Request Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander le remboursement d’un achat ou d’un service, avec le montant, la date de paiement et la raison.",
+    "en": "Ask for a refund for a purchase or a service, with the amount, the payment date and the reason."
+  },
+  "champs": [
+    {
+      "id": "achat",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Achat ou service concerné",
+        "en": "Purchase or service concerned"
+      },
+      "exemple": {
+        "fr": "ex. commande en ligne d’un aspirateur",
+        "en": "e.g. online order for a vacuum cleaner"
+      }
+    },
+    {
+      "id": "reference",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Numéro de commande, de client ou de facture",
+        "en": "Order, customer or invoice number"
+      }
+    },
+    {
+      "id": "date_paiement",
+      "type": "date",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Date du paiement",
+        "en": "Payment date"
+      }
+    },
+    {
+      "id": "montant",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Montant demandé ($)",
+        "en": "Amount requested ($)"
+      },
+      "exemple": {
+        "fr": "ex. 89,99",
+        "en": "e.g. 89.99"
+      }
+    },
+    {
+      "id": "motif",
+      "type": "texte-long",
+      "requis": true,
+      "max": 600,
+      "libelle": {
+        "fr": "Raison de la demande",
+        "en": "Reason for the request"
+      },
+      "exemple": {
+        "fr": "ex. Le produit est arrivé endommagé et je l’ai retourné le 15 septembre.",
+        "en": "e.g. The product arrived damaged and I returned it on September 15."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’utilisateur indique l’organisme et son adresse (dest_*).",
+    "en": "Free: the user gives the organization and its address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"remboursement\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF d’une page (format Lettre), police Helvetica. La taille du texte est réduite automatiquement (12,5 à 9,5 pt) pour tenir sur une page. Si le texte ne tient pas, plan.tient vaut faux.",
+      "en": "A one-page PDF letter (Letter size), Helvetica. The text size is reduced automatically (12.5 to 9.5 pt) to fit one page. If the text does not fit, tient is false."
+    },
+    "options": [
+      "lettre",
+      "lienPied",
+      "sig"
+    ],
+    "autresFormats": [
+      "docx",
+      "odt (générés par la page seulement, pas par le moteur)"
+    ]
+  }
+}

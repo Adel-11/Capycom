@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "id": "contestation",
+  "section": "argent",
+  "titre": {
+    "fr": "Contestation de facture",
+    "en": "Bill dispute"
+  },
+  "description": {
+    "fr": "Contester un montant ou des frais sur une facture.",
+    "en": "Dispute an amount or fees on a bill."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-contestation-de-facture",
+      "en": "bill-dispute-letter"
+    },
+    "titre": {
+      "fr": "Lettre de contestation de facture : modèle gratuit | Capycom",
+      "en": "Free bill dispute letter template | Capycom"
+    },
+    "description": {
+      "fr": "Rédigez une lettre pour contester une facture avec ce modèle gratuit. Téléchargez-la ou faites-la imprimer et poster au Canada.",
+      "en": "Write a bill dispute letter with this free template. Download it or have it printed and mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de lettre de contestation de facture",
+      "en": "Bill Dispute Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Contester un montant ou des frais sur une facture, avec le numéro de la facture, le montant contesté et la raison.",
+    "en": "Dispute an amount or fees on a bill, with the invoice number, the amount disputed and the reason."
+  },
+  "champs": [
+    {
+      "id": "num_facture",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Numéro de la facture",
+        "en": "Invoice number"
+      }
+    },
+    {
+      "id": "date_facture",
+      "type": "date",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Date de la facture",
+        "en": "Invoice date"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Numéro de client",
+        "en": "Customer number"
+      }
+    },
+    {
+      "id": "montant",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Montant contesté ($)",
+        "en": "Amount disputed ($)"
+      },
+      "exemple": {
+        "fr": "ex. 45,00",
+        "en": "e.g. 45.00"
+      }
+    },
+    {
+      "id": "motif",
+      "type": "texte-long",
+      "requis": true,
+      "max": 600,
+      "libelle": {
+        "fr": "Pourquoi vous contestez",
+        "en": "Why you dispute it"
+      },
+      "exemple": {
+        "fr": "ex. Des frais d’itinérance m’ont été facturés alors que je n’ai pas quitté le Canada.",
+        "en": "e.g. I was charged roaming fees although I did not leave Canada."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’utilisateur indique l’organisme et son adresse (dest_*).",
+    "en": "Free: the user gives the organization and its address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"contestation\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF d’une page (format Lettre), police Helvetica. La taille du texte est réduite automatiquement (12,5 à 9,5 pt) pour tenir sur une page. Si le texte ne tient pas, plan.tient vaut faux.",
+      "en": "A one-page PDF letter (Letter size), Helvetica. The text size is reduced automatically (12.5 to 9.5 pt) to fit one page. If the text does not fit, tient is false."
+    },
+    "options": [
+      "lettre",
+      "lienPied",
+      "sig"
+    ],
+    "autresFormats": [
+      "docx",
+      "odt (générés par la page seulement, pas par le moteur)"
+    ]
+  }
+}

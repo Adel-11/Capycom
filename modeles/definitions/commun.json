@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "note": {
+    "fr": "Données partagées par les modèles. Les listes de provinces et territoires sont dans le moteur (PROVINCES, PROVINCES_RC).",
+    "en": "Data shared by the templates. The lists of provinces and territories are in the engine (PROVINCES, PROVINCES_RC)."
+  },
+  "sections": [
+    {
+      "id": "contrats",
+      "titre": {
+        "fr": "Contrats et abonnements",
+        "en": "Contracts and subscriptions"
+      },
+      "modeles": [
+        "resiliation"
+      ],
+      "slug": {
+        "fr": "contrats-et-abonnements",
+        "en": "contracts-and-subscriptions"
+      },
+      "description": {
+        "fr": "Résiliation d’un abonnement ou d’un contrat : Internet, cellulaire, assurance, salle de sport.",
+        "en": "Cancel a subscription or a contract: internet, mobile, insurance, gym."
+      },
+      "seo": {
+        "fr": "Modèles de lettres pour résilier un contrat ou un abonnement. Gratuits, à télécharger en PDF ou Word, ou à faire poster au Canada.",
+        "en": "Letter templates to cancel a contract or a subscription. Free to download as PDF or Word, or have them mailed in Canada."
+      }
+    },
+    {
+      "id": "argent",
+      "titre": {
+        "fr": "Argent et factures",
+        "en": "Money and bills"
+      },
+      "modeles": [
+        "credit",
+        "remboursement",
+        "contestation",
+        "demeure"
+      ],
+      "slug": {
+        "fr": "argent-et-factures",
+        "en": "money-and-bills"
+      },
+      "description": {
+        "fr": "Corriger une erreur dans votre dossier de crédit, réclamer un remboursement, contester une facture ou envoyer une mise en demeure.",
+        "en": "Correct an error in your credit report, ask for a refund, dispute a bill or send a demand letter."
+      },
+      "seo": {
+        "fr": "Modèles de lettres pour demander un remboursement, contester une facture ou envoyer une mise en demeure. Gratuits, en PDF ou Word.",
+        "en": "Letter templates to ask for a refund, dispute a bill or send a demand letter. Free, as PDF or Word."
+      }
+    },
+    {
+      "id": "logement",
+      "titre": {
+        "fr": "Adresse et logement",
+        "en": "Address and housing"
+      },
+      "modeles": [
+        "adresse"
+      ],
+      "slug": {
+        "fr": "adresse-et-logement",
+        "en": "address-and-housing"
+      },
+      "description": {
+        "fr": "Informer un organisme ou une entreprise de votre nouvelle adresse.",
+        "en": "Tell an organization or a business about your new address."
+      },
+      "seo": {
+        "fr": "Modèle de lettre de changement d’adresse, gratuit, en PDF ou Word, ou à faire poster au Canada.",
+        "en": "Free change of address letter template, as PDF or Word, or have it mailed in Canada."
+      }
+    },
+    {
+      "id": "gouv",
+      "titre": {
+        "fr": "Démarches gouvernementales",
+        "en": "Government applications"
+      },
+      "modeles": [
+        "rc66"
+      ],
+      "slug": {
+        "fr": "demarches-gouvernementales",
+        "en": "government-applications"
+      },
+      "description": {
+        "fr": "Formulaires officiels remplis avec des questions simples, comme la demande d’allocation pour enfants.",
+        "en": "Official forms filled in with simple questions, such as the child benefit application."
+      },
+      "seo": {
+        "fr": "Outils gratuits pour remplir des formulaires officiels canadiens avec des questions simples : allocation canadienne pour enfants (RC66).",
+        "en": "Free tools to fill in official Canadian forms with simple questions: Canada child benefit application (RC66)."
+      }
+    }
+  ],
+  "liens": {
+    "comment": {
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/allocation-canadienne-enfants/comment-demande.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-apply.html",
+      "but": {
+        "fr": "Lire comment demander l’allocation canadienne pour enfants et vérifier l’admissibilité",
+        "en": "Read how to apply for the Canada child benefit and check eligibility"
+      }
+    },
+    "form": {
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/rc66.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66.html",
+      "but": {
+        "fr": "Formulaire officiel RC66 (ARC)",
+        "en": "Official form RC66 (CRA)"
+      }
+    },
+    "sch": {
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/rc66sch.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/rc66sch.html",
+      "but": {
+        "fr": "Formulaire officiel RC66SCH (ARC), statut au Canada et revenus",
+        "en": "Official form RC66SCH (CRA), status in Canada and income"
+      }
+    },
+    "docs": {
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/prestations-enfants-familles/documents-justificatifs.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/supporting-documents.html",
+      "but": {
+        "fr": "Liste des documents justificatifs acceptés par l’ARC",
+        "en": "List of supporting documents accepted by the CRA"
+      }
+    },
+    "resid": {
+      "fr": "https://www.canada.ca/fr/agence-revenu/services/impot/impot-international-non-residents/renseignements-ont-deplaces/determination-votre-statut-residence.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html",
+      "but": {
+        "fr": "Déterminer son statut de résidence (ARC)",
+        "en": "Determine your residency status (CRA)"
+      }
+    },
+    "fcac": {
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere/services/dossier-pointage-credit/verifier-erreurs.html",
+      "en": "https://www.canada.ca/en/financial-consumer-agency/services/credit-reports-scores/check-errors.html",
+      "but": {
+        "fr": "Repérer les erreurs dans un dossier de crédit (Agence de la consommation en matière financière du Canada)",
+        "en": "Spot errors in a credit report (Financial Consumer Agency of Canada)"
+      }
+    },
+    "eq": {
+      "fr": "https://www.equifax.ca/fr/personnel/contester-dossier-de-credit/options",
+      "en": "https://www.equifax.ca/personal/dispute-credit-report-form",
+      "but": {
+        "fr": "Contester un dossier chez Equifax",
+        "en": "Dispute a credit report with Equifax"
+      }
+    },
+    "eqacc": {
+      "fr": "https://assets.equifax.com/assets/canada/english/Accounts_Dispute_Form_EN.pdf",
+      "en": "https://assets.equifax.com/assets/canada/english/Accounts_Dispute_Form_EN.pdf",
+      "but": {
+        "fr": "Formulaire officiel Equifax, contestation de compte",
+        "en": "Official Equifax form, account dispute"
+      }
+    },
+    "eqpi": {
+      "fr": "https://assets.equifax.com/assets/canada/english/Personal_Info_Dispute_Form_EN.pdf",
+      "en": "https://assets.equifax.com/assets/canada/english/Personal_Info_Dispute_Form_EN.pdf",
+      "but": {
+        "fr": "Formulaire officiel Equifax, renseignements personnels",
+        "en": "Official Equifax form, personal information"
+      }
+    },
+    "tu": {
+      "fr": "https://www.transunion.ca/assistance/credit-report-disputes",
+      "en": "https://www.transunion.ca/assistance/credit-report-disputes",
+      "but": {
+        "fr": "Contester un dossier chez TransUnion",
+        "en": "Dispute a credit report with TransUnion"
+      }
+    },
+    "tuform": {
+      "fr": "https://www.transunion.ca/content/dam/transunion/ca/consumer/documents/Credit-Investigation-Request-Form-fr.pdf",
+      "en": "https://www.transunion.ca/content/dam/transunion/ca/consumer/documents/Credit-Investigation-Request-Form-en.pdf",
+      "but": {
+        "fr": "Formulaire officiel TransUnion, demande d’enquête",
+        "en": "Official TransUnion form, investigation request"
+      }
+    }
+  },
+  "centres": {
+    "winnipeg": {
+      "nom": "Centre fiscal de Winnipeg",
+      "ligne": "Case postale 14005, succursale Main",
+      "ville": "Winnipeg",
+      "prov": "Manitoba",
+      "cp": "R3C 0E3",
+      "zone": {
+        "fr": "Alberta, Colombie-Britannique, Manitoba, Nunavut, Saskatchewan, Territoires du Nord-Ouest et Yukon",
+        "en": "Alberta, British Columbia, Manitoba, Nunavut, Saskatchewan, Northwest Territories and Yukon"
+      }
+    },
+    "sudbury": {
+      "nom": "Centre fiscal de Sudbury",
+      "ligne": "Case postale 20000, succursale A",
+      "ville": "Sudbury",
+      "prov": "Ontario",
+      "cp": "P3A 5C1",
+      "zone": {
+        "fr": "Île-du-Prince-Édouard, Nouveau-Brunswick, Nouvelle-Écosse, Ontario et Terre-Neuve-et-Labrador",
+        "en": "Prince Edward Island, New Brunswick, Nova Scotia, Ontario and Newfoundland and Labrador"
+      }
+    },
+    "jonquiere": {
+      "nom": "Centre fiscal de Jonquière",
+      "ligne": "2251, boulevard René-Lévesque",
+      "ville": "Jonquière",
+      "prov": "Québec",
+      "cp": "G7S 5J2",
+      "zone": {
+        "fr": "Québec",
+        "en": "Quebec"
+      }
+    }
+  },
+  "bureaux": {
+    "eq": {
+      "nom": "Equifax",
+      "dest": {
+        "fr": {
+          "nom": "Equifax Canada Co., Relations nationales avec les consommateurs",
+          "ligne": "Case postale 190, succursale Jean-Talon",
+          "ville": "Montréal",
+          "prov": "Québec",
+          "cp": "H1S 2Z2"
+        },
+        "en": {
+          "nom": "Equifax Canada Co., National Consumer Relations",
+          "ligne": "Box 190, Jean Talon Station",
+          "ville": "Montreal",
+          "prov": "Québec",
+          "cp": "H1S 2Z2"
+        }
+      }
+    },
+    "tu": {
+      "nom": "TransUnion",
+      "dest": {
+        "fr": {
+          "nom": "TransUnion, Centre de relations au consommateur",
+          "ligne": "Case postale 338, succursale LCD1",
+          "ville": "Hamilton",
+          "prov": "Ontario",
+          "cp": "L8L 7W2"
+        },
+        "en": {
+          "nom": "TransUnion, Consumer Relations Centre",
+          "ligne": "P.O. Box 338, LCD1",
+          "ville": "Hamilton",
+          "prov": "Ontario",
+          "cp": "L8L 7W2"
+        }
+      }
+    }
+  },
+  "champsLettre": [
+    {
+      "id": "exp_nom",
+      "type": "texte",
+      "requis": true,
+      "max": 80,
+      "libelle": {
+        "fr": "Prénom et nom",
+        "en": "First and last name"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "exp_ligne",
+      "type": "texte",
+      "requis": true,
+      "max": 90,
+      "libelle": {
+        "fr": "Numéro et rue (app. si besoin)",
+        "en": "Street number and name (unit if needed)"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "exp_ville",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Ville",
+        "en": "City"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "exp_prov",
+      "type": "province",
+      "requis": true,
+      "libelle": {
+        "fr": "Province",
+        "en": "Province"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "exp_cp",
+      "type": "code-postal",
+      "requis": true,
+      "max": 7,
+      "exemple": {
+        "fr": "K1A 0B1",
+        "en": "K1A 0B1"
+      },
+      "libelle": {
+        "fr": "Code postal",
+        "en": "Postal code"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "exp_contact",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Téléphone ou courriel",
+        "en": "Phone or email"
+      },
+      "groupe": "expediteur"
+    },
+    {
+      "id": "dest_nom",
+      "type": "texte",
+      "requis": true,
+      "max": 80,
+      "libelle": {
+        "fr": "Entreprise, organisme ou personne",
+        "en": "Company, organization or person"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "dest_service",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Service ou à l’attention de",
+        "en": "Department or attention"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "dest_ligne",
+      "type": "texte",
+      "requis": true,
+      "max": 90,
+      "libelle": {
+        "fr": "Numéro et rue (app. si besoin)",
+        "en": "Street number and name (unit if needed)"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "dest_ville",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Ville",
+        "en": "City"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "dest_prov",
+      "type": "province",
+      "requis": true,
+      "libelle": {
+        "fr": "Province",
+        "en": "Province"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "dest_cp",
+      "type": "code-postal",
+      "requis": true,
+      "max": 7,
+      "exemple": {
+        "fr": "K1A 0B1",
+        "en": "K1A 0B1"
+      },
+      "libelle": {
+        "fr": "Code postal",
+        "en": "Postal code"
+      },
+      "groupe": "destinataire"
+    },
+    {
+      "id": "date_lettre",
+      "type": "date",
+      "requis": true,
+      "libelle": {
+        "fr": "Date de la lettre",
+        "en": "Letter date"
+      },
+      "groupe": "lettre"
+    }
+  ],
+  "optionsLettre": [
+    {
+      "id": "lettre",
+      "valeurs": [
+        "fr",
+        "en"
+      ],
+      "defaut": "langue de l’interface",
+      "aide": {
+        "fr": "Langue dans laquelle la lettre est rédigée, indépendante de la langue de l’interface.",
+        "en": "Language the letter is written in, independent of the interface language."
+      }
+    },
+    {
+      "id": "lienPied",
+      "type": "booleen",
+      "defaut": true,
+      "aide": {
+        "fr": "Ajoute « Modèle gratuit : capycom.ca » au pied de la page.",
+        "en": "Adds “Free template: capycom.ca” at the foot of the page."
+      }
+    },
+    {
+      "id": "sig",
+      "type": "image",
+      "requis": false,
+      "aide": {
+        "fr": "Signature : image PNG ou JPEG {url, w, h}. La lettre est signée à la main si elle est absente.",
+        "en": "Signature: PNG or JPEG image {url, w, h}. The letter is signed by hand if absent."
+      }
+    }
+  ],
+  "champEcritDans": {
+    "fr": "Les identifiants de champs sont les clés du dictionnaire de réponses passé au moteur (v).",
+    "en": "Field ids are the keys of the answers dictionary passed to the engine (v)."
+  }
+}

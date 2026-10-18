@@ -152,6 +152,11 @@ function ok(objet) {
 function echec(objet) {
   return { content: [{ type: 'text', text: JSON.stringify(objet, null, 2) }], structuredContent: objet, isError: true };
 }
+const PDF_INVALIDE = {
+  statut: 'erreur', erreur: 'pdf_invalide',
+  message: 'The PDF cannot be used (it is protected by a password or encrypted, or it is unreadable). Export an unprotected copy and try again.',
+  message_fr: "Le PDF est inutilisable (protégé par un mot de passe, chiffré ou illisible). Exportez une copie sans protection et réessayez."
+};
 function erreurChamps(erreurs) {
   return echec({
     statut: 'erreur', erreur: 'champs_invalides',
@@ -195,9 +200,9 @@ async function lirePdfFourni(args, cfg) {
   if (octets.length > TAILLE_PDF_MAX) return { erreurs: ['pdf : file larger than 6 MB / fichier de plus de 6 Mo'] };
   const info = await compterPages(octets);
   if (!info.valide) return { erreurs: ['pdf : not a PDF file / ce n\'est pas un fichier PDF'] };
+  if (info.chiffre) return { pdfInvalide: true };
   const avert = [];
-  if (info.chiffre) avert.push('The PDF is encrypted: Capycom may refuse it. Export an unprotected copy if creation fails. / PDF chiffré : Capycom peut le refuser.');
-  else if (info.pages == null) avert.push('The page count could not be read here; Capycom counts the pages when the draft is created. / Nombre de pages non lisible ici, Capycom le compte à la création.');
+  if (info.pages == null) avert.push('The page count could not be read here; Capycom counts the pages when the draft is created. / Nombre de pages non lisible ici, Capycom le compte à la création.');
   return { octets, nom, pages: info.pages, avertissements: avert };
 }
 
@@ -227,6 +232,7 @@ async function preparerContenu(args, cfg) {
   if (erreurs.length) return { erreurs };
   const pdf = await lirePdfFourni(args, cfg);
   if (pdf.erreurs) return { erreurs: pdf.erreurs };
+  if (pdf.pdfInvalide) return { pdfInvalide: true };
   return { mode: 'pdf', octets: pdf.octets, pages: pdf.pages, nom: pdf.nom, adresses: { exp: exp.adresse, dest: dest.adresse }, avertissements: pdf.avertissements };
 }
 
@@ -248,6 +254,7 @@ export async function appelerOutil(nom, args, cfg, cle) {
     case 'preparer_lettre': {
       const c = await preparerContenu(args, cfg);
       if (c.erreurs) return erreurChamps(c.erreurs);
+      if (c.pdfInvalide) return echec(PDF_INVALIDE);
       const sortie = {
         statut: 'ok', mode: c.mode, pages: c.pages, couleur: !!args.couleur,
         expediteur: c.apercu?.expediteur, destinataire: c.apercu?.destinataire,
@@ -269,6 +276,7 @@ export async function appelerOutil(nom, args, cfg, cle) {
       }
       const c = await preparerContenu(args, cfg);
       if (c.erreurs) return erreurChamps(c.erreurs);
+      if (c.pdfInvalide) return echec(PDF_INVALIDE);
       const langue = String(args.langue || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
       const corps = {
         pdf: { filename: c.nom, contents: versBase64(c.octets), private: true },

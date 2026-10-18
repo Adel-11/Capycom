@@ -225,3 +225,15 @@ test('le contenu de la lettre n\'est pas renvoyé dans les erreurs ni conservé 
   assert.doesNotMatch(JSON.stringify(l), new RegExp(secret));
   assert.equal(sorties.length, 0);
 });
+
+test('PDF chiffré : pdf_invalide (FR et EN) pour preparer_lettre et creer_courrier, sans trace', async () => {
+  const { s, jeton } = await session();
+  const brut = '%PDF-1.4\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids [] /Count 0 >>\nendobj\ntrailer\n<< /Root 1 0 R /Encrypt 5 0 R >>\n%%EOF\n';
+  const b64 = Buffer.from(brut, 'latin1').toString('base64');
+  for (const outil of ['preparer_lettre', 'creer_courrier']) {
+    const r = await appelOutil(s, jeton, outil, { expediteur: EXP, destinataire: DEST, pdf_base64: b64, ...(outil === 'creer_courrier' ? { adresses_confirmees: true } : {}) });
+    assert.equal(r.isError, true, outil);
+    assert.equal(sj(r).erreur, 'pdf_invalide', outil);
+    assert.ok(sj(r).message && sj(r).message_fr, outil);
+  }
+});

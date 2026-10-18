@@ -1,0 +1,1286 @@
+{
+  "version": 1,
+  "id": "credit",
+  "section": "argent",
+  "titre": {
+    "fr": "Contestation du dossier de crédit (Equifax, TransUnion)",
+    "en": "Credit report dispute (Equifax, TransUnion)"
+  },
+  "description": {
+    "fr": "Corriger une erreur dans votre dossier de crédit : formulaires officiels d’Equifax et de TransUnion remplis avec quelques questions, adresses d’envoi et documents à joindre.",
+    "en": "Correct an error in your credit report: the official Equifax and TransUnion forms filled in with a few questions, mailing addresses and documents to attach."
+  },
+  "seo": {
+    "slug": {
+      "fr": "contester-erreur-dossier-de-credit-equifax-transunion",
+      "en": "dispute-credit-report-error-equifax-transunion"
+    },
+    "titre": {
+      "fr": "Corriger une erreur dans son dossier de crédit : formulaires Equifax et TransUnion | Capycom",
+      "en": "Correct an error in your credit report: Equifax and TransUnion forms | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à quelques questions et obtenez les formulaires officiels d’Equifax et de TransUnion pour corriger une erreur dans votre dossier de crédit. Envoi par la poste possible.",
+      "en": "Free tool: answer a few questions and get the official Equifax and TransUnion forms to correct an error in your credit report. Mailing available."
+    },
+    "h1": {
+      "fr": "Corriger une erreur dans son dossier de crédit (Equifax et TransUnion)",
+      "en": "Correct an Error in Your Credit Report (Equifax and TransUnion)"
+    }
+  },
+  "type": "formulaire-officiel",
+  "formulaire": {
+    "nom": {
+      "fr": "Contestation du dossier de crédit",
+      "en": "Credit report dispute"
+    },
+    "organisme": {
+      "fr": "Equifax Canada et TransUnion Canada",
+      "en": "Equifax Canada and TransUnion Canada"
+    },
+    "associes": [
+      "Equifax : mise à jour d’un compte (Accounts Dispute Form)",
+      "Equifax : renseignements personnels (Personal Information Dispute Form)",
+      "TransUnion : demande d’enquête (Credit Investigation Request Form)"
+    ],
+    "langues": [
+      "fr",
+      "en"
+    ],
+    "envoi": {
+      "fr": "Par la poste au bureau concerné (voir destinataires). Un formulaire par bureau.",
+      "en": "By mail to the bureau concerned (see recipients). One form per bureau."
+    }
+  },
+  "usage": {
+    "fr": "Corriger une erreur dans le dossier de crédit : compte inconnu ou fraude, solde ou retards inexacts, compte fermé mal indiqué, renseignements personnels faux. Les formulaires officiels sont remplis selon les réponses.",
+    "en": "Correct an error in a credit report: unknown account or fraud, wrong balance or late payments, closed account shown wrongly, wrong personal information. The official forms are filled in from the answers."
+  },
+  "etapes": [
+    {
+      "id": "intro",
+      "titre": {
+        "fr": "Corriger une erreur dans votre dossier de crédit",
+        "en": "Correct an error in your credit report"
+      },
+      "aide": {
+        "fr": "Un outil gratuit qui remplit pour vous les formulaires officiels d’Equifax et de TransUnion, les deux bureaux de crédit du Canada. Vous répondez à des questions simples, puis vous obtenez les formulaires prêts à signer et à envoyer par la poste.",
+        "en": "A free tool that fills in the official forms of Equifax and TransUnion, the two credit bureaus in Canada, for you. You answer simple questions, then you get the forms ready to sign and mail."
+      },
+      "notes": [
+        {
+          "titre": {
+            "fr": "À savoir avant de commencer",
+            "en": "Good to know before you start"
+          },
+          "texte": {
+            "fr": [
+              "Demandez d’abord votre dossier de crédit gratuit aux deux bureaux et repérez l’erreur : compte que vous ne reconnaissez pas, retard de paiement qui n’existe pas, compte fermé encore indiqué comme ouvert, date de naissance ou adresse inexacte.",
+              "La correction est gratuite. Chaque bureau tient son propre dossier : si l’erreur figure chez les deux, il faut écrire aux deux.",
+              "Chaque bureau demande des copies de vos pièces d’identité et d’une preuve d’adresse. Gardez les originaux et masquez les codes de sécurité (CVV) de toute carte.",
+              "Le formulaire Equifax n’existe qu’en anglais. Vous pouvez y écrire en français. Celui de TransUnion est en français.",
+              "Capycom n’est affilié ni à Equifax ni à TransUnion. Cet outil ne donne pas de conseil juridique ou financier. Vos réponses restent dans votre navigateur tant que vous ne choisissez pas l’envoi par la poste."
+            ],
+            "en": [
+              "First get your free credit report from both bureaus and spot the error: an account you do not recognize, a late payment that never happened, a closed account still shown as open, a wrong date of birth or address.",
+              "Correcting an error is free. Each bureau keeps its own file: if the error appears at both, write to both.",
+              "Each bureau asks for copies of your ID and a proof of address. Keep the originals and black out the security codes (CVV) of any card.",
+              "The Equifax form only exists in English. TransUnion’s form is in French.",
+              "Capycom is not affiliated with Equifax or TransUnion. This tool does not give legal or financial advice. Your answers stay in your browser unless you choose mailing."
+            ]
+          },
+          "quand": []
+        }
+      ]
+    },
+    {
+      "id": "quoi",
+      "titre": {
+        "fr": "Ce que vous voulez corriger",
+        "en": "What you want to correct"
+      },
+      "aide": {
+        "fr": "Si l’erreur figure dans les deux dossiers, cochez les deux : vous obtiendrez un formulaire pour chacun.",
+        "en": "If the error appears in both files, tick both: you will get one form for each."
+      },
+      "champs": [
+        {
+          "id": "cr_bureau",
+          "type": "groupe",
+          "requis": true,
+          "libelle": {
+            "fr": "À quel bureau voulez-vous écrire ?",
+            "en": "Which bureau do you want to write to?"
+          },
+          "membres": [
+            "cr_eq",
+            "cr_tu"
+          ],
+          "aide": {
+            "fr": "Cocher au moins une case du groupe.",
+            "en": "Tick at least one box in the group."
+          }
+        },
+        {
+          "id": "cr_eq",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Equifax",
+            "en": "Equifax"
+          },
+          "groupe": {
+            "fr": "À quel bureau voulez-vous écrire ?",
+            "en": "Which bureau do you want to write to?"
+          }
+        },
+        {
+          "id": "cr_tu",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "TransUnion",
+            "en": "TransUnion"
+          },
+          "groupe": {
+            "fr": "À quel bureau voulez-vous écrire ?",
+            "en": "Which bureau do you want to write to?"
+          }
+        },
+        {
+          "id": "cr_type",
+          "type": "groupe",
+          "requis": true,
+          "libelle": {
+            "fr": "Qu’est-ce qui est faux ?",
+            "en": "What is wrong?"
+          },
+          "membres": [
+            "cr_t_comptes",
+            "cr_t_perso"
+          ],
+          "aide": {
+            "fr": "Cocher au moins une case du groupe.",
+            "en": "Tick at least one box in the group."
+          }
+        },
+        {
+          "id": "cr_t_comptes",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Un compte ou un prêt (inconnu, fraude, solde ou retards inexacts, compte fermé…)",
+            "en": "An account or a loan (unknown, fraud, wrong balance or late payments, closed account…)"
+          },
+          "groupe": {
+            "fr": "Qu’est-ce qui est faux ?",
+            "en": "What is wrong?"
+          }
+        },
+        {
+          "id": "cr_t_perso",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mes renseignements personnels (nom, adresse, date de naissance, NAS, téléphone)",
+            "en": "My personal information (name, address, date of birth, SIN, phone)"
+          },
+          "groupe": {
+            "fr": "Qu’est-ce qui est faux ?",
+            "en": "What is wrong?"
+          }
+        }
+      ],
+      "regle": {
+        "fr": "Cocher au moins un bureau (cr_eq, cr_tu) et au moins un type d’erreur (cr_t_comptes, cr_t_perso).",
+        "en": "Tick at least one bureau (cr_eq, cr_tu) and at least one kind of error (cr_t_comptes, cr_t_perso)."
+      }
+    },
+    {
+      "id": "vous",
+      "titre": {
+        "fr": "Vos renseignements",
+        "en": "About you"
+      },
+      "aide": {
+        "fr": "Écrivez-les comme sur vos pièces d’identité. Ils servent à retrouver votre dossier.",
+        "en": "Write them as on your ID. They are used to find your file."
+      },
+      "champs": [
+        {
+          "id": "cr_prenom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Prénom",
+            "en": "First name"
+          },
+          "max": 60
+        },
+        {
+          "id": "cr_prenom2",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Deuxième prénom",
+            "en": "Middle name"
+          },
+          "max": 60
+        },
+        {
+          "id": "cr_nom",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de famille",
+            "en": "Last name"
+          },
+          "max": 60
+        },
+        {
+          "id": "cr_suffixe",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Suffixe (Jr, Sr)",
+            "en": "Suffix (Jr, Sr)"
+          },
+          "max": 60
+        },
+        {
+          "id": "cr_naiss",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de naissance",
+            "en": "Date of birth"
+          }
+        },
+        {
+          "id": "cr_nas",
+          "type": "nas",
+          "requis": false,
+          "libelle": {
+            "fr": "Numéro d’assurance sociale (NAS), facultatif",
+            "en": "Social insurance number (SIN), optional"
+          },
+          "max": 11,
+          "exemple": {
+            "fr": "123 456 789",
+            "en": "123 456 789"
+          }
+        },
+        {
+          "id": "cr_tel",
+          "type": "tel",
+          "requis": true,
+          "libelle": {
+            "fr": "Téléphone",
+            "en": "Phone"
+          },
+          "max": 20,
+          "exemple": {
+            "fr": "613 555 1234",
+            "en": "613 555 1234"
+          }
+        },
+        {
+          "id": "cr_courriel",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Courriel",
+            "en": "Email"
+          },
+          "max": 60,
+          "exemple": {
+            "fr": "nom@exemple.ca",
+            "en": "nom@exemple.ca"
+          }
+        },
+        {
+          "id": "cr_numeq",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Numéro unique Equifax, facultatif",
+            "en": "Equifax unique number, optional"
+          },
+          "max": 10,
+          "quand": [
+            {
+              "cr_eq": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adresse",
+      "titre": {
+        "fr": "Vos adresses",
+        "en": "Your addresses"
+      },
+      "champs": [
+        {
+          "id": "cr_a_no",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Numéro civique",
+            "en": "Street number"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_a_rue",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de la rue",
+            "en": "Street name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_a_app",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Appartement ou unité",
+            "en": "Unit or apartment"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_a_ville",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Ville",
+            "en": "City"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_a_prov",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province ou territoire",
+            "en": "Province or territory"
+          },
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_a_cp",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Code postal",
+            "en": "Postal code"
+          },
+          "max": 7,
+          "exemple": {
+            "fr": "K1A 0B1",
+            "en": "K1A 0B1"
+          },
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_p_oui",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "J’ai une adresse précédente à indiquer (par exemple si j’ai déménagé depuis moins de deux ans)",
+            "en": "I have a previous address to enter (for example if I moved in the last two years)"
+          },
+          "groupe": {
+            "fr": "Adresse actuelle",
+            "en": "Current address"
+          }
+        },
+        {
+          "id": "cr_p_no",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Numéro civique",
+            "en": "Street number"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_rue",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom de la rue",
+            "en": "Street name"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_app",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Appartement ou unité",
+            "en": "Unit or apartment"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_ville",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Ville",
+            "en": "City"
+          },
+          "max": 60,
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_prov",
+          "type": "province-rc",
+          "requis": true,
+          "libelle": {
+            "fr": "Province ou territoire",
+            "en": "Province or territory"
+          },
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_cp",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Code postal",
+            "en": "Postal code"
+          },
+          "max": 7,
+          "exemple": {
+            "fr": "K1A 0B1",
+            "en": "K1A 0B1"
+          },
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_de",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Habité là depuis le",
+            "en": "Lived there from"
+          },
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        },
+        {
+          "id": "cr_p_a",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Jusqu’au",
+            "en": "Until"
+          },
+          "groupe": {
+            "fr": "Adresse précédente",
+            "en": "Previous address"
+          },
+          "quand": [
+            {
+              "cr_p_oui": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comptes",
+      "titre": {
+        "fr": "Les comptes en cause",
+        "en": "The accounts involved"
+      },
+      "aide": {
+        "fr": "Un bloc par compte. Le nom du prêteur et le numéro de compte sont sur votre dossier de crédit. Vous pouvez écrire seulement les derniers chiffres du numéro.",
+        "en": "One block per account. The lender’s name and the account number are on your credit report. You can write only the last digits of the number."
+      },
+      "quand": [
+        {
+          "cr_t_comptes": true
+        }
+      ],
+      "champs": [
+        {
+          "id": "cr_c{n}_cred",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Nom du prêteur ou du créancier",
+            "en": "Lender or creditor name"
+          },
+          "max": 60
+        },
+        {
+          "id": "cr_c{n}_num",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Numéro de compte",
+            "en": "Account number"
+          },
+          "max": 40
+        },
+        {
+          "id": "cr_c{n}_motif",
+          "type": "choix",
+          "requis": true,
+          "libelle": {
+            "fr": "Qu’est-ce qui est faux ?",
+            "en": "What is wrong?"
+          },
+          "valeurs": [
+            {
+              "valeur": "pasmien",
+              "fr": "Ce compte n’est pas le mien, je ne le reconnais pas",
+              "en": "This account is not mine, I do not recognize it"
+            },
+            {
+              "valeur": "fraude",
+              "fr": "Victime de fraude ou de vol d’identité",
+              "en": "Victim of fraud or identity theft"
+            },
+            {
+              "valeur": "ferme",
+              "fr": "Compte remboursé et fermé, mais mal indiqué",
+              "en": "Account paid and closed, but shown wrongly"
+            },
+            {
+              "valeur": "note",
+              "fr": "Retards de paiement ou cote inexacts",
+              "en": "Wrong late payments or rating"
+            },
+            {
+              "valeur": "faillite",
+              "fr": "Compte inclus dans une faillite",
+              "en": "Account included in a bankruptcy"
+            },
+            {
+              "valeur": "autre",
+              "fr": "Autre erreur (à décrire)",
+              "en": "Other error (describe it)"
+            }
+          ]
+        },
+        {
+          "id": "cr_c{n}_date",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de fermeture du compte",
+            "en": "Date the account was closed"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_comptes": true,
+              "cr_c{n}_motif": "ferme"
+            }
+          ]
+        },
+        {
+          "id": "cr_c{n}_cote",
+          "type": "texte",
+          "requis": true,
+          "libelle": {
+            "fr": "Cote à corriger (exemple : R2)",
+            "en": "Rating to correct (example: R2)"
+          },
+          "max": 8,
+          "exemple": {
+            "fr": "R2",
+            "en": "R2"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_comptes": true,
+              "cr_c{n}_motif": "note"
+            }
+          ]
+        },
+        {
+          "id": "cr_c{n}_cotedate",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date associée",
+            "en": "Associated date"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_comptes": true,
+              "cr_c{n}_motif": "note"
+            }
+          ]
+        },
+        {
+          "id": "cr_c{n}_autre",
+          "type": "texte-long",
+          "requis": true,
+          "libelle": {
+            "fr": "Décrivez l’erreur en quelques mots",
+            "en": "Describe the error in a few words"
+          },
+          "max": 180,
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_comptes": true,
+              "cr_c{n}_motif": "autre"
+            },
+            {
+              "cr_tu": true,
+              "cr_t_comptes": true,
+              "cr_c{n}_motif": "autre"
+            }
+          ]
+        }
+      ],
+      "repete": {
+        "variable": "n",
+        "min": 1,
+        "max": {
+          "fr": "3 pour Equifax, 6 pour TransUnion seul",
+          "en": "3 for Equifax, 6 for TransUnion only"
+        },
+        "motifs": [
+          {
+            "valeur": "pasmien",
+            "fr": "Ce compte n’est pas le mien, je ne le reconnais pas",
+            "en": "This account is not mine, I do not recognize it"
+          },
+          {
+            "valeur": "fraude",
+            "fr": "Victime de fraude ou de vol d’identité",
+            "en": "Victim of fraud or identity theft"
+          },
+          {
+            "valeur": "ferme",
+            "fr": "Compte remboursé et fermé, mais mal indiqué",
+            "en": "Account paid and closed, but shown wrongly"
+          },
+          {
+            "valeur": "note",
+            "fr": "Retards de paiement ou cote inexacts",
+            "en": "Wrong late payments or rating"
+          },
+          {
+            "valeur": "faillite",
+            "fr": "Compte inclus dans une faillite",
+            "en": "Account included in a bankruptcy"
+          },
+          {
+            "valeur": "autre",
+            "fr": "Autre erreur (à décrire)",
+            "en": "Other error (describe it)"
+          }
+        ],
+        "option": "@cr.nb = nombre de comptes affichés"
+      }
+    },
+    {
+      "id": "perso",
+      "titre": {
+        "fr": "Renseignements personnels à corriger",
+        "en": "Personal information to correct"
+      },
+      "aide": {
+        "fr": "Les renseignements des étapes précédentes sont les bons. Cochez ce qui est faux dans le dossier.",
+        "en": "The details from the previous steps are the correct ones. Tick what is wrong in the file."
+      },
+      "quand": [
+        {
+          "cr_t_perso": true
+        }
+      ],
+      "champs": [
+        {
+          "id": "cr_s_quoi",
+          "type": "groupe",
+          "requis": false,
+          "libelle": {
+            "fr": "Qu’est-ce qui est inexact ?",
+            "en": "What is wrong?"
+          },
+          "aide": {
+            "fr": "Cocher au moins une des cases cr_s_nom, cr_s_adr, cr_s_dob, cr_s_nas, cr_s_tel et décrire dans cr_s_detail.",
+            "en": "Tick at least one of the boxes cr_s_nom, cr_s_adr, cr_s_dob, cr_s_nas, cr_s_tel and describe it in cr_s_detail."
+          }
+        },
+        {
+          "id": "cr_s_nom",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon nom",
+            "en": "My name"
+          }
+        },
+        {
+          "id": "cr_s_adr",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon adresse",
+            "en": "My address"
+          }
+        },
+        {
+          "id": "cr_s_dob",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Ma date de naissance",
+            "en": "My date of birth"
+          }
+        },
+        {
+          "id": "cr_s_nas",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon NAS",
+            "en": "My SIN"
+          }
+        },
+        {
+          "id": "cr_s_tel",
+          "type": "case",
+          "requis": false,
+          "libelle": {
+            "fr": "Mon numéro de téléphone",
+            "en": "My phone number"
+          }
+        },
+        {
+          "id": "cr_s_detail",
+          "type": "texte-long",
+          "requis": true,
+          "libelle": {
+            "fr": "Expliquez en une phrase (150 caractères au plus)",
+            "en": "Explain in one sentence (150 characters at most)"
+          },
+          "max": 150
+        },
+        {
+          "id": "cr_anc_prenom",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Prénom",
+            "en": "First name"
+          },
+          "max": 15,
+          "groupe": {
+            "fr": "Ancien nom, si différent",
+            "en": "Former name, if different"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_perso": true,
+              "cr_s_nom": true
+            },
+            {
+              "cr_tu": true,
+              "cr_t_perso": true,
+              "cr_s_nom": true
+            }
+          ]
+        },
+        {
+          "id": "cr_anc_nom",
+          "type": "texte",
+          "requis": false,
+          "libelle": {
+            "fr": "Nom de famille",
+            "en": "Last name"
+          },
+          "max": 25,
+          "groupe": {
+            "fr": "Ancien nom, si différent",
+            "en": "Former name, if different"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_perso": true,
+              "cr_s_nom": true
+            },
+            {
+              "cr_tu": true,
+              "cr_t_perso": true,
+              "cr_s_nom": true
+            }
+          ]
+        },
+        {
+          "id": "cr_anc_nas",
+          "type": "nas",
+          "requis": false,
+          "libelle": {
+            "fr": "Ancien NAS, facultatif",
+            "en": "Previous SIN, optional"
+          },
+          "max": 11,
+          "exemple": {
+            "fr": "123 456 789",
+            "en": "123 456 789"
+          },
+          "quand": [
+            {
+              "cr_eq": true,
+              "cr_t_perso": true,
+              "cr_s_nas": true
+            },
+            {
+              "cr_tu": true,
+              "cr_t_perso": true,
+              "cr_s_nas": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decl",
+      "titre": {
+        "fr": "Déclaration du consommateur",
+        "en": "Consumer statement"
+      },
+      "aide": {
+        "fr": "Facultatif. Si le bureau ne règle pas votre dispute, vous pouvez ajouter à votre dossier une courte déclaration qui donne votre version des faits. Elle est gratuite et apparaît dans votre dossier. Si vous l’écrivez ici, Capycom la met sur une feuille séparée jointe à la demande.",
+        "en": "Optional. If the bureau does not settle your dispute, you can add a short statement giving your side to your file. It is free and appears in your file. If you write it here, Capycom puts it on a separate sheet attached to the request."
+      },
+      "champs": [
+        {
+          "id": "cr_decl",
+          "type": "texte-long",
+          "requis": false,
+          "libelle": {
+            "fr": "Votre déclaration (400 mots au plus)",
+            "en": "Your statement (400 words at most)"
+          },
+          "max": 2600
+        }
+      ]
+    },
+    {
+      "id": "signature",
+      "titre": {
+        "fr": "Signature et date",
+        "en": "Signature and date"
+      },
+      "aide": {
+        "fr": "En signant, vous autorisez le bureau à vérifier les renseignements auprès des prêteurs et vous confirmez qu’ils sont exacts.",
+        "en": "By signing, you allow the bureau to check the information with the lenders and you confirm it is accurate."
+      },
+      "champs": [
+        {
+          "id": "cr_datesign",
+          "type": "date",
+          "requis": true,
+          "libelle": {
+            "fr": "Date de la signature",
+            "en": "Date of signature"
+          }
+        }
+      ],
+      "notes": [
+        {
+          "titre": {
+            "fr": "",
+            "en": ""
+          },
+          "texte": {
+            "fr": [
+              "Vous pouvez signer à la main après avoir imprimé les formulaires. Si vous voulez que Capycom les imprime et les poste pour vous, ajoutez votre signature ici : dessinez-la ou envoyez une photo de votre signature manuscrite."
+            ],
+            "en": [
+              "You can sign by hand after printing the forms. If you want Capycom to print and mail them for you, add your signature here: draw it or upload a photo of your handwritten signature."
+            ]
+          },
+          "quand": []
+        }
+      ]
+    }
+  ],
+  "optionsMoteur": [
+    {
+      "id": "cr.nb",
+      "type": "entier",
+      "aide": {
+        "fr": "Nombre de comptes affichés (1 à 3 chez Equifax, 1 à 6 chez TransUnion seul). Par défaut : le plus grand n tel que cr_c{n}_cred est rempli.",
+        "en": "Number of accounts shown (1 to 3 for Equifax, 1 to 6 for TransUnion only). Default: the largest n for which cr_c{n}_cred is filled in."
+      }
+    },
+    {
+      "id": "bureaux",
+      "valeurs": [
+        "eq",
+        "tu"
+      ],
+      "aide": {
+        "fr": "Bureaux pour lesquels générer un PDF. Par défaut : ceux cochés (cr_eq, cr_tu).",
+        "en": "Bureaus to generate a PDF for. Default: the ones ticked (cr_eq, cr_tu)."
+      }
+    },
+    {
+      "id": "sig",
+      "type": "image",
+      "aide": {
+        "fr": "Signature {url, w, h}, posée sur les formulaires.",
+        "en": "Signature {url, w, h}, placed on the forms."
+      }
+    }
+  ],
+  "piecesJointes": {
+    "eq": [
+      {
+        "id": "pieces",
+        "requis": true,
+        "titre": {
+          "fr": "2 pièces d’identité émises par un gouvernement (recto et verso)",
+          "en": "2 government-issued IDs (front and back)"
+        },
+        "aide": {
+          "fr": "Elles confirment votre nom légal, votre date de naissance ou votre adresse actuelle : permis de conduire, passeport, certificat de naissance, etc.",
+          "en": "They confirm your legal name, date of birth or current address: driver’s licence, passport, birth certificate, etc."
+        }
+      },
+      {
+        "id": "adresse",
+        "requis": true,
+        "titre": {
+          "fr": "1 preuve d’adresse datée de moins de 90 jours",
+          "en": "1 proof of address dated less than 90 days ago"
+        },
+        "aide": {
+          "fr": "Facture de services publics ou relevé financier à votre nom et à votre adresse actuelle. Masquez les codes de sécurité (CVV) et, de préférence, le détail des transactions.",
+          "en": "Utility bill or financial statement showing your name and current address. Black out security codes (CVV) and, preferably, transaction details."
+        }
+      },
+      {
+        "id": "creancier",
+        "requis": true,
+        "titre": {
+          "fr": "Lettre du prêteur ou du créancier",
+          "en": "Letter from the lender or creditor"
+        },
+        "aide": {
+          "fr": "Elle confirme l’état, la propriété et les détails du compte : quatre derniers chiffres du numéro, montant, payé ou réglé, etc.",
+          "en": "It confirms the status, ownership and details of the account: last 4 digits of the number, amount, paid or settled, etc."
+        },
+        "quand": {
+          "fr": "Compte contesté avec un motif « fermé » ou « cote » : obligatoire ; autrement recommandé.",
+          "en": "Account disputed with a “closed” or “rating” reason: required; otherwise recommended."
+        }
+      },
+      {
+        "id": "autres",
+        "requis": false,
+        "titre": {
+          "fr": "Autres documents (facultatif)",
+          "en": "Other documents (optional)"
+        },
+        "aide": {
+          "fr": "Tout autre document que vous voulez joindre à la demande.",
+          "en": "Any other document you want to attach to the request."
+        }
+      }
+    ],
+    "tu": [
+      {
+        "id": "pieces",
+        "requis": false,
+        "titre": {
+          "fr": "Copies de vos pièces d’identité (recommandé)",
+          "en": "Copies of your ID (recommended)"
+        },
+        "aide": {
+          "fr": "Le formulaire de TransUnion n’en exige pas, mais le bureau peut vous en demander pour vérifier votre identité. En les joignant, vous évitez un délai.",
+          "en": "TransUnion’s form does not require any, but the bureau may ask for some to check your identity. Attaching them can avoid a delay."
+        }
+      },
+      {
+        "id": "preuves",
+        "requis": false,
+        "titre": {
+          "fr": "Documents qui appuient votre contestation",
+          "en": "Documents that support your dispute"
+        },
+        "aide": {
+          "fr": "Lettre du prêteur, preuve de paiement, relevé, jugement ou documents de faillite, rapport de police en cas de fraude.",
+          "en": "Letter from the lender, proof of payment, statement, court or bankruptcy documents, police report in case of fraud."
+        }
+      },
+      {
+        "id": "autres",
+        "requis": false,
+        "titre": {
+          "fr": "Autres documents (facultatif)",
+          "en": "Other documents (optional)"
+        },
+        "aide": {
+          "fr": "Tout autre document que vous voulez joindre à la demande.",
+          "en": "Any other document you want to attach to the request."
+        }
+      }
+    ]
+  },
+  "destinataires": {
+    "type": "bureaux",
+    "bureaux": {
+      "eq": {
+        "nom": "Equifax",
+        "dest": {
+          "fr": {
+            "nom": "Equifax Canada Co., Relations nationales avec les consommateurs",
+            "ligne": "Case postale 190, succursale Jean-Talon",
+            "ville": "Montréal",
+            "prov": "Québec",
+            "cp": "H1S 2Z2"
+          },
+          "en": {
+            "nom": "Equifax Canada Co., National Consumer Relations",
+            "ligne": "Box 190, Jean Talon Station",
+            "ville": "Montreal",
+            "prov": "Québec",
+            "cp": "H1S 2Z2"
+          }
+        }
+      },
+      "tu": {
+        "nom": "TransUnion",
+        "dest": {
+          "fr": {
+            "nom": "TransUnion, Centre de relations au consommateur",
+            "ligne": "Case postale 338, succursale LCD1",
+            "ville": "Hamilton",
+            "prov": "Ontario",
+            "cp": "L8L 7W2"
+          },
+          "en": {
+            "nom": "TransUnion, Consumer Relations Centre",
+            "ligne": "P.O. Box 338, LCD1",
+            "ville": "Hamilton",
+            "prov": "Ontario",
+            "cp": "L8L 7W2"
+          }
+        }
+      }
+    }
+  },
+  "liensOfficiels": [
+    {
+      "cle": "fcac",
+      "but": {
+        "fr": "Repérer les erreurs dans un dossier de crédit (Agence de la consommation en matière financière du Canada)",
+        "en": "Spot errors in a credit report (Financial Consumer Agency of Canada)"
+      },
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere/services/dossier-pointage-credit/verifier-erreurs.html",
+      "en": "https://www.canada.ca/en/financial-consumer-agency/services/credit-reports-scores/check-errors.html"
+    },
+    {
+      "cle": "eq",
+      "but": {
+        "fr": "Contester un dossier chez Equifax",
+        "en": "Dispute a credit report with Equifax"
+      },
+      "fr": "https://www.equifax.ca/fr/personnel/contester-dossier-de-credit/options",
+      "en": "https://www.equifax.ca/personal/dispute-credit-report-form"
+    },
+    {
+      "cle": "eqacc",
+      "but": {
+        "fr": "Formulaire officiel Equifax, contestation de compte",
+        "en": "Official Equifax form, account dispute"
+      },
+      "fr": "https://assets.equifax.com/assets/canada/english/Accounts_Dispute_Form_EN.pdf",
+      "en": "https://assets.equifax.com/assets/canada/english/Accounts_Dispute_Form_EN.pdf"
+    },
+    {
+      "cle": "eqpi",
+      "but": {
+        "fr": "Formulaire officiel Equifax, renseignements personnels",
+        "en": "Official Equifax form, personal information"
+      },
+      "fr": "https://assets.equifax.com/assets/canada/english/Personal_Info_Dispute_Form_EN.pdf",
+      "en": "https://assets.equifax.com/assets/canada/english/Personal_Info_Dispute_Form_EN.pdf"
+    },
+    {
+      "cle": "tu",
+      "but": {
+        "fr": "Contester un dossier chez TransUnion",
+        "en": "Dispute a credit report with TransUnion"
+      },
+      "fr": "https://www.transunion.ca/assistance/credit-report-disputes",
+      "en": "https://www.transunion.ca/assistance/credit-report-disputes"
+    },
+    {
+      "cle": "tuform",
+      "but": {
+        "fr": "Formulaire officiel TransUnion, demande d’enquête",
+        "en": "Official TransUnion form, investigation request"
+      },
+      "fr": "https://www.transunion.ca/content/dam/transunion/ca/consumer/documents/Credit-Investigation-Request-Form-fr.pdf",
+      "en": "https://www.transunion.ca/content/dam/transunion/ca/consumer/documents/Credit-Investigation-Request-Form-en.pdf"
+    }
+  ],
+  "limites": {
+    "equifax": {
+      "prenom": 15,
+      "prenom2": 15,
+      "nom": 25,
+      "suffixe": 4,
+      "a_no": 10,
+      "a_rue": 25,
+      "a_app": 6,
+      "a_ville": 20,
+      "p_no": 10,
+      "p_rue": 25,
+      "p_app": 6,
+      "p_ville": 20,
+      "courriel": 35,
+      "anc_prenom": 15,
+      "anc_nom": 25
+    },
+    "aide": {
+      "fr": "Equifax : un caractère par case, donc des longueurs maximales par champ (nombre de cases du formulaire).",
+      "en": "Equifax: one character per box, hence maximum lengths per field (number of boxes on the form)."
+    }
+  },
+  "avertissements": [
+    {
+      "fr": "Capycom n’est affilié ni à Equifax ni à TransUnion. L’outil ne donne pas de conseil juridique ou financier.",
+      "en": "Capycom is not affiliated with Equifax or TransUnion. The tool does not give legal or financial advice."
+    },
+    {
+      "fr": "Le formulaire Equifax n’existe qu’en anglais ; on peut y écrire en français. Celui de TransUnion est en français.",
+      "en": "The Equifax form exists in English only; it can be filled in in French. TransUnion’s is in French."
+    },
+    {
+      "fr": "Chaque bureau tient son propre dossier : si l’erreur figure chez les deux, il faut écrire aux deux.",
+      "en": "Each bureau keeps its own file: if the error is in both, write to both."
+    },
+    {
+      "fr": "Joindre des copies (jamais les originaux) des pièces d’identité et d’une preuve d’adresse ; masquer les codes de sécurité (CVV).",
+      "en": "Attach copies (never originals) of ID and proof of address; hide card security codes (CVV)."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"credit\", reponses, options)",
+    "sortie": {
+      "fr": "Un PDF par bureau : Equifax (formulaire de comptes et/ou de renseignements personnels, 3 à 9 pages) ou TransUnion (2 pages), plus une page de déclaration du consommateur si cr_decl est rempli.",
+      "en": "One PDF per bureau: Equifax (accounts and/or personal information form, 3 to 9 pages) or TransUnion (2 pages), plus a consumer statement page if cr_decl is filled in."
+    },
+    "fonds": [
+      "fonds/credit.json"
+    ],
+    "verification": "verifier(\"credit\", reponses, options) ; documentsDe(\"credit\", reponses, {bureau: \"eq\"|\"tu\"})",
+    "options": [
+      "cr.nb",
+      "bureaux",
+      "sig"
+    ],
+    "aideRedaction": {
+      "fr": "Dates au format AAAA-MM-JJ. Les identifiants cr_c{n}_ désignent le compte n. Les noms sont mis en majuscules sur les formulaires Equifax.",
+      "en": "Dates use the YYYY-MM-DD format. The cr_c{n}_ ids refer to account n. Names are put in capitals on the Equifax forms."
+    }
+  }
+}

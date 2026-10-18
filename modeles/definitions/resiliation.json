@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "id": "resiliation",
+  "section": "contrats",
+  "titre": {
+    "fr": "Résiliation de contrat",
+    "en": "Contract cancellation"
+  },
+  "description": {
+    "fr": "Mettre fin à un abonnement ou à un contrat, avec une date de fin et un numéro de client.",
+    "en": "End a subscription or a contract, with an end date and a customer number."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-resiliation",
+      "en": "cancellation-letter"
+    },
+    "titre": {
+      "fr": "Lettre de résiliation : modèle gratuit (PDF, Word) | Capycom",
+      "en": "Free cancellation letter template (PDF, Word) | Capycom"
+    },
+    "description": {
+      "fr": "Rédigez une lettre de résiliation avec ce modèle gratuit. Téléchargez-la ou faites imprimer et poster votre lettre au Canada par Capycom.",
+      "en": "Write a cancellation letter with this free template. Download it or have Capycom print and mail your letter in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de lettre de résiliation",
+      "en": "Free Cancellation Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Mettre fin à un abonnement ou à un contrat. La lettre indique le contrat, le numéro de client, la date de fin demandée et, si vous le souhaitez, un motif.",
+    "en": "End a subscription or a contract. The letter names the contract, the customer number, the requested end date and, if you wish, a reason."
+  },
+  "champs": [
+    {
+      "id": "service",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Contrat ou abonnement à résilier",
+        "en": "Contract or subscription to cancel"
+      },
+      "exemple": {
+        "fr": "ex. abonnement Internet, assurance habitation",
+        "en": "e.g. internet plan, home insurance"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Numéro de client ou de contrat",
+        "en": "Customer or contract number"
+      }
+    },
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Date de fin souhaitée (vide = dès que possible)",
+        "en": "Requested end date (blank = as soon as possible)"
+      }
+    },
+    {
+      "id": "motif",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Motif",
+        "en": "Reason"
+      },
+      "exemple": {
+        "fr": "Facultatif. Vous n’êtes pas obligé de donner un motif.",
+        "en": "Optional. You do not have to give a reason."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’utilisateur indique l’organisme et son adresse (dest_*).",
+    "en": "Free: the user gives the organization and its address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"resiliation\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF d’une page (format Lettre), police Helvetica. La taille du texte est réduite automatiquement (12,5 à 9,5 pt) pour tenir sur une page. Si le texte ne tient pas, plan.tient vaut faux.",
+      "en": "A one-page PDF letter (Letter size), Helvetica. The text size is reduced automatically (12.5 to 9.5 pt) to fit one page. If the text does not fit, tient is false."
+    },
+    "options": [
+      "lettre",
+      "lienPied",
+      "sig"
+    ],
+    "autresFormats": [
+      "docx",
+      "odt (générés par la page seulement, pas par le moteur)"
+    ]
+  }
+}
