@@ -15,6 +15,13 @@ PUBLIC_BASE_URL = "https://mcp.capycom.ca"
 # Vide = la liste par défaut du code (Claude).
 ALLOWED_REDIRECT_URIS = ""
 
+# Moteur des modèles (formulaires officiels remplis) : service Node hébergé sur le Coolify d'Adel, publié par Cloudflare Tunnel.
+# Adresse publique du moteur, sans barre finale. Vide = les outils de modèles répondent « moteur_non_configure ».
+# Le secret partagé se donne avec : npx wrangler secret put MOTEUR_SECRET   (même valeur que dans Coolify)
+MOTEUR_URL = ""
+# Modèles proposés, séparés par des virgules. Vide = rc66, credit, resiliation.
+MODELES_ACTIFS = ""
+
 # Ni journaux ni traces : le contenu des lettres ne doit jamais être conservé.
 [observability]
 enabled = false

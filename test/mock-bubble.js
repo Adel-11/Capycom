@@ -35,6 +35,9 @@ export function creerMock() {
       const contenu = corps.pdf && corps.pdf.contents;
       if (!contenu || !atob(contenu).startsWith('%PDF-')) return rep({ statut: 'erreur', erreur: 'pdf_invalide', message: 'Invalid PDF', message_fr: 'PDF invalide' });
       if (!/^[A-Z]\d[A-Z] \d[A-Z]\d$/.test(corps.dest_code_postal)) return rep({ statut: 'erreur', erreur: 'code_postal_invalide', message: 'Invalid postal code', message_fr: 'Code postal invalide' });
+      etat.dernierPdf = Buffer.from(contenu, 'base64');
+      let nbPages = 1;
+      try { nbPages = (await (await import('pdf-lib')).PDFDocument.load(etat.dernierPdf)).getPageCount(); } catch { /* PDF de test inhabituel */ }
       const idem = corps.cle_idempotence;
       if (idem && [...courriers.values()].find((c) => c.idem === idem)) {
         const c = [...courriers.values()].find((x) => x.idem === idem);
@@ -42,7 +45,7 @@ export function creerMock() {
       }
       const id = '1791565001023x' + String(courriers.size + 1).padStart(6, '0');
       const reponse = {
-        statut: 'ok', id_courrier: id, statut_courrier: 'brouillon', reference: '', canal: 'api', nombre_feuilles: 1, couleur: !!corps.couleur,
+        statut: 'ok', id_courrier: id, statut_courrier: 'brouillon', reference: '', canal: 'api', nombre_feuilles: nbPages, couleur: !!corps.couleur,
         enveloppe: 'petite', montant_enveloppe: 0.3, montant_feuilles: 0.5, nombre_timbres: 1, montant_timbres: 2.56, total_avant_taxes: 3.3600000000000003, devise: 'CAD',
         destinataire: corps.dest_nom, expediteur: corps.exp_nom,
         lien_paiement: `https://capycom.test/login?courrier=${id}&Parameter 1=1&Parameter 2=1`,

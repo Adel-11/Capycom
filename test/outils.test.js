@@ -16,11 +16,11 @@ async function session(envExtra) {
 }
 const sj = (r) => r.structuredContent;
 
-test('tools/list : 6 outils, title et readOnlyHint ou destructiveHint partout', async () => {
+test('tools/list : 9 outils, title et readOnlyHint ou destructiveHint partout', async () => {
   const { s, jeton } = await session();
   const { corps } = await rpc(s, jeton, 'tools/list');
   const outils = corps.result.tools;
-  assert.deepEqual(outils.map((o) => o.name).sort(), ['annuler_brouillon', 'creer_courrier', 'estimer_prix', 'lister_courriers', 'preparer_lettre', 'statut_courrier']);
+  assert.deepEqual(outils.map((o) => o.name).sort(), ['annuler_brouillon', 'creer_courrier', 'decrire_modele', 'estimer_prix', 'lister_courriers', 'lister_modeles', 'preparer_lettre', 'remplir_modele', 'statut_courrier']);
   for (const o of outils) {
     assert.ok(o.title && o.title.length > 3, o.name + ' title');
     assert.ok(o.name.length <= 64);
@@ -32,7 +32,7 @@ test('tools/list : 6 outils, title et readOnlyHint ou destructiveHint partout', 
   assert.equal(par.annuler_brouillon.destructiveHint, true);
   assert.equal(par.creer_courrier.destructiveHint, false);
   assert.equal(par.estimer_prix.readOnlyHint, true);
-  assert.equal(OUTILS.length, 6);
+  assert.equal(OUTILS.length, 9);
 });
 
 test('estimer_prix : prix arrondi à 2 décimales, erreur de l\'API relayée', async () => {

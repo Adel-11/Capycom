@@ -23,6 +23,10 @@ export function lireConfig(env, request, extra = {}) {
     siteBase: apiBase.replace(/\/api\/1\.1\/wf$/, ''),
     versionTest: /\/version-test(\/|$)/.test(apiBase),
     secret: env.TOKEN_SECRET,
+    // Service « moteur de modèles » (Coolify chez Adel, publié par Cloudflare Tunnel). Vide = modèles remplis indisponibles.
+    moteurUrl: String(env.MOTEUR_URL || '').replace(/\/+$/, ''),
+    moteurSecret: env.MOTEUR_SECRET,
+    modelesActifs: env.MODELES_ACTIFS,
     redirections: listeRedirections.length ? listeRedirections : REDIRECTIONS_PAR_DEFAUT,
     fetch: extra.fetch || ((...a) => fetch(...a)),
     maintenant: extra.maintenant || (() => Math.floor(Date.now() / 1000))

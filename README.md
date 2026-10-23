@@ -12,12 +12,21 @@ Hébergé sur Cloudflare Workers (`mcp.capycom.ca`), sans dépendance à l'exéc
 |---|---|---|
 | `estimer_prix` | Prix avant taxes pour un nombre de feuilles (N&B ou couleur) | lecture seule |
 | `preparer_lettre` | Vérifie les adresses, met le texte en page en PDF (ou vérifie un PDF fourni), renvoie nombre de pages, aperçu et prix. Rien n'est créé | lecture seule |
-| `creer_courrier` | Crée le brouillon sur le compte et renvoie prix, identifiant et lien de paiement | écriture, non destructif |
+| `lister_modeles` | Les modèles disponibles : lettre de résiliation, formulaire RC66 (avec RC66SCH), demande de crédit TPS/TVH ou d'impôt | lecture seule |
+| `decrire_modele` | Pages officielles à lire d'abord, liste de vérification, questions, pièces à joindre, destinataire | lecture seule |
+| `remplir_modele` | Vérifie les réponses et les pièces, fait le rendu complet (rien n'est créé ni conservé), renvoie ce qui manque ou le nombre de pages et le prix | lecture seule |
+| `creer_courrier` | Crée le brouillon (texte, PDF fourni ou `modele`) et renvoie prix, identifiant et lien de paiement | écriture, non destructif |
 | `statut_courrier` | Statut, référence et prix d'un courrier | lecture seule |
 | `lister_courriers` | Les 5 derniers courriers du compte | lecture seule |
 | `annuler_brouillon` | Annule un brouillon (supprime pages et PDF chez Capycom) | destructif |
 
 Mise en page des lettres : format Lettre (8,5 x 11 po), expéditeur à gauche, destinataire à droite, date et ligne de signature en bas, pied de page, comme les modèles de lettres du site. Le texte tient sur une page quand c'est possible (police de 12,5 à 10 pt), sinon il passe sur plusieurs pages à 11 pt. Un PDF fourni (`pdf_url` en HTTPS ou `pdf_base64`, 6 Mo au plus) est envoyé tel quel.
+
+### Modèles et formulaires officiels
+
+Chaque modèle a aussi un **prompt MCP** (`prompts/list`, `prompts/get`) qui guide l'assistant pas à pas. Les formulaires (RC66, crédit) sont remplis sur les PDF officiels et fusionnés avec les pièces jointes (par adresse https ou en base64) en un seul PDF. `remplir_modele` ne renvoie jamais le PDF (1 à 2 Mo ne passent pas par le modèle) : `creer_courrier` avec `modele` refait le rendu et crée le brouillon, sans que le PDF transite par le Worker. Le serveur ne donne jamais d'avis juridique ou fiscal : il indique les pages officielles à lire et une liste de vérification. Les réponses (NAS, enfants, statut) ne sont ni journalisées ni stockées.
+
+Le rendu des formulaires est trop long pour la limite de 10 ms de calcul du plan gratuit de Workers (environ 1,6 s mesuré pour RC66 + RC66SCH). Il est donc fait par un petit service Node.js séparé, `serveur-modeles/` (Docker, Coolify, Cloudflare Tunnel), protégé par un secret partagé. Voir `serveur-modeles/README.md`. Sans ce service, les lettres libres et les PDF fournis fonctionnent comme avant.
 
 Le prix est toujours celui que calcule l'API Capycom, avant taxes. Ce serveur ne contient aucune règle de prix.
 
@@ -47,9 +56,11 @@ Variables (`wrangler.toml`, aucune n'est secrète) :
 |---|---|
 | `CAPYCOM_API_BASE` | Base de l'API : `https://capycom.ca/version-test/api/1.1/wf` (test) ou `https://capycom.ca/api/1.1/wf` (production) |
 | `PUBLIC_BASE_URL` | Adresse publique du serveur, sans barre finale (`https://mcp.capycom.ca`) |
+| `MOTEUR_URL` | Adresse du moteur des modèles, sans barre finale (vide = modèles remplis indisponibles) |
+| `MODELES_ACTIFS` | Modèles proposés, séparés par des virgules (vide = `rc66`, `credit`, `resiliation`) |
 | `ALLOWED_REDIRECT_URIS` | Adresses de retour OAuth, séparées par des virgules (`{port}` pour un port local). Vide = liste par défaut |
 
-Secret (jamais dans le code ni dans git) : `TOKEN_SECRET`, 32 caractères aléatoires ou plus.
+Secrets (jamais dans le code ni dans git) : `TOKEN_SECRET`, 32 caractères aléatoires ou plus ; `MOTEUR_SECRET` (24 caractères ou plus, même valeur que dans le service moteur).
 
 Quand l'API vise `version-test`, le lien de paiement renvoyé est celui de test.
 
@@ -118,7 +129,8 @@ npm run essai-local           # terminal 3 : parcours OAuth + outils
 - Noms d'options de province autres que Québec et Ontario (testés par l'API) : la valeur envoyée est le nom français (Colombie-Britannique, Île-du-Prince-Édouard, etc.), à confirmer.
 - Le courrier créé porte le canal `api`, pas `mcp` : l'API n'accepte pas encore de paramètre `canal`.
 - PDF fourni par URL ou en base64 : le nombre de pages est lu au mieux (PDF chiffrés ou à structure inhabituelle : inconnu ici, Capycom le recompte).
-- Charge, limite de temps CPU du plan gratuit de Workers, quota de 20 courriers par jour et par clé.
+- Modèles remplis : la construction de l'image Docker, le déploiement Coolify et le tunnel, la vraie création d'un RC66 depuis Claude, l'acceptation par Bubble d'un PDF de 1 à 2 Mo envoyé par le moteur, la récupération de pièces par vraies adresses https, la comparaison visuelle avec le formulaire du site.
+- Charge, quota de 20 courriers par jour et par clé.
 
 ## Licence
 

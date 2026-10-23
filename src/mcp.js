@@ -1,10 +1,11 @@
 // Serveur MCP, transport Streamable HTTP en mode sans session : une réponse JSON par requête POST.
 
 import { OUTILS, appelerOutil } from './tools.js';
+import { listerPrompts, lirePrompt } from './outils-modeles.js';
 
 export const VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05'];
-export const INFO = { name: 'capycom', title: 'Capycom', version: '0.1.0' };
-const INSTRUCTIONS = 'Capycom prints and mails letters within Canada. These tools prepare a letter, create a draft with its price before tax and return a payment link. The account holder pays on capycom.ca; the tools never pay. Letter content passes through this server only to be forwarded to Capycom and is not stored or logged.';
+export const INFO = { name: 'capycom', title: 'Capycom', version: '0.2.0' };
+const INSTRUCTIONS = 'Capycom prints and mails letters within Canada. These tools prepare a letter, create a draft with its price before tax and return a payment link. They can also fill in templates (official forms such as the CRA form RC66, credit report disputes, cancellation letters): lister_modeles, decrire_modele, remplir_modele, then creer_courrier. Capycom is not a government office and gives no legal advice: the user reads the official pages and decides. The account holder pays on capycom.ca; the tools never pay. Letters, answers and attachments pass through this server only to produce the PDF and to be forwarded to Capycom; they are not stored or logged.';
 
 const rpcErreur = (id, code, message) => ({ jsonrpc: '2.0', id: id ?? null, error: { code, message } });
 const rpcOk = (id, result) => ({ jsonrpc: '2.0', id, result });
@@ -16,12 +17,19 @@ async function traiter(msg, cfg, cle) {
     case 'initialize': {
       const demande = msg.params?.protocolVersion;
       const version = VERSIONS.includes(demande) ? demande : VERSIONS[0];
-      return rpcOk(msg.id, { protocolVersion: version, capabilities: { tools: { listChanged: false } }, serverInfo: INFO, instructions: INSTRUCTIONS });
+      return rpcOk(msg.id, { protocolVersion: version, capabilities: { tools: { listChanged: false }, prompts: { listChanged: false } }, serverInfo: INFO, instructions: INSTRUCTIONS });
     }
     case 'ping':
       return notification ? null : rpcOk(msg.id, {});
     case 'tools/list':
       return rpcOk(msg.id, { tools: OUTILS });
+    case 'prompts/list':
+      return rpcOk(msg.id, { prompts: listerPrompts(cfg) });
+    case 'prompts/get': {
+      const p = lirePrompt(msg.params?.name, msg.params?.arguments, cfg);
+      if (!p) return rpcErreur(msg.id, -32602, `Unknown prompt: ${String(msg.params?.name).slice(0, 80)}`);
+      return rpcOk(msg.id, p);
+    }
     case 'tools/call': {
       const nom = msg.params?.name;
       const r = await appelerOutil(nom, msg.params?.arguments, cfg, cle);

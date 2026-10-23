@@ -1911,6 +1911,33 @@
           ]
         },
         {
+          "id": "rc_sch_y_rc",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Vous ($ CAD)",
+            "en": "You ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "C. Revenus gagnés deux ans avant l’année indiquée (seulement si vous êtes devenu résident entre le 1er janvier et le 31 mai)",
+            "en": "C. Income earned two years before the year given (only if you became a resident between January 1 and May 31)"
+          },
+          "aide": {
+            "fr": "Demandé seulement si la date où vous (ou votre conjoint) êtes devenu résident tombe entre le 1er janvier et le 31 mai. Écrivez 0 s’il n’y en avait aucun.",
+            "en": "Only asked if the date you (or your partner) became a resident falls between January 1 and May 31. Enter 0 if there was none."
+          },
+          "quand": [
+            {
+              "rc_new": "oui"
+            }
+          ]
+        },
+        {
           "id": "rc_sch_s_ra",
           "type": "montant",
           "requis": true,
@@ -1954,6 +1981,38 @@
           "groupe": {
             "fr": "B. Revenus gagnés en l’année précédente",
             "en": "B. Income earned in the previous year"
+          },
+          "quand": [
+            {
+              "rc_civil": "marie",
+              "rc_s_new": "oui"
+            },
+            {
+              "rc_civil": "fait",
+              "rc_s_new": "oui"
+            }
+          ]
+        },
+        {
+          "id": "rc_sch_s_rc",
+          "type": "montant",
+          "requis": true,
+          "libelle": {
+            "fr": "Votre époux ou conjoint de fait ($ CAD)",
+            "en": "Your spouse or common-law partner ($ CAD)"
+          },
+          "max": 14,
+          "exemple": {
+            "fr": "0",
+            "en": "0"
+          },
+          "groupe": {
+            "fr": "C. Revenus gagnés deux ans avant l’année indiquée (seulement si vous êtes devenu résident entre le 1er janvier et le 31 mai)",
+            "en": "C. Income earned two years before the year given (only if you became a resident between January 1 and May 31)"
+          },
+          "aide": {
+            "fr": "Demandé seulement si la date où vous (ou votre conjoint) êtes devenu résident tombe entre le 1er janvier et le 31 mai. Écrivez 0 s’il n’y en avait aucun.",
+            "en": "Only asked if the date you (or your partner) became a resident falls between January 1 and May 31. Enter 0 if there was none."
           },
           "quand": [
             {

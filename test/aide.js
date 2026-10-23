@@ -1,6 +1,7 @@
 import { traiterRequete } from '../src/index.js';
 import { creerMock, CLE_VALIDE, API } from './mock-bubble.js';
 import { b64uEncode } from '../src/crypto.js';
+import { creerServeur as creerServeurMoteur } from '../serveur-modeles/serveur.mjs';
 
 export const BASE = 'https://mcp.test';
 export const REDIRECTION = 'https://claude.ai/api/mcp/auth_callback';
@@ -11,8 +12,22 @@ export function creerServeur(envExtra = {}) {
   let t = 1_800_000_000;
   const horloge = { avancer: (s) => { t += s; }, now: () => t };
   const env = { ...ENV, ...envExtra };
-  const appeler = (url, init) => traiterRequete(new Request(url.startsWith('http') ? url : BASE + url, init), env, { fetch: mock.fetch, maintenant: horloge.now });
-  return { mock, appeler, horloge, env };
+  const s = { mock, horloge, env, fetch: mock.fetch };
+  s.appeler = (url, init) => traiterRequete(new Request(url.startsWith('http') ? url : BASE + url, init), env, { fetch: (u, i) => s.fetch(u, i), maintenant: horloge.now });
+  return s;
+}
+
+/** Démarre le vrai service moteur sur un port local et le branche sur le serveur de test (le reste va au faux Bubble). */
+export async function avecMoteur(s, options = {}) {
+  const secret = options.secret || 'secret-moteur-de-test-' + 'y'.repeat(30);
+  const srv = creerServeurMoteur({ secret, simultanes: options.simultanes || 2, rendu: options.rendu, apisAutorisees: options.apisAutorisees || ['https://capycom.test/'], fetchApi: (u, i) => s.mock.fetch(u, i) });
+  await new Promise((ok) => srv.listen(0, '127.0.0.1', ok));
+  const url = `http://127.0.0.1:${srv.address().port}`;
+  s.env.MOTEUR_URL = url;
+  s.env.MOTEUR_SECRET = options.secretWorker || secret;
+  s.fetch = (u, i) => (String(u).startsWith(url) ? fetch(u, i) : s.mock.fetch(u, i));
+  s.fermerMoteur = () => new Promise((ok) => { srv.close(ok); srv.closeAllConnections?.(); });
+  return { url, secret, srv };
 }
 
 export async function pkce() {

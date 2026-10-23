@@ -1,0 +1,14 @@
+{
+  "name": "capycom-moteur-modeles",
+  "version": "0.1.0",
+  "description": "Service de rendu des modèles de lettres et de formulaires officiels de Capycom (pdf-lib), pour le serveur MCP.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node demarrer.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  }
+}

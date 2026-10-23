@@ -4,6 +4,8 @@
 import * as api from './capycom.js';
 import { composer, mettreEnPage, apercuTexte, aujourdhuiOttawa, champsApi, validerAdresse, LIMITES } from './lettre.js';
 import { versBase64, depuisBase64, compterPages } from './pdf.js';
+import { OUTILS_MODELES, CHAMPS_MODELE, appelerOutilModele, traiterModele } from './outils-modeles.js';
+import { valider, ok, echec, erreurChamps, erreurApi, PDF_INVALIDE } from './resultats.js';
 
 const TAILLE_PDF_MAX = 6 * 1024 * 1024;
 
@@ -53,6 +55,7 @@ export const OUTILS = [
     },
     annotations: { title: 'Estimate the price of a letter', readOnlyHint: true, openWorldHint: true }
   },
+  ...OUTILS_MODELES,
   {
     name: 'preparer_lettre',
     title: 'Prepare a letter and check its price',
@@ -73,17 +76,19 @@ export const OUTILS = [
   {
     name: 'creer_courrier',
     title: 'Create a mail draft and get the payment link',
-    description: 'Creates a draft mail item on the connected Capycom account from a letter text or a ready-made PDF, and returns the price before tax and a payment link. The letter is printed and mailed only after the account holder pays on capycom.ca; this tool never pays. Drafts that are not paid are deleted automatically.',
+    description: 'Creates a draft mail item on the connected Capycom account from a letter text, a ready-made PDF or a filled-in template (modele, with reponses, signature and attachments as for remplir_modele; the sender and the recipient then come from the template), and returns the price before tax and a payment link. The letter is printed and mailed only after the account holder pays on capycom.ca; this tool never pays. Drafts that are not paid are deleted automatically.',
     inputSchema: {
       type: 'object',
       properties: {
         expediteur: SCHEMA_ADRESSE,
         destinataire: SCHEMA_ADRESSE,
         ...CHAMPS_CONTENU,
+        modele: { type: 'string', description: 'Template id (from lister_modeles) instead of texte, pdf_url or pdf_base64. Then give reponses, and for official forms signature_url or signature_base64 and the attachments; expediteur and destinataire are not used.' },
+        ...CHAMPS_MODELE,
         adresses_confirmees: { type: 'boolean', description: 'Must be true: states that the user confirmed the recipient address and the content' },
         cle_idempotence: { type: 'string', description: 'Optional. Calling again with the same value returns the same draft instead of creating a second one' }
       },
-      required: ['expediteur', 'destinataire', 'adresses_confirmees'],
+      required: ['adresses_confirmees'],
       additionalProperties: false
     },
     annotations: { title: 'Create a mail draft and get the payment link', readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true }
@@ -120,58 +125,6 @@ export const OUTILS = [
     annotations: { title: 'Cancel a draft', readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: true }
   }
 ];
-
-/* ---------- validation minimale des arguments ---------- */
-
-function valider(schema, args, chemin = '') {
-  const erreurs = [];
-  if (schema.type === 'object') {
-    if (!args || typeof args !== 'object' || Array.isArray(args)) return [`${chemin || 'arguments'} : object expected`];
-    for (const k of schema.required || []) if (args[k] === undefined || args[k] === null || args[k] === '') erreurs.push(`${chemin}${k} : required / obligatoire`);
-    for (const [k, v] of Object.entries(args)) {
-      const s = schema.properties?.[k];
-      if (!s) { if (schema.additionalProperties === false) erreurs.push(`${chemin}${k} : unknown field / champ inconnu`); continue; }
-      erreurs.push(...valider(s, v, `${chemin}${k}.`));
-    }
-    return erreurs;
-  }
-  const nom = chemin.replace(/\.$/, '');
-  if (schema.type === 'string' && typeof args !== 'string') erreurs.push(`${nom} : string expected`);
-  if (schema.type === 'boolean' && typeof args !== 'boolean') erreurs.push(`${nom} : boolean expected`);
-  if (schema.type === 'integer' && !Number.isInteger(args)) erreurs.push(`${nom} : integer expected`);
-  if (schema.enum && !schema.enum.includes(args)) erreurs.push(`${nom} : one of ${schema.enum.join(', ')}`);
-  if (schema.minimum !== undefined && typeof args === 'number' && args < schema.minimum) erreurs.push(`${nom} : minimum ${schema.minimum}`);
-  return erreurs;
-}
-
-/* ---------- résultats ---------- */
-
-function ok(objet) {
-  return { content: [{ type: 'text', text: JSON.stringify(objet, null, 2) }], structuredContent: objet };
-}
-function echec(objet) {
-  return { content: [{ type: 'text', text: JSON.stringify(objet, null, 2) }], structuredContent: objet, isError: true };
-}
-const PDF_INVALIDE = {
-  statut: 'erreur', erreur: 'pdf_invalide',
-  message: 'The PDF cannot be used (it is protected by a password or encrypted, or it is unreadable). Export an unprotected copy and try again.',
-  message_fr: "Le PDF est inutilisable (protégé par un mot de passe, chiffré ou illisible). Exportez une copie sans protection et réessayez."
-};
-function erreurChamps(erreurs) {
-  return echec({
-    statut: 'erreur', erreur: 'champs_invalides',
-    message: 'Some fields are missing or invalid. Ask the user for the information, then call the tool again.',
-    message_fr: 'Des champs sont manquants ou invalides.',
-    champs: erreurs
-  });
-}
-function erreurApi(rep) {
-  if (rep.erreur === 'cle_invalide') {
-    return echec({ statut: 'erreur', erreur: 'cle_invalide', message: 'The Capycom API key linked to this connection is no longer valid (it may have been replaced). The user needs to disconnect and reconnect the Capycom connector.', message_fr: 'La clé d\'API liée à cette connexion n\'est plus valide (elle a peut-être été remplacée). Il faut déconnecter puis reconnecter le connecteur Capycom.' });
-  }
-  const { statut, ...reste } = rep;
-  return echec({ statut: 'erreur', ...reste });
-}
 
 /* ---------- contenu : texte mis en page ou PDF fourni ---------- */
 
@@ -245,6 +198,8 @@ export async function appelerOutil(nom, args, cfg, cle) {
   const err = valider(outil.inputSchema, args);
   if (err.length) return erreurChamps(err);
 
+  if (nom === 'lister_modeles' || nom === 'decrire_modele' || nom === 'remplir_modele') return appelerOutilModele(nom, args, cfg);
+
   switch (nom) {
     case 'estimer_prix': {
       const r = await api.estimerPrix(cfg, args);
@@ -273,6 +228,10 @@ export async function appelerOutil(nom, args, cfg, cle) {
     case 'creer_courrier': {
       if (args.adresses_confirmees !== true) {
         return erreurChamps(['adresses_confirmees : must be true once the user has confirmed the recipient address and the content / doit être vrai après confirmation par l\'utilisateur']);
+      }
+      if (args.modele) return creerDepuisModele(args, cfg, cle);
+      if (!args.expediteur || !args.destinataire) {
+        return erreurChamps([...(!args.expediteur ? ['expediteur : required / obligatoire'] : []), ...(!args.destinataire ? ['destinataire : required / obligatoire'] : [])]);
       }
       const c = await preparerContenu(args, cfg);
       if (c.erreurs) return erreurChamps(c.erreurs);
@@ -314,6 +273,32 @@ export async function appelerOutil(nom, args, cfg, cle) {
     }
   }
   return null;
+}
+
+/** Brouillon depuis un modèle : le moteur remplit le formulaire et fusionne les pièces, le Worker crée le courrier. */
+async function creerDepuisModele(args, cfg, cle) {
+  if (args.texte || args.pdf_url || args.pdf_base64) {
+    return erreurChamps(['modele, texte, pdf_url, pdf_base64 : use only one source / une seule source']);
+  }
+  const t = await traiterModele(args, cfg, 'creer', cle);
+  if (t.sortie) return t.sortie;
+  const { id, langue, moteur, avertissements } = t.donnees;
+  const r = moteur.creation;
+  if (!r || typeof r !== 'object') return echec({ statut: 'erreur', erreur: 'moteur_indisponible', message: 'The form engine returned no answer from Capycom.' });
+  if (r.statut !== 'ok') return erreurApi(r);
+  const avert = [...avertissements];
+  if (typeof r.nombre_feuilles === 'number' && r.nombre_feuilles !== moteur.pages_total) {
+    avert.push(`Capycom counted ${r.nombre_feuilles} sheet(s) while ${moteur.pages_total} page(s) were sent. Check the summary before paying.`);
+  }
+  return ok({
+    ...r,
+    modele: id,
+    pages_envoyees: moteur.pages_total,
+    avertissements: avert,
+    etape_suivante: langue === 'en'
+      ? 'The item is a draft. It is printed and mailed as shown only after the account holder opens lien_paiement, signs in, checks the summary and pays.'
+      : 'Le courrier est un brouillon. Il est imprimé et posté tel quel seulement après que le titulaire du compte a ouvert lien_paiement, s\'est connecté, a vérifié le récapitulatif et a payé.'
+  });
 }
 
 function adresseTexte(a) {

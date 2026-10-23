@@ -1,3 +1,6 @@
 # Copier en .dev.vars (ignoré par git) pour wrangler dev. Générer le secret avec :
 #   node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
 TOKEN_SECRET=remplacer-par-une-valeur-aleatoire-de-43-caracteres-ou-plus
+# Modèles remplis (optionnel) : adresse et secret du moteur local (cd serveur-modeles; MOTEUR_SECRET=... node demarrer.mjs)
+#MOTEUR_URL=http://127.0.0.1:8787
+#MOTEUR_SECRET=un-secret-d-au-moins-24-caracteres
