@@ -43,6 +43,7 @@ export function creerServeur({ secret, simultanes = 2, delaiMs = 60000, rendu = 
       try { demande = JSON.parse(await lireCorps(req)); } catch (e) { if (e instanceof ErreurRendu) throw e; throw new ErreurRendu('json_invalide', 'invalid JSON'); }
       const r = await rendu(demande);
       const sortie = { statut: 'ok', pages_formulaire: r.pages_formulaire, pieces: r.pieces, pages_total: r.pages_total };
+      if (r.apercu) sortie.apercu = r.apercu;
       if (res.headersSent) return;
       if (demande.sortie === 'creer') sortie.creation = await creer(demande.creation, r.octets, { autorisees: apisAutorisees, fetchApi });
       repondre(res, 200, sortie);

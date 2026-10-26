@@ -124,9 +124,17 @@ export function manques(id, v0, opts) {
     const def = DEFS[id].etapes?.find((e) => e.id === r.etape);
     out.push({
       etape: r.etape, titre: def ? T(def.titre, langue) : undefined,
-      champs: r.manques.map((cle) => descriptionChamp(id, cle, langue))
+      champs: [...new Set(r.manques)].map((cle) => descriptionChamp(id, cle, langue))
     });
   }
+  // Dates fournies dans un autre format que AAAA-MM-JJ : le moteur les laisserait passer telles quelles.
+  const vues = new Set(out.flatMap((e) => e.champs.map((c) => c.id)));
+  const mauvaises = Object.keys(v0 || {}).filter((cle) => {
+    const c = champ(id, cle);
+    const val = String((v0 || {})[cle] ?? '').trim();
+    return c && c.type === 'date' && val && !/^\d{4}-\d{2}-\d{2}$/.test(val) && !vues.has(cle);
+  });
+  if (mauvaises.length) out.push({ etape: 'dates', champs: mauvaises.map((cle) => descriptionChamp(id, cle, langue)) });
   if (id === 'credit' && !opts.bureau) out.unshift({ etape: 'bureau', champs: [{ id: 'bureau', libelle: langue === 'fr' ? 'Bureau de crédit (eq = Equifax, tu = TransUnion)' : 'Credit bureau (eq = Equifax, tu = TransUnion)' }] });
   return out;
 }

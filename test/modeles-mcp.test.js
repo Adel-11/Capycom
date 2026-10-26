@@ -384,3 +384,23 @@ test('B1 : valeur fournie mais invalide marquée comme telle ; apercu texte pour
   assert.equal(champs.find((c) => c.id === 'rc_naiss').longueur_max, undefined);
   assert.doesNotMatch(JSON.stringify(champs.find((c) => c.id === 'rc_nas')), /9 digits|is filled in/);
 });
+
+test('manques : pas de doublons, date mal formatée signalée ; le serveur moteur renvoie apercu', async () => {
+  const { manques } = await import('../src/modeles-commun.js');
+  const m = manques('resiliation', { exp_nom: 'A', date_lettre: '26/10/2026' }, { langue: 'fr', today: '2026-10-26' });
+  const ids = m.flatMap((e) => e.champs.map((c) => c.id));
+  assert.equal(ids.length, new Set(ids).size);
+  assert.ok(ids.includes('date_lettre'));
+  const { creerServeur: cs } = await import('../serveur-modeles/serveur.mjs');
+  const srv = cs({ secret: 'x'.repeat(30) });
+  await new Promise((r) => srv.listen(0, '127.0.0.1', r));
+  try {
+    const rep = await fetch(`http://127.0.0.1:${srv.address().port}/rendre`, {
+      method: 'POST', headers: { 'content-type': 'application/json', 'x-moteur-secret': 'x'.repeat(30) },
+      body: JSON.stringify({ modele: 'resiliation', langue: 'fr', sortie: 'resume', today: '2026-10-26', reponses: { exp_nom: 'T', exp_ligne: '1 rue A', exp_ville: 'Ottawa', exp_prov: 'Ontario', exp_cp: 'K1A 0B1', dest_nom: 'F', dest_ligne: '2 rue B', dest_ville: 'Ottawa', dest_prov: 'Ontario', dest_cp: 'K1A 0B1', date_lettre: '2026-10-26', service: 'Internet' } })
+    });
+    const j = await rep.json();
+    assert.equal(j.statut, 'ok');
+    assert.ok(Array.isArray(j.apercu) && j.apercu.length > 3);
+  } finally { srv.close(); }
+});
