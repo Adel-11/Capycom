@@ -138,6 +138,10 @@ export async function rendre(demande) {
 
   const pagesForm = r.plan.pages.length;
   const sortie = { pages_formulaire: pagesForm, pieces: [], pages_total: pagesForm };
+  if (!formulaire) {
+    // Texte de la lettre, pour que l'utilisateur la relise avant de créer le brouillon (rien n'est conservé).
+    sortie.apercu = (r.plan.pages[0].ops || []).filter((op) => op.t === 'text' && op.a !== 'center' && String(op.s || '').trim()).map((op) => String(op.s));
+  }
 
   // Les pièces sont lues dans tous les cas : le nombre de pages et la validité en dépendent.
   const final = await PDFLib.PDFDocument.create();

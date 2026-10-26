@@ -8,8 +8,10 @@ import { aujourdhuiOttawa, validerAdresse, champsApi } from './lettre.js';
 import { ok, echec, erreurChamps } from './resultats.js';
 import {
   modelesActifs, catalogue, decrire, normaliserReponses, manques, piecesAttendues, adressesDe, estFormulaire, langueDe,
-  titrePrompt, descriptionPrompt
+  titrePrompt, descriptionPrompt, CONF
 } from './modeles-commun.js';
+
+const tr = (langue, fr, en) => (langue === 'en' ? en : fr);
 
 const CONFIDENTIEL = 'The answers may contain very sensitive personal data (social insurance number, children, status in Canada). They pass through this server only to produce the PDF, they are never stored or logged, and the Capycom connector never pays.';
 
@@ -140,12 +142,18 @@ export async function traiterModele(args, cfg, sortie, cle) {
   const today = aujourdhuiOttawa(cfg.maintenant() * 1000);
   const opts = { langue, bureau: args.bureau, today };
   const avertissements = [];
-  if (inconnus.length) avertissements.push(`Ignored unknown answer ids: ${inconnus.slice(0, 20).join(', ')}. Use the ids returned by decrire_modele.`);
+  if (inconnus.length) avertissements.push(tr(langue, `Identifiants de réponse inconnus, ignorés : ${inconnus.slice(0, 20).join(', ')}. Utilisez les identifiants renvoyés par decrire_modele.`, `Ignored unknown answer ids: ${inconnus.slice(0, 20).join(', ')}. Use the ids returned by decrire_modele.`));
 
+  if (id === 'rc66') {
+    const sup = Object.keys(reponses).filter((k) => /^rc_e[3-9]_/.test(k) && reponses[k]);
+    if (sup.length) avertissements.push(langue === 'en'
+      ? 'Children beyond the second are NOT written on the RC66 itself (ids ' + sup.slice(0, 6).join(', ') + ' are ignored). Set rc_plus2 to 1 and attach the RC66-1 sheet (piece rc661) with their details.'
+      : 'Les enfants au-delà du deuxième ne sont PAS écrits sur le RC66 lui-même (les ids ' + sup.slice(0, 6).join(', ') + ' sont ignorés). Mettez rc_plus2 à 1 et joignez la feuille RC66-1 (pièce rc661) avec leurs renseignements.');
+  }
   const manquants = manques(id, reponses, opts);
   const signaturePresente = !!(args.signature_url || args.signature_base64);
   if (formulaire && !signaturePresente) {
-    manquants.push({ etape: 'signature', champs: [{ id: 'signature_url', libelle: 'Image of the user\'s own handwritten signature (signature_url or signature_base64). The assistant must not invent one.' }] });
+    manquants.push({ etape: 'signature', champs: [{ id: 'signature_url', libelle: tr(langue, 'Image de la propre signature manuscrite de l’utilisateur (signature_url ou signature_base64). L’assistant ne doit pas en inventer une.', 'Image of the user\'s own handwritten signature (signature_url or signature_base64). The assistant must not invent one.') }] });
   }
   if (args.signature_url && args.signature_base64) return { sortie: erreurChamps(['signature_url, signature_base64 : use only one of them / une seule des deux']) };
   const attendues = piecesAttendues(id, reponses, opts);
@@ -158,10 +166,12 @@ export async function traiterModele(args, cfg, sortie, cle) {
     manquants.push({ etape: 'pieces_jointes', champs: requisManquants.map((p) => ({ id: `pieces_jointes (piece: ${p.id})`, libelle: p.titre, aide: p.aide })) });
   }
   if (manquants.length) {
+    const invalide = tr(langue, 'une valeur a été fournie mais elle n’est pas valide (format ou valeur)', 'a value was provided but it is not valid (format or value)');
+    for (const m of manquants) m.champs = (m.champs || []).map((c) => (reponses[c.id] ? { ...c, probleme: invalide } : c));
     return {
       sortie: ok({
         statut: 'incomplet', modele: id, manquants,
-        message: 'Some answers, attachments or the signature are missing or invalid. Ask the user for them, then call the tool again with the complete arguments.',
+        message: tr(langue, 'Des réponses, des pièces jointes ou la signature manquent ou sont invalides. Demandez-les à l’utilisateur, puis rappelez l’outil avec tous les arguments.', 'Some answers, attachments or the signature are missing or invalid. Ask the user for them, then call the tool again with the complete arguments.'),
         pieces_a_joindre: attendues,
         avertissements
       })
@@ -193,7 +203,7 @@ export async function traiterModele(args, cfg, sortie, cle) {
   if (m.echec) return { sortie: m.echec };
   const rep = m.rep;
   if (rep.statut !== 'ok') {
-    if (rep.erreur === 'reponses_incompletes') return { sortie: ok({ statut: 'incomplet', modele: id, manquants: rep.manques || [], message: rep.message }) };
+    if (rep.erreur === 'reponses_incompletes') return { sortie: ok({ statut: 'incomplet', modele: id, manquants: rep.manques || [], message: tr(langue, 'Des réponses manquent ou sont invalides.', rep.message), avertissements }) };
     const { statut, ...reste } = rep;
     return { sortie: echec({ statut: 'erreur', ...reste }) };
   }
@@ -209,14 +219,14 @@ export async function appelerOutilModele(nom, args, cfg) {
       const actifs = modelesActifs({ MODELES_ACTIFS: cfg.modelesActifs });
       return ok({
         statut: 'ok', modeles: catalogue(actifs, langue),
-        remarque: 'Call decrire_modele for the questions, the official pages to read and the documents to attach. Capycom does not give legal advice and never decides whether the user qualifies.'
+        remarque: tr(langue, 'Appelez decrire_modele pour les questions, les pages officielles à lire et les documents à joindre. Capycom ne donne pas de conseil juridique et ne décide jamais si l’utilisateur est admissible.', 'Call decrire_modele for the questions, the official pages to read and the documents to attach. Capycom does not give legal advice and never decides whether the user qualifies.')
       });
     }
     case 'decrire_modele': {
       const langue = langueDe(args.langue);
       const actifs = modelesActifs({ MODELES_ACTIFS: cfg.modelesActifs });
-      if (!actifs.includes(args.modele)) return echec({ statut: 'erreur', erreur: 'modele_inconnu', message: `Unknown template. Available: ${actifs.join(', ')}.`, modeles: actifs });
-      return ok({ statut: 'ok', ...decrire(args.modele, langue), confidentialite: CONFIDENTIEL });
+      if (!actifs.includes(args.modele)) return echec({ statut: 'erreur', erreur: 'modele_inconnu', message: `Modèle inconnu / Unknown template. Available: ${actifs.join(', ')}.`, modeles: actifs });
+      return ok({ statut: 'ok', ...decrire(args.modele, langue) });
     }
     case 'remplir_modele': {
       const t = await traiterModele(args, cfg, 'resume');
@@ -227,15 +237,18 @@ export async function appelerOutilModele(nom, args, cfg) {
         statut: 'ok', modele: id, titre: titrePrompt(id, langue), langue, pret_a_creer: true,
         expediteur: lignes(exp), destinataire: lignes(dest),
         documents: [
-          { contenu: estFormulaire(id) ? 'official form filled in from the answers' : 'letter', pages: moteur.pages_formulaire },
-          ...moteur.pieces.map((p) => ({ contenu: `attachment: ${p.piece}`, nom: p.nom, pages: p.pages }))
+          { contenu: estFormulaire(id) ? tr(langue, 'formulaire officiel rempli à partir des réponses', 'official form filled in from the answers') : tr(langue, 'lettre', 'letter'), pages: moteur.pages_formulaire },
+          ...moteur.pieces.map((p) => ({ contenu: tr(langue, `pièce jointe : ${p.piece}`, `attachment: ${p.piece}`), nom: p.nom, pages: p.pages }))
         ],
         pages_total: moteur.pages_total,
         avertissements,
-        etape_suivante: 'Show the user the recipient, the number of pages and the price, and the list of attachments. After the user confirms, call creer_courrier with the same arguments and adresses_confirmees true. The user then pays on capycom.ca; the form is printed and mailed as is.'
+        etape_suivante: estFormulaire(id)
+          ? tr(langue, 'Montrez à l’utilisateur le destinataire, le nombre de pages, le prix et la liste des pièces jointes. Après sa confirmation, appelez creer_courrier avec les mêmes arguments et adresses_confirmees à true. L’utilisateur paie ensuite sur capycom.ca; le formulaire est imprimé et posté tel quel.', 'Show the user the recipient, the number of pages and the price, and the list of attachments. After the user confirms, call creer_courrier with the same arguments and adresses_confirmees true. The user then pays on capycom.ca; the form is printed and mailed as is.')
+          : tr(langue, 'Montrez à l’utilisateur le texte de la lettre (apercu_texte), le destinataire, le nombre de pages et le prix. Après sa confirmation, appelez creer_courrier avec les mêmes arguments et adresses_confirmees à true. L’utilisateur paie ensuite sur capycom.ca; la lettre est imprimée et postée telle quelle.', 'Show the user the text of the letter (apercu_texte), the recipient, the number of pages and the price. After the user confirms, call creer_courrier with the same arguments and adresses_confirmees true. The user then pays on capycom.ca; the letter is printed and mailed as is.')
       };
-      if (prix.statut === 'ok') { sortie.prix = prix; sortie.remarque_prix = 'Black and white printing, envelope and stamps included. The exact price is returned when the draft is created.'; }
-      else sortie.avertissements.push(`Price estimate unavailable: ${prix.message || prix.erreur}`);
+      if (Array.isArray(moteur.apercu) && moteur.apercu.length) sortie.apercu_texte = moteur.apercu;
+      if (prix.statut === 'ok') { sortie.prix = prix; sortie.remarque_prix = tr(langue, 'Impression noir et blanc, enveloppe et timbres inclus. Le prix exact est donné à la création du brouillon.', 'Black and white printing, envelope and stamps included. The exact price is returned when the draft is created.'); }
+      else sortie.avertissements.push(tr(langue, `Estimation du prix indisponible : ${prix.message || prix.erreur}`, `Price estimate unavailable: ${prix.message || prix.erreur}`));
       return ok(sortie);
     }
   }

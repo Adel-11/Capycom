@@ -72,9 +72,9 @@ test('decrire_modele rc66 : pages officielles, mises en garde, questions, pièce
   assert.ok(champs.find((c) => c.id === 'rc_sch_y_ra').afficher_si);
   assert.ok(r.pieces_a_joindre.some((p) => p.id === 'naissance' && p.requis));
   assert.equal(r.signature.requise, true);
-  assert.match(r.signature.aide, /must not draw/);
+  assert.match(r.signature.aide, /ne doit pas dessiner/);
   assert.equal(r.destinataires.length, 3);
-  assert.match(r.confidentialite, /never stored or logged/);
+  assert.match(r.confidentialite, /jamais conservées ni journalisées/);
   // pas d'avis juridique : aucune phrase du type « vous avez droit »
   assert.doesNotMatch(JSON.stringify(r), /vous avez droit|you are entitled|you qualify/i);
   await fermer();
@@ -360,4 +360,27 @@ test('prompts/list et prompts/get : un scénario par modèle, avec les consignes
   const inconnu = (await rpc(s, jeton, 'prompts/get', { name: 'adresse' })).corps.error;
   assert.equal(inconnu.code, -32602);
   await fermer();
+});
+
+test('decrire : aucune note du site sur le navigateur ou le dessin de signature', async () => {
+  const { decrire } = await import('../src/modeles-commun.js');
+  for (const m of ['rc66', 'credit']) for (const l of ['fr', 'en']) {
+    const notes = decrire(m, l).avant_de_commencer.notes;
+    const txt = notes.map((n) => n.texte.join(' ')).join(' ');
+    assert.doesNotMatch(txt, /navigateur|your browser|dessinez|draw it or/i);
+    assert.ok(notes.every((n) => n.titre), 'aucun titre de note vide');
+  }
+});
+
+test('B1 : valeur fournie mais invalide marquée comme telle ; apercu texte pour une lettre ; descriptions fr sans anglais ni noms internes', async () => {
+  const { decrire } = await import('../src/modeles-commun.js');
+  const d = decrire('rc66', 'fr');
+  const piece = d.pieces_a_joindre.find((p) => p.id === 'sch');
+  assert.equal(piece.requis, false);
+  assert.doesNotMatch(JSON.stringify(d.pieces_a_joindre), /rc\.schPerso|rc_premiere = oui/);
+  const champs = d.questions.flatMap((q) => q.champs);
+  assert.ok(champs.find((c) => c.id === 'rc_sch_y_stat').membres.includes('rc_sch_y_rp'));
+  assert.equal(champs.find((c) => c.id === 'rc_sch_an').type, 'annee');
+  assert.equal(champs.find((c) => c.id === 'rc_naiss').longueur_max, undefined);
+  assert.doesNotMatch(JSON.stringify(champs.find((c) => c.id === 'rc_nas')), /9 digits|is filled in/);
 });
