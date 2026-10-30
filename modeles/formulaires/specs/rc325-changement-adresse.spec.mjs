@@ -17,6 +17,7 @@ export default {
   id: 'rc325-changement-adresse',
   source: { pdf: 'rc325-changement-adresse.pdf', url: URL, consulte: '2026-10-30' },
   def: {
+    icone: 'epingle',
     section: 'gouv',
     titre: T('Changement d’adresse à l’ARC (RC325)', 'Address change with the CRA (RC325)'),
     description: T('Remplir le formulaire RC325 de l’Agence du revenu du Canada pour changer votre adresse postale, votre adresse du domicile et vos numéros de téléphone. Prêt à signer et à poster au centre fiscal.', 'Fill in Canada Revenue Agency form RC325 to change your mailing address, home address and phone numbers. Ready to sign and mail to the tax centre.'),

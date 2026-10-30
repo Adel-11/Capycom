@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "id": "lettre-motivation",
+  "section": "emploi",
+  "icone": "stylo",
+  "titre": {
+    "fr": "Lettre de motivation",
+    "en": "Cover letter"
+  },
+  "description": {
+    "fr": "Présenter votre candidature à un poste en quelques paragraphes.",
+    "en": "Present your application for a job in a few paragraphs."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-motivation",
+      "en": "cover-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre de motivation : modèle gratuit | Capycom",
+      "en": "Cover letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Rédigez une lettre de motivation claire pour appuyer votre CV. Modèle gratuit en français et en anglais, à télécharger ou à faire poster au Canada.",
+      "en": "Write a clear cover letter to go with your résumé. Free template in French and English, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de motivation",
+      "en": "Cover Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Présenter votre candidature à un poste en quelques paragraphes.",
+    "en": "Present your application for a job in a few paragraphs."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "poste",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Poste visé",
+        "en": "Position you are applying for"
+      },
+      "exemple": {
+        "fr": "ex. Technicien en électricité",
+        "en": "e.g. Electrical technician"
+      }
+    },
+    {
+      "id": "entreprise",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Entreprise",
+        "en": "Company"
+      },
+      "exemple": {
+        "fr": "ex. Services Exemple inc.",
+        "en": "e.g. Example Services Inc."
+      }
+    },
+    {
+      "id": "atouts",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Vos principaux atouts pour ce poste",
+        "en": "Your main strengths for this job"
+      },
+      "exemple": {
+        "fr": "ex. dix ans d’expérience en automatisation industrielle et en mise en service d’équipements.",
+        "en": "e.g. ten years of experience in industrial automation and equipment commissioning."
+      }
+    },
+    {
+      "id": "motivation",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Pourquoi cette entreprise (facultatif)",
+        "en": "Why this company (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Vos projets en énergie propre correspondent à ce que je veux faire.",
+        "en": "e.g. Your clean energy projects match what I want to do."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"lettre-motivation\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Candidature, {{poste}}",
+      "en": "Application, {{poste}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris pour poser ma candidature au poste de {{poste|sp}} chez {{entreprise|sp}}.",
+        "en": "I am writing to apply for the position of {{poste|sp}} at {{entreprise|sp}}."
+      },
+      {
+        "fr": "Voici ce que je peux apporter : {{atouts|sp}}.",
+        "en": "Here is what I can bring: {{atouts|sp}}."
+      },
+      {
+        "fr": "{{motivation|phrase}}",
+        "en": "{{motivation|phrase}}",
+        "si": "motivation"
+      },
+      {
+        "fr": "Mon curriculum vitæ est joint. J’aimerais en discuter avec vous lors d’une entrevue, à votre convenance.",
+        "en": "My résumé is attached. I would welcome the chance to discuss it with you in an interview, at your convenience."
+      }
+    ]
+  }
+}

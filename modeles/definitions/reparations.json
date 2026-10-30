@@ -259,5 +259,6 @@
         "en": "If the problem is not fixed by then, I may apply to the competent body ({{province.instance}}). I am available to give access to the unit, with reasonable notice."
       }
     ]
-  }
+  },
+  "icone": "outil"
 }

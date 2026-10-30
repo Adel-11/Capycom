@@ -435,5 +435,6 @@
         "en": "My forwarding address is the one at the top of this letter. If I do not hear from you within 10 days of receiving it, I may apply to the competent body ({{province.instance}})."
       }
     ]
-  }
+  },
+  "icone": "cle"
 }

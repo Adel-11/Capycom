@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "id": "autorisation-voyage-enfant",
+  "section": "juridique",
+  "icone": "avion",
+  "titre": {
+    "fr": "Autorisation de voyage pour un enfant",
+    "en": "Travel consent letter for a child"
+  },
+  "description": {
+    "fr": "Autoriser une personne à voyager avec votre enfant mineur, ou votre enfant à voyager sans vous.",
+    "en": "Authorize someone to travel with your minor child, or your child to travel without you."
+  },
+  "seo": {
+    "slug": {
+      "fr": "autorisation-voyage-enfant",
+      "en": "child-travel-consent-letter"
+    },
+    "titre": {
+      "fr": "Autorisation de voyage pour un enfant : modèle de lettre | Capycom",
+      "en": "Child travel consent letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Lettre de consentement pour qu’un enfant voyage avec un autre adulte. Modèle gratuit, à imprimer, avec lien vers la page officielle du gouvernement du Canada.",
+      "en": "Consent letter so a child can travel with another adult. Free template to print, with a link to the Government of Canada’s official page."
+    },
+    "h1": {
+      "fr": "Lettre d’autorisation de voyage pour un enfant",
+      "en": "Child Travel Consent Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Autoriser une personne à voyager avec votre enfant mineur, ou votre enfant à voyager sans vous.",
+    "en": "Authorize someone to travel with your minor child, or your child to travel without you."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "enfant_nom",
+      "type": "texte",
+      "requis": true,
+      "max": 80,
+      "libelle": {
+        "fr": "Nom complet de l’enfant",
+        "en": "Child’s full name"
+      },
+      "exemple": {
+        "fr": "ex. Léa Tremblay",
+        "en": "e.g. Emma Smith"
+      }
+    },
+    {
+      "id": "enfant_naissance",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de naissance de l’enfant",
+        "en": "Child’s date of birth"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "enfant_passeport",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Numéro de passeport de l’enfant (facultatif)",
+        "en": "Child’s passport number (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "accompagnateur",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de la personne qui accompagne l’enfant",
+        "en": "Name of the adult travelling with the child"
+      },
+      "exemple": {
+        "fr": "ex. Julie Roy (tante)",
+        "en": "e.g. Julie Roy (aunt)"
+      }
+    },
+    {
+      "id": "destination",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Destination",
+        "en": "Destination"
+      },
+      "exemple": {
+        "fr": "ex. Orlando, États-Unis",
+        "en": "e.g. Orlando, United States"
+      }
+    },
+    {
+      "id": "date_depart",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de départ",
+        "en": "Departure date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "date_retour",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de retour",
+        "en": "Return date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "autre_parent",
+      "type": "texte",
+      "requis": false,
+      "max": 100,
+      "libelle": {
+        "fr": "Autre parent ou tuteur légal qui est d’accord (facultatif)",
+        "en": "Other parent or legal guardian who agrees (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Marc Tremblay",
+        "en": "e.g. Mark Smith"
+      }
+    },
+    {
+      "id": "autre_contact",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Téléphone de l’autre parent ou tuteur (facultatif)",
+        "en": "Other parent’s or guardian’s phone (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 613-555-0198",
+        "en": "e.g. 613-555-0198"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez la personne qui accompagne l’enfant et son adresse, ou le vôtre. La lettre est à emporter avec l’enfant.",
+    "en": "Free: give the adult travelling with the child and their address, or your own. The letter is for the child to carry."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "autorisation-voyage-enfant_gc_voyage_enfant",
+      "but": {
+        "fr": "Page du gouvernement du Canada sur la lettre de consentement pour un enfant qui voyage",
+        "en": "Government of Canada page on the consent letter for a child travelling"
+      },
+      "fr": "https://travel.gc.ca/travelling/children/consent-letter",
+      "en": "https://travel.gc.ca/travelling/children/consent-letter"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Selon la destination, des documents ou une lettre notariée peuvent être exigés. Lisez la page du gouvernement du Canada (consultée le 30 octobre 2026) et celle du pays de destination avant le départ.",
+      "en": "Depending on the destination, extra documents or a notarized letter may be required. Read the Government of Canada page (consulted October 30, 2026) and the destination country’s rules before you leave."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"autorisation-voyage-enfant\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Autorisation de voyage de {{enfant_nom}}",
+      "en": "Travel consent for {{enfant_nom}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je confirme que je suis parent ou tuteur légal de {{enfant_nom}}, dont la date de naissance est le {{enfant_naissance|date}}.",
+        "en": "I confirm that I am a parent or legal guardian of {{enfant_nom}}, whose date of birth is {{enfant_naissance|date}}."
+      },
+      {
+        "fr": "Numéro de passeport de l’enfant : {{enfant_passeport}}.",
+        "en": "Child’s passport number: {{enfant_passeport}}.",
+        "si": "enfant_passeport"
+      },
+      {
+        "fr": "J’autorise {{accompagnateur|sp}} à voyager avec l’enfant vers la destination suivante : {{destination|sp}}, du {{date_depart|date}} au {{date_retour|date}}.",
+        "en": "I authorize {{accompagnateur|sp}} to travel with the child to the following destination: {{destination|sp}}, from {{date_depart|date}} to {{date_retour|date}}."
+      },
+      {
+        "fr": "Ce voyage est fait avec l’accord de {{autre_parent|sp}}, autre parent ou tuteur légal.",
+        "en": "This trip is made with the agreement of {{autre_parent|sp}}, the other parent or legal guardian.",
+        "si": "autre_parent"
+      },
+      {
+        "fr": "Autre parent ou tuteur, téléphone : {{autre_contact}}.",
+        "en": "Other parent or guardian, phone: {{autre_contact}}.",
+        "si": "autre_contact"
+      },
+      {
+        "fr": "Vous pouvez me joindre aux coordonnées indiquées en haut de cette lettre pendant toute la durée du voyage.",
+        "en": "You can reach me using the contact details at the top of this letter throughout the trip."
+      }
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "id": "lettre-depute",
+  "section": "gouv",
+  "icone": "parlement",
+  "titre": {
+    "fr": "Lettre à un député fédéral",
+    "en": "Letter to a Member of Parliament"
+  },
+  "description": {
+    "fr": "Écrire à votre député à Ottawa pour exposer un problème, une opinion ou une demande d’aide.",
+    "en": "Write to your MP in Ottawa to raise a problem, an opinion or a request for help."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-au-depute-federal",
+      "en": "letter-to-member-of-parliament"
+    },
+    "titre": {
+      "fr": "Lettre à un député fédéral : modèle gratuit | Capycom",
+      "en": "Letter to your MP: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez à votre député fédéral pour exposer un problème ou demander de l’aide avec un service du gouvernement. Modèle gratuit, à télécharger ou à faire poster.",
+      "en": "Write to your federal MP to raise a problem or ask for help with a government service. Free template, to download or have mailed."
+    },
+    "h1": {
+      "fr": "Lettre à un député",
+      "en": "Letter to Your MP"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Écrire à votre député à Ottawa pour exposer un problème, une opinion ou une demande d’aide.",
+    "en": "Write to your MP in Ottawa to raise a problem, an opinion or a request for help."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "type",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Pourquoi écrivez-vous ?",
+        "en": "Why are you writing?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "aide",
+          "fr": "Demander de l’aide avec un service fédéral",
+          "en": "Ask for help with a federal service",
+          "donnees": {
+            "i": {
+              "fr": "Je vous écris pour demander votre aide au sujet d’une démarche auprès d’un service du gouvernement fédéral.",
+              "en": "I am writing to ask for your help with a matter involving a federal government service."
+            }
+          }
+        },
+        {
+          "valeur": "opinion",
+          "fr": "Donner mon opinion sur un enjeu",
+          "en": "Share my view on an issue",
+          "donnees": {
+            "i": {
+              "fr": "Je vous écris pour vous faire part de ma position sur un enjeu qui me tient à cœur.",
+              "en": "I am writing to share my position on an issue that matters to me."
+            }
+          }
+        },
+        {
+          "valeur": "projet",
+          "fr": "Demander votre appui pour un projet de loi ou une cause",
+          "en": "Ask for your support for a bill or cause",
+          "donnees": {
+            "i": {
+              "fr": "Je vous écris pour vous demander votre appui à une cause qui touche notre circonscription.",
+              "en": "I am writing to ask for your support for a cause that affects our riding."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "circonscription",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Votre circonscription (facultatif)",
+        "en": "Your riding (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Ottawa-Centre",
+        "en": "e.g. Ottawa Centre"
+      }
+    },
+    {
+      "id": "sujet",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Sujet",
+        "en": "Subject"
+      },
+      "exemple": {
+        "fr": "ex. Retard dans le traitement de mon dossier",
+        "en": "e.g. Delay in processing my file"
+      }
+    },
+    {
+      "id": "expose",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Exposé de la situation",
+        "en": "Your situation"
+      },
+      "exemple": {
+        "fr": "ex. J’ai déposé ma demande le 12 mai et je n’ai reçu aucune réponse après cinq mois.",
+        "en": "e.g. I filed my application on May 12 and have had no reply in five months."
+      }
+    },
+    {
+      "id": "demande",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce que vous demandez au député",
+        "en": "What you ask of your MP"
+      },
+      "exemple": {
+        "fr": "ex. Pouvez-vous intervenir auprès du ministère pour obtenir une réponse ?",
+        "en": "e.g. Could you contact the department to get a reply?"
+      }
+    },
+    {
+      "id": "dossier",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : nom du député. Le bureau de circonscription ou la Chambre des communes (Ottawa) reçoivent le courrier. Vérifiez l’adresse sur ourcommons.ca.",
+    "en": "Free: your MP’s name. The constituency office or the House of Commons (Ottawa) accepts mail. Check the address on ourcommons.ca."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "lettre-depute_ourcommons_contact",
+      "but": {
+        "fr": "Coordonnées des députés (Chambre des communes)",
+        "en": "Contact details for MPs (House of Commons)"
+      },
+      "fr": "https://www.ourcommons.ca/en/contact-us",
+      "en": "https://www.ourcommons.ca/en/contact-us"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"lettre-depute\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "Madame, Monsieur le ou la député(e),",
+      "en": "Dear Member of Parliament,"
+    },
+    "objet": {
+      "fr": "{{sujet}}",
+      "en": "{{sujet}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je réside dans votre circonscription ({{circonscription}}).",
+        "en": "I live in your riding ({{circonscription}}).",
+        "si": "circonscription"
+      },
+      {
+        "fr": "{{type.i}}",
+        "en": "{{type.i}}"
+      },
+      {
+        "fr": "Dossier ou référence : {{dossier}}.",
+        "en": "File or reference: {{dossier}}.",
+        "si": "dossier"
+      },
+      {
+        "fr": "{{expose|phrase}}",
+        "en": "{{expose|phrase}}"
+      },
+      {
+        "fr": "{{demande|phrase}}",
+        "en": "{{demande|phrase}}"
+      },
+      {
+        "fr": "Je vous remercie de l’attention portée à ma lettre et je reste disponible pour tout renseignement.",
+        "en": "Thank you for considering my letter. I remain available for any information."
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ export default {
   id: 'n9-ontario',
   source: { pdf: 'n9-ontario.pdf', url: 'https://tribunalsontario.ca/ltb/forms/', consulte: '2026-10-30' },
   def: {
+    icone: 'sortie',
     section: 'logement',
     titre: T('Avis de fin de bail du locataire (Ontario, N9)', 'Tenant’s notice to end the tenancy (Ontario, N9)'),
     description: T('Remplir le formulaire N9 de la Commission de la location immobilière de l’Ontario pour quitter votre logement. Formulaire prêt à signer et à poster au propriétaire.', 'Fill in the Ontario Landlord and Tenant Board form N9 to move out of your rental unit. Ready to sign and mail to your landlord.'),

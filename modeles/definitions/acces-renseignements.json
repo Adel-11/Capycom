@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "id": "acces-renseignements",
+  "section": "gouv",
+  "icone": "loupe",
+  "titre": {
+    "fr": "Demande d’accès à vos renseignements personnels",
+    "en": "Request for access to your personal information"
+  },
+  "description": {
+    "fr": "Demander à une entreprise ou un organisme une copie des renseignements personnels qu’il détient sur vous.",
+    "en": "Ask a business or body for a copy of the personal information it holds about you."
+  },
+  "seo": {
+    "slug": {
+      "fr": "acces-renseignements-personnels",
+      "en": "personal-information-access-request"
+    },
+    "titre": {
+      "fr": "Accès à vos renseignements personnels : modèle de lettre | Capycom",
+      "en": "Personal information access request: free template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez par écrit une copie des renseignements personnels qu’une entreprise ou un organisme détient sur vous. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Ask in writing for a copy of the personal information a business or body holds about you. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Demande d’accès aux renseignements personnels",
+      "en": "Personal Information Access Request"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander à une entreprise ou un organisme une copie des renseignements personnels qu’il détient sur vous.",
+    "en": "Ask a business or body for a copy of the personal information it holds about you."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "quoi",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Quels renseignements vous voulez obtenir",
+        "en": "What information you want"
+      },
+      "exemple": {
+        "fr": "ex. Mon dossier client complet, y compris les enregistrements d’appels.",
+        "en": "e.g. My complete customer file, including call recordings."
+      }
+    },
+    {
+      "id": "periode",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Période visée (facultatif)",
+        "en": "Period covered (optional)"
+      },
+      "exemple": {
+        "fr": "ex. de 2023 à aujourd’hui",
+        "en": "e.g. 2023 to today"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    },
+    {
+      "id": "format",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Comment les recevoir",
+        "en": "How to receive them"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "copie",
+          "fr": "Une copie papier par la poste",
+          "en": "A paper copy by mail",
+          "donnees": {
+            "f": {
+              "fr": "par la poste, en copie papier",
+              "en": "by mail, as a paper copy"
+            }
+          }
+        },
+        {
+          "valeur": "electronique",
+          "fr": "Une copie électronique",
+          "en": "An electronic copy",
+          "donnees": {
+            "f": {
+              "fr": "sous forme électronique",
+              "en": "in electronic form"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : le responsable de la protection des renseignements personnels de l’organisation (dest_*).",
+    "en": "Free: the organization’s privacy officer (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"acces-renseignements\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande d’accès à mes renseignements personnels",
+      "en": "Request for access to my personal information"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous demande, en vertu de la loi sur la protection des renseignements personnels qui s’applique à votre organisation, l’accès aux renseignements personnels que vous détenez à mon sujet.",
+        "en": "Under the privacy law that applies to your organization, I ask for access to the personal information you hold about me."
+      },
+      {
+        "fr": "Les renseignements visés : {{quoi|sp}}.",
+        "en": "The information concerned: {{quoi|sp}}."
+      },
+      {
+        "fr": "Période visée : {{periode|sp}}.",
+        "en": "Period covered: {{periode|sp}}.",
+        "si": "periode"
+      },
+      {
+        "fr": "Numéro de client ou de dossier : {{num_client}}.",
+        "en": "Customer or file number: {{num_client}}.",
+        "si": "num_client"
+      },
+      {
+        "fr": "Je souhaite les recevoir {{format.f}}. Je peux confirmer mon identité si vous le demandez.",
+        "en": "I would like to receive them {{format.f}}. I can confirm my identity if you ask."
+      },
+      {
+        "fr": "Je vous remercie de me répondre dans le délai prévu par la loi.",
+        "en": "Please reply within the time set by law."
+      }
+    ]
+  }
+}

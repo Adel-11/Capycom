@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "id": "delai-paiement",
+  "section": "argent",
+  "icone": "sablier",
+  "titre": {
+    "fr": "Demande de délai ou d’entente de paiement",
+    "en": "Payment extension request"
+  },
+  "description": {
+    "fr": "Demander à un créancier plus de temps, ou des versements échelonnés, pour payer une somme due.",
+    "en": "Ask a creditor for more time, or instalments, to pay an amount you owe."
+  },
+  "seo": {
+    "slug": {
+      "fr": "demande-delai-paiement",
+      "en": "payment-extension-request-letter"
+    },
+    "titre": {
+      "fr": "Demande de délai de paiement : modèle de lettre | Capycom",
+      "en": "Payment extension request: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez par écrit un délai ou des versements échelonnés pour payer une facture ou une dette. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Ask in writing for more time or instalments to pay a bill or debt. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de demande de délai de paiement",
+      "en": "Payment Extension Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander à un créancier plus de temps, ou des versements échelonnés, pour payer une somme due.",
+    "en": "Ask a creditor for more time, or instalments, to pay an amount you owe."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "objet_dette",
+      "type": "texte",
+      "requis": true,
+      "max": 140,
+      "libelle": {
+        "fr": "Facture ou somme visée",
+        "en": "Bill or amount concerned"
+      },
+      "exemple": {
+        "fr": "ex. Facture de mars 2026",
+        "en": "e.g. March 2026 invoice"
+      }
+    },
+    {
+      "id": "montant",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Montant dû",
+        "en": "Amount owed"
+      },
+      "exemple": {
+        "fr": "ex. 640,00",
+        "en": "e.g. 640.00"
+      }
+    },
+    {
+      "id": "num_compte",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    },
+    {
+      "id": "plan",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Votre proposition",
+        "en": "Your proposal"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "date",
+          "fr": "Payer en un seul versement à une date plus tardive",
+          "en": "Pay in full on a later date",
+          "donnees": {
+            "p": {
+              "fr": "Je propose de payer la totalité à une date plus tardive.",
+              "en": "I propose to pay the full amount on a later date."
+            }
+          }
+        },
+        {
+          "valeur": "versements",
+          "fr": "Payer en versements",
+          "en": "Pay in instalments",
+          "donnees": {
+            "p": {
+              "fr": "Je propose de payer en versements réguliers.",
+              "en": "I propose to pay in regular instalments."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "nouvelle_date",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de paiement, ou du premier versement",
+        "en": "Payment date, or date of the first instalment"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "versement",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Montant et fréquence des versements (facultatif)",
+        "en": "Instalment amount and frequency (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 160 $ par mois pendant quatre mois",
+        "en": "e.g. $160 a month for four months"
+      }
+    },
+    {
+      "id": "raison",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Brève explication (facultatif)",
+        "en": "Short explanation (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Mon employeur a retardé ma paie du mois dernier.",
+        "en": "e.g. My employer delayed last month’s pay."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"delai-paiement\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande de délai de paiement, {{objet_dette}}",
+      "en": "Payment extension request, {{objet_dette}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris au sujet de la somme de {{montant|montant}} que je vous dois ({{objet_dette|sp}}).",
+        "en": "I am writing about the {{montant|montant}} I owe you ({{objet_dette|sp}})."
+      },
+      {
+        "fr": "Numéro de compte ou de dossier : {{num_compte}}.",
+        "en": "Account or file number: {{num_compte}}.",
+        "si": "num_compte"
+      },
+      {
+        "fr": "{{raison|phrase}}",
+        "en": "{{raison|phrase}}",
+        "si": "raison"
+      },
+      {
+        "fr": "{{plan.p}} Le premier paiement, ou le paiement complet, serait fait le {{nouvelle_date|date}}.",
+        "en": "{{plan.p}} The first payment, or the full payment, would be made on {{nouvelle_date|date}}."
+      },
+      {
+        "fr": "Détail des versements : {{versement|sp}}.",
+        "en": "Instalment details: {{versement|sp}}.",
+        "si": "versement"
+      },
+      {
+        "fr": "Merci de me confirmer par écrit si cette proposition vous convient et, dans le cas contraire, de m’indiquer ce que vous pouvez accepter.",
+        "en": "Please confirm in writing whether this proposal works for you and, if not, tell me what you can accept."
+      }
+    ]
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "id": "plainte-banque",
+  "section": "argent",
+  "icone": "banque",
+  "titre": {
+    "fr": "Plainte à une banque ou une caisse",
+    "en": "Complaint to a bank or credit union"
+  },
+  "description": {
+    "fr": "Déposer une plainte écrite à votre institution financière et demander une réponse dans un délai précis.",
+    "en": "File a written complaint with your financial institution and ask for a reply within a set time."
+  },
+  "seo": {
+    "slug": {
+      "fr": "plainte-banque-institution-financiere",
+      "en": "bank-complaint-letter"
+    },
+    "titre": {
+      "fr": "Plainte à une banque : modèle de lettre gratuit | Capycom",
+      "en": "Bank complaint letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez une plainte à votre banque ou caisse : frais, erreur, fraude, service. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a complaint to your bank or credit union: fees, errors, fraud, service. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de plainte à une banque",
+      "en": "Bank Complaint Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Déposer une plainte écrite à votre institution financière et demander une réponse dans un délai précis.",
+    "en": "File a written complaint with your financial institution and ask for a reply within a set time."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "institution",
+      "type": "choix",
+      "requis": true,
+      "max": 30,
+      "libelle": {
+        "fr": "Institution financière",
+        "en": "Financial institution"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "b0",
+          "fr": "Banque Royale du Canada (RBC)",
+          "en": "Banque Royale du Canada (RBC)",
+          "donnees": {
+            "nom": {
+              "fr": "Banque Royale du Canada (RBC)",
+              "en": "Banque Royale du Canada (RBC)"
+            }
+          }
+        },
+        {
+          "valeur": "b1",
+          "fr": "Banque TD",
+          "en": "Banque TD",
+          "donnees": {
+            "nom": {
+              "fr": "Banque TD",
+              "en": "Banque TD"
+            }
+          }
+        },
+        {
+          "valeur": "b2",
+          "fr": "Banque Scotia",
+          "en": "Banque Scotia",
+          "donnees": {
+            "nom": {
+              "fr": "Banque Scotia",
+              "en": "Banque Scotia"
+            }
+          }
+        },
+        {
+          "valeur": "b3",
+          "fr": "Banque de Montréal (BMO)",
+          "en": "Banque de Montréal (BMO)",
+          "donnees": {
+            "nom": {
+              "fr": "Banque de Montréal (BMO)",
+              "en": "Banque de Montréal (BMO)"
+            }
+          }
+        },
+        {
+          "valeur": "b4",
+          "fr": "CIBC",
+          "en": "CIBC",
+          "donnees": {
+            "nom": {
+              "fr": "CIBC",
+              "en": "CIBC"
+            }
+          }
+        },
+        {
+          "valeur": "b5",
+          "fr": "Banque Nationale",
+          "en": "Banque Nationale",
+          "donnees": {
+            "nom": {
+              "fr": "Banque Nationale",
+              "en": "Banque Nationale"
+            }
+          }
+        },
+        {
+          "valeur": "b6",
+          "fr": "Desjardins",
+          "en": "Desjardins",
+          "donnees": {
+            "nom": {
+              "fr": "Desjardins",
+              "en": "Desjardins"
+            }
+          }
+        },
+        {
+          "valeur": "b7",
+          "fr": "Tangerine",
+          "en": "Tangerine",
+          "donnees": {
+            "nom": {
+              "fr": "Tangerine",
+              "en": "Tangerine"
+            }
+          }
+        },
+        {
+          "valeur": "b8",
+          "fr": "Banque Laurentienne",
+          "en": "Banque Laurentienne",
+          "donnees": {
+            "nom": {
+              "fr": "Banque Laurentienne",
+              "en": "Banque Laurentienne"
+            }
+          }
+        },
+        {
+          "valeur": "b9",
+          "fr": "Autre institution",
+          "en": "Autre institution",
+          "donnees": {
+            "nom": {
+              "fr": "mon institution financière",
+              "en": "my financial institution"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "num_compte",
+      "type": "texte",
+      "requis": false,
+      "max": 30,
+      "libelle": {
+        "fr": "Quatre derniers chiffres du compte ou de la carte (facultatif)",
+        "en": "Last four digits of the account or card (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4821",
+        "en": "e.g. 4821"
+      }
+    },
+    {
+      "id": "date_evt",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de l’événement (facultatif)",
+        "en": "Date of the event (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "probleme",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce qui s’est passé",
+        "en": "What happened"
+      },
+      "exemple": {
+        "fr": "ex. Des frais de 35 $ m’ont été facturés pour un retrait que je n’ai pas fait.",
+        "en": "e.g. I was charged $35 in fees for a withdrawal I did not make."
+      }
+    },
+    {
+      "id": "demande",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce que vous demandez",
+        "en": "What you ask for"
+      },
+      "exemple": {
+        "fr": "ex. Le remboursement des frais et une explication écrite.",
+        "en": "e.g. A refund of the fees and a written explanation."
+      }
+    },
+    {
+      "id": "delai",
+      "type": "nombre",
+      "requis": false,
+      "max": 3,
+      "libelle": {
+        "fr": "Délai de réponse, en jours (15 par défaut)",
+        "en": "Reply deadline, in days (15 by default)"
+      },
+      "exemple": {
+        "fr": "15",
+        "en": "15"
+      },
+      "defaut": "15"
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’adresse du service des plaintes de votre institution, indiquée sur son site ou sur vos relevés (dest_*).",
+    "en": "Free: the address of your institution’s complaints office, shown on its website or your statements (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "plainte-banque_fcac_plainte",
+      "but": {
+        "fr": "Agence de la consommation en matière financière du Canada",
+        "en": "Financial Consumer Agency of Canada"
+      },
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "en": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"plainte-banque\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Plainte, {{institution.nom}}",
+      "en": "Complaint, {{institution.nom}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je dépose par la présente une plainte auprès de {{institution.nom}}.",
+        "en": "I am filing a complaint with {{institution.nom}}."
+      },
+      {
+        "fr": "Compte ou carte se terminant par : {{num_compte}}.",
+        "en": "Account or card ending in: {{num_compte}}.",
+        "si": "num_compte"
+      },
+      {
+        "fr": "Date de l’événement : {{date_evt|date}}.",
+        "en": "Date of the event: {{date_evt|date}}.",
+        "si": "date_evt"
+      },
+      {
+        "fr": "{{probleme|phrase}}",
+        "en": "{{probleme|phrase}}"
+      },
+      {
+        "fr": "Je vous demande ce qui suit : {{demande|sp}}.",
+        "en": "I ask for the following: {{demande|sp}}."
+      },
+      {
+        "fr": "Je vous demande de me répondre par écrit dans un délai de {{delai}} jours. Si la réponse ne me satisfait pas, je pourrai m’adresser à l’Agence de la consommation en matière financière du Canada ou à l’ombudsman compétent.",
+        "en": "Please reply in writing within {{delai}} days. If the reply does not satisfy me, I may turn to the Financial Consumer Agency of Canada or to the appropriate ombudsman."
+      }
+    ]
+  }
+}

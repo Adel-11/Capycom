@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "id": "remerciement-entrevue",
+  "section": "emploi",
+  "icone": "poignee",
+  "titre": {
+    "fr": "Remerciement après une entrevue",
+    "en": "Interview thank-you letter"
+  },
+  "description": {
+    "fr": "Remercier la personne qui vous a reçu en entrevue et réaffirmer votre intérêt.",
+    "en": "Thank the person who interviewed you and restate your interest."
+  },
+  "seo": {
+    "slug": {
+      "fr": "remerciement-apres-entrevue",
+      "en": "interview-thank-you-letter"
+    },
+    "titre": {
+      "fr": "Remerciement après une entrevue : modèle de lettre | Capycom",
+      "en": "Interview thank-you letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Remerciez votre interlocuteur après une entrevue d’embauche et rappelez votre intérêt. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Thank your interviewer after a job interview and restate your interest. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de remerciement après entrevue",
+      "en": "Interview Thank-You Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remercier la personne qui vous a reçu en entrevue et réaffirmer votre intérêt.",
+    "en": "Thank the person who interviewed you and restate your interest."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "poste",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Poste visé",
+        "en": "Position you are applying for"
+      },
+      "exemple": {
+        "fr": "ex. Technicien en électricité",
+        "en": "e.g. Electrical technician"
+      }
+    },
+    {
+      "id": "date_entrevue",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de l’entrevue",
+        "en": "Interview date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "interlocuteur",
+      "type": "texte",
+      "requis": false,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de la personne rencontrée (facultatif)",
+        "en": "Name of the person you met (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Mme Roy",
+        "en": "e.g. Ms. Roy"
+      }
+    },
+    {
+      "id": "retenu",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce qui vous a marqué (facultatif)",
+        "en": "What stood out for you (optional)"
+      },
+      "exemple": {
+        "fr": "ex. votre approche de la sécurité sur le chantier.",
+        "en": "e.g. your approach to safety on site."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"remerciement-entrevue\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Remerciement, entrevue du {{date_entrevue|date}}",
+      "en": "Thank you, interview of {{date_entrevue|date}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous remercie pour l’entrevue du {{date_entrevue|date}} concernant le poste de {{poste|sp}}.",
+        "en": "Thank you for meeting with me on {{date_entrevue|date}} about the {{poste|sp}} position."
+      },
+      {
+        "fr": "Notre échange avec {{interlocuteur|sp}} m’a confirmé mon intérêt.",
+        "en": "Our conversation with {{interlocuteur|sp}} confirmed my interest.",
+        "si": "interlocuteur"
+      },
+      {
+        "fr": "Ce qui m’a marqué : {{retenu|sp}}.",
+        "en": "What stood out for me: {{retenu|sp}}.",
+        "si": "retenu"
+      },
+      {
+        "fr": "Je reste disponible pour tout renseignement complémentaire et j’espère avoir l’occasion de contribuer à votre équipe.",
+        "en": "I remain available for any further information and hope to have the chance to contribute to your team."
+      }
+    ]
+  }
+}

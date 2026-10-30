@@ -117,5 +117,6 @@
       "docx",
       "odt (générés par la page seulement, pas par le moteur)"
     ]
-  }
+  },
+  "icone": "alerte"
 }

@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "id": "invitation",
+  "section": "personnel",
+  "icone": "fete",
+  "titre": {
+    "fr": "Lettre d’invitation",
+    "en": "Invitation letter"
+  },
+  "description": {
+    "fr": "Inviter quelqu’un à une fête, un mariage, une pendaison de crémaillère ou un repas.",
+    "en": "Invite someone to a party, a wedding, a housewarming or a meal."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-d-invitation",
+      "en": "invitation-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre d’invitation : fête, mariage, crémaillère | Capycom",
+      "en": "Invitation letter: party, wedding, housewarming | Capycom"
+    },
+    "description": {
+      "fr": "Invitez vos proches par une lettre personnelle : fête, mariage, pendaison de crémaillère, repas. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Invite your loved ones with a personal letter: party, wedding, housewarming, dinner. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre d’invitation",
+      "en": "Invitation Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Inviter quelqu’un à une fête, un mariage, une pendaison de crémaillère ou un repas.",
+    "en": "Invite someone to a party, a wedding, a housewarming or a meal."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "occasion",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Pour quelle occasion ?",
+        "en": "Which occasion?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "fete",
+          "fr": "Une fête",
+          "en": "A party",
+          "donnees": {
+            "q": {
+              "fr": "à une fête",
+              "en": "to a party"
+            }
+          }
+        },
+        {
+          "valeur": "mariage",
+          "fr": "Un mariage",
+          "en": "A wedding",
+          "donnees": {
+            "q": {
+              "fr": "à notre mariage",
+              "en": "to our wedding"
+            }
+          }
+        },
+        {
+          "valeur": "cremaillere",
+          "fr": "Une pendaison de crémaillère",
+          "en": "A housewarming",
+          "donnees": {
+            "q": {
+              "fr": "à pendre la crémaillère",
+              "en": "to our housewarming"
+            }
+          }
+        },
+        {
+          "valeur": "repas",
+          "fr": "Un repas",
+          "en": "A dinner",
+          "donnees": {
+            "q": {
+              "fr": "à un repas",
+              "en": "to a dinner"
+            }
+          }
+        },
+        {
+          "valeur": "anniv",
+          "fr": "Un anniversaire",
+          "en": "A birthday",
+          "donnees": {
+            "q": {
+              "fr": "à un anniversaire",
+              "en": "to a birthday celebration"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "date_evt",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de l’événement",
+        "en": "Date of the event"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "heure",
+      "type": "texte",
+      "requis": false,
+      "max": 30,
+      "libelle": {
+        "fr": "Heure (facultatif)",
+        "en": "Time (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 17 h",
+        "en": "e.g. 5 p.m."
+      }
+    },
+    {
+      "id": "lieu",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Lieu",
+        "en": "Place"
+      },
+      "exemple": {
+        "fr": "ex. chez nous, 25, rue des Érables, Gatineau",
+        "en": "e.g. our place, 25 Maple Street, Ottawa"
+      }
+    },
+    {
+      "id": "rsvp",
+      "type": "texte",
+      "requis": false,
+      "max": 100,
+      "libelle": {
+        "fr": "Réponse souhaitée avant le (facultatif)",
+        "en": "Please reply by (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 15 novembre",
+        "en": "e.g. November 15"
+      }
+    },
+    {
+      "id": "detail",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Précisions (facultatif)",
+        "en": "Details (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Apportez votre bonne humeur, nous nous occupons du reste.",
+        "en": "e.g. Just bring your good mood, we will take care of the rest."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"invitation\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Invitation",
+      "en": "Invitation"
+    },
+    "paragraphes": [
+      {
+        "fr": "Nous aurions grand plaisir à vous inviter {{occasion.q}}, le {{date_evt|date}}.",
+        "en": "We would be delighted to invite you {{occasion.q}} on {{date_evt|date}}."
+      },
+      {
+        "fr": "Heure : {{heure|phrase}}",
+        "en": "Time: {{heure|phrase}}",
+        "si": "heure"
+      },
+      {
+        "fr": "L’événement aura lieu à l’endroit suivant : {{lieu|sp}}.",
+        "en": "It will take place at: {{lieu|sp}}."
+      },
+      {
+        "fr": "{{detail|phrase}}",
+        "en": "{{detail|phrase}}",
+        "si": "detail"
+      },
+      {
+        "fr": "Merci de nous confirmer votre présence avant le {{rsvp|sp}}.",
+        "en": "Please let us know whether you can come by {{rsvp|sp}}.",
+        "si": "rsvp"
+      },
+      {
+        "fr": "Nous espérons que vous pourrez venir.",
+        "en": "We hope you can join us."
+      }
+    ]
+  }
+}

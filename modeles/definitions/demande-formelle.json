@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "demande-formelle",
+  "section": "juridique",
+  "icone": "dossier",
+  "titre": {
+    "fr": "Demande écrite formelle",
+    "en": "Formal written request"
+  },
+  "description": {
+    "fr": "Adresser une demande claire et datée à une entreprise, un organisme ou une personne.",
+    "en": "Send a clear, dated request to a business, an organization or a person."
+  },
+  "seo": {
+    "slug": {
+      "fr": "demande-formelle-lettre",
+      "en": "formal-request-letter"
+    },
+    "titre": {
+      "fr": "Demande écrite formelle : modèle de lettre gratuit | Capycom",
+      "en": "Formal request letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Rédigez une demande formelle claire, avec un délai de réponse. Modèle de lettre gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a clear formal request with a reply deadline. Free letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de demande formelle",
+      "en": "Formal Request Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Adresser une demande claire et datée à une entreprise, un organisme ou une personne.",
+    "en": "Send a clear, dated request to a business, an organization or a person."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "sujet",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Objet de la demande",
+        "en": "Subject of the request"
+      },
+      "exemple": {
+        "fr": "ex. Copie de mon dossier client",
+        "en": "e.g. Copy of my customer file"
+      }
+    },
+    {
+      "id": "reference",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    },
+    {
+      "id": "demande",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce que vous demandez",
+        "en": "What you are asking for"
+      },
+      "exemple": {
+        "fr": "ex. Je vous demande de me transmettre une copie complète de mon dossier.",
+        "en": "e.g. I ask you to send me a complete copy of my file."
+      }
+    },
+    {
+      "id": "contexte",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Contexte ou faits utiles (facultatif)",
+        "en": "Background or useful facts (optional)"
+      },
+      "exemple": {
+        "fr": "ex. J’ai fait une première demande par téléphone le 3 octobre.",
+        "en": "e.g. I made a first request by phone on October 3."
+      }
+    },
+    {
+      "id": "delai",
+      "type": "nombre",
+      "requis": false,
+      "max": 3,
+      "libelle": {
+        "fr": "Délai de réponse souhaité, en jours (30 par défaut)",
+        "en": "Reply deadline, in days (30 by default)"
+      },
+      "exemple": {
+        "fr": "30",
+        "en": "30"
+      },
+      "defaut": "30"
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"demande-formelle\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande : {{sujet}}",
+      "en": "Request: {{sujet}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Référence : {{reference}}.",
+        "en": "Reference: {{reference}}.",
+        "si": "reference"
+      },
+      {
+        "fr": "{{contexte|phrase}}",
+        "en": "{{contexte|phrase}}",
+        "si": "contexte"
+      },
+      {
+        "fr": "{{demande|phrase}}",
+        "en": "{{demande|phrase}}"
+      },
+      {
+        "fr": "Je vous demande de me répondre par écrit dans un délai de {{delai}} jours suivant la réception de cette lettre.",
+        "en": "Please reply in writing within {{delai}} days of receiving this letter."
+      }
+    ]
+  }
+}

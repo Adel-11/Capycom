@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "id": "felicitations",
+  "section": "personnel",
+  "icone": "trophee",
+  "titre": {
+    "fr": "Lettre de félicitations",
+    "en": "Congratulations letter"
+  },
+  "description": {
+    "fr": "Féliciter quelqu’un pour un mariage, une naissance, une retraite, un diplôme, un nouveau poste ou une réussite.",
+    "en": "Congratulate someone on a wedding, a birth, a retirement, a graduation, a new job or an achievement."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-felicitations",
+      "en": "congratulations-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre de félicitations : modèle gratuit | Capycom",
+      "en": "Congratulations letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Félicitez un proche ou un collègue : mariage, naissance, retraite, diplôme, nouveau poste. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Congratulate a loved one or colleague: wedding, birth, retirement, graduation, new job. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de félicitations",
+      "en": "Congratulations Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Féliciter quelqu’un pour un mariage, une naissance, une retraite, un diplôme, un nouveau poste ou une réussite.",
+    "en": "Congratulate someone on a wedding, a birth, a retirement, a graduation, a new job or an achievement."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "occasion",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Pour quelle occasion ?",
+        "en": "What are you congratulating them on?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "mariage",
+          "fr": "Un mariage",
+          "en": "A wedding",
+          "donnees": {
+            "p1": {
+              "fr": "Toutes mes félicitations pour votre mariage. Quelle belle étape !",
+              "en": "Congratulations on your wedding. What a wonderful milestone!"
+            },
+            "p2": {
+              "fr": "Je vous souhaite beaucoup de bonheur, de complicité et de beaux projets à deux.",
+              "en": "I wish you much happiness, closeness and many good plans together."
+            }
+          }
+        },
+        {
+          "valeur": "fiancailles",
+          "fr": "Des fiançailles",
+          "en": "An engagement",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour vos fiançailles ! Quelle excellente nouvelle.",
+              "en": "Congratulations on your engagement! What wonderful news."
+            },
+            "p2": {
+              "fr": "Je vous souhaite de profiter de cette période et d’en garder de beaux souvenirs.",
+              "en": "I hope you enjoy this time and keep good memories of it."
+            }
+          }
+        },
+        {
+          "valeur": "naissance",
+          "fr": "Une naissance",
+          "en": "A birth",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour la naissance de votre enfant ! Quelle belle nouvelle.",
+              "en": "Congratulations on the birth of your child! What lovely news."
+            },
+            "p2": {
+              "fr": "Je vous souhaite beaucoup de tendresse, de repos quand c’est possible et de moments précieux en famille.",
+              "en": "I wish you lots of tenderness, rest when you can get it, and precious family moments."
+            }
+          }
+        },
+        {
+          "valeur": "retraite",
+          "fr": "Un départ à la retraite",
+          "en": "A retirement",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour votre départ à la retraite ! Vous avez bien mérité ce nouveau chapitre.",
+              "en": "Congratulations on your retirement! You have earned this new chapter."
+            },
+            "p2": {
+              "fr": "Je vous souhaite du temps pour vos passions, du repos et beaucoup de belles journées.",
+              "en": "I wish you time for your passions, rest and many good days."
+            }
+          }
+        },
+        {
+          "valeur": "diplome",
+          "fr": "Un diplôme",
+          "en": "A graduation",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour l’obtention de votre diplôme ! Votre travail et votre persévérance ont porté fruit.",
+              "en": "Congratulations on your graduation! Your hard work and perseverance paid off."
+            },
+            "p2": {
+              "fr": "Je vous souhaite le meilleur pour la suite de votre parcours.",
+              "en": "I wish you all the best for what comes next."
+            }
+          }
+        },
+        {
+          "valeur": "promotion",
+          "fr": "Un nouveau poste ou une promotion",
+          "en": "A new job or promotion",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour votre nouveau poste ! Cette reconnaissance est bien méritée.",
+              "en": "Congratulations on your new role! This recognition is well deserved."
+            },
+            "p2": {
+              "fr": "Je vous souhaite beaucoup de réussite dans vos nouvelles fonctions.",
+              "en": "I wish you great success in your new position."
+            }
+          }
+        },
+        {
+          "valeur": "logement",
+          "fr": "Un nouveau logement",
+          "en": "A new home",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour votre nouveau chez-vous ! Quelle belle étape.",
+              "en": "Congratulations on your new home! What a great milestone."
+            },
+            "p2": {
+              "fr": "Je vous souhaite d’y être bien et d’y vivre de nombreux bons moments.",
+              "en": "I hope you feel at home there and enjoy many good moments."
+            }
+          }
+        },
+        {
+          "valeur": "reussite",
+          "fr": "Une réussite",
+          "en": "An achievement",
+          "donnees": {
+            "p1": {
+              "fr": "Félicitations pour cette belle réussite !",
+              "en": "Congratulations on this great achievement!"
+            },
+            "p2": {
+              "fr": "Continuez sur cette lancée.",
+              "en": "Keep up the great work."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "detail",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un mot personnel (facultatif)",
+        "en": "A personal note (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je pense à toi depuis que j’ai appris la nouvelle.",
+        "en": "e.g. I have been thinking of you since I heard the news."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        },
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"felicitations\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Félicitations",
+      "en": "Congratulations"
+    },
+    "paragraphes": [
+      {
+        "fr": "{{occasion.p1}}",
+        "en": "{{occasion.p1}}"
+      },
+      {
+        "fr": "{{detail|phrase}}",
+        "en": "{{detail|phrase}}",
+        "si": "detail"
+      },
+      {
+        "fr": "{{occasion.p2}}",
+        "en": "{{occasion.p2}}"
+      }
+    ]
+  }
+}

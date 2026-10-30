@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "avis-hausse-prix",
+  "section": "affaires",
+  "icone": "graphique",
+  "titre": {
+    "fr": "Avis de hausse de prix à un client",
+    "en": "Price increase notice to customers"
+  },
+  "description": {
+    "fr": "Informer vos clients d’une hausse de prix, avec la date d’entrée en vigueur et la raison.",
+    "en": "Tell your customers about a price increase, with the effective date and the reason."
+  },
+  "seo": {
+    "slug": {
+      "fr": "avis-hausse-de-prix",
+      "en": "price-increase-notice-letter"
+    },
+    "titre": {
+      "fr": "Avis de hausse de prix : modèle de lettre gratuit | Capycom",
+      "en": "Price increase notice: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Annoncez une hausse de prix à vos clients de façon claire et respectueuse. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Announce a price increase to your customers clearly and respectfully. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Avis de hausse de prix",
+      "en": "Price Increase Notice"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Informer vos clients d’une hausse de prix, avec la date d’entrée en vigueur et la raison.",
+    "en": "Tell your customers about a price increase, with the effective date and the reason."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "entreprise",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de votre entreprise",
+        "en": "Your company name"
+      },
+      "exemple": {
+        "fr": "ex. Atelier Exemple inc.",
+        "en": "e.g. Example Workshop Inc."
+      }
+    },
+    {
+      "id": "service",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Produit ou service concerné",
+        "en": "Product or service"
+      },
+      "exemple": {
+        "fr": "ex. Abonnement mensuel d’entretien",
+        "en": "e.g. Monthly maintenance plan"
+      }
+    },
+    {
+      "id": "ancien",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Prix actuel",
+        "en": "Current price"
+      },
+      "exemple": {
+        "fr": "ex. 80,00",
+        "en": "e.g. 80.00"
+      }
+    },
+    {
+      "id": "nouveau",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Nouveau prix",
+        "en": "New price"
+      },
+      "exemple": {
+        "fr": "ex. 88,00",
+        "en": "e.g. 88.00"
+      }
+    },
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date d’entrée en vigueur",
+        "en": "Effective date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "raison",
+      "type": "texte-long",
+      "requis": false,
+      "max": 300,
+      "libelle": {
+        "fr": "Raison (facultatif)",
+        "en": "Reason (optional)"
+      },
+      "exemple": {
+        "fr": "ex. La hausse des coûts des pièces et de la main-d’œuvre.",
+        "en": "e.g. Higher parts and labour costs."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    },
+    {
+      "fr": "Selon le contrat et la province, une hausse peut exiger un préavis écrit précis ou l’accord du client. Vérifiez-le avant d’envoyer.",
+      "en": "Depending on the contract and the province, an increase may require specific written notice or the customer’s consent. Check before you send."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"avis-hausse-prix\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Avis de modification de prix",
+      "en": "Notice of price change"
+    },
+    "paragraphes": [
+      {
+        "fr": "Nous vous informons que le prix de {{service|sp}} passera de {{ancien|montant}} à {{nouveau|montant}} à compter du {{date_effet|date}}.",
+        "en": "We are writing to let you know that the price of {{service|sp}} will change from {{ancien|montant}} to {{nouveau|montant}} as of {{date_effet|date}}."
+      },
+      {
+        "fr": "{{raison|phrase}}",
+        "en": "{{raison|phrase}}",
+        "si": "raison"
+      },
+      {
+        "fr": "Si cette modification pose problème, vous pouvez nous joindre pour en discuter avant cette date. Merci de votre confiance.",
+        "en": "If this change is a concern, you can contact us to discuss it before that date. Thank you for your trust."
+      },
+      {
+        "fr": "L’équipe de {{entreprise|sp}}.",
+        "en": "The {{entreprise|sp}} team."
+      }
+    ]
+  }
+}

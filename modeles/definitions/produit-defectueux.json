@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "id": "produit-defectueux",
+  "section": "argent",
+  "icone": "outil",
+  "titre": {
+    "fr": "Demande pour un produit défectueux",
+    "en": "Defective product claim"
+  },
+  "description": {
+    "fr": "Demander la réparation, le remplacement ou le remboursement d’un bien qui ne fonctionne pas comme il devrait.",
+    "en": "Ask for the repair, replacement or refund of an item that does not work as it should."
+  },
+  "seo": {
+    "slug": {
+      "fr": "produit-defectueux-lettre",
+      "en": "defective-product-letter"
+    },
+    "titre": {
+      "fr": "Produit défectueux : modèle de lettre gratuit | Capycom",
+      "en": "Defective product letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez réparation, remplacement ou remboursement pour un produit défectueux ou sous garantie. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Ask for a repair, replacement or refund for a defective or under-warranty product. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre pour produit défectueux",
+      "en": "Defective Product Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander la réparation, le remplacement ou le remboursement d’un bien qui ne fonctionne pas comme il devrait.",
+    "en": "Ask for the repair, replacement or refund of an item that does not work as it should."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "produit",
+      "type": "texte",
+      "requis": true,
+      "max": 140,
+      "libelle": {
+        "fr": "Produit",
+        "en": "Product"
+      },
+      "exemple": {
+        "fr": "ex. Lave-vaisselle Modèle D5",
+        "en": "e.g. D5 dishwasher"
+      }
+    },
+    {
+      "id": "date_achat",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de l’achat",
+        "en": "Date of purchase"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "prix",
+      "type": "montant",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Prix payé (facultatif)",
+        "en": "Price paid (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 899,00",
+        "en": "e.g. 899.00"
+      }
+    },
+    {
+      "id": "defaut",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Le défaut constaté",
+        "en": "The defect"
+      },
+      "exemple": {
+        "fr": "ex. Il ne vidange plus l’eau depuis le 5 octobre.",
+        "en": "e.g. It has not drained since October 5."
+      }
+    },
+    {
+      "id": "demande",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Ce que vous demandez",
+        "en": "What you ask for"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "reparation",
+          "fr": "Une réparation",
+          "en": "A repair",
+          "donnees": {
+            "d": {
+              "fr": "que le produit soit réparé sans frais",
+              "en": "that the product be repaired at no cost"
+            }
+          }
+        },
+        {
+          "valeur": "remplacement",
+          "fr": "Un remplacement",
+          "en": "A replacement",
+          "donnees": {
+            "d": {
+              "fr": "que le produit soit remplacé",
+              "en": "that the product be replaced"
+            }
+          }
+        },
+        {
+          "valeur": "remboursement",
+          "fr": "Un remboursement",
+          "en": "A refund",
+          "donnees": {
+            "d": {
+              "fr": "le remboursement du prix payé",
+              "en": "a refund of the price paid"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "delai",
+      "type": "nombre",
+      "requis": false,
+      "max": 3,
+      "libelle": {
+        "fr": "Délai de réponse, en jours (15 par défaut)",
+        "en": "Reply deadline, in days (15 by default)"
+      },
+      "exemple": {
+        "fr": "15",
+        "en": "15"
+      },
+      "defaut": "15"
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"produit-defectueux\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Produit défectueux : {{produit}}",
+      "en": "Defective product: {{produit}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "J’ai acheté le produit suivant le {{date_achat|date}} : {{produit|sp}}.",
+        "en": "I bought the following product on {{date_achat|date}}: {{produit|sp}}."
+      },
+      {
+        "fr": "Prix payé : {{prix|montant}}.",
+        "en": "Price paid: {{prix|montant}}.",
+        "si": "prix"
+      },
+      {
+        "fr": "Il présente le défaut suivant : {{defaut|sp}}.",
+        "en": "It has the following defect: {{defaut|sp}}."
+      },
+      {
+        "fr": "Selon moi, ce bien doit pouvoir servir normalement à l’usage pour lequel il est vendu et, le cas échéant, être couvert par la garantie. Je demande {{demande.d}}.",
+        "en": "In my view, this item should serve normally for the purpose it is sold for and, where it applies, be covered by the warranty. I ask {{demande.d}}."
+      },
+      {
+        "fr": "Merci de me répondre par écrit dans un délai de {{delai}} jours et de m’indiquer la marche à suivre. Je peux fournir la preuve d’achat.",
+        "en": "Please reply in writing within {{delai}} days and tell me how to proceed. I can provide proof of purchase."
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "id": "remerciements-affaires",
+  "section": "affaires",
+  "icone": "poignee",
+  "titre": {
+    "fr": "Remerciements à un client ou partenaire",
+    "en": "Business thank-you letter"
+  },
+  "description": {
+    "fr": "Remercier un client, un fournisseur ou un partenaire pour sa confiance ou une collaboration.",
+    "en": "Thank a client, supplier or partner for their trust or a collaboration."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-remerciements-affaires",
+      "en": "business-thank-you-letter"
+    },
+    "titre": {
+      "fr": "Lettre de remerciements d’affaires : modèle gratuit | Capycom",
+      "en": "Business thank-you letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Remerciez un client, un fournisseur ou un partenaire par une lettre professionnelle. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Thank a client, supplier or partner with a professional letter. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de remerciements d’affaires",
+      "en": "Business Thank-You Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remercier un client, un fournisseur ou un partenaire pour sa confiance ou une collaboration.",
+    "en": "Thank a client, supplier or partner for their trust or a collaboration."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "pour",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Pour quoi vous remerciez",
+        "en": "What you are thanking them for"
+      },
+      "exemple": {
+        "fr": "ex. votre commande du mois dernier",
+        "en": "e.g. your order last month"
+      }
+    },
+    {
+      "id": "entreprise",
+      "type": "texte",
+      "requis": false,
+      "max": 100,
+      "libelle": {
+        "fr": "Votre entreprise (facultatif)",
+        "en": "Your company (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Atelier Exemple inc.",
+        "en": "e.g. Example Workshop Inc."
+      }
+    },
+    {
+      "id": "suite",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Prochaine étape ou offre (facultatif)",
+        "en": "Next step or offer (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Nous serions ravis de vous accompagner sur votre prochain projet.",
+        "en": "e.g. We would be glad to support your next project."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"remerciements-affaires\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Remerciements",
+      "en": "Thank you"
+    },
+    "paragraphes": [
+      {
+        "fr": "Nous tenons à vous remercier pour {{pour|sp}}. Votre confiance compte beaucoup pour nous.",
+        "en": "Thank you for {{pour|sp}}. Your trust means a lot to us."
+      },
+      {
+        "fr": "Cordialement, l’équipe de {{entreprise|sp}}.",
+        "en": "Sincerely, the {{entreprise|sp}} team.",
+        "si": "entreprise"
+      },
+      {
+        "fr": "{{suite|phrase}}",
+        "en": "{{suite|phrase}}",
+        "si": "suite"
+      },
+      {
+        "fr": "N’hésitez pas à nous contacter si nous pouvons faire plus pour vous.",
+        "en": "Please contact us if we can do more for you."
+      }
+    ]
+  }
+}

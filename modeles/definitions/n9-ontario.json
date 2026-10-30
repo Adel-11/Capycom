@@ -6,6 +6,7 @@
     "fr": "Avis de fin de bail du locataire (Ontario, N9)",
     "en": "Tenant’s notice to end the tenancy (Ontario, N9)"
   },
+  "icone": "sortie",
   "description": {
     "fr": "Remplir le formulaire N9 de la Commission de la location immobilière de l’Ontario pour quitter votre logement. Formulaire prêt à signer et à poster au propriétaire.",
     "en": "Fill in the Ontario Landlord and Tenant Board form N9 to move out of your rental unit. Ready to sign and mail to your landlord."

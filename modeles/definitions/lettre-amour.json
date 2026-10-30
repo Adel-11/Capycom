@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "id": "lettre-amour",
+  "section": "personnel",
+  "icone": "coeur",
+  "titre": {
+    "fr": "Lettre d’amour",
+    "en": "Love letter"
+  },
+  "description": {
+    "fr": "Dire à quelqu’un ce que vous ressentez, avec vos propres mots.",
+    "en": "Tell someone how you feel, in your own words."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-d-amour",
+      "en": "love-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre d’amour : modèle gratuit | Capycom",
+      "en": "Love letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez une lettre d’amour à la main ou imprimée, à partir de vos propres mots. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a love letter from your own words. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre d’amour",
+      "en": "Love Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Dire à quelqu’un ce que vous ressentez, avec vos propres mots.",
+    "en": "Tell someone how you feel, in your own words."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Mon amour",
+        "en": "e.g. My love"
+      }
+    },
+    {
+      "id": "qualite",
+      "type": "texte-long",
+      "requis": true,
+      "max": 400,
+      "libelle": {
+        "fr": "Ce que vous aimez chez cette personne",
+        "en": "What you love about this person"
+      },
+      "exemple": {
+        "fr": "ex. ta façon de rire de tout, même des mauvais jours",
+        "en": "e.g. the way you laugh at everything, even on bad days"
+      }
+    },
+    {
+      "id": "souvenir",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un souvenir qui compte pour vous (facultatif)",
+        "en": "A memory that matters to you (optional)"
+      },
+      "exemple": {
+        "fr": "ex. notre premier voyage à Québec",
+        "en": "e.g. our first trip to Quebec City"
+      }
+    },
+    {
+      "id": "avenir",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Ce que vous souhaitez pour vous deux (facultatif)",
+        "en": "What you wish for the two of you (optional)"
+      },
+      "exemple": {
+        "fr": "ex. continuer à rire ensemble pendant longtemps",
+        "en": "e.g. to keep laughing together for a long time"
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "tendre",
+      "options": [
+        {
+          "valeur": "tendre",
+          "fr": "Tendre",
+          "en": "Tendre",
+          "donnees": {
+            "pol": {
+              "fr": "Je t’embrasse,",
+              "en": "With all my love,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"lettre-amour\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Lettre d’amour",
+      "en": "Love letter"
+    },
+    "paragraphes": [
+      {
+        "fr": "J’avais envie de prendre le temps de t’écrire ce que je ressens. Ce que j’aime chez toi : {{qualite|sp}}.",
+        "en": "I wanted to take the time to write down how I feel. What I love about you: {{qualite|sp}}."
+      },
+      {
+        "fr": "Je repense souvent à {{souvenir|sp}}.",
+        "en": "I often think back to {{souvenir|sp}}.",
+        "si": "souvenir"
+      },
+      {
+        "fr": "Ce que je souhaite pour nous : {{avenir|sp}}.",
+        "en": "What I wish for us: {{avenir|sp}}.",
+        "si": "avenir"
+      },
+      {
+        "fr": "Merci d’être là. Je t’aime.",
+        "en": "Thank you for being there. I love you."
+      }
+    ]
+  }
+}

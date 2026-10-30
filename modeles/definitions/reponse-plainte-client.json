@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "id": "reponse-plainte-client",
+  "section": "affaires",
+  "icone": "bulle",
+  "titre": {
+    "fr": "Réponse à la plainte d’un client",
+    "en": "Reply to a customer complaint"
+  },
+  "description": {
+    "fr": "Répondre à une plainte avec écoute, explication et proposition de solution.",
+    "en": "Reply to a complaint with listening, an explanation and a proposed fix."
+  },
+  "seo": {
+    "slug": {
+      "fr": "reponse-plainte-client",
+      "en": "reply-to-customer-complaint"
+    },
+    "titre": {
+      "fr": "Répondre à la plainte d’un client : modèle de lettre | Capycom",
+      "en": "Reply to a customer complaint: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Répondez à une plainte de client avec professionnalisme : reconnaissance, explication, solution. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Reply to a customer complaint professionally: acknowledgement, explanation, solution. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Réponse à une plainte de client",
+      "en": "Reply to a Customer Complaint"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Répondre à une plainte avec écoute, explication et proposition de solution.",
+    "en": "Reply to a complaint with listening, an explanation and a proposed fix."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "entreprise",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de votre entreprise",
+        "en": "Your company name"
+      },
+      "exemple": {
+        "fr": "ex. Atelier Exemple inc.",
+        "en": "e.g. Example Workshop Inc."
+      }
+    },
+    {
+      "id": "date_plainte",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de la plainte (facultatif)",
+        "en": "Date of the complaint (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "plainte",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Le problème soulevé par le client",
+        "en": "The problem the customer raised"
+      },
+      "exemple": {
+        "fr": "ex. La livraison est arrivée avec trois jours de retard et une pièce manquait.",
+        "en": "e.g. The delivery came three days late and a part was missing."
+      }
+    },
+    {
+      "id": "explication",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Explication, si utile (facultatif)",
+        "en": "Explanation, if useful (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Un retard de notre transporteur est en cause.",
+        "en": "e.g. A delay at our carrier is the cause."
+      }
+    },
+    {
+      "id": "solution",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Solution proposée",
+        "en": "Proposed solution"
+      },
+      "exemple": {
+        "fr": "ex. Nous expédions la pièce sans frais cette semaine et créditons les frais de livraison.",
+        "en": "e.g. We are shipping the part at no cost this week and crediting the delivery fee."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"reponse-plainte-client\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Réponse à votre plainte",
+      "en": "Reply to your complaint"
+    },
+    "paragraphes": [
+      {
+        "fr": "Nous avons bien reçu votre plainte et nous vous remercions de nous l’avoir signalée.",
+        "en": "We received your complaint and thank you for bringing it to us."
+      },
+      {
+        "fr": "Voici ce que nous avons compris : {{plainte|sp}}.",
+        "en": "Here is what we understood: {{plainte|sp}}."
+      },
+      {
+        "fr": "{{explication|phrase}}",
+        "en": "{{explication|phrase}}",
+        "si": "explication"
+      },
+      {
+        "fr": "Nous regrettons ce désagrément. Voici ce que nous vous proposons : {{solution|sp}}.",
+        "en": "We are sorry for the inconvenience. Here is what we propose: {{solution|sp}}."
+      },
+      {
+        "fr": "Si cette solution ne vous convient pas, répondez-nous et nous chercherons une autre issue avec vous.",
+        "en": "If this solution does not suit you, reply and we will look for another outcome with you."
+      }
+    ]
+  }
+}

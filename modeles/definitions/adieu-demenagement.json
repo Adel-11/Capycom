@@ -1,0 +1,282 @@
+{
+  "version": 1,
+  "id": "adieu-demenagement",
+  "section": "personnel",
+  "icone": "boite",
+  "titre": {
+    "fr": "Lettre d’adieu ou de déménagement",
+    "en": "Farewell or moving letter"
+  },
+  "description": {
+    "fr": "Dire au revoir à des voisins, des amis ou des collègues quand vous partez, ou quand ils partent.",
+    "en": "Say goodbye to neighbours, friends or colleagues when you leave, or when they do."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-adieu-demenagement",
+      "en": "farewell-moving-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre d’adieu ou de déménagement : modèle gratuit | Capycom",
+      "en": "Farewell or moving letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Dites au revoir à vos voisins, amis ou collègues par une lettre personnelle. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Say goodbye to neighbours, friends or colleagues with a personal letter. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre d’adieu ou de déménagement",
+      "en": "Farewell or Moving Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Dire au revoir à des voisins, des amis ou des collègues quand vous partez, ou quand ils partent.",
+    "en": "Say goodbye to neighbours, friends or colleagues when you leave, or when they do."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "situation",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Qui part ?",
+        "en": "Who is leaving?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "moi",
+          "fr": "C’est moi qui pars",
+          "en": "I am leaving",
+          "donnees": {}
+        },
+        {
+          "valeur": "autre",
+          "fr": "C’est la personne qui part",
+          "en": "The other person is leaving",
+          "donnees": {}
+        }
+      ]
+    },
+    {
+      "id": "date_depart",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date du départ (facultatif)",
+        "en": "Date of departure (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "adresse_nouvelle",
+      "type": "texte",
+      "requis": false,
+      "max": 160,
+      "libelle": {
+        "fr": "Ma nouvelle adresse ou mes coordonnées (facultatif)",
+        "en": "My new address or contact details (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 40, rue Laurier, Ottawa",
+        "en": "e.g. 40 Laurier Street, Ottawa"
+      }
+    },
+    {
+      "id": "souvenir",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un souvenir ou un remerciement (facultatif)",
+        "en": "A memory or a thank-you (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Merci pour les soupers sur le balcon.",
+        "en": "e.g. Thank you for the dinners on the balcony."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"adieu-demenagement\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Au revoir",
+      "en": "Goodbye"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris pour vous dire au revoir : je quitterai bientôt l’endroit où nous nous côtoyons.",
+        "en": "I am writing to say goodbye: I will soon be leaving the place where we have crossed paths.",
+        "si": {
+          "champ": "situation",
+          "egal": "moi"
+        }
+      },
+      {
+        "fr": "Mon départ est prévu le {{date_depart|date}}.",
+        "en": "My departure is planned for {{date_depart|date}}.",
+        "si": {
+          "tous": [
+            {
+              "champ": "situation",
+              "egal": "moi"
+            },
+            "date_depart"
+          ]
+        }
+      },
+      {
+        "fr": "Votre départ est prévu le {{date_depart|date}}.",
+        "en": "Your departure is planned for {{date_depart|date}}.",
+        "si": {
+          "tous": [
+            {
+              "champ": "situation",
+              "egal": "autre"
+            },
+            "date_depart"
+          ]
+        }
+      },
+      {
+        "fr": "Je tenais à vous écrire avant votre départ pour vous dire que votre présence a compté.",
+        "en": "I wanted to write before you leave to tell you that your presence meant something.",
+        "si": {
+          "champ": "situation",
+          "egal": "autre"
+        }
+      },
+      {
+        "fr": "{{souvenir|phrase}}",
+        "en": "{{souvenir|phrase}}",
+        "si": "souvenir"
+      },
+      {
+        "fr": "Mes nouvelles coordonnées, si vous souhaitez rester en contact : {{adresse_nouvelle}}.",
+        "en": "My new contact details, if you would like to keep in touch: {{adresse_nouvelle}}.",
+        "si": "adresse_nouvelle"
+      },
+      {
+        "fr": "Merci pour tout, et surtout, gardons contact.",
+        "en": "Thank you for everything, and let us keep in touch."
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "id": "excuses",
+  "section": "personnel",
+  "icone": "poignee",
+  "titre": {
+    "fr": "Lettre d’excuses",
+    "en": "Apology letter"
+  },
+  "description": {
+    "fr": "Présenter vos excuses par écrit, simplement et sans détour.",
+    "en": "Apologize in writing, simply and directly."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-d-excuses",
+      "en": "apology-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre d’excuses : modèle gratuit | Capycom",
+      "en": "Apology letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Présentez vos excuses par écrit à un proche, un voisin ou un collègue. Modèle de lettre d’excuses gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Apologize in writing to a loved one, neighbour or colleague. Free apology letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre d’excuses",
+      "en": "Apology Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Présenter vos excuses par écrit, simplement et sans détour.",
+    "en": "Apologize in writing, simply and directly."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "sujet",
+      "type": "texte-long",
+      "requis": true,
+      "max": 300,
+      "libelle": {
+        "fr": "De quoi vous excusez-vous ?",
+        "en": "What are you apologizing for?"
+      },
+      "exemple": {
+        "fr": "ex. d’avoir oublié ton anniversaire",
+        "en": "e.g. for forgetting your birthday"
+      }
+    },
+    {
+      "id": "reparation",
+      "type": "texte-long",
+      "requis": false,
+      "max": 300,
+      "libelle": {
+        "fr": "Ce que vous allez faire pour réparer ou éviter que cela se reproduise (facultatif)",
+        "en": "What you will do to make it right or avoid a repeat (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je te propose de t’inviter à souper cette semaine.",
+        "en": "e.g. I would like to take you out for dinner this week."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "cordiale",
+      "options": [
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        },
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"excuses\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Excuses",
+      "en": "Apology"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris pour m’excuser {{sujet|sp}}.",
+        "en": "I am writing to apologize {{sujet|sp}}."
+      },
+      {
+        "fr": "Je comprends que cela ait pu vous blesser ou vous causer des désagréments, et je le regrette sincèrement.",
+        "en": "I understand this may have hurt you or caused you trouble, and I sincerely regret it."
+      },
+      {
+        "fr": "{{reparation|phrase}}",
+        "en": "{{reparation|phrase}}",
+        "si": "reparation"
+      },
+      {
+        "fr": "Si vous le souhaitez, je serai disponible pour en parler quand vous le voudrez.",
+        "en": "If you would like, I am available to talk about it whenever you are ready."
+      }
+    ]
+  }
+}

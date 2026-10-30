@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "id": "resiliation-salle-sport",
+  "section": "contrats",
+  "icone": "haltere",
+  "titre": {
+    "fr": "Résiliation d’un abonnement de salle de sport",
+    "en": "Gym membership cancellation"
+  },
+  "description": {
+    "fr": "Mettre fin à un abonnement de salle de sport : GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, LA Fitness, Movati ou autre.",
+    "en": "End a gym membership: GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, LA Fitness, Movati or another gym."
+  },
+  "seo": {
+    "slug": {
+      "fr": "resiliation-abonnement-salle-de-sport",
+      "en": "gym-membership-cancellation-letter"
+    },
+    "titre": {
+      "fr": "Résilier un abonnement de salle de sport : modèle de lettre | Capycom",
+      "en": "Cancel a gym membership: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Lettre pour annuler un abonnement de salle de sport (GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, Movati). Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Letter to cancel a gym membership (GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, Movati). Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de résiliation d’abonnement de salle de sport",
+      "en": "Gym Membership Cancellation Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Mettre fin à un abonnement de salle de sport : GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, LA Fitness, Movati ou autre.",
+    "en": "End a gym membership: GoodLife, Planet Fitness, Anytime Fitness, Fit4Less, LA Fitness, Movati or another gym."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "salle",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Salle de sport",
+        "en": "Gym"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "goodlife",
+          "fr": "GoodLife Fitness",
+          "en": "GoodLife Fitness",
+          "donnees": {
+            "nom": {
+              "fr": "GoodLife Fitness",
+              "en": "GoodLife Fitness"
+            }
+          }
+        },
+        {
+          "valeur": "planetfitness",
+          "fr": "Planet Fitness",
+          "en": "Planet Fitness",
+          "donnees": {
+            "nom": {
+              "fr": "Planet Fitness",
+              "en": "Planet Fitness"
+            }
+          }
+        },
+        {
+          "valeur": "anytime",
+          "fr": "Anytime Fitness",
+          "en": "Anytime Fitness",
+          "donnees": {
+            "nom": {
+              "fr": "Anytime Fitness",
+              "en": "Anytime Fitness"
+            }
+          }
+        },
+        {
+          "valeur": "fit4less",
+          "fr": "Fit4Less",
+          "en": "Fit4Less",
+          "donnees": {
+            "nom": {
+              "fr": "Fit4Less",
+              "en": "Fit4Less"
+            }
+          }
+        },
+        {
+          "valeur": "lafitness",
+          "fr": "LA Fitness",
+          "en": "LA Fitness",
+          "donnees": {
+            "nom": {
+              "fr": "LA Fitness",
+              "en": "LA Fitness"
+            }
+          }
+        },
+        {
+          "valeur": "movati",
+          "fr": "Movati Athletic",
+          "en": "Movati Athletic",
+          "donnees": {
+            "nom": {
+              "fr": "Movati Athletic",
+              "en": "Movati Athletic"
+            }
+          }
+        },
+        {
+          "valeur": "autre",
+          "fr": "Autre salle (indiquez-la ci-dessous)",
+          "en": "Other gym (name it below)",
+          "donnees": {
+            "nom": {
+              "fr": "votre salle de sport",
+              "en": "your gym"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "salle_nom",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Nom de la salle ou du club, si « Autre » ou pour préciser",
+        "en": "Gym or club name, if “Other” or to be specific"
+      },
+      "exemple": {
+        "fr": "ex. succursale de la rue Rideau",
+        "en": "e.g. Rideau Street location"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de client ou de membre (facultatif)",
+        "en": "Customer or member number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 123456",
+        "en": "e.g. 123456"
+      }
+    },
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de fin souhaitée (facultatif)",
+        "en": "Preferred end date (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "motif",
+      "type": "texte",
+      "requis": false,
+      "max": 200,
+      "libelle": {
+        "fr": "Motif (facultatif)",
+        "en": "Reason (optional)"
+      },
+      "exemple": {
+        "fr": "ex. déménagement",
+        "en": "e.g. I am moving"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : écrivez l’adresse de la succursale, ou l’adresse de résiliation indiquée dans votre contrat (dest_*). Capycom n’y met aucune adresse, car les conditions varient selon la salle et la succursale.",
+    "en": "Free: write the branch address, or the cancellation address given in your contract (dest_*). Capycom does not prefill one, because terms vary by gym and location."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Les frais et les délais de résiliation sont fixés par votre contrat et par la loi de votre province. Lisez votre contrat et gardez une preuve d’envoi.",
+      "en": "Cancellation fees and notice periods are set by your contract and by your province’s law. Read your contract and keep proof of mailing."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"resiliation-salle-sport\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Résiliation d’abonnement, {{salle.nom}}",
+      "en": "Membership cancellation, {{salle.nom}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous informe par la présente que je souhaite résilier mon abonnement à {{salle.nom}}.",
+        "en": "I am writing to cancel my membership with {{salle.nom}}."
+      },
+      {
+        "fr": "Succursale ou club : {{salle_nom|sp}}.",
+        "en": "Location or club: {{salle_nom|sp}}.",
+        "si": "salle_nom"
+      },
+      {
+        "fr": "Numéro de client ou de membre : {{num_client}}.",
+        "en": "Customer or member number: {{num_client}}.",
+        "si": "num_client"
+      },
+      {
+        "fr": "Je vous demande de mettre fin à l’abonnement à compter du {{date_effet|date}}, ou à la première date permise par mon contrat.",
+        "en": "I ask that the membership end on {{date_effet|date}}, or on the first date my contract allows.",
+        "si": "date_effet"
+      },
+      {
+        "fr": "Je vous demande de mettre fin à l’abonnement à la première date permise par mon contrat.",
+        "en": "I ask that the membership end on the first date my contract allows.",
+        "si": {
+          "champ": "date_effet",
+          "vide": true
+        }
+      },
+      {
+        "fr": "{{motif|phrase}}",
+        "en": "{{motif|phrase}}",
+        "si": "motif"
+      },
+      {
+        "fr": "Merci de cesser tout prélèvement à compter de cette date, de me confirmer la résiliation par écrit et de m’indiquer le solde éventuel à payer.",
+        "en": "Please stop all withdrawals from that date, confirm the cancellation in writing and tell me any balance still owing."
+      }
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "id": "validation-dette",
+  "section": "argent",
+  "icone": "loupe",
+  "titre": {
+    "fr": "Demande de validation d’une dette",
+    "en": "Debt validation request"
+  },
+  "description": {
+    "fr": "Demander à une agence de recouvrement de prouver qu’une dette existe et qu’elle est autorisée à la réclamer.",
+    "en": "Ask a collection agency to prove that a debt exists and that it may collect it."
+  },
+  "seo": {
+    "slug": {
+      "fr": "validation-de-dette-agence-recouvrement",
+      "en": "debt-validation-letter"
+    },
+    "titre": {
+      "fr": "Validation de dette : lettre à une agence de recouvrement | Capycom",
+      "en": "Debt validation letter to a collection agency | Capycom"
+    },
+    "description": {
+      "fr": "Demandez à une agence de recouvrement de prouver la dette et son droit de la réclamer. Modèle de lettre gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Ask a collection agency to prove the debt and its right to collect it. Free letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de validation de dette",
+      "en": "Debt Validation Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander à une agence de recouvrement de prouver qu’une dette existe et qu’elle est autorisée à la réclamer.",
+    "en": "Ask a collection agency to prove that a debt exists and that it may collect it."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "creancier",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Créancier d’origine indiqué par l’agence",
+        "en": "Original creditor named by the agency"
+      },
+      "exemple": {
+        "fr": "ex. Banque Exemple, carte de crédit",
+        "en": "e.g. Example Bank, credit card"
+      }
+    },
+    {
+      "id": "montant",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Montant réclamé",
+        "en": "Amount claimed"
+      },
+      "exemple": {
+        "fr": "ex. 1 250,00",
+        "en": "e.g. 1,250.00"
+      }
+    },
+    {
+      "id": "num_dossier",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    },
+    {
+      "id": "date_lettre_agence",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de leur premier avis (facultatif)",
+        "en": "Date of their first notice (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "canal",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Comment l’agence vous a-t-elle joint ?",
+        "en": "How did the agency contact you?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "lettre",
+          "fr": "Par lettre",
+          "en": "By letter",
+          "donnees": {
+            "c": {
+              "fr": "Votre lettre",
+              "en": "Your letter"
+            }
+          }
+        },
+        {
+          "valeur": "telephone",
+          "fr": "Par téléphone",
+          "en": "By phone",
+          "donnees": {
+            "c": {
+              "fr": "Votre appel téléphonique",
+              "en": "Your phone call"
+            }
+          }
+        },
+        {
+          "valeur": "courriel",
+          "fr": "Par courriel ou message",
+          "en": "By email or message",
+          "donnees": {
+            "c": {
+              "fr": "Votre message",
+              "en": "Your message"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : le nom et l’adresse de l’agence qui figurent sur son avis (dest_*).",
+    "en": "Free: the agency’s name and address from its notice (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "validation-dette_fcac_recouvrement",
+      "but": {
+        "fr": "Agence de la consommation en matière financière du Canada",
+        "en": "Financial Consumer Agency of Canada"
+      },
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "en": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Une lettre de ce genre peut avoir des conséquences juridiques. Si l’enjeu est important, faites-la relire par un avocat ou un notaire avant de l’envoyer.",
+      "en": "A letter of this kind can have legal consequences. If a lot is at stake, have a lawyer or notary read it before you send it."
+    },
+    {
+      "fr": "Ne signez rien et ne payez rien avant d’avoir reçu la preuve de la dette. Les règles sur le recouvrement dépendent de votre province : lisez celles de votre province avant d’envoyer cette lettre.",
+      "en": "Do not sign or pay anything until you receive proof of the debt. Collection rules depend on your province: read yours before you send this letter."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"validation-dette\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande de validation de dette, dossier {{num_dossier}}",
+      "en": "Debt validation request, file {{num_dossier}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "{{canal.c}} concerne une dette de {{montant|montant}} que vous attribuez à {{creancier|sp}}. Je ne reconnais pas cette dette par cette lettre et je vous demande de la valider.",
+        "en": "{{canal.c}} concerns a debt of {{montant|montant}} that you attribute to {{creancier|sp}}. This letter is not an acknowledgement of the debt, and I ask you to validate it."
+      },
+      {
+        "fr": "Merci de m’envoyer par écrit : le nom du créancier d’origine, les documents qui établissent la dette (contrat ou relevé), le détail du montant (capital, intérêts, frais), la preuve que vous avez le droit de la réclamer (cession ou mandat), et votre numéro de permis ou d’enregistrement si la loi de ma province l’exige.",
+        "en": "Please send me in writing: the name of the original creditor, the documents that establish the debt (contract or statements), a breakdown of the amount (principal, interest, fees), proof that you are entitled to collect it (assignment or mandate), and your licence or registration number if my province’s law requires one."
+      },
+      {
+        "fr": "D’ici là, je vous demande de ne communiquer avec moi que par écrit.",
+        "en": "Until then, please contact me in writing only."
+      }
+    ]
+  }
+}

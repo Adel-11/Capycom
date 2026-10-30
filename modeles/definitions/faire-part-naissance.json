@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "id": "faire-part-naissance",
+  "section": "personnel",
+  "icone": "bebe",
+  "titre": {
+    "fr": "Annonce de naissance",
+    "en": "Birth announcement"
+  },
+  "description": {
+    "fr": "Annoncer la naissance ou l’adoption de votre enfant à vos proches.",
+    "en": "Tell your loved ones about the birth or adoption of your child."
+  },
+  "seo": {
+    "slug": {
+      "fr": "annonce-de-naissance",
+      "en": "birth-announcement-letter"
+    },
+    "titre": {
+      "fr": "Annonce de naissance : modèle de lettre gratuit | Capycom",
+      "en": "Birth announcement: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Annoncez la naissance ou l’adoption de votre enfant par une lettre personnelle. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Announce the birth or adoption of your child with a personal letter. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Annonce de naissance",
+      "en": "Birth Announcement"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Annoncer la naissance ou l’adoption de votre enfant à vos proches.",
+    "en": "Tell your loved ones about the birth or adoption of your child."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "type",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Naissance ou adoption ?",
+        "en": "Birth or adoption?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "naissance",
+          "fr": "Une naissance",
+          "en": "A birth",
+          "donnees": {
+            "v": {
+              "fr": "a vu le jour",
+              "en": "was born"
+            }
+          }
+        },
+        {
+          "valeur": "adoption",
+          "fr": "Une adoption",
+          "en": "An adoption",
+          "donnees": {
+            "v": {
+              "fr": "a rejoint notre famille",
+              "en": "has joined our family"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "prenom_enfant",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Prénom de l’enfant",
+        "en": "Child’s first name"
+      },
+      "exemple": {
+        "fr": "ex. Léa",
+        "en": "e.g. Emma"
+      }
+    },
+    {
+      "id": "date_evt",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date",
+        "en": "Date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "details",
+      "type": "texte",
+      "requis": false,
+      "max": 160,
+      "libelle": {
+        "fr": "Détails (poids, taille, lieu, facultatif)",
+        "en": "Details (weight, length, place, optional)"
+      },
+      "exemple": {
+        "fr": "ex. 3,4 kg, 50 cm, à l’hôpital de Gatineau",
+        "en": "e.g. 7 lb 8 oz, 20 in, at Ottawa General"
+      }
+    },
+    {
+      "id": "detail",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un mot personnel (facultatif)",
+        "en": "A personal note (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Nous sommes comblés et un peu fatigués.",
+        "en": "e.g. We are overjoyed and a little tired."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "chaleureuse",
+      "options": [
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        },
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"faire-part-naissance\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Naissance",
+      "en": "Birth announcement"
+    },
+    "paragraphes": [
+      {
+        "fr": "Nous avons la joie de vous annoncer que {{prenom_enfant}} {{type.v}} le {{date_evt|date}}.",
+        "en": "We are delighted to announce that {{prenom_enfant}} {{type.v}} on {{date_evt|date}}."
+      },
+      {
+        "fr": "{{details|phrase}}",
+        "en": "{{details|phrase}}",
+        "si": "details"
+      },
+      {
+        "fr": "{{detail|phrase}}",
+        "en": "{{detail|phrase}}",
+        "si": "detail"
+      },
+      {
+        "fr": "Nous serons heureux de vous présenter {{prenom_enfant}} dès que ce sera possible.",
+        "en": "We will be happy to introduce {{prenom_enfant}} to you as soon as we can."
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "id": "contester-contravention",
+  "section": "juridique",
+  "icone": "contravention",
+  "titre": {
+    "fr": "Contestation d’une contravention de stationnement",
+    "en": "Parking ticket dispute"
+  },
+  "description": {
+    "fr": "Contester par écrit un constat d’infraction de stationnement et demander son annulation ou une audience.",
+    "en": "Dispute a parking ticket in writing and ask for it to be cancelled or for a hearing."
+  },
+  "seo": {
+    "slug": {
+      "fr": "contester-contravention-stationnement",
+      "en": "dispute-parking-ticket-letter"
+    },
+    "titre": {
+      "fr": "Contester une contravention de stationnement : modèle de lettre | Capycom",
+      "en": "Dispute a parking ticket: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Contestez un constat de stationnement par écrit et demandez son annulation ou une audience. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Dispute a parking ticket in writing and ask for cancellation or a hearing. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de contestation de contravention",
+      "en": "Parking Ticket Dispute Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Contester par écrit un constat d’infraction de stationnement et demander son annulation ou une audience.",
+    "en": "Dispute a parking ticket in writing and ask for it to be cancelled or for a hearing."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "num_constat",
+      "type": "texte",
+      "requis": true,
+      "max": 40,
+      "libelle": {
+        "fr": "Numéro du constat d’infraction",
+        "en": "Ticket number"
+      },
+      "exemple": {
+        "fr": "ex. 12345678",
+        "en": "e.g. 12345678"
+      }
+    },
+    {
+      "id": "date_constat",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date du constat",
+        "en": "Date of the ticket"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "lieu",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Lieu",
+        "en": "Location"
+      },
+      "exemple": {
+        "fr": "ex. rue Rideau, devant le no 150",
+        "en": "e.g. Rideau Street, in front of no. 150"
+      }
+    },
+    {
+      "id": "plaque",
+      "type": "texte",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Plaque d’immatriculation (facultatif)",
+        "en": "Licence plate (optional)"
+      },
+      "exemple": {
+        "fr": "ex. ABCD 123",
+        "en": "e.g. ABCD 123"
+      }
+    },
+    {
+      "id": "motifs",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Pourquoi vous contestez",
+        "en": "Why you are disputing it"
+      },
+      "exemple": {
+        "fr": "ex. Le panneau était caché par un arbre et le paiement mobile était en cours de traitement.",
+        "en": "e.g. The sign was hidden by a tree and my mobile payment was still being processed."
+      }
+    },
+    {
+      "id": "demande",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Ce que vous demandez",
+        "en": "What you ask for"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "annulation",
+          "fr": "L’annulation du constat",
+          "en": "Cancellation of the ticket",
+          "donnees": {
+            "d": {
+              "fr": "Je vous demande d’annuler ce constat.",
+              "en": "I ask that this ticket be cancelled."
+            }
+          }
+        },
+        {
+          "valeur": "audience",
+          "fr": "Une audience pour présenter ma version",
+          "en": "A hearing to present my side",
+          "donnees": {
+            "d": {
+              "fr": "Je demande à être entendu(e) et à présenter ma version devant l’instance compétente.",
+              "en": "I ask to be heard and to present my side before the competent body."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : la municipalité ou le tribunal indiqué sur le constat (dest_*).",
+    "en": "Free: the municipality or court named on the ticket (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Chaque municipalité et chaque province a sa procédure et ses délais pour contester : un formulaire, un site en ligne ou une comparution peuvent être exigés. Lisez le verso du constat, et envoyez cette lettre avant la date limite.",
+      "en": "Each municipality and province has its own dispute process and deadlines: a form, an online site or an appearance may be required. Read the back of the ticket, and send this letter before the deadline."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"contester-contravention\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Contestation du constat no {{num_constat}}",
+      "en": "Dispute of ticket no. {{num_constat}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je conteste le constat d’infraction no {{num_constat}}, délivré le {{date_constat|date}} à l’endroit suivant : {{lieu|sp}}.",
+        "en": "I am disputing ticket no. {{num_constat}}, issued on {{date_constat|date}} at: {{lieu|sp}}."
+      },
+      {
+        "fr": "Plaque d’immatriculation : {{plaque}}.",
+        "en": "Licence plate: {{plaque}}.",
+        "si": "plaque"
+      },
+      {
+        "fr": "{{motifs|phrase}}",
+        "en": "{{motifs|phrase}}"
+      },
+      {
+        "fr": "{{demande.d}}",
+        "en": "{{demande.d}}"
+      },
+      {
+        "fr": "Je joins, s’il y a lieu, les photos et les documents qui appuient ma version. Merci de m’informer par écrit de la suite donnée à ma demande.",
+        "en": "I attach any photos and documents that support my version. Please tell me in writing what happens next."
+      }
+    ]
+  }
+}

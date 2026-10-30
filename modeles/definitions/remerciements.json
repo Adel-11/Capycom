@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "id": "remerciements",
+  "section": "personnel",
+  "icone": "coeur_main",
+  "titre": {
+    "fr": "Lettre de remerciements",
+    "en": "Thank-you letter"
+  },
+  "description": {
+    "fr": "Remercier quelqu’un pour un cadeau, un service, un accueil ou un soutien.",
+    "en": "Thank someone for a gift, a favour, their hospitality or their support."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-remerciements",
+      "en": "thank-you-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre de remerciements : modèle gratuit | Capycom",
+      "en": "Thank-you letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez une lettre de remerciements pour un cadeau, un service, un accueil ou un soutien. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a thank-you letter for a gift, a favour, hospitality or support. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de remerciements",
+      "en": "Thank-You Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remercier quelqu’un pour un cadeau, un service, un accueil ou un soutien.",
+    "en": "Thank someone for a gift, a favour, their hospitality or their support."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "occasion",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Pour quelle occasion ?",
+        "en": "What are you thanking them for?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "cadeau",
+          "fr": "Un cadeau",
+          "en": "A gift",
+          "donnees": {
+            "p2": {
+              "fr": "Cette attention me va droit au cœur.",
+              "en": "This thoughtful gesture means a lot to me."
+            }
+          }
+        },
+        {
+          "valeur": "aide",
+          "fr": "Un service ou de l’aide",
+          "en": "A favour or help",
+          "donnees": {
+            "p2": {
+              "fr": "Votre aide a fait une vraie différence, et je ne l’oublierai pas.",
+              "en": "Your help made a real difference, and I will not forget it."
+            }
+          }
+        },
+        {
+          "valeur": "accueil",
+          "fr": "Un accueil ou un repas",
+          "en": "Hospitality or a meal",
+          "donnees": {
+            "p2": {
+              "fr": "Votre hospitalité et votre accueil chaleureux ont rendu ce moment très agréable.",
+              "en": "Your hospitality and warm welcome made it a very pleasant time."
+            }
+          }
+        },
+        {
+          "valeur": "soutien",
+          "fr": "Un soutien dans une période difficile",
+          "en": "Support during a hard time",
+          "donnees": {
+            "p2": {
+              "fr": "Votre soutien m’a donné du courage dans une période qui n’était pas simple.",
+              "en": "Your support gave me strength during a period that was not easy."
+            }
+          }
+        },
+        {
+          "valeur": "geste",
+          "fr": "Un geste ou un mot gentil",
+          "en": "A kind gesture or word",
+          "donnees": {
+            "p2": {
+              "fr": "Votre geste a compté pour moi, et je tenais à vous le dire par écrit.",
+              "en": "Your gesture mattered to me, and I wanted to tell you so in writing."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "objet_merci",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Précisez pour quoi vous remerciez",
+        "en": "What exactly are you thanking them for?"
+      },
+      "exemple": {
+        "fr": "ex. le beau livre reçu pour mon anniversaire",
+        "en": "e.g. the lovely book you gave me for my birthday"
+      }
+    },
+    {
+      "id": "detail",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un détail personnel (facultatif)",
+        "en": "A personal detail (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je l’ai déjà commencé et je ne peux plus m’arrêter.",
+        "en": "e.g. I have already started it and cannot put it down."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        },
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"remerciements\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Remerciements",
+      "en": "Thank you"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je tenais à vous remercier pour {{objet_merci|sp}}.",
+        "en": "I wanted to thank you for {{objet_merci|sp}}."
+      },
+      {
+        "fr": "{{occasion.p2}}",
+        "en": "{{occasion.p2}}"
+      },
+      {
+        "fr": "{{detail|phrase}}",
+        "en": "{{detail|phrase}}",
+        "si": "detail"
+      },
+      {
+        "fr": "J’espère avoir bientôt l’occasion de vous remercier de vive voix.",
+        "en": "I hope to have the chance to thank you in person soon."
+      }
+    ]
+  }
+}

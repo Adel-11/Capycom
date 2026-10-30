@@ -7,6 +7,7 @@ export default {
   source: { pdf: 'form-c-nouvelle-ecosse.pdf', url: URL, consulte: '2026-10-30' },
   pages: [2],
   def: {
+    icone: 'sortie',
     section: 'logement',
     titre: T('Avis de départ du locataire (Nouvelle-Écosse, formulaire C)', 'Tenant’s notice to quit (Nova Scotia, Form C)'),
     description: T('Remplir le formulaire C du Residential Tenancies Program de la Nouvelle-Écosse pour quitter votre logement à la fin du bail. Prêt à signer et à poster au propriétaire.', 'Fill in Nova Scotia Residential Tenancies Program Form C to leave your rental unit at the end of the lease term. Ready to sign and mail to your landlord.'),

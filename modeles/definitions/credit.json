@@ -1282,5 +1282,6 @@
       "fr": "Dates au format AAAA-MM-JJ. Les identifiants cr_c{n}_ désignent le compte n. Les noms sont mis en majuscules sur les formulaires Equifax.",
       "en": "Dates use the YYYY-MM-DD format. The cr_c{n}_ ids refer to account n. Names are put in capitals on the Equifax forms."
     }
-  }
+  },
+  "icone": "bouclier"
 }

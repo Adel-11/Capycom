@@ -59,7 +59,7 @@ export async function generer(fichierSpec) {
   f[spec.id] = imgs; fs.writeFileSync(fp, JSON.stringify(f));
   const s = spec.def, a = s.avert || AVERT;
   const d = {
-    version: 1, id: spec.id, section: s.section, titre: s.titre, description: s.description, seo: s.seo, type: 'lettre',
+    version: 1, id: spec.id, section: s.section, titre: s.titre, icone: s.icone, description: s.description, seo: s.seo, type: 'lettre',
     usage: s.usage || s.description, avertissement: a, champs: s.champs, champsCommuns: 'commun.champsLettre',
     destinataire: s.destinataire, piecesJointes: [], liensOfficiels: (s.liens || []).map(l => ({ ...l, cle: spec.id + '_' + l.cle })),
     avertissements: [a].concat(s.avertsPlus || []),

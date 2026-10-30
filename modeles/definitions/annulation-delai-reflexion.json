@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "id": "annulation-delai-reflexion",
+  "section": "contrats",
+  "icone": "chronometre",
+  "titre": {
+    "fr": "Annulation d’un contrat dans le délai de réflexion",
+    "en": "Cancelling a contract within the cooling-off period"
+  },
+  "description": {
+    "fr": "Annuler un contrat conclu à domicile, à distance ou sous pression, quand la loi vous accorde un délai pour changer d’avis.",
+    "en": "Cancel a contract made at your door, at a distance or under pressure, when the law gives you time to change your mind."
+  },
+  "seo": {
+    "slug": {
+      "fr": "annulation-contrat-delai-de-reflexion",
+      "en": "cooling-off-cancellation-letter"
+    },
+    "titre": {
+      "fr": "Annuler un contrat pendant le délai de réflexion : modèle de lettre | Capycom",
+      "en": "Cancel a contract in the cooling-off period: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Lettre pour annuler un contrat de vente à domicile ou à distance dans le délai de réflexion prévu par la loi. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Letter to cancel a door-to-door or distance contract within the cooling-off period set by law. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre d’annulation de contrat (délai de réflexion)",
+      "en": "Cooling-Off Cancellation Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Annuler un contrat conclu à domicile, à distance ou sous pression, quand la loi vous accorde un délai pour changer d’avis.",
+    "en": "Cancel a contract made at your door, at a distance or under pressure, when the law gives you time to change your mind."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "type",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Comment le contrat a-t-il été conclu ?",
+        "en": "How was the contract made?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "domicile",
+          "fr": "À ma porte ou chez moi (vente à domicile)",
+          "en": "At my door or in my home",
+          "donnees": {
+            "m": {
+              "fr": "conclu à mon domicile",
+              "en": "made at my home"
+            }
+          }
+        },
+        {
+          "valeur": "distance",
+          "fr": "À distance (téléphone ou Internet)",
+          "en": "At a distance (phone or online)",
+          "donnees": {
+            "m": {
+              "fr": "conclu à distance",
+              "en": "made at a distance"
+            }
+          }
+        },
+        {
+          "valeur": "autre",
+          "fr": "Autre situation prévue par la loi",
+          "en": "Another situation covered by law",
+          "donnees": {
+            "m": {
+              "fr": "conclu",
+              "en": "made"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "produit",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Produit ou service",
+        "en": "Product or service"
+      },
+      "exemple": {
+        "fr": "ex. un contrat de chauffe-eau",
+        "en": "e.g. a water heater contract"
+      }
+    },
+    {
+      "id": "date_contrat",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de signature du contrat",
+        "en": "Date you signed the contract"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "num_contrat",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro du contrat (facultatif)",
+        "en": "Contract number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. A-123456",
+        "en": "e.g. A-123456"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Une lettre de ce genre peut avoir des conséquences juridiques. Si l’enjeu est important, faites-la relire par un avocat ou un notaire avant de l’envoyer.",
+      "en": "A letter of this kind can have legal consequences. If a lot is at stake, have a lawyer or notary read it before you send it."
+    },
+    {
+      "fr": "Le délai de réflexion dépend du type de contrat et de la province. Calculez-le sur le site de l’organisme de protection du consommateur de votre province et postez la lettre avec une preuve d’envoi avant la fin du délai.",
+      "en": "The cooling-off period depends on the type of contract and the province. Work it out on your province’s consumer protection website and mail the letter with proof of mailing before the period ends."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"annulation-delai-reflexion\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Annulation du contrat du {{date_contrat|date}}",
+      "en": "Cancellation of the contract dated {{date_contrat|date}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous informe que j’annule le contrat suivant, {{type.m}} le {{date_contrat|date}} : {{produit|sp}}.",
+        "en": "I am writing to cancel the following contract, {{type.m}} on {{date_contrat|date}}: {{produit|sp}}."
+      },
+      {
+        "fr": "Numéro du contrat : {{num_contrat}}.",
+        "en": "Contract number: {{num_contrat}}.",
+        "si": "num_contrat"
+      },
+      {
+        "fr": "Je fais cette demande dans le délai de réflexion prévu par la loi sur la protection du consommateur de ma province ou de mon territoire.",
+        "en": "I am making this request within the cooling-off period set by the consumer protection law of my province or territory."
+      },
+      {
+        "fr": "Je vous demande de me rembourser toute somme versée, de cesser tout prélèvement, de ne pas poursuivre l’exécution du contrat et de me confirmer l’annulation par écrit. Je tiens à votre disposition tout bien reçu, afin que vous en repreniez possession.",
+        "en": "Please refund any amount I paid, stop any withdrawals, do not continue to perform the contract and confirm the cancellation in writing. Any goods received are available for you to collect."
+      }
+    ]
+  }
+}

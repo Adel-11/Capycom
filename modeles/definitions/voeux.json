@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "id": "voeux",
+  "section": "personnel",
+  "icone": "cadeau",
+  "titre": {
+    "fr": "Lettre de vœux",
+    "en": "Greeting letter"
+  },
+  "description": {
+    "fr": "Souhaiter de bonnes fêtes ou un bon anniversaire : Noël, Nouvel An, Action de grâce, fête des Mères ou des Pères, anniversaire, Saint-Valentin.",
+    "en": "Send seasonal or birthday wishes: Christmas, New Year, Thanksgiving, Mother’s or Father’s Day, birthday, Valentine’s Day."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-voeux",
+      "en": "greeting-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre de vœux : Noël, Nouvel An, anniversaire, fête des Mères | Capycom",
+      "en": "Greeting letter: Christmas, New Year, birthday, Mother’s Day | Capycom"
+    },
+    "description": {
+      "fr": "Modèles de lettres de vœux : Noël, Nouvel An, Action de grâce, anniversaire, fête des Mères et des Pères. Gratuits, à télécharger ou à faire poster au Canada.",
+      "en": "Greeting letter templates: Christmas, New Year, Thanksgiving, birthday, Mother’s and Father’s Day. Free, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de vœux",
+      "en": "Greeting Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Souhaiter de bonnes fêtes ou un bon anniversaire : Noël, Nouvel An, Action de grâce, fête des Mères ou des Pères, anniversaire, Saint-Valentin.",
+    "en": "Send seasonal or birthday wishes: Christmas, New Year, Thanksgiving, Mother’s or Father’s Day, birthday, Valentine’s Day."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "occasion",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Pour quelle occasion ?",
+        "en": "Which occasion?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "noel",
+          "fr": "Noël",
+          "en": "Christmas",
+          "donnees": {
+            "p1": {
+              "fr": "Joyeux Noël ! En cette période de l’année, je pense à vous avec plaisir.",
+              "en": "Merry Christmas! At this time of year, I think of you fondly."
+            },
+            "p2": {
+              "fr": "Je vous souhaite des fêtes chaleureuses, entourés de ceux que vous aimez.",
+              "en": "I wish you a warm holiday season, surrounded by the people you love."
+            }
+          }
+        },
+        {
+          "valeur": "nouvelan",
+          "fr": "Nouvel An",
+          "en": "New Year",
+          "donnees": {
+            "p1": {
+              "fr": "Bonne et heureuse année !",
+              "en": "Happy New Year!"
+            },
+            "p2": {
+              "fr": "Que cette nouvelle année vous apporte la santé, de la joie et la réussite de vos projets.",
+              "en": "May the new year bring you health, joy and success in your plans."
+            }
+          }
+        },
+        {
+          "valeur": "actiongrace",
+          "fr": "Action de grâce",
+          "en": "Thanksgiving",
+          "donnees": {
+            "p1": {
+              "fr": "Joyeuse Action de grâce !",
+              "en": "Happy Thanksgiving!"
+            },
+            "p2": {
+              "fr": "J’ai la chance de vous avoir dans ma vie, et je profite de l’occasion pour vous le dire.",
+              "en": "I am lucky to have you in my life, and I would like to take this chance to say so."
+            }
+          }
+        },
+        {
+          "valeur": "anniversaire",
+          "fr": "Anniversaire",
+          "en": "Birthday",
+          "donnees": {
+            "p1": {
+              "fr": "Joyeux anniversaire !",
+              "en": "Happy birthday!"
+            },
+            "p2": {
+              "fr": "Je vous souhaite une belle journée, de bons moments et une année remplie de bonnes surprises.",
+              "en": "I wish you a lovely day, good moments and a year full of good surprises."
+            }
+          }
+        },
+        {
+          "valeur": "mere",
+          "fr": "Fête des Mères",
+          "en": "Mother’s Day",
+          "donnees": {
+            "p1": {
+              "fr": "Bonne fête des Mères !",
+              "en": "Happy Mother’s Day!"
+            },
+            "p2": {
+              "fr": "Merci pour tout ce que vous faites et pour ce que vous êtes.",
+              "en": "Thank you for everything you do and everything you are."
+            }
+          }
+        },
+        {
+          "valeur": "pere",
+          "fr": "Fête des Pères",
+          "en": "Father’s Day",
+          "donnees": {
+            "p1": {
+              "fr": "Bonne fête des Pères !",
+              "en": "Happy Father’s Day!"
+            },
+            "p2": {
+              "fr": "Merci pour tout ce que vous faites et pour ce que vous êtes.",
+              "en": "Thank you for everything you do and everything you are."
+            }
+          }
+        },
+        {
+          "valeur": "valentin",
+          "fr": "Saint-Valentin",
+          "en": "Valentine’s Day",
+          "donnees": {
+            "p1": {
+              "fr": "Joyeuse Saint-Valentin !",
+              "en": "Happy Valentine’s Day!"
+            },
+            "p2": {
+              "fr": "Je voulais simplement vous dire que vous comptez beaucoup pour moi.",
+              "en": "I simply wanted to tell you that you mean a lot to me."
+            }
+          }
+        },
+        {
+          "valeur": "paques",
+          "fr": "Pâques",
+          "en": "Easter",
+          "donnees": {
+            "p1": {
+              "fr": "Joyeuses Pâques !",
+              "en": "Happy Easter!"
+            },
+            "p2": {
+              "fr": "Je vous souhaite un beau congé, de la douceur et de bons moments en famille.",
+              "en": "I wish you a lovely break, some gentleness and good family time."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "detail",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un mot personnel (facultatif)",
+        "en": "A personal note (optional)"
+      },
+      "exemple": {
+        "fr": "ex. J’espère qu’on pourra se voir bientôt.",
+        "en": "e.g. I hope we can see each other soon."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        },
+        {
+          "valeur": "chaleureuse",
+          "fr": "Chaleureuse",
+          "en": "Chaleureuse",
+          "donnees": {
+            "pol": {
+              "fr": "Bien chaleureusement,",
+              "en": "Warmly,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"voeux\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Vœux",
+      "en": "Greetings"
+    },
+    "paragraphes": [
+      {
+        "fr": "{{occasion.p1}}",
+        "en": "{{occasion.p1}}"
+      },
+      {
+        "fr": "{{occasion.p2}}",
+        "en": "{{occasion.p2}}"
+      },
+      {
+        "fr": "{{detail|phrase}}",
+        "en": "{{detail|phrase}}",
+        "si": "detail"
+      }
+    ]
+  }
+}

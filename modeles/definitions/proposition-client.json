@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "proposition-client",
+  "section": "affaires",
+  "icone": "ampoule",
+  "titre": {
+    "fr": "Proposition à un client",
+    "en": "Client proposal letter"
+  },
+  "description": {
+    "fr": "Proposer vos services ou un projet à un client potentiel, avec prix et échéancier.",
+    "en": "Propose your services or a project to a potential client, with price and timeline."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-proposition-client",
+      "en": "client-proposal-letter"
+    },
+    "titre": {
+      "fr": "Proposition à un client : modèle de lettre gratuit | Capycom",
+      "en": "Client proposal letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Présentez une offre de services claire à un client : portée, prix, échéancier. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Present a clear service offer to a client: scope, price, timeline. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de proposition à un client",
+      "en": "Client Proposal Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Proposer vos services ou un projet à un client potentiel, avec prix et échéancier.",
+    "en": "Propose your services or a project to a potential client, with price and timeline."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "entreprise",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de votre entreprise",
+        "en": "Your company name"
+      },
+      "exemple": {
+        "fr": "ex. Atelier Exemple inc.",
+        "en": "e.g. Example Workshop Inc."
+      }
+    },
+    {
+      "id": "projet",
+      "type": "texte",
+      "requis": true,
+      "max": 140,
+      "libelle": {
+        "fr": "Projet ou service proposé",
+        "en": "Project or service proposed"
+      },
+      "exemple": {
+        "fr": "ex. Entretien annuel des systèmes de ventilation",
+        "en": "e.g. Annual maintenance of ventilation systems"
+      }
+    },
+    {
+      "id": "portee",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce qui est inclus",
+        "en": "What is included"
+      },
+      "exemple": {
+        "fr": "ex. Deux visites par année, rapport écrit et pièces de remplacement courantes.",
+        "en": "e.g. Two visits a year, a written report and common replacement parts."
+      }
+    },
+    {
+      "id": "prix",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Prix proposé (avant taxes)",
+        "en": "Proposed price (before tax)"
+      },
+      "exemple": {
+        "fr": "ex. 2 400,00",
+        "en": "e.g. 2,400.00"
+      }
+    },
+    {
+      "id": "echeancier",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Échéancier (facultatif)",
+        "en": "Timeline (optional)"
+      },
+      "exemple": {
+        "fr": "ex. début en janvier, fin en mars",
+        "en": "e.g. start in January, finish in March"
+      }
+    },
+    {
+      "id": "validite",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Offre valable jusqu’au",
+        "en": "Offer valid until"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"proposition-client\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Proposition : {{projet}}",
+      "en": "Proposal: {{projet}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "{{entreprise}} a le plaisir de vous soumettre la proposition suivante : {{projet|sp}}.",
+        "en": "{{entreprise}} is pleased to submit the following proposal: {{projet|sp}}."
+      },
+      {
+        "fr": "Ce qui est inclus : {{portee|sp}}.",
+        "en": "What is included: {{portee|sp}}."
+      },
+      {
+        "fr": "Prix : {{prix|montant}}, avant taxes.",
+        "en": "Price: {{prix|montant}}, before tax."
+      },
+      {
+        "fr": "Échéancier : {{echeancier|sp}}.",
+        "en": "Timeline: {{echeancier|sp}}.",
+        "si": "echeancier"
+      },
+      {
+        "fr": "Cette offre est valable jusqu’au {{validite|date}}. Nous restons disponibles pour en discuter.",
+        "en": "This offer is valid until {{validite|date}}. We remain available to discuss it."
+      }
+    ]
+  }
+}

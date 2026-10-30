@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "id": "condoleances",
+  "section": "personnel",
+  "icone": "fleur",
+  "titre": {
+    "fr": "Lettre de condoléances",
+    "en": "Condolence letter"
+  },
+  "description": {
+    "fr": "Exprimer votre sympathie à une personne qui vit un deuil.",
+    "en": "Express your sympathy to someone who is grieving."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-condoleances",
+      "en": "condolence-letter-template"
+    },
+    "titre": {
+      "fr": "Lettre de condoléances : modèle gratuit | Capycom",
+      "en": "Condolence letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez quelques mots sobres et sincères à une personne en deuil. Modèle de lettre de condoléances gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a few sincere words to someone who is grieving. Free condolence letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de condoléances",
+      "en": "Condolence Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Exprimer votre sympathie à une personne qui vit un deuil.",
+    "en": "Express your sympathy to someone who is grieving."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Chère Marie",
+        "en": "e.g. Dear Marie"
+      }
+    },
+    {
+      "id": "defunt",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Qui est décédé ?",
+        "en": "Who passed away?"
+      },
+      "exemple": {
+        "fr": "ex. votre père, Jean Tremblay",
+        "en": "e.g. your father, John Smith"
+      }
+    },
+    {
+      "id": "souvenir",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Un souvenir ou une qualité de la personne (facultatif)",
+        "en": "A memory or quality of the person (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Il avait toujours un mot gentil pour tout le monde.",
+        "en": "e.g. He always had a kind word for everyone."
+      }
+    },
+    {
+      "id": "offre",
+      "type": "texte",
+      "requis": false,
+      "max": 200,
+      "libelle": {
+        "fr": "Une aide que vous pouvez offrir (facultatif)",
+        "en": "Help you can offer (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je peux vous apporter des repas cette semaine.",
+        "en": "e.g. I can bring over some meals this week."
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "sympathie",
+      "options": [
+        {
+          "valeur": "sympathie",
+          "fr": "Sympathie",
+          "en": "Sympathie",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute ma sympathie,",
+              "en": "With deepest sympathy,"
+            }
+          }
+        },
+        {
+          "valeur": "cordiale",
+          "fr": "Cordiale",
+          "en": "Cordiale",
+          "donnees": {
+            "pol": {
+              "fr": "Cordialement,",
+              "en": "Kind regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"condoleances\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "Condoléances",
+      "en": "Condolences"
+    },
+    "paragraphes": [
+      {
+        "fr": "C’est avec une grande tristesse que j’ai appris le décès de {{defunt|sp}}. Je tiens à vous offrir mes plus sincères condoléances.",
+        "en": "I was deeply saddened to learn of the passing of {{defunt|sp}}. Please accept my sincere condolences."
+      },
+      {
+        "fr": "{{souvenir|phrase}}",
+        "en": "{{souvenir|phrase}}",
+        "si": "souvenir"
+      },
+      {
+        "fr": "Je pense beaucoup à vous et à ceux qui vous entourent en ces moments difficiles.",
+        "en": "You and those around you are in my thoughts during this difficult time."
+      },
+      {
+        "fr": "{{offre|phrase}} N’hésitez pas à me demander si je peux vous aider.",
+        "en": "{{offre|phrase}} Please do not hesitate to ask if I can help.",
+        "si": "offre"
+      },
+      {
+        "fr": "N’hésitez pas à me demander si je peux vous aider.",
+        "en": "Please do not hesitate to ask if I can help.",
+        "si": {
+          "champ": "offre",
+          "vide": true
+        }
+      }
+    ]
+  }
+}

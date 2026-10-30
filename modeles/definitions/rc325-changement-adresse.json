@@ -6,6 +6,7 @@
     "fr": "Changement d’adresse à l’ARC (RC325)",
     "en": "Address change with the CRA (RC325)"
   },
+  "icone": "epingle",
   "description": {
     "fr": "Remplir le formulaire RC325 de l’Agence du revenu du Canada pour changer votre adresse postale, votre adresse du domicile et vos numéros de téléphone. Prêt à signer et à poster au centre fiscal.",
     "en": "Fill in Canada Revenue Agency form RC325 to change your mailing address, home address and phone numbers. Ready to sign and mail to the tax centre."

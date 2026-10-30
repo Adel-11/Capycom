@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "id": "suivi-reunion",
+  "section": "affaires",
+  "icone": "calendrier",
+  "titre": {
+    "fr": "Suivi après une réunion",
+    "en": "Meeting follow-up letter"
+  },
+  "description": {
+    "fr": "Résumer une réunion, les décisions prises et les prochaines étapes.",
+    "en": "Summarize a meeting, the decisions made and the next steps."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-suivi-reunion",
+      "en": "meeting-follow-up-letter"
+    },
+    "titre": {
+      "fr": "Suivi de réunion : modèle de lettre gratuit | Capycom",
+      "en": "Meeting follow-up letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Résumez une réunion, les décisions et les prochaines étapes dans une lettre claire. Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Summarize a meeting, the decisions and the next steps in a clear letter. Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de suivi de réunion",
+      "en": "Meeting Follow-Up Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Résumer une réunion, les décisions prises et les prochaines étapes.",
+    "en": "Summarize a meeting, the decisions made and the next steps."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+    "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+  },
+  "champs": [
+    {
+      "id": "date_reunion",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de la réunion",
+        "en": "Meeting date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "sujet",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Sujet",
+        "en": "Subject"
+      },
+      "exemple": {
+        "fr": "ex. Rénovation de l’entrepôt",
+        "en": "e.g. Warehouse renovation"
+      }
+    },
+    {
+      "id": "decisions",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Décisions prises",
+        "en": "Decisions made"
+      },
+      "exemple": {
+        "fr": "ex. Le budget est fixé à 40 000 $ et les travaux commencent en janvier.",
+        "en": "e.g. The budget is set at $40,000 and work begins in January."
+      }
+    },
+    {
+      "id": "prochaines",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Prochaines étapes et responsables",
+        "en": "Next steps and who is responsible"
+      },
+      "exemple": {
+        "fr": "ex. Vous envoyez les plans d’ici le 15 novembre; nous remettons la soumission le 22.",
+        "en": "e.g. You send the plans by November 15; we deliver the quote on the 22nd."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Adaptez-le à votre situation et relisez-le avant de l’envoyer.",
+      "en": "This template is a starting point. Adapt it to your situation and read it over before you send it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"suivi-reunion\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Suivi de notre réunion du {{date_reunion|date}}, {{sujet}}",
+      "en": "Follow-up to our meeting of {{date_reunion|date}}, {{sujet}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Merci pour notre rencontre du {{date_reunion|date}} au sujet de {{sujet|sp}}. Voici un résumé de ce dont nous avons convenu.",
+        "en": "Thank you for our meeting on {{date_reunion|date}} about {{sujet|sp}}. Here is a summary of what we agreed."
+      },
+      {
+        "fr": "Décisions : {{decisions|sp}}.",
+        "en": "Decisions: {{decisions|sp}}."
+      },
+      {
+        "fr": "Prochaines étapes : {{prochaines|sp}}.",
+        "en": "Next steps: {{prochaines|sp}}."
+      },
+      {
+        "fr": "Si ce résumé ne correspond pas à votre compréhension, merci de me le signaler.",
+        "en": "If this summary does not match your understanding, please let me know."
+      }
+    ]
+  }
+}

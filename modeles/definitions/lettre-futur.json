@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "id": "lettre-futur",
+  "section": "personnel",
+  "icone": "sablier",
+  "titre": {
+    "fr": "Lettre à moi-même dans le futur",
+    "en": "Letter to my future self"
+  },
+  "description": {
+    "fr": "Écrire à la personne que vous serez dans quelques années.",
+    "en": "Write to the person you will be in a few years."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-a-soi-meme-futur",
+      "en": "letter-to-future-self"
+    },
+    "titre": {
+      "fr": "Lettre à soi-même dans le futur : modèle gratuit | Capycom",
+      "en": "Letter to your future self: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez à la personne que vous serez dans quelques années : où vous en êtes, vos espoirs, vos questions. Modèle gratuit, à télécharger ou à faire poster.",
+      "en": "Write to the person you will be in a few years: where you are, your hopes, your questions. Free template, to download or have mailed."
+    },
+    "h1": {
+      "fr": "Lettre à soi-même dans le futur",
+      "en": "Letter to Your Future Self"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Écrire à la personne que vous serez dans quelques années.",
+    "en": "Write to the person you will be in a few years."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+    "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+  },
+  "champs": [
+    {
+      "id": "appel",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Formule d’appel",
+        "en": "Opening greeting"
+      },
+      "exemple": {
+        "fr": "ex. Salut, moi de 2031",
+        "en": "e.g. Hello, me in 2031"
+      }
+    },
+    {
+      "id": "horizon",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Dans combien de temps la lirez-vous ?",
+        "en": "When will you read it?"
+      },
+      "exemple": {
+        "fr": "ex. dans cinq ans",
+        "en": "e.g. in five years"
+      }
+    },
+    {
+      "id": "situation",
+      "type": "texte-long",
+      "requis": true,
+      "max": 400,
+      "libelle": {
+        "fr": "Où vous en êtes aujourd’hui",
+        "en": "Where you are today"
+      },
+      "exemple": {
+        "fr": "ex. J’apprends à cuisiner et je cherche un nouvel appartement.",
+        "en": "e.g. I am learning to cook and looking for a new apartment."
+      }
+    },
+    {
+      "id": "espoirs",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Vos espoirs pour la suite (facultatif)",
+        "en": "Your hopes for what comes next (optional)"
+      },
+      "exemple": {
+        "fr": "ex. avoir terminé mon diplôme et voyagé un peu",
+        "en": "e.g. to have finished my degree and travelled a bit"
+      }
+    },
+    {
+      "id": "question",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Une question à vous poser (facultatif)",
+        "en": "A question for yourself (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Est-ce que tu as encore le temps de lire ?",
+        "en": "e.g. Do you still make time to read?"
+      }
+    },
+    {
+      "id": "formule",
+      "type": "choix",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Formule de fin",
+        "en": "Closing"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "amicale",
+      "options": [
+        {
+          "valeur": "amicale",
+          "fr": "Amicale",
+          "en": "Amicale",
+          "donnees": {
+            "pol": {
+              "fr": "Amicalement,",
+              "en": "Warm regards,"
+            }
+          }
+        },
+        {
+          "valeur": "affectueuse",
+          "fr": "Affectueuse",
+          "en": "Affectueuse",
+          "donnees": {
+            "pol": {
+              "fr": "Avec toute mon affection,",
+              "en": "With much love,"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de la personne à qui vous écrivez (dest_*).",
+    "en": "Free: give the name and address of the person you are writing to (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Modifiez-le pour qu’il vous ressemble et relisez-le avant de l’imprimer ou de le faire poster.",
+      "en": "This template is a starting point. Change it so it sounds like you, and read it over before you print it or have it mailed."
+    },
+    {
+      "fr": "Cette lettre est postée à l’adresse que vous indiquez, à la date de la commande. Si vous voulez la lire dans plusieurs années, gardez-la dans un endroit sûr plutôt que de l’envoyer maintenant.",
+      "en": "The letter is mailed to the address you give, on the day you order it. If you want to read it in several years, keep it somewhere safe rather than mailing it now."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"lettre-futur\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "salut": {
+      "fr": "{{appel}},",
+      "en": "{{appel}},"
+    },
+    "sansObjet": true,
+    "politesse": {
+      "fr": "{{formule.pol}}",
+      "en": "{{formule.pol}}"
+    },
+    "objet": {
+      "fr": "À moi-même",
+      "en": "To myself"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je t’écris aujourd’hui en pensant au moment où tu liras cette lettre, {{horizon|sp}}.",
+        "en": "I am writing today thinking of the moment you will read this letter, {{horizon|sp}}."
+      },
+      {
+        "fr": "Voici où j’en suis : {{situation|sp}}.",
+        "en": "Here is where I am: {{situation|sp}}."
+      },
+      {
+        "fr": "Voici ce que j’espère pour la suite : {{espoirs|sp}}.",
+        "en": "Here is what I hope for: {{espoirs|sp}}.",
+        "si": "espoirs"
+      },
+      {
+        "fr": "Une question pour toi : {{question|sp}} ?",
+        "en": "A question for you: {{question|sp}}?",
+        "si": "question"
+      },
+      {
+        "fr": "Quoi qu’il soit arrivé entre-temps, j’espère que tu es fier de ce que tu as fait et que tu prends soin de toi.",
+        "en": "Whatever has happened in the meantime, I hope you are proud of what you did and that you take care of yourself."
+      }
+    ]
+  }
+}

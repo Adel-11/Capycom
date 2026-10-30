@@ -18,6 +18,7 @@ const def = { version: defs.version, commun: defs.commun, modeles: defs.modeles 
 const fonds = chargerFonds();
 const parties = {
   moteur: lire('moteur.cjs'),
+  icones: lire('site', 'icones.js'),
   interface: lire('site', 'interface.js'),
   css: lire('site', 'styles.css'),
 };
@@ -28,7 +29,7 @@ const donnees = 'window.CapyModelesDef = ' + JSON.stringify(def).replace(/<\/(sc
 
 const bloc = '<style>\n' + parties.css.trim() + '\n</style>\n' +
   '<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n' +
-  '<script>\n' + parties.moteur + '\n' + donnees + '\n' + parties.interface + '\n</script>';
+  '<script>\n' + parties.moteur + '\n' + donnees + '\n' + parties.icones + '\n' + parties.interface + '\n</script>';
 
 const sortie = path.join(ici, 'dist', 'bloc-bubble.html');
 fs.mkdirSync(path.dirname(sortie), { recursive: true });

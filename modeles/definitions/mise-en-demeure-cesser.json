@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "id": "mise-en-demeure-cesser",
+  "section": "juridique",
+  "icone": "marteau",
+  "titre": {
+    "fr": "Mise en demeure de cesser un comportement",
+    "en": "Cease and desist letter"
+  },
+  "description": {
+    "fr": "Demander par écrit à quelqu’un de mettre fin à un comportement : harcèlement, bruit, utilisation de vos biens ou de votre nom.",
+    "en": "Ask someone in writing to stop a behaviour: harassment, noise, use of your property or name."
+  },
+  "seo": {
+    "slug": {
+      "fr": "mise-en-demeure-cesser",
+      "en": "cease-and-desist-letter"
+    },
+    "titre": {
+      "fr": "Mise en demeure de cesser : modèle de lettre gratuit | Capycom",
+      "en": "Cease and desist letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Exigez par écrit qu’une personne ou une entreprise cesse un comportement. Modèle de lettre gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Demand in writing that a person or company stops a behaviour. Free letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Mise en demeure de cesser",
+      "en": "Cease and Desist Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander par écrit à quelqu’un de mettre fin à un comportement : harcèlement, bruit, utilisation de vos biens ou de votre nom.",
+    "en": "Ask someone in writing to stop a behaviour: harassment, noise, use of your property or name."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "comportement",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Le comportement qui doit cesser",
+        "en": "The behaviour that must stop"
+      },
+      "exemple": {
+        "fr": "ex. Vous stationnez votre véhicule devant l’entrée de mon garage presque chaque soir.",
+        "en": "e.g. You park your vehicle in front of my garage entrance almost every evening."
+      }
+    },
+    {
+      "id": "faits",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Dates et faits utiles (facultatif)",
+        "en": "Dates and useful facts (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Constaté les 2, 5 et 9 octobre, photos à l’appui.",
+        "en": "e.g. Seen on October 2, 5 and 9, with photos."
+      }
+    },
+    {
+      "id": "date_limite",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date limite pour cesser ou répondre",
+        "en": "Deadline to stop or reply"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "suite",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Si le comportement continue",
+        "en": "If it continues"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "droits",
+          "fr": "Je me réserve le droit de faire valoir mes droits",
+          "en": "I reserve the right to enforce my rights",
+          "donnees": {
+            "s": {
+              "fr": "Si ce comportement se poursuit après cette date, je me réserve le droit de faire valoir mes droits par les moyens appropriés.",
+              "en": "If this behaviour continues after that date, I reserve the right to enforce my rights through appropriate means."
+            }
+          }
+        },
+        {
+          "valeur": "plainte",
+          "fr": "Je pourrai déposer une plainte auprès de l’instance compétente",
+          "en": "I may file a complaint with the competent body",
+          "donnees": {
+            "s": {
+              "fr": "Si ce comportement se poursuit après cette date, je pourrai déposer une plainte auprès de l’instance compétente.",
+              "en": "If this behaviour continues after that date, I may file a complaint with the competent body."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse du destinataire (dest_*).",
+    "en": "Free: give the recipient’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Une lettre de ce genre peut avoir des conséquences juridiques. Si l’enjeu est important, faites-la relire par un avocat ou un notaire avant de l’envoyer.",
+      "en": "A letter of this kind can have legal consequences. If a lot is at stake, have a lawyer or notary read it before you send it."
+    },
+    {
+      "fr": "Gardez une preuve d’envoi. Selon la situation (harcèlement, menaces, danger), la police ou un avocat sont plus appropriés qu’une lettre.",
+      "en": "Keep proof of mailing. Depending on the situation (harassment, threats, danger), the police or a lawyer are more appropriate than a letter."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"mise-en-demeure-cesser\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Mise en demeure de cesser",
+      "en": "Formal demand to stop"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris pour vous demander de cesser le comportement suivant : {{comportement|sp}}.",
+        "en": "I am writing to ask you to stop the following behaviour: {{comportement|sp}}."
+      },
+      {
+        "fr": "{{faits|phrase}}",
+        "en": "{{faits|phrase}}",
+        "si": "faits"
+      },
+      {
+        "fr": "Je vous demande d’y mettre fin au plus tard le {{date_limite|date}} et de me confirmer par écrit que c’est fait.",
+        "en": "I ask that you stop by {{date_limite|date}} at the latest and confirm in writing that you have."
+      },
+      {
+        "fr": "{{suite.s}}",
+        "en": "{{suite.s}}"
+      },
+      {
+        "fr": "Je préférerais régler la situation simplement. Vous pouvez me joindre aux coordonnées indiquées ci-dessus.",
+        "en": "I would rather settle this simply. You can reach me at the contact details above."
+      }
+    ]
+  }
+}

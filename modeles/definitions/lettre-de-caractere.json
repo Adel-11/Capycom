@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "id": "lettre-de-caractere",
+  "section": "gouv",
+  "icone": "pouce",
+  "titre": {
+    "fr": "Lettre de caractère ou de soutien",
+    "en": "Character or support letter"
+  },
+  "description": {
+    "fr": "Parler en faveur d’une personne que vous connaissez : immigration, tribunal, location, adoption.",
+    "en": "Speak in favour of someone you know: immigration, court, rental, adoption."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-caractere-soutien",
+      "en": "character-reference-letter"
+    },
+    "titre": {
+      "fr": "Lettre de caractère ou de soutien : modèle gratuit | Capycom",
+      "en": "Character reference letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Écrivez une lettre de caractère pour appuyer quelqu’un que vous connaissez (immigration, tribunal, location). Modèle gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Write a character letter to support someone you know (immigration, court, rental). Free template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de caractère",
+      "en": "Character Reference Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Parler en faveur d’une personne que vous connaissez : immigration, tribunal, location, adoption.",
+    "en": "Speak in favour of someone you know: immigration, court, rental, adoption."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "personne",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Nom de la personne que vous appuyez",
+        "en": "Name of the person you are supporting"
+      },
+      "exemple": {
+        "fr": "ex. Samir Haddad",
+        "en": "e.g. Samir Haddad"
+      }
+    },
+    {
+      "id": "but",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Dans quel but ?",
+        "en": "For what purpose?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "immigration",
+          "fr": "Une demande d’immigration",
+          "en": "An immigration application",
+          "donnees": {
+            "b": {
+              "fr": "sa demande d’immigration",
+              "en": "their immigration application"
+            }
+          }
+        },
+        {
+          "valeur": "tribunal",
+          "fr": "Une audience ou un tribunal",
+          "en": "A hearing or court",
+          "donnees": {
+            "b": {
+              "fr": "son dossier devant le tribunal",
+              "en": "their matter before the court"
+            }
+          }
+        },
+        {
+          "valeur": "logement",
+          "fr": "Une demande de location",
+          "en": "A rental application",
+          "donnees": {
+            "b": {
+              "fr": "sa demande de location",
+              "en": "their rental application"
+            }
+          }
+        },
+        {
+          "valeur": "adoption",
+          "fr": "Une adoption",
+          "en": "An adoption",
+          "donnees": {
+            "b": {
+              "fr": "son projet d’adoption",
+              "en": "their adoption plan"
+            }
+          }
+        },
+        {
+          "valeur": "autre",
+          "fr": "Autre démarche",
+          "en": "Another process",
+          "donnees": {
+            "b": {
+              "fr": "sa démarche",
+              "en": "their application"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lien",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Votre lien avec cette personne",
+        "en": "Your relationship with this person"
+      },
+      "exemple": {
+        "fr": "ex. voisin, collègue, ami",
+        "en": "e.g. neighbour, colleague, friend"
+      }
+    },
+    {
+      "id": "duree",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Depuis combien de temps vous la connaissez",
+        "en": "How long you have known this person"
+      },
+      "exemple": {
+        "fr": "ex. depuis huit ans",
+        "en": "e.g. for eight years"
+      }
+    },
+    {
+      "id": "qualites",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Ce que vous avez observé personnellement",
+        "en": "What you have seen first-hand"
+      },
+      "exemple": {
+        "fr": "ex. Elle est fiable, présente pour son entourage et s’implique dans notre quartier.",
+        "en": "e.g. She is reliable, there for those around her, and active in our neighbourhood."
+      }
+    },
+    {
+      "id": "exemple",
+      "type": "texte-long",
+      "requis": false,
+      "max": 500,
+      "libelle": {
+        "fr": "Un exemple concret (facultatif)",
+        "en": "A concrete example (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Il a aidé plusieurs familles pendant le verglas de 2023.",
+        "en": "e.g. He helped several families during the 2023 ice storm."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez l’organisme, le tribunal ou la personne qui recevra la lettre (dest_*).",
+    "en": "Free: give the body, court or person who will receive the letter (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "Une lettre de ce genre peut avoir des conséquences juridiques. Si l’enjeu est important, faites-la relire par un avocat ou un notaire avant de l’envoyer.",
+      "en": "A letter of this kind can have legal consequences. If a lot is at stake, have a lawyer or notary read it before you send it."
+    },
+    {
+      "fr": "N’écrivez que ce qui est vrai et que vous avez vu vous-même. Un organisme peut demander une déclaration sous serment ou une copie de pièce d’identité : renseignez-vous auprès de lui.",
+      "en": "Write only what is true and what you have seen yourself. A body may ask for a sworn statement or a copy of your ID: check with it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"lettre-de-caractere\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Lettre de soutien pour {{personne}}",
+      "en": "Support letter for {{personne}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "J’écris pour appuyer {{personne}} dans {{but.b}}. Je connais cette personne en tant que {{lien|sp}}, {{duree|sp}}.",
+        "en": "I am writing to support {{personne}} in {{but.b}}. I know this person as {{lien|sp}}, {{duree|sp}}."
+      },
+      {
+        "fr": "{{qualites|phrase}}",
+        "en": "{{qualites|phrase}}"
+      },
+      {
+        "fr": "{{exemple|phrase}}",
+        "en": "{{exemple|phrase}}",
+        "si": "exemple"
+      },
+      {
+        "fr": "Ce que j’écris est fondé sur ce que j’ai moi-même observé. Je suis disponible pour répondre à toute question aux coordonnées indiquées ci-dessus.",
+        "en": "What I write is based on what I have seen myself. I am available to answer any question at the contact details above."
+      }
+    ]
+  }
+}

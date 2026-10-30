@@ -13,7 +13,9 @@
       },
       "modeles": [
         "resiliation",
-        "resiliation-telecom"
+        "resiliation-telecom",
+        "resiliation-salle-sport",
+        "annulation-delai-reflexion"
       ],
       "slug": {
         "fr": "contrats-et-abonnements",
@@ -26,7 +28,8 @@
       "seo": {
         "fr": "Modèles de lettres pour résilier un contrat ou un abonnement. Gratuits, à télécharger en PDF ou Word, ou à faire poster au Canada.",
         "en": "Letter templates to cancel a contract or a subscription. Free to download as PDF or Word, or have them mailed in Canada."
-      }
+      },
+      "icone": "fichier"
     },
     {
       "id": "argent",
@@ -38,7 +41,12 @@
         "credit",
         "remboursement",
         "contestation",
-        "demeure"
+        "demeure",
+        "validation-dette",
+        "plainte-banque",
+        "plainte-entreprise",
+        "produit-defectueux",
+        "delai-paiement"
       ],
       "slug": {
         "fr": "argent-et-factures",
@@ -51,7 +59,8 @@
       "seo": {
         "fr": "Modèles de lettres pour demander un remboursement, contester une facture ou envoyer une mise en demeure. Gratuits, en PDF ou Word.",
         "en": "Letter templates to ask for a refund, dispute a bill or send a demand letter. Free, as PDF or Word."
-      }
+      },
+      "icone": "carte"
     },
     {
       "id": "logement",
@@ -79,7 +88,8 @@
       "seo": {
         "fr": "Modèle de lettre de changement d’adresse, gratuit, en PDF ou Word, ou à faire poster au Canada.",
         "en": "Free change of address letter template, as PDF or Word, or have it mailed in Canada."
-      }
+      },
+      "icone": "maison"
     },
     {
       "id": "gouv",
@@ -89,7 +99,11 @@
       },
       "modeles": [
         "rc66",
-        "rc325-changement-adresse"
+        "rc325-changement-adresse",
+        "lettre-de-caractere",
+        "lettre-depute",
+        "reponse-arc",
+        "acces-renseignements"
       ],
       "slug": {
         "fr": "demarches-gouvernementales",
@@ -102,7 +116,8 @@
       "seo": {
         "fr": "Outils gratuits pour remplir des formulaires officiels canadiens avec des questions simples : allocation canadienne pour enfants (RC66).",
         "en": "Free tools to fill in official Canadian forms with simple questions: Canada child benefit application (RC66)."
-      }
+      },
+      "icone": "parlement"
     },
     {
       "id": "emploi",
@@ -113,7 +128,9 @@
       "modeles": [
         "demission",
         "demande-conge",
-        "reference-emploi"
+        "reference-emploi",
+        "lettre-motivation",
+        "remerciement-entrevue"
       ],
       "slug": {
         "fr": "emploi",
@@ -126,7 +143,94 @@
       "seo": {
         "fr": "Modèles de lettres pour l’emploi : démission, demande de congé, lettre de référence. Gratuits, en PDF ou Word, ou à faire poster au Canada.",
         "en": "Letter templates for work: resignation, leave request, reference letter. Free as PDF or Word, or have them mailed in Canada."
-      }
+      },
+      "icone": "valise"
+    },
+    {
+      "id": "personnel",
+      "titre": {
+        "fr": "Lettres personnelles et occasions",
+        "en": "Personal letters and occasions"
+      },
+      "modeles": [
+        "remerciements",
+        "felicitations",
+        "condoleances",
+        "excuses",
+        "lettre-amour",
+        "lettre-futur",
+        "bon-retablissement",
+        "adieu-demenagement",
+        "voeux",
+        "invitation",
+        "faire-part-naissance"
+      ],
+      "slug": {
+        "fr": "lettres-personnelles",
+        "en": "personal-letters"
+      },
+      "description": {
+        "fr": "Remerciements, félicitations, condoléances, vœux, invitations : des lettres à la main, qui font plaisir à recevoir.",
+        "en": "Thank-you notes, congratulations, condolences, greetings, invitations: letters that are nice to receive."
+      },
+      "seo": {
+        "fr": "Modèles de lettres personnelles : remerciements, félicitations, condoléances, vœux, excuses, invitations. Gratuits, en PDF ou Word, ou à faire poster au Canada.",
+        "en": "Personal letter templates: thank-you notes, congratulations, condolences, greetings, apologies, invitations. Free as PDF or Word, or have them mailed in Canada."
+      },
+      "icone": "coeur"
+    },
+    {
+      "id": "juridique",
+      "titre": {
+        "fr": "Lettres formelles et juridiques",
+        "en": "Formal and legal letters"
+      },
+      "modeles": [
+        "demande-formelle",
+        "autorisation-voyage-enfant",
+        "mise-en-demeure-cesser",
+        "contester-contravention"
+      ],
+      "slug": {
+        "fr": "lettres-formelles-et-juridiques",
+        "en": "formal-and-legal-letters"
+      },
+      "description": {
+        "fr": "Demande formelle, mise en demeure, contravention, autorisation de voyage, validation d’une dette.",
+        "en": "Formal request, cease and desist, ticket dispute, travel authorization, debt validation."
+      },
+      "seo": {
+        "fr": "Modèles de lettres formelles : demande, mise en demeure, contestation de contravention, autorisation de voyage. Gratuits, en PDF ou Word, ou à faire poster au Canada.",
+        "en": "Formal letter templates: request, cease and desist, ticket dispute, travel authorization. Free as PDF or Word, or have them mailed in Canada."
+      },
+      "icone": "balance"
+    },
+    {
+      "id": "affaires",
+      "titre": {
+        "fr": "Entreprises et clients",
+        "en": "Business and clients"
+      },
+      "modeles": [
+        "remerciements-affaires",
+        "suivi-reunion",
+        "proposition-client",
+        "reponse-plainte-client",
+        "avis-hausse-prix"
+      ],
+      "slug": {
+        "fr": "entreprises-et-clients",
+        "en": "business-and-clients"
+      },
+      "description": {
+        "fr": "Remerciements, suivi de réunion, proposition, réponse à une plainte, avis de hausse de prix.",
+        "en": "Thank-yous, meeting follow-ups, proposals, complaint replies, price-increase notices."
+      },
+      "seo": {
+        "fr": "Modèles de lettres d’affaires : remerciements, suivi de réunion, proposition à un client, réponse à une plainte, hausse de prix. Gratuits, en PDF ou Word.",
+        "en": "Business letter templates: thank-you, meeting follow-up, client proposal, complaint reply, price increase. Free as PDF or Word."
+      },
+      "icone": "graphique"
     }
   ],
   "liens": {
@@ -306,6 +410,46 @@
       "fr": "https://www.canada.ca/cra-offices",
       "en": "https://www.canada.ca/cra-offices",
       "but": "Adresses de l’ARC (canada.ca/cra-offices)"
+    },
+    "autorisation-voyage-enfant_gc_voyage_enfant": {
+      "fr": "https://travel.gc.ca/travelling/children/consent-letter",
+      "en": "https://travel.gc.ca/travelling/children/consent-letter",
+      "but": {
+        "fr": "Page du gouvernement du Canada sur la lettre de consentement pour un enfant qui voyage",
+        "en": "Government of Canada page on the consent letter for a child travelling"
+      }
+    },
+    "validation-dette_fcac_recouvrement": {
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "en": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "but": {
+        "fr": "Agence de la consommation en matière financière du Canada",
+        "en": "Financial Consumer Agency of Canada"
+      }
+    },
+    "plainte-banque_fcac_plainte": {
+      "fr": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "en": "https://www.canada.ca/fr/agence-consommation-matiere-financiere.html",
+      "but": {
+        "fr": "Agence de la consommation en matière financière du Canada",
+        "en": "Financial Consumer Agency of Canada"
+      }
+    },
+    "lettre-depute_ourcommons_contact": {
+      "fr": "https://www.ourcommons.ca/en/contact-us",
+      "en": "https://www.ourcommons.ca/en/contact-us",
+      "but": {
+        "fr": "Coordonnées des députés (Chambre des communes)",
+        "en": "Contact details for MPs (House of Commons)"
+      }
+    },
+    "reponse-arc_arc_contact": {
+      "fr": "https://www.canada.ca/fr/agence-revenu.html",
+      "en": "https://www.canada.ca/fr/agence-revenu.html",
+      "but": {
+        "fr": "Agence du revenu du Canada",
+        "en": "Canada Revenue Agency"
+      }
     }
   },
   "centres": {

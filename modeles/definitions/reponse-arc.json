@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "id": "reponse-arc",
+  "section": "gouv",
+  "icone": "dossier",
+  "titre": {
+    "fr": "Réponse à une lettre de l’Agence du revenu du Canada",
+    "en": "Reply to a Canada Revenue Agency letter"
+  },
+  "description": {
+    "fr": "Répondre à un avis, une demande de renseignements ou une cotisation de l’ARC, ou demander un délai.",
+    "en": "Reply to a CRA notice, request for information or assessment, or ask for more time."
+  },
+  "seo": {
+    "slug": {
+      "fr": "reponse-lettre-arc",
+      "en": "reply-to-cra-letter"
+    },
+    "titre": {
+      "fr": "Répondre à une lettre de l’ARC : modèle gratuit | Capycom",
+      "en": "Reply to a CRA letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Répondez par écrit à un avis ou à une demande de l’Agence du revenu du Canada, ou demandez un délai. Modèle gratuit, à télécharger ou à faire poster.",
+      "en": "Reply in writing to a Canada Revenue Agency notice or request, or ask for more time. Free template, to download or have mailed."
+    },
+    "h1": {
+      "fr": "Réponse à l’ARC",
+      "en": "Reply to the CRA"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Répondre à un avis, une demande de renseignements ou une cotisation de l’ARC, ou demander un délai.",
+    "en": "Reply to a CRA notice, request for information or assessment, or ask for more time."
+  },
+  "avertissement": {
+    "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+    "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+  },
+  "champs": [
+    {
+      "id": "avis",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Type d’avis et date",
+        "en": "Type of notice and date"
+      },
+      "exemple": {
+        "fr": "ex. Avis de nouvelle cotisation du 14 septembre 2026",
+        "en": "e.g. Notice of reassessment dated September 14, 2026"
+      }
+    },
+    {
+      "id": "annee",
+      "type": "texte",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Année d’imposition visée",
+        "en": "Tax year concerned"
+      },
+      "exemple": {
+        "fr": "ex. 2025",
+        "en": "e.g. 2025"
+      }
+    },
+    {
+      "id": "num_ref",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de référence ou de dossier (facultatif)",
+        "en": "Reference or file number (optional)"
+      },
+      "exemple": {
+        "fr": "ex. 4567-89",
+        "en": "e.g. 4567-89"
+      }
+    },
+    {
+      "id": "position",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Votre réponse",
+        "en": "Your reply"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "renseignements",
+          "fr": "Je fournis les renseignements demandés",
+          "en": "I am sending the information requested",
+          "donnees": {
+            "p": {
+              "fr": "Je réponds à votre demande et je joins les documents demandés.",
+              "en": "I am replying to your request and attaching the documents requested."
+            }
+          }
+        },
+        {
+          "valeur": "desaccord",
+          "fr": "Je suis en désaccord",
+          "en": "I disagree",
+          "donnees": {
+            "p": {
+              "fr": "Je suis en désaccord avec cet avis pour les raisons suivantes.",
+              "en": "I disagree with this notice for the following reasons."
+            }
+          }
+        },
+        {
+          "valeur": "delai",
+          "fr": "Je demande un délai",
+          "en": "I ask for more time",
+          "donnees": {
+            "p": {
+              "fr": "Je vous demande un délai supplémentaire pour répondre.",
+              "en": "I ask for more time to reply."
+            }
+          }
+        },
+        {
+          "valeur": "correction",
+          "fr": "Je demande une correction",
+          "en": "I ask for a correction",
+          "donnees": {
+            "p": {
+              "fr": "Je vous demande de corriger mon dossier.",
+              "en": "I ask that my file be corrected."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "type": "texte-long",
+      "requis": true,
+      "max": 500,
+      "libelle": {
+        "fr": "Explications",
+        "en": "Explanations"
+      },
+      "exemple": {
+        "fr": "ex. Le montant des frais de garde n’avait pas été pris en compte. Reçus ci-joints.",
+        "en": "e.g. The child care expenses were not taken into account. Receipts attached."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : l’adresse de retour indiquée sur la lettre de l’ARC (dest_*).",
+    "en": "Free: the return address shown on the CRA letter (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "reponse-arc_arc_contact",
+      "but": {
+        "fr": "Agence du revenu du Canada",
+        "en": "Canada Revenue Agency"
+      },
+      "fr": "https://www.canada.ca/fr/agence-revenu.html",
+      "en": "https://www.canada.ca/fr/agence-revenu.html"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle est un point de départ. Il ne constitue pas un avis juridique et ne remplace pas un avocat, un notaire ou un organisme officiel. Les règles varient selon la province et la situation : vérifiez-les sur le site officiel avant d’envoyer la lettre, et gardez une copie.",
+      "en": "This template is a starting point. It is not legal advice and does not replace a lawyer, a notary or an official body. Rules vary by province and situation: check them on the official website before you send the letter, and keep a copy."
+    },
+    {
+      "fr": "N’écrivez pas votre numéro d’assurance sociale dans la lettre : utilisez le numéro de référence de l’avis. Un désaccord officiel a un délai fixe (avis d’opposition) : consultez le site de l’ARC avant de répondre.",
+      "en": "Do not write your social insurance number in the letter: use the reference number on the notice. A formal objection has a fixed deadline: check the CRA website before you reply."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"reponse-arc\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Réponse à votre avis, année d’imposition {{annee}}",
+      "en": "Reply to your notice, tax year {{annee}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je réponds à l’avis suivant : {{avis|sp}}, pour l’année d’imposition {{annee}}.",
+        "en": "I am replying to the following notice: {{avis|sp}}, for the {{annee}} tax year."
+      },
+      {
+        "fr": "Référence : {{num_ref}}.",
+        "en": "Reference: {{num_ref}}.",
+        "si": "num_ref"
+      },
+      {
+        "fr": "{{position.p}}",
+        "en": "{{position.p}}"
+      },
+      {
+        "fr": "{{details|phrase}}",
+        "en": "{{details|phrase}}"
+      },
+      {
+        "fr": "Merci de me confirmer la réception de cette lettre et de me faire connaître la suite donnée à mon dossier.",
+        "en": "Please confirm that you received this letter and let me know what happens next."
+      }
+    ]
+  }
+}
