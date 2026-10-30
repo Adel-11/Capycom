@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "id": "reference-emploi",
+  "section": "emploi",
+  "titre": {
+    "fr": "Demande de lettre de référence",
+    "en": "Reference letter request"
+  },
+  "description": {
+    "fr": "Demander à un ancien employeur ou superviseur une lettre de référence.",
+    "en": "Ask a former employer or supervisor for a reference letter."
+  },
+  "seo": {
+    "slug": {
+      "fr": "demande-lettre-de-reference",
+      "en": "reference-letter-request"
+    },
+    "titre": {
+      "fr": "Demande de lettre de référence : modèle gratuit | Capycom",
+      "en": "Reference letter request: free template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez une lettre de référence à un ancien employeur ou superviseur. Modèle gratuit à télécharger ou à faire poster au Canada.",
+      "en": "Ask a former employer or supervisor for a reference letter. Free template to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de demande de lettre de référence",
+      "en": "Reference Letter Request Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander à un ancien employeur ou superviseur une lettre de référence.",
+    "en": "Ask a former employer or supervisor for a reference letter."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+  },
+  "champs": [
+    {
+      "id": "poste",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Poste que vous occupiez",
+        "en": "Position you held"
+      },
+      "exemple": {
+        "fr": "ex. caissier",
+        "en": "e.g. cashier"
+      }
+    },
+    {
+      "id": "periode",
+      "type": "texte",
+      "requis": true,
+      "max": 80,
+      "libelle": {
+        "fr": "Période travaillée",
+        "en": "Period you worked there"
+      },
+      "exemple": {
+        "fr": "ex. de juin 2022 à août 2025",
+        "en": "e.g. June 2022 to August 2025"
+      }
+    },
+    {
+      "id": "usage",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Pourquoi vous en avez besoin",
+        "en": "Why you need it"
+      },
+      "exemple": {
+        "fr": "ex. une demande d’emploi dans une bibliothèque",
+        "en": "e.g. a job application at a library"
+      }
+    },
+    {
+      "id": "echeance",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date limite (facultatif)",
+        "en": "Deadline (optional)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom de l’employeur et son adresse (dest_*), avec le service ou la personne à qui écrire.",
+    "en": "Free: give the employer’s name and address (dest_*), with the department or person to write to."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"reference-emploi\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande de lettre de référence",
+      "en": "Reference letter request"
+    },
+    "paragraphes": [
+      {
+        "fr": "J’ai occupé le poste de {{poste}} chez vous {{periode|min}}. Je prépare {{usage}} et je serais reconnaissant(e) si vous acceptiez de rédiger une lettre de référence à mon sujet.",
+        "en": "I worked for you as {{poste}}, {{periode|min}}. I am preparing {{usage}} and would be grateful if you would write a reference letter for me."
+      },
+      {
+        "si": "echeance",
+        "fr": "Si possible, j’en aurais besoin avant le {{echeance|date}}.",
+        "en": "If possible, I would need it before {{echeance|date}}."
+      },
+      {
+        "fr": "Je peux vous transmettre un résumé de mes fonctions pour faciliter la rédaction. Je vous remercie du temps que vous y consacrerez.",
+        "en": "I can send you a summary of my duties to help with the writing. Thank you for your time."
+      }
+    ]
+  }
+}

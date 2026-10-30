@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "id": "demande-conge",
+  "section": "emploi",
+  "titre": {
+    "fr": "Demande de congé",
+    "en": "Leave request"
+  },
+  "description": {
+    "fr": "Demander un congé ou des vacances à votre employeur, avec les dates.",
+    "en": "Ask your employer for time off or vacation, with the dates."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-demande-de-conge",
+      "en": "leave-request-letter"
+    },
+    "titre": {
+      "fr": "Demande de congé : modèle de lettre gratuit | Capycom",
+      "en": "Leave request: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez un congé à votre employeur avec ce modèle de lettre gratuit. Téléchargez-le ou faites imprimer et poster votre lettre au Canada.",
+      "en": "Ask your employer for time off with this free letter template. Download it or have your letter printed and mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de demande de congé",
+      "en": "Leave Request Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander un congé ou des vacances à votre employeur, avec les dates.",
+    "en": "Ask your employer for time off or vacation, with the dates."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+  },
+  "champs": [
+    {
+      "id": "type_conge",
+      "type": "texte",
+      "requis": true,
+      "max": 80,
+      "libelle": {
+        "fr": "Type de congé",
+        "en": "Type of leave"
+      },
+      "exemple": {
+        "fr": "ex. vacances, congé sans solde, congé familial",
+        "en": "e.g. vacation, unpaid leave, family leave"
+      }
+    },
+    {
+      "id": "date_debut",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Premier jour de congé",
+        "en": "First day of leave"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "date_fin",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Dernier jour de congé",
+        "en": "Last day of leave"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "precision",
+      "type": "texte",
+      "requis": false,
+      "max": 250,
+      "libelle": {
+        "fr": "Précision (facultatif)",
+        "en": "Details (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je m’assurerai que mes dossiers soient à jour avant mon départ.",
+        "en": "e.g. I will make sure my files are up to date before I leave."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom de l’employeur et son adresse (dest_*), avec le service ou la personne à qui écrire.",
+    "en": "Free: give the employer’s name and address (dest_*), with the department or person to write to."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"demande-conge\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande de congé : {{type_conge}}",
+      "en": "Leave request: {{type_conge}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous écris pour demander un congé ({{type_conge|min}}) du {{date_debut|date}} au {{date_fin|date}} inclusivement.",
+        "en": "I am writing to request time off ({{type_conge|min}}) from {{date_debut|date}} to {{date_fin|date}} inclusive."
+      },
+      {
+        "si": "precision",
+        "fr": "{{precision|phrase}}",
+        "en": "{{precision|phrase}}"
+      },
+      {
+        "fr": "Je vous remercie de me faire part de votre décision par écrit. Je reste disponible pour en discuter.",
+        "en": "Thank you for letting me know your decision in writing. I am available to discuss it."
+      }
+    ]
+  }
+}

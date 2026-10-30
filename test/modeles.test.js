@@ -141,3 +141,36 @@ test('aucune donnée de client dans les définitions ni dans les cas de test (ad
   const texte = fs.readFileSync(path.join(racine, 'tests', 'cas.json'), 'utf8');
   assert.doesNotMatch(texte, /@(gmail|hotmail|outlook|yahoo)\./i);
 });
+
+/* ---- lettres décrites par les définitions (redaction) : rendu complet dans les deux langues, pour chaque choix ---- */
+const EXEMPLE = { texte: 'Exemple texte', 'texte-long': 'Un exemple de phrase', date: '2026-09-30', montant: '850', nombre: '10', 'code-postal': 'K1A 0A1', province: 'ON' };
+const COMM = { exp_nom: 'Test Un', exp_ligne: '1 rue Test', exp_ville: 'Ottawa', exp_prov: 'ON', exp_cp: 'K1A0A1', dest_nom: 'Dest Deux', dest_ligne: '2 rue Autre', dest_ville: 'Gatineau', dest_prov: 'QC', dest_cp: 'J8X1A1', date_lettre: '2026-10-30' };
+const DONNEES = M.LETTRES.filter(id => defs.parId[id] && defs.parId[id].redaction && !['resiliation', 'adresse', 'remboursement', 'contestation', 'demeure'].includes(id));
+test('lettres par définition : au moins une famille est enregistrée', () => { assert.ok(DONNEES.length >= 1); });
+for (const id of DONNEES) {
+  test('lettres par définition : ' + id + ' se rédige sans gabarit restant, dans les deux langues, pour chaque choix', () => {
+    const d = defs.parId[id];
+    const choix = d.champs.filter(c => c.type === 'choix');
+    const combos = choix.length ? choix[0].options.map(o => ({ [choix[0].id]: o.valeur })) : [{}];
+    for (const cb of combos) for (const l of ['fr', 'en']) for (const rempliOpt of [false, true]) {
+      const v = Object.assign({}, COMM, cb);
+      for (const c of d.champs) if (c.type !== 'choix' && (c.requis || rempliOpt)) v[c.id] = EXEMPLE[c.type] || 'Exemple';
+      const manques = M.verifier(id, v, { lettre: l })[0].manques;
+      assert.deepEqual(manques, [], id + ' ' + JSON.stringify(cb) + ' manques');
+      const corps = M.composerLettre(id, k => v[k] || '', l);
+      const tout = [corps.objet].concat(corps.corps).join('\n');
+      assert.ok(corps.corps.length >= 2, id + ' corps trop court');
+      assert.ok(!/\{\{|\}\}|undefined|\[object/.test(tout), id + ' ' + l + ' gabarit restant : ' + tout);
+      assert.ok(!/[—–]/.test(tout), id + ' tiret long');
+      assert.ok(!/'/.test(tout), id + ' apostrophe droite');
+      assert.ok(M.plansDe(id, v, { lettre: l }).length >= 1);
+    }
+  });
+}
+test('dépôt : le Québec cite l’article 1904, les autres provinces citent leur loi', () => {
+  const v = Object.assign({}, COMM, { adresse_logement: '1 rue X', date_fin: '2026-09-30', montant: '500' });
+  const qc = M.composerLettre('depot', k => (Object.assign({ province: 'QC' }, v))[k] || '', 'fr').corps.join(' ');
+  assert.match(qc, /1904/); assert.doesNotMatch(qc, /intérêts auxquels/);
+  const bc = M.composerLettre('depot', k => (Object.assign({ province: 'BC' }, v))[k] || '', 'fr').corps.join(' ');
+  assert.match(bc, /Residential Tenancy Act/); assert.match(bc, /15 jours/);
+});

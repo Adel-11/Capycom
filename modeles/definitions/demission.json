@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "id": "demission",
+  "section": "emploi",
+  "titre": {
+    "fr": "Lettre de démission",
+    "en": "Resignation letter"
+  },
+  "description": {
+    "fr": "Annoncer votre départ à votre employeur, avec votre dernier jour de travail.",
+    "en": "Tell your employer you are leaving, with your last day of work."
+  },
+  "seo": {
+    "slug": {
+      "fr": "lettre-de-demission",
+      "en": "resignation-letter"
+    },
+    "titre": {
+      "fr": "Lettre de démission : modèle de lettre gratuit | Capycom",
+      "en": "Resignation letter: free template | Capycom"
+    },
+    "description": {
+      "fr": "Rédigez une lettre de démission claire et polie avec ce modèle gratuit. Téléchargez-la ou faites imprimer et poster votre lettre au Canada.",
+      "en": "Write a clear, polite resignation letter with this free template. Download it or have it printed and mailed in Canada."
+    },
+    "h1": {
+      "fr": "Modèle de lettre de démission",
+      "en": "Resignation Letter Template"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Annoncer votre départ à votre employeur, avec votre dernier jour de travail.",
+    "en": "Tell your employer you are leaving, with your last day of work."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+  },
+  "champs": [
+    {
+      "id": "poste",
+      "type": "texte",
+      "requis": true,
+      "max": 100,
+      "libelle": {
+        "fr": "Votre poste",
+        "en": "Your position"
+      },
+      "exemple": {
+        "fr": "ex. technicienne administrative",
+        "en": "e.g. administrative assistant"
+      }
+    },
+    {
+      "id": "dernier_jour",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Votre dernier jour de travail",
+        "en": "Your last day of work"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "remerciement",
+      "type": "texte",
+      "requis": false,
+      "max": 200,
+      "libelle": {
+        "fr": "Un mot de remerciement (facultatif)",
+        "en": "A word of thanks (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Merci pour la confiance accordée pendant ces quatre années.",
+        "en": "e.g. Thank you for the trust you showed me over these four years."
+      }
+    },
+    {
+      "id": "transition",
+      "type": "texte",
+      "requis": false,
+      "max": 200,
+      "libelle": {
+        "fr": "Aide à la transition (facultatif)",
+        "en": "Help with the handover (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Je peux former mon remplaçant pendant mes dernières semaines.",
+        "en": "e.g. I can train my replacement during my last weeks."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom de l’employeur et son adresse (dest_*), avec le service ou la personne à qui écrire.",
+    "en": "Free: give the employer’s name and address (dest_*), with the department or person to write to."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat ou d’un conseiller en droit du travail. Vérifiez votre contrat et les règles de votre province avant d’envoyer la lettre.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer or an employment law advisor. Check your contract and your province’s rules before you send the letter."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"demission\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Démission du poste de {{poste}}",
+      "en": "Resignation from the position of {{poste}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "Je vous informe par la présente de ma démission du poste de {{poste}}. Mon dernier jour de travail sera le {{dernier_jour|date}}.",
+        "en": "I am writing to tell you that I am resigning from my position as {{poste}}. My last day of work will be {{dernier_jour|date}}."
+      },
+      {
+        "si": "remerciement",
+        "fr": "{{remerciement|phrase}}",
+        "en": "{{remerciement|phrase}}"
+      },
+      {
+        "si": "transition",
+        "fr": "{{transition|phrase}}",
+        "en": "{{transition|phrase}}"
+      },
+      {
+        "fr": "Merci de me confirmer la réception de cette lettre et de m’indiquer les démarches à suivre pour mon départ : remise du matériel, dernier relevé de paie et relevé d’emploi.",
+        "en": "Please confirm that you received this letter and tell me the steps for my departure: return of equipment, final pay and record of employment."
+      }
+    ]
+  }
+}

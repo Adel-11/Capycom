@@ -6,6 +6,7 @@
   if (window.capyLettre) return;
   // Moteur, définitions et fonds de formulaires : sources uniques du dépôt « 11-Capycom MCP », dossier modeles/ (injectés par construire-site.mjs)
   var CM = window.CapyModeles, DEF = window.CapyModelesDef, FONDS = window.CapyModelesFonds;
+  if (CM.enregistrer) CM.enregistrer(DEF.modeles);
   if (!CM || !DEF || !FONDS) { console.log('CAPYCOM modele : moteur ou définitions introuvables'); return; }
 
 
@@ -66,7 +67,7 @@
 
   var MODELES = DEF.modeles.map(function (d) {
     var m = { id: d.id, fr: d.titre.fr, en: d.titre.en, champs: (d.champs || []).map(function (c) {
-      return { id: c.id, fr: c.libelle.fr, en: c.libelle.en, type: c.type || 'text', req: !!c.requis, phfr: c.exemple ? c.exemple.fr : '', phen: c.exemple ? c.exemple.en : '', max: c.max || 120 };
+      return { id: c.id, fr: c.libelle.fr, en: c.libelle.en, type: c.type || 'text', req: !!c.requis, phfr: c.exemple ? c.exemple.fr : '', phen: c.exemple ? c.exemple.en : '', max: c.max || 120, options: c.options || null, defaut: c.defaut != null ? String(c.defaut) : '' };
     }) };
     // types de la définition (neutres) vers ceux de l'interface
     m.champs.forEach(function (c) { c.type = { 'texte': 'text', 'texte-long': 'textarea' }[c.type] || c.type; });
@@ -312,6 +313,10 @@
 
   /* ------------------------------------------------------------ rendu */
   var racine;
+  function aideChoix(options, valeur) {
+    for (var i = 0; i < (options || []).length; i++) if (options[i].valeur === valeur && options[i].aide) return esc(options[i].aide[etat.ui] || options[i].aide.fr || '');
+    return '';
+  }
   function champHtml(id, label, opts) {
     opts = opts || {};
     var lab = '<label for="ml-' + id + '">' + esc(label) + (opts.req ? '' : ' <span class="opt">' + esc(t('opt')) + '</span>') + '</label>';
@@ -322,6 +327,10 @@
     if (opts.type === 'textarea') inp = '<textarea id="ml-' + id + '" data-k="' + id + '"' + ph + max + '>' + v + '</textarea>';
     else if (opts.type === 'provpays') {
       inp = '<input type="text" id="ml-' + id + '" data-k="' + id + '" value="' + v + '"' + ph + max + ' list="ml-dl-prov" autocomplete="off"><datalist id="ml-dl-prov">' + PROVINCES_RC.concat([{ fr: 'Autre pays', en: 'Other country' }]).map(function (p) { return '<option value="' + esc(etat.ui === 'fr' ? p.fr : p.en) + '">'; }).join('') + '</datalist>';
+    } else if (opts.type === 'choix') {
+      inp = '<select id="ml-' + id + '" data-k="' + id + '" data-choix="1"><option value="">' + esc(t('choisirProv')) + '</option>' +
+        (opts.options || []).map(function (o) { return '<option value="' + esc(o.valeur) + '"' + (etat.v[id] === o.valeur ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? o.fr : o.en) + '</option>'; }).join('') + '</select>' +
+        '<div class="ml-aide-choix" id="ml-aide-' + id + '">' + aideChoix(opts.options, etat.v[id]) + '</div>';
     } else if (opts.type === 'province' || opts.type === 'provinceRc') {
       inp = '<select id="ml-' + id + '" data-k="' + id + '"><option value="">' + esc(t('choisirProv')) + '</option>' +
         (opts.type === 'provinceRc' || /^rc/.test(id) ? PROVINCES_RC : PROVINCES).map(function (p) { return '<option value="' + esc(p.fr) + '"' + (etat.v[id] === p.fr ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? p.fr : p.en) + '</option>'; }).join('') + '</select>';
@@ -348,7 +357,7 @@
     var h = '<div class="ml-form">';
     h += '<div class="ml-carte"><h3>' + esc(M[u]) + '</h3>';
     h += M.avert ? '<div class="ml-avert">' + esc(M.avert[u]) + '</div>' : '';
-    M.champs.forEach(function (c) { h += champHtml(c.id, c[u], { req: c.req, type: c.type, ph: u === 'fr' ? c.phfr : c.phen, max: c.max }); });
+    M.champs.forEach(function (c) { h += champHtml(c.id, c[u], { req: c.req, type: c.type, ph: u === 'fr' ? c.phfr : c.phen, max: c.max, options: c.options }); });
     h += '<div class="ml-ligne">' + champHtml('date_lettre', t('dateLettre'), { req: true, type: 'date' }) +
       '<div class="ml-champ"><label>' + esc(t('langueLettre')) + '</label><div class="ml-langue">' +
       '<button type="button" data-lettre="fr" class="' + (langueLettre() === 'fr' ? 'actif' : '') + '">Français</button>' +
@@ -558,7 +567,7 @@
       if (e.target.getAttribute('data-sigtransp')) { etat.sig.transp = e.target.checked; traiterPhoto(); rendreSignature(); return; }
       if (e.target.getAttribute('data-optlien')) { etat.lienPied = e.target.checked; return; }
     });
-    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; apercu(); } });
+    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; if (e.target.getAttribute('data-choix')) { var ch = null; modele(etat.modele).champs.forEach(function (c) { if (c.id === k) ch = c; }); var ae = document.getElementById('ml-aide-' + k); if (ae && ch) ae.innerHTML = aideChoix(ch.options, e.target.value); } apercu(); } });
     racine.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && e.target.id && /_q$/.test(e.target.id)) { e.preventDefault(); rechercher(e.target.id.replace(/^ml-/, '').replace(/_q$/, '')); }
     });

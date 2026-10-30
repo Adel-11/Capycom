@@ -59,7 +59,10 @@
         "en": "Address and housing"
       },
       "modeles": [
-        "adresse"
+        "adresse",
+        "depot",
+        "reparations",
+        "preavis-depart"
       ],
       "slug": {
         "fr": "adresse-et-logement",
@@ -94,6 +97,30 @@
       "seo": {
         "fr": "Outils gratuits pour remplir des formulaires officiels canadiens avec des questions simples : allocation canadienne pour enfants (RC66).",
         "en": "Free tools to fill in official Canadian forms with simple questions: Canada child benefit application (RC66)."
+      }
+    },
+    {
+      "id": "emploi",
+      "titre": {
+        "fr": "Emploi",
+        "en": "Work"
+      },
+      "modeles": [
+        "demission",
+        "demande-conge",
+        "reference-emploi"
+      ],
+      "slug": {
+        "fr": "emploi",
+        "en": "work"
+      },
+      "description": {
+        "fr": "Démission, demande de congé, demande de lettre de référence.",
+        "en": "Resignation, leave request, reference letter request."
+      },
+      "seo": {
+        "fr": "Modèles de lettres pour l’emploi : démission, demande de congé, lettre de référence. Gratuits, en PDF ou Word, ou à faire poster au Canada.",
+        "en": "Letter templates for work: resignation, leave request, reference letter. Free as PDF or Word, or have them mailed in Canada."
       }
     }
   ],
@@ -184,6 +211,70 @@
       "but": {
         "fr": "Formulaire officiel TransUnion, demande d’enquête",
         "en": "Official TransUnion form, investigation request"
+      }
+    },
+    "depot_bc": {
+      "fr": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/ending-a-tenancy/moving-out-of-rental-units",
+      "en": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/ending-a-tenancy/moving-out-of-rental-units",
+      "but": {
+        "fr": "Colombie-Britannique : quitter un logement",
+        "en": "British Columbia: moving out"
+      }
+    },
+    "depot_ab": {
+      "fr": "https://www.alberta.ca/ending-a-tenancy",
+      "en": "https://www.alberta.ca/ending-a-tenancy",
+      "but": {
+        "fr": "Alberta : fin de la location",
+        "en": "Alberta: ending a tenancy"
+      }
+    },
+    "depot_sk": {
+      "fr": "https://www.saskatchewan.ca/residents/housing-and-renting/renting-and-leasing/security-deposits",
+      "en": "https://www.saskatchewan.ca/residents/housing-and-renting/renting-and-leasing/security-deposits",
+      "but": {
+        "fr": "Saskatchewan : dépôts de garantie",
+        "en": "Saskatchewan: security deposits"
+      }
+    },
+    "depot_mb": {
+      "fr": "https://www.gov.mb.ca/cca/rtb/ot/gbook/s10securitydeposit_refundingasd7.html",
+      "en": "https://www.gov.mb.ca/cca/rtb/ot/gbook/s10securitydeposit_refundingasd7.html",
+      "but": {
+        "fr": "Manitoba : remboursement du dépôt",
+        "en": "Manitoba: refunding the deposit"
+      }
+    },
+    "depot_qc": {
+      "fr": "https://www.quebec.ca/nouvelles/actualites/details/exiger-un-depot-de-garantie-est-illegal",
+      "en": "https://www.quebec.ca/nouvelles/actualites/details/exiger-un-depot-de-garantie-est-illegal",
+      "but": {
+        "fr": "Québec : le dépôt de garantie est illégal",
+        "en": "Quebec: security deposits are illegal"
+      }
+    },
+    "depot_nb": {
+      "fr": "https://www.gnb.ca/en/topic/family-home-community/housing-property/deposits.html",
+      "en": "https://www.gnb.ca/en/topic/family-home-community/housing-property/deposits.html",
+      "but": {
+        "fr": "Nouveau-Brunswick : dépôts",
+        "en": "New Brunswick: deposits"
+      }
+    },
+    "depot_ns": {
+      "fr": "https://www.novascotia.ca/sites/default/files/documents/1-1763/residential-tenancies-guides-ending-tenancy-en.pdf",
+      "en": "https://www.novascotia.ca/sites/default/files/documents/1-1763/residential-tenancies-guides-ending-tenancy-en.pdf",
+      "but": {
+        "fr": "Nouvelle-Écosse : fin de la location",
+        "en": "Nova Scotia: ending a tenancy"
+      }
+    },
+    "depot_yt": {
+      "fr": "https://yukon.ca/en/housing-and-property/landlords-and-tenants-responsibilities/security-and-pet-deposits",
+      "en": "https://yukon.ca/en/housing-and-property/landlords-and-tenants-responsibilities/security-and-pet-deposits",
+      "but": {
+        "fr": "Yukon : dépôts de garantie",
+        "en": "Yukon: security deposits"
       }
     }
   },

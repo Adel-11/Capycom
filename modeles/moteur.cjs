@@ -93,7 +93,7 @@
     { fr: 'Territoires du Nord-Ouest', en: 'Northwest Territories', ab: 'NT', osm: ['Northwest Territories', 'Territoires du Nord-Ouest'] },
     { fr: 'Yukon', en: 'Yukon', ab: 'YT', osm: ['Yukon'] }
   ]);
-  function prov(fr) { for (var i = 0; i < PROVINCES.length; i++) if (PROVINCES[i].fr === fr) return PROVINCES[i]; return null; }
+  function prov(fr) { for (var i = 0; i < PROVINCES_RC.length; i++) if (PROVINCES_RC[i].fr === fr) return PROVINCES_RC[i]; return null; }
   function provRc(fr) { for (var i = 0; i < PROVINCES_RC.length; i++) if (PROVINCES_RC[i].fr === fr) return PROVINCES_RC[i]; return null; }
   function nettoyer(s) {
     return String(s || '').replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-').replace(/…/g, '...').replace(/œ/g, 'oe').replace(/Œ/g, 'OE').replace(/ /g, ' ');
@@ -132,12 +132,101 @@
   // Contrôle de date : ISO valide, entre 1900 et 2100, pas dans le futur sauf futurOk
   function dateOkFn(rv, today) { return function (id, futurOk) { var s = rv(id); if (!dateIso(s)) return false; var an = parseInt(s.slice(0, 4), 10); if (an < 1900 || an > 2100) return false; return futurOk || s <= today; }; }
 
+
+  /* ------------------------------------------------------------ lettres décrites par les définitions (redaction) */
+  // Les modèles qui ne sont pas écrits en dur sont décrits par leur définition JSON : champs (dont les choix avec données), texte avec {{champ}}.
+  // Chaque point d'entrée trouve la définition par son id dans ce registre (enregistrer() est appelé par la page et par definitions.cjs).
+  var REGISTRE = {};
+  var BUILTIN = ['resiliation', 'adresse', 'remboursement', 'contestation', 'demeure'];
+  function enregistrer(defs) {
+    var liste = Array.isArray(defs) ? defs : Object.keys(defs || {}).map(function (k) { return defs[k]; });
+    liste.forEach(function (d) {
+      if (!d || !d.id) return;
+      REGISTRE[d.id] = d;
+      if (d.type === 'lettre' && LETTRES.indexOf(d.id) === -1) LETTRES.push(d.id);
+    });
+    return LETTRES;
+  }
+  function defDe(id) { return REGISTRE[id] || null; }
+  function champDe(D, id) { var cs = (D && D.champs) || []; for (var i = 0; i < cs.length; i++) if (cs[i].id === id) return cs[i]; return null; }
+  function optionDe(D, id, valeur) {
+    var c = champDe(D, id), os = (c && c.options) || [];
+    for (var i = 0; i < os.length; i++) if (os[i].valeur === valeur) return os[i];
+    return null;
+  }
+  function txt(o, l) { return o && typeof o === 'object' ? (o[l] != null ? o[l] : (o.fr != null ? o.fr : '')) : (o == null ? '' : String(o)); }
+  // Lecteur de réponses complété : valeur par défaut d'un champ, et destinataire prérempli par le choix (destinataireDepuis)
+  function avecDefauts(D, get) {
+    var dep = D.destinataireDepuis, opt = null;
+    return function (id) {
+      var x = get(id);
+      if (x) return x;
+      var c = champDe(D, id);
+      if (c && c.defaut != null) return String(c.defaut);
+      if (dep && /^dest_/.test(id)) {
+        if (opt === null) opt = optionDe(D, dep, String(get(dep) || '').trim()) || false;
+        var d = opt && opt.dest;
+        if (d) { var k = id.slice(5); if (k === 'prov') return d.prov || ''; if (d[k] != null) return d[k]; }
+      }
+      return x;
+    };
+  }
+  // Condition d'un paragraphe : "champ" (rempli), ou { champ, egal | dans | vide | non }, ou { tous:[...] } / { un:[...] }
+  function condOk(c, val) {
+    if (c == null || c === true) return true;
+    if (typeof c === 'string') return !!val(c);
+    if (c.tous) return c.tous.every(function (x) { return condOk(x, val); });
+    if (c.un) return c.un.some(function (x) { return condOk(x, val); });
+    var v = val(c.champ), r = true;
+    if (c.egal != null) r = v === String(c.egal);
+    else if (c.dans) r = c.dans.indexOf(v) !== -1;
+    else if (c.vide) r = !v;
+    else r = !!v;
+    return c.non ? !r : r;
+  }
+  // Remplace {{champ}}, {{champ|filtre}}, {{champ.cle}} (donnée du choix) dans un gabarit
+  function gabarit(s, D, val, l) {
+    return String(s == null ? '' : s).replace(/\{\{\s*([A-Za-z0-9_]+)(?:\.([A-Za-z0-9_]+))?(?:\|([a-z]+))?\s*\}\}/g, function (_, id, cle, filtre) {
+      var raw = val(id), r = raw, o;
+      if (cle) {
+        o = optionDe(D, id, raw);
+        if (!o) r = raw; else if (cle === 'label') r = txt(o, l); else r = txt(o.donnees && o.donnees[cle], l);
+      } else if (filtre === 'option') { o = optionDe(D, id, raw); r = o ? txt(o, l) : raw; }
+      if (filtre === 'date') r = dateTexte(raw, l);
+      else if (filtre === 'montant') r = montantTexte(raw, l);
+      else if (filtre === 'min') r = minus(r);
+      else if (filtre === 'phrase') r = phrase(r);
+      else if (filtre === 'sp') r = sansPoint(r);
+      return r == null ? '' : r;
+    });
+  }
+  function ajoutPar(p, D, val, l, c) {
+    if (!condOk(p.si, val)) return;
+    var t = gabarit(txt(p, l), D, val, l).replace(/[ \t]+\n/g, '\n').trim();
+    if (t) c.push(t);
+  }
+  // Rédaction complète à partir de la définition (modèles qui ne sont pas écrits en dur)
+  function composerDonnees(D, val, l, L) {
+    var R = D.redaction, fr = l === 'fr';
+    var objet = gabarit(txt(R.objet, l), D, val, l).trim();
+    L.objet = objet;
+    if (R.sansObjet) L.sansObjet = true;
+    if (R.salut) L.salut = gabarit(txt(R.salut, l), D, val, l).trim();
+    if (R.politesse) L.politesse = gabarit(txt(R.politesse, l), D, val, l).trim();
+    (R.paragraphes || []).forEach(function (p) { ajoutPar(p, D, val, l, L.corps); });
+    if (fr && R.politesse2) L.politesse2 = gabarit(txt(R.politesse2, l), D, val, l).trim();
+  }
+  // Paragraphes facultatifs ajoutés à une lettre écrite en dur (ex. mise en demeure selon la province) : sans effet si la condition n'est pas remplie
+  function ajoutsDonnees(D, val, l, L) {
+    (D.redaction.ajouts || []).forEach(function (p) { ajoutPar(p, D, val, l, L.corps); });
+  }
+
   /* ------------------------------------------------------------ lettres libres (résiliation, adresse, remboursement, contestation, mise en demeure) */
   var PAGE = { W: 215.9, H: 279.4, mg: 22, xDest: 112 };
 
   // Contenu de la lettre. get(id) : valeur d'une réponse (déjà nettoyée) ; l : 'fr' ou 'en'.
   function composerLettre(m, get, l) {
-    var fr = l === 'fr', val = get;
+    var D = defDe(m), fr = l === 'fr', val = D ? avecDefauts(D, get) : get;
     function villeLigne(pfx) {
       var v = val(pfx + '_ville'), p = prov(val(pfx + '_prov')), c = cpNormal(val(pfx + '_cp'));
       if (l === 'fr') return v + (p ? ' (' + p.fr + ')' : '') + (c ? '  ' + c : '');
@@ -223,6 +312,7 @@
         L.politesse = 'Govern yourself accordingly.';
       }
     }
+    if (D && D.redaction) { if (BUILTIN.indexOf(m) === -1) composerDonnees(D, val, l, L); else ajoutsDonnees(D, val, l, L); }
     if (fr && m === 'demeure') L.politesse2 = 'Je vous prie d’agréer, Madame, Monsieur, mes salutations.';
     L.pied = L.exp.filter(Boolean).join('  ·  ');
     return L;
@@ -249,8 +339,7 @@
     y = Math.max(y + 8, 58);
     L.dest.forEach(function (s, i) { ecrire(s, { x: xD, w: W - mg - xD, gras: i === 0 }); });
     y += lh * 2.2;
-    ecrire((langue === 'fr' ? 'Objet : ' : 'Re: ') + L.objet, { gras: true });
-    y += lh * 0.9;
+    if (!L.sansObjet) { ecrire((langue === 'fr' ? 'Objet : ' : 'Re: ') + L.objet, { gras: true }); y += lh * 0.9; }
     ecrire(L.salut);
     y += lh * 0.7;
     L.corps.forEach(function (p) { p.split('\n').forEach(function (s) { ecrire(s); }); y += lh * 0.9; });
@@ -739,6 +828,7 @@
       (champs || []).forEach(function (x) { if (x.id === id) c = x; });
       if (ok && c && c.type === 'montant') ok = nombre(rv(id)) !== null && nombre(rv(id)) > 0;
       if (ok && c && c.type === 'nombre') ok = parseInt(rv(id), 10) > 0;
+      if (ok && c && c.type === 'choix') { ok = false; (c.options || []).forEach(function (x) { if (x.valeur === rv(id)) ok = true; }); }
       if (!ok) manque.push(id);
     });
     ['exp_cp', 'dest_cp'].forEach(function (id) { if (rv(id) && !cpValide(rv(id)) && manque.indexOf(id) === -1) manque.push(id); });
@@ -1024,8 +1114,8 @@
     o = o || {};
     var rv = lecteur(v);
     if (LETTRES.indexOf(modeleId) !== -1) {
-      var r = planLettre(modeleId, v, o);
-      return [{ cle: 'lettre', nomFichier: nomBase((o.titre || modeleId) + ' ' + rv('dest_nom'), 'lettre') + '.pdf', plan: r.plan, tient: r.tient }];
+      var r = planLettre(modeleId, v, o), dD = defDe(modeleId);
+      return [{ cle: 'lettre', nomFichier: nomBase((o.titre || modeleId) + ' ' + (dD ? avecDefauts(dD, rv)('dest_nom') : rv('dest_nom')), 'lettre') + '.pdf', plan: r.plan, tient: r.tient }];
     }
     if (modeleId === 'rc66') return [{ cle: 'rc66', nomFichier: 'RC66-' + nomBase(rv('rc_nom'), 'demande') + '.pdf', plan: planRc66(v, o) }];
     if (modeleId === 'credit') {
@@ -1037,7 +1127,11 @@
   // Étapes actives et réponses manquantes ou invalides, étape par étape : [{ etape, manques:[ids] }]
   function verifier(modeleId, v, o) {
     o = o || {};
-    if (LETTRES.indexOf(modeleId) !== -1) return [{ etape: 'formulaire', manques: manquesLettre(o.champs || [], v, o) }];
+    if (LETTRES.indexOf(modeleId) !== -1) {
+      var D = defDe(modeleId), lv = D ? avecDefauts(D, lecteur(v)) : lecteur(v), v2 = {};
+      ['exp_nom', 'exp_ligne', 'exp_ville', 'exp_prov', 'exp_cp', 'dest_nom', 'dest_ligne', 'dest_ville', 'dest_prov', 'dest_cp', 'date_lettre'].concat(((D && D.champs) || o.champs || []).map(function (c) { return c.id; })).forEach(function (id) { v2[id] = lv(id); });
+      return [{ etape: 'formulaire', manques: manquesLettre(o.champs || (D && D.champs) || [], v2, o) }];
+    }
     if (modeleId === 'rc66') { var C = ctxRc(v, o); return rcEtapesActives(C).map(function (e) { return { etape: e, manques: rcManquesEtape(C, e) }; }); }
     if (modeleId === 'credit') { var D = ctxCr(v, o); return crEtapesActives(D).map(function (e) { return { etape: e, manques: crManquesEtape(D, e) }; }); }
     throw new Error('modele inconnu : ' + modeleId);
@@ -1058,7 +1152,7 @@
     nettoyer: nettoyer, hexRgb: hexRgb, dimSig: dimSig, dateTexte: dateTexte, nombre: nombre, montantTexte: montantTexte, cpNormal: cpNormal, cpValide: cpValide,
     chiffres: chiffres, dateIso: dateIso, mots: mots, aujourdhuiIso: aujourdhuiIso, prov: prov, provRc: provRc, nomBase: nomBase,
     // lettres libres
-    composerLettre: composerLettre, disposerLettre: disposerLettre, planLettre: planLettre, manquesLettre: manquesLettre,
+    enregistrer: enregistrer, definitionDe: defDe, composerLettre: composerLettre, disposerLettre: disposerLettre, planLettre: planLettre, manquesLettre: manquesLettre,
     // RC66
     ctxRc: ctxRc, planRc66: planRc66, rcEtapesActives: rcEtapesActives, rcManquesEtape: rcManquesEtape, docsRc66: docsRc66, rcFlags: rcFlags,
     // contestation de crédit

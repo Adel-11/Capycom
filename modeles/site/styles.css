@@ -10,6 +10,8 @@
 #capy-ml .ml-carte h3{font:400 24px Newsreader,Georgia,serif;margin:0 0 6px;color:#1c2430}
 #capy-ml .ml-carte h3+.ml-champ,#capy-ml .ml-carte h3+.ml-avert{margin-top:20px}
 #capy-ml .ml-aide{font-size:14px;color:#857f71;margin:0 0 20px;line-height:1.5}
+#capy-ml .ml-aide-choix{font-size:13px;color:#857f71;margin:6px 0 0;line-height:1.4}
+#capy-ml .ml-aide-choix:empty{display:none}
 #capy-ml .ml-ligne{display:flex;gap:16px}
 #capy-ml .ml-ligne>.ml-champ{flex:1 1 0;min-width:0}
 #capy-ml .ml-champ{margin:0 0 16px}

@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "id": "depot",
+  "section": "logement",
+  "titre": {
+    "fr": "Remboursement du dépôt de garantie",
+    "en": "Return of a security deposit"
+  },
+  "description": {
+    "fr": "Demander à votre propriétaire de vous rendre votre dépôt, selon la province.",
+    "en": "Ask your landlord to return your deposit, based on your province."
+  },
+  "seo": {
+    "slug": {
+      "fr": "remboursement-depot-de-garantie",
+      "en": "return-security-deposit"
+    },
+    "titre": {
+      "fr": "Remboursement du dépôt de garantie : modèle de lettre | Capycom",
+      "en": "Security deposit return: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Demandez à votre propriétaire de rembourser votre dépôt de garantie. Modèle de lettre gratuit pour chaque province et territoire, à télécharger ou à faire poster au Canada.",
+      "en": "Ask your landlord to return your security deposit. Free letter template for every province and territory, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de remboursement du dépôt de garantie",
+      "en": "Security Deposit Return Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Demander à votre propriétaire de vous rendre votre dépôt, selon la province.",
+    "en": "Ask your landlord to return your deposit, based on your province."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur. Les règles changent : vérifiez-les sur le site officiel avant d’envoyer la lettre.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office. Rules change: check them on the official website before you send the letter."
+  },
+  "champs": [
+    {
+      "id": "province",
+      "type": "choix",
+      "requis": true,
+      "max": 2,
+      "libelle": {
+        "fr": "Province ou territoire du logement",
+        "en": "Province or territory of the rental unit"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "BC",
+          "fr": "Colombie-Britannique",
+          "en": "British Columbia",
+          "donnees": {
+            "loi": "Residential Tenancy Act",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé, ou une demande d’arbitrage déposée, dans les 15 jours suivant la fin de la location ou la réception de mon adresse de réexpédition écrite, selon la dernière de ces dates",
+              "en": "the deposit must be returned, or an application for dispute resolution filed, within 15 days after the tenancy ends or the forwarding address is received in writing, whichever is later"
+            },
+            "instance": "Residential Tenancy Branch"
+          }
+        },
+        {
+          "valeur": "AB",
+          "fr": "Alberta",
+          "en": "Alberta",
+          "donnees": {
+            "loi": "Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt, ou un état de compte détaillé, doit m’être remis dans les 10 jours suivant mon départ",
+              "en": "the deposit, or an itemized statement of account, must be given to me within 10 days after I move out"
+            },
+            "instance": "Residential Tenancy Dispute Resolution Service"
+          }
+        },
+        {
+          "valeur": "SK",
+          "fr": "Saskatchewan",
+          "en": "Saskatchewan",
+          "donnees": {
+            "loi": "The Residential Tenancies Act, 2006",
+            "delai": {
+              "fr": "le dépôt, ou un avis de retenue, doit m’être remis dans les 7 jours ouvrables suivant la fin de la location",
+              "en": "the deposit, or a notice of deduction, must be given to me within 7 business days after the tenancy ends"
+            },
+            "instance": "Office of Residential Tenancies"
+          }
+        },
+        {
+          "valeur": "MB",
+          "fr": "Manitoba",
+          "en": "Manitoba",
+          "donnees": {
+            "loi": "The Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé dans les 14 jours suivant la fin de la location, à moins qu’une réclamation ne soit déposée",
+              "en": "the deposit must be returned within 14 days after the tenancy ends, unless a claim is filed"
+            },
+            "instance": "Residential Tenancies Branch"
+          }
+        },
+        {
+          "valeur": "ON",
+          "fr": "Ontario",
+          "en": "Ontario",
+          "donnees": {
+            "loi": "Residential Tenancies Act, 2006",
+            "delai": {
+              "fr": "seul un dépôt pour le dernier mois de loyer est permis; il doit être imputé au dernier mois et porter intérêt chaque année",
+              "en": "only a last month’s rent deposit is allowed; it must be applied to the last month and earn interest each year"
+            },
+            "instance": "Commission de la location immobilière (Landlord and Tenant Board)"
+          },
+          "aide": {
+            "fr": "En Ontario, seul un dépôt pour le dernier mois de loyer est permis, avec intérêts.",
+            "en": "In Ontario, only a last month’s rent deposit is allowed, with interest."
+          }
+        },
+        {
+          "valeur": "QC",
+          "fr": "Québec",
+          "en": "Quebec",
+          "donnees": {
+            "loi": "Code civil du Québec, art. 1904",
+            "delai": {
+              "fr": "le locateur ne peut pas exiger de dépôt ou d’autre somme en garantie de ses obligations",
+              "en": "a landlord cannot require a deposit or any other sum as security for the tenant’s obligations"
+            },
+            "instance": "Tribunal administratif du logement"
+          },
+          "aide": {
+            "fr": "Au Québec, un dépôt de garantie est interdit (Code civil, art. 1904). La lettre demande le remboursement de la somme versée.",
+            "en": "In Quebec, a security deposit is not allowed (Civil Code, art. 1904). The letter asks for the money you paid to be returned."
+          }
+        },
+        {
+          "valeur": "NB",
+          "fr": "Nouveau-Brunswick",
+          "en": "New Brunswick",
+          "donnees": {
+            "loi": "Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt est détenu par le Tenant and Landlord Relations Office et doit m’être remboursé sur demande, à moins que vous ne déposiez une réclamation dans les 7 jours suivant la fin de la location",
+              "en": "the deposit is held by the Tenant and Landlord Relations Office and must be returned on request, unless you file a claim within 7 days after the tenancy ends"
+            },
+            "instance": "Tenant and Landlord Relations Office"
+          },
+          "aide": {
+            "fr": "Au Nouveau-Brunswick, le dépôt est remis à un office du gouvernement, qui le rembourse.",
+            "en": "In New Brunswick, the deposit is held by a government office, which returns it."
+          }
+        },
+        {
+          "valeur": "NS",
+          "fr": "Nouvelle-Écosse",
+          "en": "Nova Scotia",
+          "donnees": {
+            "loi": "Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé, ou une réclamation déposée, dans les 10 jours suivant la fin du bail",
+              "en": "the deposit must be returned, or a claim filed, within 10 days after the tenancy ends"
+            },
+            "instance": "Residential Tenancies Program"
+          }
+        },
+        {
+          "valeur": "PE",
+          "fr": "Île-du-Prince-Édouard",
+          "en": "Prince Edward Island",
+          "donnees": {
+            "loi": "loi applicable à l’Île-du-Prince-Édouard",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé dans le délai que la loi prévoit après la remise des lieux",
+              "en": "the deposit must be returned within the time the law sets after I hand back the unit"
+            },
+            "instance": "Island Regulatory and Appeals Commission (IRAC)"
+          },
+          "aide": {
+            "fr": "Le délai n’a pas pu être confirmé : la lettre reste générale. Vérifiez-le sur le site officiel.",
+            "en": "The deadline could not be confirmed: the letter stays general. Check it on the official website."
+          }
+        },
+        {
+          "valeur": "NL",
+          "fr": "Terre-Neuve-et-Labrador",
+          "en": "Newfoundland and Labrador",
+          "donnees": {
+            "loi": "Residential Tenancies Act, 2018",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé dans les 10 jours suivant mon départ, sauf réclamation",
+              "en": "the deposit must be returned within 10 days after I move out, unless a claim is made"
+            },
+            "instance": "Residential Tenancies Section"
+          }
+        },
+        {
+          "valeur": "YT",
+          "fr": "Yukon",
+          "en": "Yukon",
+          "donnees": {
+            "loi": "Residential Landlord and Tenant Act",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé dans les 15 jours suivant la fin de la location ou la réception de mon adresse de réexpédition écrite, selon la dernière de ces dates",
+              "en": "the deposit must be returned within 15 days after the tenancy ends or the forwarding address is received in writing, whichever is later"
+            },
+            "instance": "Residential Tenancies Office"
+          }
+        },
+        {
+          "valeur": "NT",
+          "fr": "Territoires du Nord-Ouest",
+          "en": "Northwest Territories",
+          "donnees": {
+            "loi": "Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt, avec un état de compte détaillé, doit m’être remis dans les 10 jours suivant la fin de la location",
+              "en": "the deposit, with an itemized statement of account, must be given to me within 10 days after the tenancy ends"
+            },
+            "instance": "Rental Officer"
+          }
+        },
+        {
+          "valeur": "NU",
+          "fr": "Nunavut",
+          "en": "Nunavut",
+          "donnees": {
+            "loi": "Residential Tenancies Act",
+            "delai": {
+              "fr": "le dépôt doit m’être remboursé dans le délai que la loi prévoit après la fin de la location",
+              "en": "the deposit must be returned within the time the law sets after the tenancy ends"
+            },
+            "instance": "Rental Officer"
+          },
+          "aide": {
+            "fr": "Le délai n’a pas pu être confirmé : la lettre reste générale. Vérifiez-le sur le site officiel.",
+            "en": "The deadline could not be confirmed: the letter stays general. Check it on the official website."
+          }
+        }
+      ]
+    },
+    {
+      "id": "adresse_logement",
+      "type": "texte",
+      "requis": true,
+      "max": 140,
+      "libelle": {
+        "fr": "Adresse du logement quitté",
+        "en": "Address of the unit you left"
+      },
+      "exemple": {
+        "fr": "ex. 25, rue des Érables, app. 3, Gatineau",
+        "en": "e.g. 25 Maple Street, Unit 3, Ottawa"
+      }
+    },
+    {
+      "id": "date_fin",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de fin de la location (ou de votre départ)",
+        "en": "Date the tenancy ended (or you moved out)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "montant",
+      "type": "montant",
+      "requis": true,
+      "max": 12,
+      "libelle": {
+        "fr": "Montant du dépôt versé",
+        "en": "Amount of the deposit you paid"
+      },
+      "exemple": {
+        "fr": "ex. 850",
+        "en": "e.g. 850"
+      }
+    },
+    {
+      "id": "retenue",
+      "type": "texte-long",
+      "requis": false,
+      "max": 400,
+      "libelle": {
+        "fr": "Si une somme a été retenue, ce que vous contestez (facultatif)",
+        "en": "If an amount was kept, what you dispute (optional)"
+      },
+      "exemple": {
+        "fr": "ex. Vous avez retenu 200 $ pour des murs, mais l’état des lieux ne mentionne aucun dommage.",
+        "en": "e.g. You kept $200 for the walls, but the move-in report notes no damage."
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de votre propriétaire (dest_*).",
+    "en": "Free: give your landlord’s name and address (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "depot_bc",
+      "but": {
+        "fr": "Colombie-Britannique : quitter un logement",
+        "en": "British Columbia: moving out"
+      },
+      "fr": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/ending-a-tenancy/moving-out-of-rental-units",
+      "en": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/ending-a-tenancy/moving-out-of-rental-units"
+    },
+    {
+      "cle": "depot_ab",
+      "but": {
+        "fr": "Alberta : fin de la location",
+        "en": "Alberta: ending a tenancy"
+      },
+      "fr": "https://www.alberta.ca/ending-a-tenancy",
+      "en": "https://www.alberta.ca/ending-a-tenancy"
+    },
+    {
+      "cle": "depot_sk",
+      "but": {
+        "fr": "Saskatchewan : dépôts de garantie",
+        "en": "Saskatchewan: security deposits"
+      },
+      "fr": "https://www.saskatchewan.ca/residents/housing-and-renting/renting-and-leasing/security-deposits",
+      "en": "https://www.saskatchewan.ca/residents/housing-and-renting/renting-and-leasing/security-deposits"
+    },
+    {
+      "cle": "depot_mb",
+      "but": {
+        "fr": "Manitoba : remboursement du dépôt",
+        "en": "Manitoba: refunding the deposit"
+      },
+      "fr": "https://www.gov.mb.ca/cca/rtb/ot/gbook/s10securitydeposit_refundingasd7.html",
+      "en": "https://www.gov.mb.ca/cca/rtb/ot/gbook/s10securitydeposit_refundingasd7.html"
+    },
+    {
+      "cle": "depot_qc",
+      "but": {
+        "fr": "Québec : le dépôt de garantie est illégal",
+        "en": "Quebec: security deposits are illegal"
+      },
+      "fr": "https://www.quebec.ca/nouvelles/actualites/details/exiger-un-depot-de-garantie-est-illegal",
+      "en": "https://www.quebec.ca/nouvelles/actualites/details/exiger-un-depot-de-garantie-est-illegal"
+    },
+    {
+      "cle": "depot_nb",
+      "but": {
+        "fr": "Nouveau-Brunswick : dépôts",
+        "en": "New Brunswick: deposits"
+      },
+      "fr": "https://www.gnb.ca/en/topic/family-home-community/housing-property/deposits.html",
+      "en": "https://www.gnb.ca/en/topic/family-home-community/housing-property/deposits.html"
+    },
+    {
+      "cle": "depot_ns",
+      "but": {
+        "fr": "Nouvelle-Écosse : fin de la location",
+        "en": "Nova Scotia: ending a tenancy"
+      },
+      "fr": "https://www.novascotia.ca/sites/default/files/documents/1-1763/residential-tenancies-guides-ending-tenancy-en.pdf",
+      "en": "https://www.novascotia.ca/sites/default/files/documents/1-1763/residential-tenancies-guides-ending-tenancy-en.pdf"
+    },
+    {
+      "cle": "depot_yt",
+      "but": {
+        "fr": "Yukon : dépôts de garantie",
+        "en": "Yukon: security deposits"
+      },
+      "fr": "https://yukon.ca/en/housing-and-property/landlords-and-tenants-responsibilities/security-and-pet-deposits",
+      "en": "https://yukon.ca/en/housing-and-property/landlords-and-tenants-responsibilities/security-and-pet-deposits"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur. Les règles changent : vérifiez-les sur le site officiel avant d’envoyer la lettre.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office. Rules change: check them on the official website before you send the letter."
+    },
+    {
+      "fr": "Règles vérifiées sur les sites officiels le 29 octobre 2026. Île-du-Prince-Édouard et Nunavut : délai non confirmé.",
+      "en": "Rules checked on official websites on October 29, 2026. Prince Edward Island and Nunavut: deadline not confirmed."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"depot\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "redaction": {
+    "objet": {
+      "fr": "Demande de remboursement du dépôt, {{adresse_logement}}",
+      "en": "Request to return the deposit, {{adresse_logement}}"
+    },
+    "paragraphes": [
+      {
+        "fr": "J’ai quitté le logement situé au {{adresse_logement}} le {{date_fin|date}}. J’avais versé une somme de {{montant|montant}} au début de la location.",
+        "en": "I moved out of the unit at {{adresse_logement}} on {{date_fin|date}}. I paid a deposit of {{montant|montant}} at the start of the tenancy."
+      },
+      {
+        "si": {
+          "champ": "province",
+          "non": true,
+          "egal": "QC"
+        },
+        "fr": "Selon la loi applicable ({{province.loi}}), {{province.delai}}. Je vous demande de me rembourser la totalité de cette somme, avec les intérêts auxquels j’ai droit, ou de m’indiquer par écrit et en détail toute somme que vous estimez pouvoir retenir.",
+        "en": "Under the applicable law ({{province.loi}}), {{province.delai}}. I ask you to return the full amount, with any interest I am owed, or to tell me in writing and in detail any amount you believe you may keep."
+      },
+      {
+        "si": {
+          "champ": "province",
+          "egal": "QC"
+        },
+        "fr": "Selon le {{province.loi}}, {{province.delai}}. Je vous demande donc de me rembourser la somme de {{montant|montant}}.",
+        "en": "Under the {{province.loi}}, {{province.delai}}. I therefore ask you to return the amount of {{montant|montant}}."
+      },
+      {
+        "si": "retenue",
+        "fr": "{{retenue|phrase}}",
+        "en": "{{retenue|phrase}}"
+      },
+      {
+        "fr": "Mon adresse de réexpédition est celle qui figure en tête de cette lettre. Sans réponse de votre part dans les 10 jours suivant sa réception, je me réserve le droit de m’adresser à l’instance compétente ({{province.instance}}).",
+        "en": "My forwarding address is the one at the top of this letter. If I do not hear from you within 10 days of receiving it, I may apply to the competent body ({{province.instance}})."
+      }
+    ]
+  }
+}
