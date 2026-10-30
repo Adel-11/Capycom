@@ -58,6 +58,10 @@ export function champ(id, cle) {
   return null;
 }
 
+export const CONF = {
+  en: 'The answers may contain very sensitive personal data (social insurance number, children, status in Canada). They pass through this server only to produce the PDF, they are never stored or logged, and the Capycom connector never pays.',
+  fr: 'Les réponses peuvent contenir des données très sensibles (numéro d’assurance sociale, enfants, statut au Canada). Elles passent par ce serveur seulement pour produire le PDF, ne sont jamais conservées ni journalisées, et le connecteur Capycom ne paie jamais.'
+};
 const VAL_PROVINCES = () => M.PROVINCES_RC.map((p) => p.fr);
 
 /** Réponses : tout en chaînes. true → '1' pour une case ; true/false → oui/non pour un choix oui/non. Clés inconnues signalées. */
@@ -120,9 +124,17 @@ export function manques(id, v0, opts) {
     const def = DEFS[id].etapes?.find((e) => e.id === r.etape);
     out.push({
       etape: r.etape, titre: def ? T(def.titre, langue) : undefined,
-      champs: r.manques.map((cle) => descriptionChamp(id, cle, langue))
+      champs: [...new Set(r.manques)].map((cle) => descriptionChamp(id, cle, langue))
     });
   }
+  // Dates fournies dans un autre format que AAAA-MM-JJ : le moteur les laisserait passer telles quelles.
+  const vues = new Set(out.flatMap((e) => e.champs.map((c) => c.id)));
+  const mauvaises = Object.keys(v0 || {}).filter((cle) => {
+    const c = champ(id, cle);
+    const val = String((v0 || {})[cle] ?? '').trim();
+    return c && c.type === 'date' && val && !/^\d{4}-\d{2}-\d{2}$/.test(val) && !vues.has(cle);
+  });
+  if (mauvaises.length) out.push({ etape: 'dates', champs: mauvaises.map((cle) => descriptionChamp(id, cle, langue)) });
   if (id === 'credit' && !opts.bureau) out.unshift({ etape: 'bureau', champs: [{ id: 'bureau', libelle: langue === 'fr' ? 'Bureau de crédit (eq = Equifax, tu = TransUnion)' : 'Credit bureau (eq = Equifax, tu = TransUnion)' }] });
   return out;
 }
@@ -205,31 +217,51 @@ export function catalogue(actifs, langue) {
   });
 }
 
-function conditionTexte(groupes) {
+function conditionTexte(groupes, langue) {
   if (!Array.isArray(groupes) || !groupes.length) return undefined;
-  return groupes.map((g) => Object.entries(g).map(([k, val]) => (val === true ? `${k} is filled in` : `${k} = ${val}`)).join(' and ')).join(' or ');
+  const en = langue === 'en';
+  return groupes.map((g) => Object.entries(g).map(([k, val]) => (val === true ? `${k} ${en ? 'is filled in' : 'est renseigné'}` : `${k} = ${val}`)).join(en ? ' and ' : ' et ')).join(en ? ' or ' : ' ou ');
 }
 
 function champDecrit(c, langue) {
+  const en = langue === 'en';
   const o = { id: c.id, type: c.type, libelle: T(c.libelle, langue) };
   o.requis = !!c.requis;
   if (c.groupe) o.groupe = T(c.groupe, langue);
   if (c.type === 'choix') o.valeurs = (c.valeurs || []).map((x) => ({ valeur: x.valeur, libelle: T(x, langue) }));
-  else if (c.type === 'province-rc' || c.type === 'province' || c.type === 'province-ou-pays') o.valeurs = c.type === 'province-ou-pays' ? 'province or territory name, or another country' : VAL_PROVINCES();
-  else if (c.type === 'case') o.valeurs = "'1' when ticked, empty otherwise";
+  else if (c.type === 'province-rc' || c.type === 'province' || c.type === 'province-ou-pays') o.valeurs = c.type === 'province-ou-pays' ? (en ? 'province or territory name, or another country' : 'nom d’une province ou d’un territoire, ou un autre pays') : VAL_PROVINCES();
+  else if (c.type === 'case') o.valeurs = en ? "'1' when ticked, empty otherwise" : "'1' si cochée, vide sinon";
   else if (c.type === 'date') o.valeurs = 'YYYY-MM-DD';
-  else if (c.type === 'nas') o.valeurs = '9 digits, spaces allowed';
+  else if (c.type === 'nas') o.valeurs = en ? '9 digits, spaces allowed' : '9 chiffres, espaces permis';
   if (c.exemple) o.exemple = T(c.exemple, langue);
-  if (c.max) o.longueur_max = c.max;
+  if (c.max && c.type !== 'date') o.longueur_max = c.max;
   if (c.aide) o.aide = T(c.aide, langue);
   if (c.membres) o.membres = c.membres;
-  const q = conditionTexte(c.quand); if (q) o.afficher_si = q;
-  const s = conditionTexte(c.sauf); if (s) o.masquer_si = s;
-  const r = conditionTexte(c.requisSauf); if (r) o.non_requis_si = r;
+  else if (c.type === 'groupe' && /_stat$/.test(c.id)) o.membres = ['cit', 'rp', 'pp', 'rt', 'ind'].map((x) => c.id.replace(/_stat$/, '_' + x));
+  if (c.id === 'rc_sch_an') o.type = 'annee';
+  const q = conditionTexte(c.quand, langue); if (q) o.afficher_si = q;
+  const s = conditionTexte(c.sauf, langue); if (s) o.masquer_si = s;
+  const r = conditionTexte(c.requisSauf, langue); if (r) o.non_requis_si = r;
   return o;
 }
 
 function lienOfficiel(l, langue) { return { but: T(l.but, langue), url: l[langue] || l.fr }; }
+
+
+/** Notes du site adaptées au MCP : on retire ce qui parle du navigateur ou du dessin de signature, et on ajoute le vrai fonctionnement. */
+function notesMcp(d, langue) {
+  const brut = (d.etapes || []).flatMap((e) => (e.notes || []).map((n) => ({ titre: T(n.titre, langue), texte: [].concat(T(n.texte, langue)) })));
+  const sortie = [];
+  for (const n of brut) {
+    const texte = n.texte.filter((t) => !/navigateur|your browser|dessinez|draw it/i.test(t));
+    if (!texte.length) continue;
+    sortie.push({ titre: n.titre || (langue === 'en' ? 'Note' : 'À noter'), texte });
+  }
+  sortie.push(langue === 'en'
+    ? { titre: 'Your data and your signature', texte: ['Through this assistant, your answers and attachments pass through the Capycom connector only to produce the PDF and forward it to Capycom. They are not stored or logged.', 'The signature is an image of your own handwritten signature that you provide (signature_url or signature_base64). The assistant must not draw or invent one. You can also sign by hand after printing.'] }
+    : { titre: 'Vos données et votre signature', texte: ['Avec cet assistant, vos réponses et vos pièces jointes passent par le connecteur Capycom seulement pour produire le PDF et le transmettre à Capycom. Elles ne sont ni conservées ni journalisées.', 'La signature est une image de votre propre signature manuscrite que vous fournissez (signature_url ou signature_base64). L\u2019assistant ne doit pas en dessiner ni en inventer une. Vous pouvez aussi signer à la main après l\u2019impression.'] });
+  return sortie;
+}
 
 /** Description complète d'un modèle pour une IA. */
 export function decrire(id, langue) {
@@ -242,30 +274,35 @@ export function decrire(id, langue) {
     avant_de_commencer: {
       pages_officielles_a_lire: (d.liensOfficiels || []).map((l) => lienOfficiel(l, langue)),
       mises_en_garde: (d.avertissements || []).map((a) => T(a, langue)),
-      notes: (d.etapes || []).flatMap((e) => (e.notes || []).map((n) => ({ titre: T(n.titre, langue), texte: [].concat(T(n.texte, langue)) })))
+      notes: notesMcp(d, langue)
     },
     questions: d.etapes
       ? d.etapes.filter((e) => (e.champs || []).length).map((e) => {
         const x = { etape: e.id, titre: T(e.titre, langue), aide: T(e.aide, langue), champs: e.champs.map((c) => champDecrit(c, langue)) };
-        const q = conditionTexte(e.quand); if (q) x.afficher_si = q;
+        const q = conditionTexte(e.quand, langue); if (q) x.afficher_si = q;
         if (e.repete) x.repetition = { variable: e.repete.variable, de: e.repete.min, a: e.repete.max, aide: T(e.repete.aide, langue) };
         if (e.regle) x.regle = T(e.regle, langue);
         return x;
       })
       : [{ etape: 'formulaire', titre: T(d.titre, langue), champs: [...commun.champsLettre, ...d.champs].map((c) => champDecrit(c, langue)) }],
-    format_des_reponses: 'reponses is an object whose keys are the field ids above. All values are strings (a ticked box is "1"). Dates are YYYY-MM-DD. Repeated ids use the child or account number in place of {n}.',
+    format_des_reponses: langue === 'en'
+      ? 'reponses is an object whose keys are the field ids above. All values are strings (a ticked box is "1"). Dates are YYYY-MM-DD. Repeated ids use the child or account number in place of {n}. afficher_si = the question applies only when the condition is true; masquer_si = the question is skipped when the condition is true; non_requis_si = not required when the condition is true.'
+      : 'reponses est un objet dont les clés sont les identifiants de champs ci-dessus. Toutes les valeurs sont des chaînes (une case cochée vaut "1"). Les dates sont au format AAAA-MM-JJ. Pour les champs répétés, remplacez {n} par le numéro de l’enfant ou du compte. afficher_si = la question ne s’applique que si la condition est vraie; masquer_si = la question est sautée si la condition est vraie; non_requis_si = non obligatoire si la condition est vraie.',
     langue_de_reference: langue
   };
   if (d.production?.aideRedaction) sortie.format_des_reponses += ' ' + T(d.production.aideRedaction, langue);
+  sortie.confidentialite = langue === 'en' ? CONF.en : CONF.fr;
   if (formulaire) {
     sortie.pieces_a_joindre = piecesDecrites(d, langue);
     sortie.signature = {
       requise: true,
-      aide: 'A PNG or JPEG image of the user\'s own handwritten signature is placed on the form (signature_url or signature_base64). The assistant must not draw, type or invent a signature: the user supplies the image.'
+      aide: langue === 'en'
+        ? 'A PNG or JPEG image of the user\'s own handwritten signature is placed on the form (signature_url or signature_base64). The assistant must not draw, type or invent a signature: the user supplies the image.'
+        : 'Une image PNG ou JPEG de la propre signature manuscrite de l’utilisateur est placée sur le formulaire (signature_url ou signature_base64). L’assistant ne doit pas dessiner, taper ni inventer une signature : c’est l’utilisateur qui fournit l’image.'
     };
   }
   if (id === 'credit') {
-    sortie.bureau = { requis: true, valeurs: ['eq', 'tu'], aide: 'One mail item per bureau. Call the tools once for eq (Equifax) and once for tu (TransUnion). The fields cr_bureau, cr_eq and cr_tu are set from this argument.' };
+    sortie.bureau = { requis: true, valeurs: ['eq', 'tu'], aide: langue === 'en' ? 'One mail item per bureau. Call the tools once for eq (Equifax) and once for tu (TransUnion). The fields cr_bureau, cr_eq and cr_tu are set from this argument.' : 'Un envoi par bureau. Appelez les outils une fois pour eq (Equifax) et une fois pour tu (TransUnion). Les champs cr_bureau, cr_eq et cr_tu viennent de cet argument.' };
     sortie.destinataires = Object.entries(commun.bureaux).map(([k, b]) => ({ bureau: k, ...b.dest[langue] }));
   } else if (id === 'rc66') {
     sortie.destinataires = Object.values(commun.centres).map((c) => ({ nom: c.nom, adresse: `${c.ligne}, ${c.ville} ${c.cp}`, provinces: T(c.zone, langue) }));
@@ -279,7 +316,11 @@ function piecesDecrites(d, langue) {
   return liste.map((p) => {
     const o = { id: p.id, requis: !!p.requis, titre: T(p.titre, langue), aide: T(p.aide, langue) };
     if (p.bureau) o.bureau = p.bureau;
-    if (p.quand) o.quand = T(p.quand, langue);
+    if (p.quand) o.quand = T(p.quand, langue).replace(/\s*\((?:[^()]*\b(?:rc|cr)[._]\w+[^()]*)\)/g, '');
+    if (d.id === 'rc66' && p.id === 'sch') {
+      o.requis = false;
+      o.quand = langue === 'en' ? 'Only if the user prefers to provide their own completed RC66SCH. Otherwise Capycom fills in the RC66SCH itself from the answers, no attachment needed.' : 'Seulement si l’utilisateur préfère fournir son propre RC66SCH rempli. Sinon Capycom remplit lui-même le RC66SCH à partir des réponses, aucune pièce à joindre.';
+    }
     return o;
   });
 }

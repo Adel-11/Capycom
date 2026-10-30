@@ -31,7 +31,7 @@ export class ErreurReseau extends Error {
 }
 
 async function resoudre(hote) {
-  if (net.isIP(hote)) throw new ErreurReseau('adresse_refusee', 'IP addresses are not accepted, use a host name');
+  if (net.isIP(hote) || /^\[.*\]$/.test(hote)) throw new ErreurReseau('adresse_refusee', 'IP addresses are not accepted, use a host name');
   let liste;
   try { liste = await dns.lookup(hote, { all: true, verbatim: true }); } catch { throw new ErreurReseau('adresse_introuvable', 'host not found'); }
   if (!liste.length || liste.some((x) => adresseInterdite(x.address))) throw new ErreurReseau('adresse_refusee', 'address not allowed');
