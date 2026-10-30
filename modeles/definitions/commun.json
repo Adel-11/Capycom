@@ -12,7 +12,8 @@
         "en": "Contracts and subscriptions"
       },
       "modeles": [
-        "resiliation"
+        "resiliation",
+        "resiliation-telecom"
       ],
       "slug": {
         "fr": "contrats-et-abonnements",

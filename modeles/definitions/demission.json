@@ -72,8 +72,8 @@
       "requis": false,
       "max": 200,
       "libelle": {
-        "fr": "Un mot de remerciement (facultatif)",
-        "en": "A word of thanks (optional)"
+        "fr": "Un mot de remerciement",
+        "en": "A word of thanks"
       },
       "exemple": {
         "fr": "ex. Merci pour la confiance accordée pendant ces quatre années.",
@@ -86,8 +86,8 @@
       "requis": false,
       "max": 200,
       "libelle": {
-        "fr": "Aide à la transition (facultatif)",
-        "en": "Help with the handover (optional)"
+        "fr": "Aide à la transition",
+        "en": "Help with the handover"
       },
       "exemple": {
         "fr": "ex. Je peux former mon remplaçant pendant mes dernières semaines.",

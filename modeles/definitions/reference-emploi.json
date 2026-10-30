@@ -86,8 +86,8 @@
       "requis": false,
       "max": 10,
       "libelle": {
-        "fr": "Date limite (facultatif)",
-        "en": "Deadline (optional)"
+        "fr": "Date limite",
+        "en": "Deadline"
       },
       "exemple": {
         "fr": "",

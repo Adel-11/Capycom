@@ -93,7 +93,7 @@
     { fr: 'Territoires du Nord-Ouest', en: 'Northwest Territories', ab: 'NT', osm: ['Northwest Territories', 'Territoires du Nord-Ouest'] },
     { fr: 'Yukon', en: 'Yukon', ab: 'YT', osm: ['Yukon'] }
   ]);
-  function prov(fr) { for (var i = 0; i < PROVINCES_RC.length; i++) if (PROVINCES_RC[i].fr === fr) return PROVINCES_RC[i]; return null; }
+  function prov(fr) { for (var i = 0; i < PROVINCES_RC.length; i++) if (PROVINCES_RC[i].fr === fr || (fr && PROVINCES_RC[i].ab === fr)) return PROVINCES_RC[i]; return null; }
   function provRc(fr) { for (var i = 0; i < PROVINCES_RC.length; i++) if (PROVINCES_RC[i].fr === fr) return PROVINCES_RC[i]; return null; }
   function nettoyer(s) {
     return String(s || '').replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-').replace(/…/g, '...').replace(/œ/g, 'oe').replace(/Œ/g, 'OE').replace(/ /g, ' ');

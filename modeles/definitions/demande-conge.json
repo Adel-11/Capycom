@@ -86,8 +86,8 @@
       "requis": false,
       "max": 250,
       "libelle": {
-        "fr": "Précision (facultatif)",
-        "en": "Details (optional)"
+        "fr": "Précision",
+        "en": "Details"
       },
       "exemple": {
         "fr": "ex. Je m’assurerai que mes dossiers soient à jour avant mon départ.",

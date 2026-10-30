@@ -1,0 +1,423 @@
+{
+  "version": 1,
+  "id": "resiliation-telecom",
+  "section": "contrats",
+  "titre": {
+    "fr": "Résiliation Internet, cellulaire ou télé",
+    "en": "Cancel internet, mobile or TV"
+  },
+  "description": {
+    "fr": "Résilier un forfait chez Bell, Rogers, Telus, Vidéotron, Fido, Koodo, Virgin Plus, Freedom et plus de 15 autres opérateurs.",
+    "en": "Cancel a plan with Bell, Rogers, Telus, Vidéotron, Fido, Koodo, Virgin Plus, Freedom and 15 more providers."
+  },
+  "seo": {
+    "slug": {
+      "fr": "resiliation-internet-cellulaire",
+      "en": "cancel-internet-mobile-plan"
+    },
+    "titre": {
+      "fr": "Résiliation Internet ou cellulaire : modèle de lettre | Capycom",
+      "en": "Cancel an internet or mobile plan: free letter template | Capycom"
+    },
+    "description": {
+      "fr": "Résiliez votre forfait Internet, cellulaire ou télé chez Bell, Rogers, Telus, Vidéotron, Fido, Koodo et plus. Modèle de lettre gratuit, à télécharger ou à faire poster au Canada.",
+      "en": "Cancel your internet, mobile or TV plan with Bell, Rogers, Telus, Vidéotron, Fido, Koodo and more. Free letter template, to download or have mailed in Canada."
+    },
+    "h1": {
+      "fr": "Lettre de résiliation Internet, cellulaire ou télé",
+      "en": "Internet, Mobile or TV Cancellation Letter"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Résilier un forfait chez Bell, Rogers, Telus, Vidéotron, Fido, Koodo, Virgin Plus, Freedom et plus de 15 autres opérateurs.",
+    "en": "Cancel a plan with Bell, Rogers, Telus, Vidéotron, Fido, Koodo, Virgin Plus, Freedom and 15 more providers."
+  },
+  "avertissement": {
+    "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur. Les règles changent : vérifiez-les sur le site officiel avant d’envoyer la lettre.",
+    "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office. Rules change: check them on the official website before you send the letter."
+  },
+  "champs": [
+    {
+      "id": "operateur",
+      "type": "choix",
+      "requis": true,
+      "max": 20,
+      "libelle": {
+        "fr": "Opérateur",
+        "en": "Provider"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "bell",
+          "fr": "Bell",
+          "en": "Bell",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "rogers",
+          "fr": "Rogers",
+          "en": "Rogers",
+          "dest": {
+            "nom": "Rogers, service à la clientèle",
+            "ligne": "70 Assomption Blvd.",
+            "ville": "Moncton",
+            "prov": "NB",
+            "cp": "E1C 1A1"
+          },
+          "aide": {
+            "fr": "Adresse de service à la clientèle publiée par l’opérateur (page de contact rogers.com, consultée le 30 octobre 2026). Elle n’est pas indiquée comme adresse de résiliation : vérifiez-la avant d’envoyer.",
+            "en": "Customer service address published by the provider (page de contact rogers.com, checked on October 30, 2026). It is not stated to be a cancellation address: check it before you send."
+          }
+        },
+        {
+          "valeur": "telus",
+          "fr": "Telus",
+          "en": "Telus",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "videotron",
+          "fr": "Vidéotron",
+          "en": "Vidéotron",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "fido",
+          "fr": "Fido",
+          "en": "Fido",
+          "dest": {
+            "nom": "Fido, service à la clientèle",
+            "ligne": "70 Assomption Blvd.",
+            "ville": "Moncton",
+            "prov": "NB",
+            "cp": "E1C 1A1"
+          },
+          "aide": {
+            "fr": "Adresse de service à la clientèle publiée par l’opérateur (page fido.ca, rubrique plaintes, consultée le 30 octobre 2026). Elle n’est pas indiquée comme adresse de résiliation : vérifiez-la avant d’envoyer.",
+            "en": "Customer service address published by the provider (page fido.ca, rubrique plaintes, checked on October 30, 2026). It is not stated to be a cancellation address: check it before you send."
+          }
+        },
+        {
+          "valeur": "koodo",
+          "fr": "Koodo",
+          "en": "Koodo",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "virgin",
+          "fr": "Virgin Plus",
+          "en": "Virgin Plus",
+          "dest": {
+            "nom": "Virgin Plus",
+            "ligne": "1 carrefour Alexander-Graham-Bell, bâtiment A-7",
+            "ville": "Verdun",
+            "prov": "QC",
+            "cp": "H3E 3B3"
+          },
+          "aide": {
+            "fr": "Adresse de service à la clientèle publiée par l’opérateur (page virginplus.ca, consultée le 30 octobre 2026). Elle n’est pas indiquée comme adresse de résiliation : vérifiez-la avant d’envoyer.",
+            "en": "Customer service address published by the provider (page virginplus.ca, checked on October 30, 2026). It is not stated to be a cancellation address: check it before you send."
+          }
+        },
+        {
+          "valeur": "freedom",
+          "fr": "Freedom Mobile",
+          "en": "Freedom Mobile",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "sasktel",
+          "fr": "SaskTel",
+          "en": "SaskTel",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "eastlink",
+          "fr": "Eastlink",
+          "en": "Eastlink",
+          "dest": {
+            "nom": "Eastlink",
+            "ligne": "C.P. 8660, succursale A",
+            "ville": "Halifax",
+            "prov": "NS",
+            "cp": "B3K 5M3"
+          },
+          "aide": {
+            "fr": "Adresse de service à la clientèle publiée par l’opérateur (page eastlink.ca, consultée le 30 octobre 2026). Elle n’est pas indiquée comme adresse de résiliation : vérifiez-la avant d’envoyer.",
+            "en": "Customer service address published by the provider (page eastlink.ca, checked on October 30, 2026). It is not stated to be a cancellation address: check it before you send."
+          }
+        },
+        {
+          "valeur": "cogeco",
+          "fr": "Cogeco",
+          "en": "Cogeco",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "distributel",
+          "fr": "Distributel",
+          "en": "Distributel",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "teksavvy",
+          "fr": "TekSavvy",
+          "en": "TekSavvy",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "publicmobile",
+          "fr": "Public Mobile",
+          "en": "Public Mobile",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "chatr",
+          "fr": "Chatr",
+          "en": "Chatr",
+          "dest": {
+            "nom": "Chatr, service à la clientèle",
+            "ligne": "333 Bloor Street East",
+            "ville": "Toronto",
+            "prov": "ON",
+            "cp": "M4W 1G9"
+          },
+          "aide": {
+            "fr": "Adresse de service à la clientèle publiée par l’opérateur (page chatrwireless.com, consultée le 30 octobre 2026). Elle n’est pas indiquée comme adresse de résiliation : vérifiez-la avant d’envoyer.",
+            "en": "Customer service address published by the provider (page chatrwireless.com, checked on October 30, 2026). It is not stated to be a cancellation address: check it before you send."
+          }
+        },
+        {
+          "valeur": "lucky",
+          "fr": "Lucky Mobile",
+          "en": "Lucky Mobile",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "fizz",
+          "fr": "Fizz",
+          "en": "Fizz",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "xplore",
+          "fr": "Xplore",
+          "en": "Xplore",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "northwestel",
+          "fr": "Northwestel",
+          "en": "Northwestel",
+          "aide": {
+            "fr": "Cet opérateur ne publie pas d’adresse postale pour les avis de résiliation (pages consultées le 30 octobre 2026). Écrivez son adresse dans le bloc « Destinataire » si vous la connaissez, et résiliez aussi par le moyen indiqué sur son site.",
+            "en": "This provider does not publish a mailing address for cancellation notices (pages checked on October 30, 2026). Enter its address in the “Recipient” block if you have it, and also cancel through the method shown on its website."
+          }
+        },
+        {
+          "valeur": "shaw",
+          "fr": "Shaw (maintenant Rogers)",
+          "en": "Shaw (maintenant Rogers)",
+          "aide": {
+            "fr": "Shaw est maintenant géré par Rogers. Aucune adresse propre à Shaw n’a été vérifiée : écrivez l’adresse indiquée sur votre facture.",
+            "en": "Shaw is now run by Rogers. No Shaw-specific address was verified: use the address on your bill."
+          }
+        },
+        {
+          "valeur": "autre",
+          "fr": "Autre opérateur",
+          "en": "Autre opérateur",
+          "aide": {
+            "fr": "Écrivez le nom et l’adresse de l’opérateur dans le bloc « Destinataire ». Vous les trouverez sur votre facture ou votre contrat.",
+            "en": "Enter the provider’s name and address in the “Recipient” block. You will find them on your bill or contract."
+          },
+          "donnees": {
+            "nom": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "type": "texte",
+      "requis": true,
+      "max": 120,
+      "libelle": {
+        "fr": "Service à résilier",
+        "en": "Service to cancel"
+      },
+      "exemple": {
+        "fr": "ex. forfait cellulaire, Internet résidentiel",
+        "en": "e.g. mobile plan, home internet"
+      }
+    },
+    {
+      "id": "num_client",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Numéro de compte ou de téléphone",
+        "en": "Account or phone number"
+      },
+      "exemple": {
+        "fr": "ex. 613 555 0100",
+        "en": "e.g. 613 555 0100"
+      }
+    },
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de fin souhaitée",
+        "en": "Requested end date"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "equipement",
+      "type": "texte",
+      "requis": false,
+      "max": 160,
+      "libelle": {
+        "fr": "Équipement à retourner",
+        "en": "Equipment to return"
+      },
+      "exemple": {
+        "fr": "ex. modem et décodeur",
+        "en": "e.g. modem and TV box"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Prérempli pour certains opérateurs (adresse de service à la clientèle publiée). Sinon, libre (dest_*).",
+    "en": "Prefilled for some providers (published customer service address). Otherwise free (dest_*)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [],
+  "avertissements": [
+    {
+      "fr": "Ce modèle sert de point de départ. Il ne remplace pas l’avis d’un avocat, d’un notaire ou d’un organisme de protection du consommateur. Les règles changent : vérifiez-les sur le site officiel avant d’envoyer la lettre.",
+      "en": "This template is a starting point. It does not replace advice from a lawyer, a notary or a consumer protection office. Rules change: check them on the official website before you send the letter."
+    },
+    {
+      "fr": "Résiliez aussi par le moyen exigé par votre opérateur et gardez une preuve d’envoi. Les adresses affichées viennent des sites des opérateurs au 30 octobre 2026 et peuvent changer.",
+      "en": "Also cancel the way your provider requires and keep proof of sending. The addresses shown come from the providers’ websites as of October 30, 2026 and may change."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"resiliation-telecom\", reponses, options)",
+    "sortie": {
+      "fr": "Une lettre PDF prête à signer et à poster.",
+      "en": "A letter as a PDF, ready to sign and mail."
+    }
+  },
+  "destinataireDepuis": "operateur",
+  "redaction": {
+    "objet": {
+      "fr": "Résiliation de {{service|min}}",
+      "en": "Cancellation of {{service|min}}"
+    },
+    "paragraphes": [
+      {
+        "si": {
+          "champ": "operateur",
+          "non": true,
+          "egal": "autre"
+        },
+        "fr": "Par la présente, je vous informe de ma décision de résilier le service suivant : {{service|sp}}, chez {{operateur|option}}.",
+        "en": "I am writing to tell you that I wish to cancel the following service: {{service|sp}}, with {{operateur|option}}."
+      },
+      {
+        "si": {
+          "champ": "operateur",
+          "egal": "autre"
+        },
+        "fr": "Par la présente, je vous informe de ma décision de résilier le service suivant : {{service|sp}}.",
+        "en": "I am writing to tell you that I wish to cancel the following service: {{service|sp}}."
+      },
+      {
+        "si": "num_client",
+        "fr": "Numéro de compte ou de téléphone : {{num_client}}.",
+        "en": "Account or phone number: {{num_client}}."
+      },
+      {
+        "si": "date_effet",
+        "fr": "Je vous demande de mettre fin au service à compter du {{date_effet|date}}.",
+        "en": "I ask that the service end on {{date_effet|date}}."
+      },
+      {
+        "si": {
+          "champ": "date_effet",
+          "vide": true
+        },
+        "fr": "Je vous demande de mettre fin au service dans les meilleurs délais, en tenant compte du préavis prévu à mon contrat, s’il y en a un.",
+        "en": "I ask that the service end as soon as possible, subject to any notice period in my contract."
+      },
+      {
+        "fr": "Merci de cesser toute facturation et tout prélèvement à partir de cette date. Si des frais de résiliation ou de retour d’équipement sont réclamés, je vous demande de m’en envoyer le calcul détaillé par écrit avant tout prélèvement.",
+        "en": "Please stop all billing and withdrawals from that date. If you charge cancellation or equipment return fees, I ask that you send me a detailed calculation in writing before any withdrawal."
+      },
+      {
+        "si": "equipement",
+        "fr": "Équipement à retourner : {{equipement}}. Merci de m’indiquer comment le retourner sans frais.",
+        "en": "Equipment to return: {{equipement}}. Please tell me how to return it at no cost."
+      },
+      {
+        "fr": "Merci de me confirmer la résiliation par écrit.",
+        "en": "Please confirm the cancellation in writing."
+      }
+    ]
+  }
+}

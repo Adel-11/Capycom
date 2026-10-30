@@ -4,7 +4,7 @@
  * Aucune donnée de client : seulement des libellés, des règles et des liens publics. */
 'use strict';
 var fs = require('fs'), path = require('path');
-var ORDRE = ['resiliation', 'adresse', 'remboursement', 'contestation', 'demeure', 'rc66', 'credit', 'depot', 'reparations', 'preavis-depart', 'demission', 'demande-conge', 'reference-emploi'];
+var ORDRE = ['resiliation', 'adresse', 'remboursement', 'contestation', 'demeure', 'rc66', 'credit', 'depot', 'reparations', 'preavis-depart', 'demission', 'demande-conge', 'reference-emploi', 'resiliation-telecom'];
 function lire(dossier, nom) { return JSON.parse(fs.readFileSync(path.join(dossier, nom + '.json'), 'utf8')); }
 function charger(dossier) {
   dossier = dossier || path.join(__dirname, 'definitions');

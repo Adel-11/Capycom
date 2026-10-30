@@ -68,7 +68,7 @@
   var MODELES = DEF.modeles.map(function (d) {
     var m = { id: d.id, fr: d.titre.fr, en: d.titre.en, champs: (d.champs || []).map(function (c) {
       return { id: c.id, fr: c.libelle.fr, en: c.libelle.en, type: c.type || 'text', req: !!c.requis, phfr: c.exemple ? c.exemple.fr : '', phen: c.exemple ? c.exemple.en : '', max: c.max || 120, options: c.options || null, defaut: c.defaut != null ? String(c.defaut) : '' };
-    }) };
+    }), destDepuis: d.destinataireDepuis || '' };
     // types de la définition (neutres) vers ceux de l'interface
     m.champs.forEach(function (c) { c.type = { 'texte': 'text', 'texte-long': 'textarea' }[c.type] || c.type; });
     if (d.type !== 'lettre') m.type = 'assistant';
@@ -313,6 +313,16 @@
 
   /* ------------------------------------------------------------ rendu */
   var racine;
+  // Choix qui préremplit le destinataire (ex. opérateur télécom) : copie l'adresse de l'option dans le bloc destinataire
+  function prefillDest(k, valeur) {
+    var M = modele(etat.modele); if (!M.destDepuis || M.destDepuis !== k) return;
+    var ch = null; M.champs.forEach(function (c) { if (c.id === k) ch = c; });
+    var o = null; ((ch && ch.options) || []).forEach(function (x) { if (x.valeur === valeur) o = x; });
+    var d = (o && o.dest) || {}, nomUi = {};
+    var p = d.prov ? (PROVINCES_RC.filter(function (q) { return q.ab === d.prov; })[0] || null) : null;
+    var vals = { nom: d.nom || '', service: d.service || '', ligne: d.ligne || '', ville: d.ville || '', cp: d.cp || '', prov: p ? p.fr : '' };
+    Object.keys(vals).forEach(function (key) { var id = 'dest_' + key; etat.v[id] = vals[key]; var el = document.getElementById('ml-' + id); if (el) el.value = vals[key]; });
+  }
   function aideChoix(options, valeur) {
     for (var i = 0; i < (options || []).length; i++) if (options[i].valeur === valeur && options[i].aide) return esc(options[i].aide[etat.ui] || options[i].aide.fr || '');
     return '';
@@ -333,7 +343,7 @@
         '<div class="ml-aide-choix" id="ml-aide-' + id + '">' + aideChoix(opts.options, etat.v[id]) + '</div>';
     } else if (opts.type === 'province' || opts.type === 'provinceRc') {
       inp = '<select id="ml-' + id + '" data-k="' + id + '"><option value="">' + esc(t('choisirProv')) + '</option>' +
-        (opts.type === 'provinceRc' || /^rc/.test(id) ? PROVINCES_RC : PROVINCES).map(function (p) { return '<option value="' + esc(p.fr) + '"' + (etat.v[id] === p.fr ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? p.fr : p.en) + '</option>'; }).join('') + '</select>';
+        PROVINCES_RC.map(function (p) { return '<option value="' + esc(p.fr) + '"' + (etat.v[id] === p.fr ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? p.fr : p.en) + '</option>'; }).join('') + '</select>';
     } else {
       var ty = opts.type === 'date' ? 'date' : (opts.type === 'tel' ? 'tel' : 'text'), im = (opts.type === 'montant' || opts.type === 'nombre') ? ' inputmode="decimal"' : (opts.type === 'nas' || opts.type === 'tel') ? ' inputmode="numeric"' : '';
       inp = '<input type="' + ty + '" id="ml-' + id + '" data-k="' + id + '" value="' + v + '"' + ph + max + im + ' autocomplete="off">';
@@ -567,7 +577,7 @@
       if (e.target.getAttribute('data-sigtransp')) { etat.sig.transp = e.target.checked; traiterPhoto(); rendreSignature(); return; }
       if (e.target.getAttribute('data-optlien')) { etat.lienPied = e.target.checked; return; }
     });
-    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; if (e.target.getAttribute('data-choix')) { var ch = null; modele(etat.modele).champs.forEach(function (c) { if (c.id === k) ch = c; }); var ae = document.getElementById('ml-aide-' + k); if (ae && ch) ae.innerHTML = aideChoix(ch.options, e.target.value); } apercu(); } });
+    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; if (e.target.getAttribute('data-choix')) { var ch = null; modele(etat.modele).champs.forEach(function (c) { if (c.id === k) ch = c; }); var ae = document.getElementById('ml-aide-' + k); if (ae && ch) ae.innerHTML = aideChoix(ch.options, e.target.value); } prefillDest(k, e.target.value); apercu(); } });
     racine.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && e.target.id && /_q$/.test(e.target.id)) { e.preventDefault(); rechercher(e.target.id.replace(/^ml-/, '').replace(/_q$/, '')); }
     });
