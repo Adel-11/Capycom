@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "id": "rt-00045-terre-neuve",
+  "section": "logement",
+  "titre": {
+    "fr": "Avis de fin de bail du locataire (Terre-Neuve-et-Labrador, RT-2018-00045)",
+    "en": "Tenant’s notice to terminate (Newfoundland and Labrador, RT-2018-00045)"
+  },
+  "description": {
+    "fr": "Remplir le formulaire RT-2018-00045 du Residential Tenancies Office de Terre-Neuve-et-Labrador pour mettre fin à votre bail. Prêt à signer et à poster au propriétaire.",
+    "en": "Fill in Newfoundland and Labrador Residential Tenancies Office form RT-2018-00045 to end your tenancy. Ready to sign and mail to your landlord."
+  },
+  "seo": {
+    "slug": {
+      "fr": "avis-fin-de-bail-terre-neuve-rt-2018-00045",
+      "en": "newfoundland-labrador-rt-2018-00045-tenant-notice-to-terminate"
+    },
+    "titre": {
+      "fr": "Formulaire RT-2018-00045 de Terre-Neuve-et-Labrador : avis du locataire | Capycom",
+      "en": "Newfoundland and Labrador form RT-2018-00045: tenant’s notice | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à quelques questions et obtenez le formulaire RT-2018-00045 rempli, prêt à signer. Envoi par la poste possible.",
+      "en": "Free tool: answer a few questions and get form RT-2018-00045 filled in, ready to sign. Mailing available."
+    },
+    "h1": {
+      "fr": "Avis de fin de bail du locataire (Terre-Neuve-et-Labrador, RT-2018-00045)",
+      "en": "Tenant’s Notice to Terminate (Newfoundland and Labrador, RT-2018-00045)"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remplir le formulaire RT-2018-00045 du Residential Tenancies Office de Terre-Neuve-et-Labrador pour mettre fin à votre bail. Prêt à signer et à poster au propriétaire.",
+    "en": "Fill in Newfoundland and Labrador Residential Tenancies Office form RT-2018-00045 to end your tenancy. Ready to sign and mail to your landlord."
+  },
+  "avertissement": {
+    "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+    "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+  },
+  "champs": [
+    {
+      "id": "type_location",
+      "type": "choix",
+      "requis": true,
+      "max": 2,
+      "libelle": {
+        "fr": "Type de contrat de location",
+        "en": "Type of rental agreement"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "semaine",
+          "texteOfficiel": "Week to week",
+          "fr": "De semaine en semaine",
+          "en": "Week to week",
+          "aide": {
+            "fr": "Article 18(1)(a) : préavis d’au moins 7 jours avant la fin de la période de location.",
+            "en": "Section 18(1)(a): notice of at least 7 days before the end of the rental period."
+          }
+        },
+        {
+          "valeur": "mois",
+          "texteOfficiel": "Month to month",
+          "fr": "De mois en mois",
+          "en": "Month to month",
+          "aide": {
+            "fr": "Article 18(1)(b) : préavis d’au moins 1 mois avant la fin de la période de location.",
+            "en": "Section 18(1)(b): notice of at least 1 month before the end of the rental period."
+          }
+        },
+        {
+          "valeur": "terme",
+          "texteOfficiel": "Fixed Term",
+          "fr": "À durée fixe",
+          "en": "Fixed term",
+          "aide": {
+            "fr": "Article 18(1)(c) : préavis d’au moins 2 mois avant la fin du terme.",
+            "en": "Section 18(1)(c): notice of at least 2 months before the end of the fixed term."
+          }
+        },
+        {
+          "valeur": "maison",
+          "texteOfficiel": "Mobile Home Site",
+          "fr": "Terrain de maison mobile",
+          "en": "Mobile home site",
+          "aide": {
+            "fr": "Article 18(3)(a) : préavis d’au moins 1 mois avant la fin de la période de location.",
+            "en": "Section 18(3)(a): notice of at least 1 month before the end of the rental period."
+          }
+        }
+      ]
+    },
+    {
+      "id": "log_ligne",
+      "type": "texte",
+      "requis": true,
+      "max": 90,
+      "libelle": {
+        "fr": "Numéro et rue du logement",
+        "en": "Street number and name of the rental unit"
+      },
+      "exemple": {
+        "fr": "ex. 25 Water Street",
+        "en": "e.g. 25 Water Street"
+      }
+    },
+    {
+      "id": "log_apt",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Appartement",
+        "en": "Apartment number"
+      },
+      "exemple": {
+        "fr": "ex. 4",
+        "en": "e.g. 4"
+      }
+    },
+    {
+      "id": "log_ville",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Ville du logement",
+        "en": "City or town of the rental unit"
+      },
+      "exemple": {
+        "fr": "ex. St. John’s",
+        "en": "e.g. St. John’s"
+      }
+    },
+    {
+      "id": "log_cp",
+      "type": "cp",
+      "requis": true,
+      "max": 7,
+      "libelle": {
+        "fr": "Code postal du logement",
+        "en": "Postal code of the rental unit"
+      },
+      "exemple": {
+        "fr": "A1C 1A1",
+        "en": "A1C 1A1"
+      }
+    },
+    {
+      "id": "autres_locataires",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Deuxième locataire, s’il y en a",
+        "en": "Second tenant, if any"
+      },
+      "exemple": {
+        "fr": "ex. Marie Tremblay",
+        "en": "e.g. Marie Tremblay"
+      }
+    },
+    {
+      "id": "date_fin",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date à laquelle vous quittez le logement",
+        "en": "Date you will move out"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de votre propriétaire (dest_*). L’avis lui est remis ; il n’est pas envoyé au Residential Tenancies Office.",
+    "en": "Free: give your landlord’s name and address (dest_*). The notice is given to your landlord; it is not sent to the Residential Tenancies Office."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "rt-00045-terre-neuve_page",
+      "fr": "https://www.gov.nl.ca/dgsnl/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "en": "https://www.gov.nl.ca/dgsnl/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "but": "Formulaire RT-2018-00045 (gouvernement de Terre-Neuve-et-Labrador)"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+      "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+    },
+    {
+      "fr": "Le préavis doit comprendre une période de location complète. Exemple : pour un loyer mensuel payé le 1er, si le propriétaire reçoit l’avis au plus tard le 1er janvier, le bail peut se terminer le 31 janvier. Le jour de la réception et le jour du déménagement ne comptent pas dans le calcul.",
+      "en": "The notice period must include a full rental period. Example: with rent paid monthly on the 1st, if your landlord receives the notice on or before January 1, the tenancy can end on January 31. The day the notice is received and the day you move out are not counted."
+    },
+    {
+      "fr": "Le départ d’un locataire met fin à la location pour tous les locataires au contrat. Livraison : en personne, dans la boîte aux lettres, par courrier recommandé ou messagerie (réputé remis le 5e jour après l’envoi par la poste), ou par voie électronique si le propriétaire a donné une adresse électronique.",
+      "en": "One tenant ending the rental agreement ends it for all tenants. Delivery: in person, in the mailbox, by registered mail or courier (deemed served on the 5th day after mailing), or electronically if your landlord gave an electronic address."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"rt-00045-terre-neuve\", reponses, options)",
+    "sortie": {
+      "fr": "Le formulaire officiel rempli, en PDF, prêt à relire, signer et poster.",
+      "en": "The official form filled in, as a PDF, ready to review, sign and mail."
+    }
+  },
+  "formulaire": {
+    "fonds": "f.rt-00045-terre-neuve",
+    "pages": 1,
+    "pagesSource": 3,
+    "pagesGardees": [
+      2
+    ],
+    "taille": [
+      612,
+      792
+    ],
+    "source": {
+      "pdf": "formulaires/sources/rt-00045-terre-neuve.pdf",
+      "url": "https://www.gov.nl.ca/dgsnl/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "consulte": "2026-10-30",
+      "sha256": "7cf89d93333d2508405d84d3bc123d9ec7f3e2256e367828e7a65c4ea5c885c0"
+    },
+    "zones": [
+      {
+        "p": 0,
+        "r": [
+          37.6,
+          654,
+          537.1,
+          21.6
+        ],
+        "k": "t",
+        "champ": "dest_nom",
+        "fs": 11,
+        "w": "Landlord Name",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          37.6,
+          597.7,
+          267.3,
+          21.6
+        ],
+        "k": "t",
+        "champ": "exp_nom",
+        "fs": 11,
+        "w": "Name Tenant 1",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          306.9,
+          597.7,
+          267.8,
+          21.6
+        ],
+        "k": "t",
+        "champ": "autres_locataires",
+        "fs": 11,
+        "w": "Name Tenant 2",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          38,
+          541.4,
+          373.5,
+          21.6
+        ],
+        "k": "t",
+        "champ": "log_ligne",
+        "fs": 11,
+        "w": "Street Number and Name",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          414.6,
+          541.4,
+          160.1,
+          21.6
+        ],
+        "k": "t",
+        "champ": "log_apt",
+        "fs": 11,
+        "w": "Apartment Number",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          37.7,
+          506.2,
+          262.6,
+          21.6
+        ],
+        "k": "t",
+        "champ": "log_ville",
+        "fs": 11,
+        "w": "City or Town",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          413.7,
+          506.2,
+          161.5,
+          21.6
+        ],
+        "k": "t",
+        "champ": "log_cp",
+        "fmt": "cp",
+        "fs": 11,
+        "w": "Postal Code",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          303,
+          446.2,
+          271.5,
+          21.6
+        ],
+        "k": "t",
+        "champ": "date_fin",
+        "fmt": "mois jj, aaaa",
+        "fs": 11,
+        "w": "Date month day year",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          55.8,
+          364.8,
+          14.4,
+          14.4
+        ],
+        "k": "x",
+        "labD": "Week to week",
+        "champ": "type_location",
+        "egal": "semaine",
+        "w": "Week to week Section 181a allows the tenant to move out not less than 7 days before",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          55.8,
+          321.3,
+          14.4,
+          14.4
+        ],
+        "k": "x",
+        "labD": "Month to month",
+        "champ": "type_location",
+        "egal": "mois",
+        "w": "Month to month Section 181b allows the tenant to move out not less than 1 month",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          55.8,
+          277.7,
+          14.4,
+          14.4
+        ],
+        "k": "x",
+        "labD": "Fixed Term",
+        "champ": "type_location",
+        "egal": "terme",
+        "w": "Fixed Term Section 181c allows the tenant to move out not less than 2 months before",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          55.8,
+          234.2,
+          14.4,
+          14.4
+        ],
+        "k": "x",
+        "labD": "Mobile Home Site",
+        "champ": "type_location",
+        "egal": "maison",
+        "w": "Mobile Home Site Section 183a allows the tenant to move out not less than 1 month",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          36.9,
+          144.8,
+          358,
+          21.6
+        ],
+        "k": "sig",
+        "w": "Signature1",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          397,
+          145.1,
+          178,
+          21.6
+        ],
+        "k": "t",
+        "champ": "date_lettre",
+        "fmt": "mois jj, aaaa",
+        "fs": 11,
+        "w": "Date month day year_2",
+        "ps": 2
+      }
+    ]
+  }
+}

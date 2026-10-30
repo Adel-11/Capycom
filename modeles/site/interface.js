@@ -67,8 +67,8 @@
 
   var MODELES = DEF.modeles.map(function (d) {
     var m = { id: d.id, fr: d.titre.fr, en: d.titre.en, champs: (d.champs || []).map(function (c) {
-      return { id: c.id, fr: c.libelle.fr, en: c.libelle.en, type: c.type || 'text', req: !!c.requis, phfr: c.exemple ? c.exemple.fr : '', phen: c.exemple ? c.exemple.en : '', max: c.max || 120, options: c.options || null, defaut: c.defaut != null ? String(c.defaut) : '' };
-    }), destDepuis: d.destinataireDepuis || '' };
+      return { id: c.id, fr: c.libelle.fr, en: c.libelle.en, type: c.type || 'text', req: !!c.requis, phfr: c.exemple ? c.exemple.fr : '', phen: c.exemple ? c.exemple.en : '', max: c.max || 120, options: c.options || null, defaut: c.defaut != null ? String(c.defaut) : '', visibleSi: c.visibleSi || null, requisSi: c.requisSi || null };
+    }), destDepuis: d.destinataireDepuis || '', formulaire: !!d.formulaire };
     // types de la définition (neutres) vers ceux de l'interface
     m.champs.forEach(function (c) { c.type = { 'texte': 'text', 'texte-long': 'textarea' }[c.type] || c.type; });
     if (d.type !== 'lettre') m.type = 'assistant';
@@ -112,8 +112,8 @@
   function construirePdf() {
     var sig = signatureImage();
     var r = CM.planLettre(etat.modele, etat.v, { ui: etat.ui, lettre: etat.lettre, lienPied: etat.lienPied, sig: sig, get: val });
-    var pdf = CM.rendreJsPdf(window.jspdf.jsPDF, r.plan, { sig: sig });
-    return { pdf: pdf, tient: r.tient, ops: r.ops };
+    var pdf = CM.rendreJsPdf(window.jspdf.jsPDF, r.plan, { fonds: FONDS, sig: sig });
+    return { pdf: pdf, tient: r.tient, ops: r.ops, formulaire: !!r.formulaire };
   }
   // Aperçu HTML : mêmes éléments, positionnés en mm sur une page lettre.
   function pageHtml(ops) {
@@ -327,6 +327,7 @@
     for (var i = 0; i < (options || []).length; i++) if (options[i].valeur === valeur && options[i].aide) return esc(options[i].aide[etat.ui] || options[i].aide.fr || '');
     return '';
   }
+  function valeurDefaut(M, id) { var d = ''; M.champs.forEach(function (c) { if (c.id === id) d = c.defaut || ''; }); return d; }
   function champHtml(id, label, opts) {
     opts = opts || {};
     var lab = '<label for="ml-' + id + '">' + esc(label) + (opts.req ? '' : ' <span class="opt">' + esc(t('opt')) + '</span>') + '</label>';
@@ -339,8 +340,8 @@
       inp = '<input type="text" id="ml-' + id + '" data-k="' + id + '" value="' + v + '"' + ph + max + ' list="ml-dl-prov" autocomplete="off"><datalist id="ml-dl-prov">' + PROVINCES_RC.concat([{ fr: 'Autre pays', en: 'Other country' }]).map(function (p) { return '<option value="' + esc(etat.ui === 'fr' ? p.fr : p.en) + '">'; }).join('') + '</datalist>';
     } else if (opts.type === 'choix') {
       inp = '<select id="ml-' + id + '" data-k="' + id + '" data-choix="1"><option value="">' + esc(t('choisirProv')) + '</option>' +
-        (opts.options || []).map(function (o) { return '<option value="' + esc(o.valeur) + '"' + (etat.v[id] === o.valeur ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? o.fr : o.en) + '</option>'; }).join('') + '</select>' +
-        '<div class="ml-aide-choix" id="ml-aide-' + id + '">' + aideChoix(opts.options, etat.v[id]) + '</div>';
+        (opts.options || []).map(function (o) { return '<option value="' + esc(o.valeur) + '"' + ((etat.v[id] || opts.def) === o.valeur ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? o.fr : o.en) + '</option>'; }).join('') + '</select>' +
+        '<div class="ml-aide-choix" id="ml-aide-' + id + '">' + aideChoix(opts.options, etat.v[id] || opts.def) + '</div>';
     } else if (opts.type === 'province' || opts.type === 'provinceRc') {
       inp = '<select id="ml-' + id + '" data-k="' + id + '"><option value="">' + esc(t('choisirProv')) + '</option>' +
         PROVINCES_RC.map(function (p) { return '<option value="' + esc(p.fr) + '"' + (etat.v[id] === p.fr ? ' selected' : '') + '>' + esc(etat.ui === 'fr' ? p.fr : p.en) + '</option>'; }).join('') + '</select>';
@@ -367,11 +368,11 @@
     var h = '<div class="ml-form">';
     h += '<div class="ml-carte"><h3>' + esc(M[u]) + '</h3>';
     h += M.avert ? '<div class="ml-avert">' + esc(M.avert[u]) + '</div>' : '';
-    M.champs.forEach(function (c) { h += champHtml(c.id, c[u], { req: c.req, type: c.type, ph: u === 'fr' ? c.phfr : c.phen, max: c.max, options: c.options }); });
+    M.champs.forEach(function (c) { if (c.visibleSi && (etat.v[c.visibleSi.champ] || valeurDefaut(M, c.visibleSi.champ)) !== String(c.visibleSi.egal)) return; h += champHtml(c.id, c[u], { req: c.req || (c.requisSi && (etat.v[c.requisSi.champ] || valeurDefaut(M, c.requisSi.champ)) === String(c.requisSi.egal)), type: c.type, ph: u === 'fr' ? c.phfr : c.phen, max: c.max, options: c.options, def: c.defaut }); });
     h += '<div class="ml-ligne">' + champHtml('date_lettre', t('dateLettre'), { req: true, type: 'date' }) +
-      '<div class="ml-champ"><label>' + esc(t('langueLettre')) + '</label><div class="ml-langue">' +
+      (M.formulaire ? '<div class="ml-champ ml-vide"></div>' : '<div class="ml-champ"><label>' + esc(t('langueLettre')) + '</label><div class="ml-langue">' +
       '<button type="button" data-lettre="fr" class="' + (langueLettre() === 'fr' ? 'actif' : '') + '">Français</button>' +
-      '<button type="button" data-lettre="en" class="' + (langueLettre() === 'en' ? 'actif' : '') + '">English</button></div></div></div>';
+      '<button type="button" data-lettre="en" class="' + (langueLettre() === 'en' ? 'actif' : '') + '">English</button></div></div>') + '</div>';
     h += '</div>';
     h += '<div class="ml-carte"><h3>' + esc(t('vous')) + '</h3><p class="ml-aide">' + esc(t('vousAide')) + '</p>' +
       champHtml('exp_nom', t('nomComplet'), { req: true, max: 80 }) + blocAdresse('exp') + champHtml('exp_contact', t('contact'), { max: 80 }) + '</div>';
@@ -380,8 +381,8 @@
     h += '<div class="ml-carte" id="ml-sig">' + contenuSignature() + '</div>';
     h += '<div class="ml-telechargement"><p class="ml-titre-tel">' + esc(t('telecharger')) + '</p>' + carteLien() + '<div class="ml-actions">' +
       '<button type="button" class="ml-btn ml-btn-plein" data-format="pdf">⤓ ' + esc(t('fmtPdf')) + '</button>' +
-      '<button type="button" class="ml-btn" data-format="docx">⤓ ' + esc(t('fmtDocx')) + '</button>' +
-      '<button type="button" class="ml-btn" data-format="odt">⤓ ' + esc(t('fmtOdt')) + '</button></div>';
+      (M.formulaire ? '' : '<button type="button" class="ml-btn" data-format="docx">⤓ ' + esc(t('fmtDocx')) + '</button>' +
+      '<button type="button" class="ml-btn" data-format="odt">⤓ ' + esc(t('fmtOdt')) + '</button>') + '</div>';
     h += '<p class="ml-message" id="ml-message"></p></div>';
     h += '<p class="ml-note">' + esc(t('note')) + '</p>';
     h += '</div>';
@@ -429,6 +430,7 @@
     if (!window.jspdf) { alert('jsPDF not loaded'); return; }
     var r; etat.apercuMode = true;
     try { r = construirePdf(); } finally { etat.apercuMode = false; }
+    if (r.formulaire) { window.open(r.pdf.output('bloburl'), '_blank'); return; }
     var m = document.getElementById('capy-ml-modal');
     if (!m) {
       m = document.createElement('div'); m.id = 'capy-ml-modal'; document.body.appendChild(m);
@@ -577,7 +579,7 @@
       if (e.target.getAttribute('data-sigtransp')) { etat.sig.transp = e.target.checked; traiterPhoto(); rendreSignature(); return; }
       if (e.target.getAttribute('data-optlien')) { etat.lienPied = e.target.checked; return; }
     });
-    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; if (e.target.getAttribute('data-choix')) { var ch = null; modele(etat.modele).champs.forEach(function (c) { if (c.id === k) ch = c; }); var ae = document.getElementById('ml-aide-' + k); if (ae && ch) ae.innerHTML = aideChoix(ch.options, e.target.value); } prefillDest(k, e.target.value); apercu(); } });
+    racine.addEventListener('change', function (e) { var k = e.target.getAttribute('data-k'); if (k) { if (/_cp$/.test(k) && cpValide(e.target.value)) { e.target.value = cpNormal(e.target.value); } etat.v[k] = e.target.value; if (e.target.getAttribute('data-choix')) { var ch = null; modele(etat.modele).champs.forEach(function (c) { if (c.id === k) ch = c; }); var ae = document.getElementById('ml-aide-' + k); if (ae && ch) ae.innerHTML = aideChoix(ch.options, e.target.value); } prefillDest(k, e.target.value); if (modele(etat.modele).champs.some(function (c) { return (c.visibleSi && c.visibleSi.champ === k) || (c.requisSi && c.requisSi.champ === k); })) rendre(); apercu(); } });
     racine.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && e.target.id && /_q$/.test(e.target.id)) { e.preventDefault(); rechercher(e.target.id.replace(/^ml-/, '').replace(/_q$/, '')); }
     });

@@ -366,6 +366,7 @@
   // Plan complet d'une lettre libre. o : { lettre|ui : langue de la lettre, lienPied, sig:{url,w,h}, get(id) facultatif }
   function planLettre(modele, v, o) {
     o = o || {};
+    var Df = defDe(modele); if (Df && Df.formulaire) return { plan: planFormulaire(Df, v, o), tient: true, ops: [], formulaire: true };
     var langue = o.lettre || o.ui || 'fr', rv = lecteur(v), get = o.get || rv;
     var L = composerLettre(modele, get, langue), tailles = [12.5, 12, 11.5, 11, 10.5, 10, 9.5], res;
     for (var ti = 0; ti < tailles.length; ti++) {
@@ -378,6 +379,57 @@
       return { t: 'img', id: 'sig', x: e.x, y: e.y, w: e.w, h: e.h };
     });
     return { plan: { unit: 'mm', taille: [PAGE.W, PAGE.H], pages: [{ ops: ops }] }, tient: res.tient, ops: res.ops, L: L };
+  }
+
+
+  /* ------------------------------------------------------------ formulaires officiels décrits par leurs zones (définition.formulaire) */
+  // Le PDF officiel (fond) est reproduit tel quel ; les réponses sont écrites dans les zones lues dans les champs du PDF
+  // (rectangle en points, origine en bas à gauche). Zone : { p, r:[x,y,w,h], k:'t'|'comb'|'x'|'sig', champ, fmt, motif, egal, fs, texte }.
+  var MOIS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  function valeurZone(z, val) {
+    var raw = z.texte != null ? String(z.texte) : z.champs ? z.champs.map(function (c) { return String(val(c) || '').trim(); }).filter(Boolean).join(z.sep || ', ') : String(val(z.champ) || '').trim(), f = z.fmt || '', m;
+    var pref = z.pref ? String(val(z.pref) || '').trim() : ''; if (pref) return nettoyer(pref); // saisie directe qui remplace le découpage automatique
+    if (!raw) return '';
+    if (f === 'jjmmaaaa' || f === 'jj/mm/aaaa' || f === 'aaaammjj' || f === 'aaaa mm jj' || f === 'mois jj, aaaa') {
+      m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw); if (!m) return '';
+      if (f === 'jjmmaaaa') return m[3] + m[2] + m[1];
+      if (f === 'jj/mm/aaaa') return m[3] + '/' + m[2] + '/' + m[1];
+      if (f === 'aaaammjj') return m[1] + m[2] + m[3];
+      if (f === 'aaaa mm jj') return m[1] + ' ' + m[2] + ' ' + m[3];
+      return MOIS_EN[+m[2] - 1] + ' ' + (+m[3]) + ', ' + m[1];
+    }
+    if (f === 'tel10') { var tt = raw.replace(/\D/g, ''); if (tt.length === 11 && tt.charAt(0) === '1') tt = tt.slice(1); return tt.length === 10 ? tt : ''; }
+    if (f === 'tel-tiret') { var t2 = raw.replace(/\D/g, ''); if (t2.length === 11 && t2.charAt(0) === '1') t2 = t2.slice(1); return t2.length === 10 ? t2.slice(0, 3) + '-' + t2.slice(3, 6) + '-' + t2.slice(6) : raw; }
+    if (f === 'cp') return cpNormal(raw);
+    if (f === 'cp-sans-espace') return cpNormal(raw).replace(/\s/g, '');
+    if (f === 'nas') return raw.replace(/\D/g, '');
+    if (f === 'prov-code') { var pa = prov(raw); return pa ? pa.ab : raw; }
+    if (f === 'prov-en') { var pb = prov(raw); return pb ? pb.en : raw; }
+    if (f === 'prenom' || f === 'nom') {
+      var parts = nettoyer(raw).split(/\s+/); if (parts.length < 2) return f === 'nom' ? raw : '';
+      return f === 'nom' ? parts[parts.length - 1] : parts.slice(0, -1).join(' ');
+    }
+    return nettoyer(raw);
+  }
+  function planFormulaire(D, v, o) {
+    o = o || {};
+    var F = D.formulaire, base = o.get || lecteur(v), val = avecDefauts(D, base), W = F.taille[0], Hh = F.taille[1], pages = [];
+    for (var p = 0; p < F.pages; p++) pages.push({ ops: [{ t: 'img', id: F.fonds + ':' + p, x: 0, y: 0, w: W, h: Hh }] });
+    F.zones.forEach(function (z) {
+      if (z.si && String(val(z.si.champ) || '') !== String(z.si.egal)) return;
+      var ops = pages[z.p].ops, x = z.r[0], y = z.r[1], w = z.r[2], h = z.r[3], s, fs;
+      if (z.k === 'x') { if (z.toujours || val(z.champ) === String(z.egal)) { var c = Math.min(2.4, w / 5); ops.push(opLigne(x + c, Hh - y - h + c, x + w - c, Hh - y - c, 1.4)); ops.push(opLigne(x + c, Hh - y - c, x + w - c, Hh - y - h + c, 1.4)); } return; }
+      if (z.k === 'sig') { if (o.sig) { var d = dimSig(o.sig, w, h); ops.push({ t: 'img', id: 'sig', x: x, y: Hh - y - h + (h - d.h) / 2, w: d.w, h: d.h }); } return; }
+      s = valeurZone(z, val); if (!s) return;
+      if (z.k === 'comb') {
+        var motif = z.motif || new Array(z.n + 1).join('_'), cw = w / motif.length, i, j = 0; fs = Math.min(z.fs || 10, h * 0.9);
+        for (i = 0; i < motif.length && j < s.length; i++) { if (motif.charAt(i) !== '_') continue; ops.push(opTxt(s.charAt(j++), x + i * cw + cw / 2, Hh - (y + (h - fs * 0.72) / 2), fs, null, 'center')); }
+        return;
+      }
+      fs = Math.min(z.fs || 10, Math.max(6, h * 0.75)); while (fs > 6 && largeur(s, fs, 'helvetica', 'normal', 'pt') > w - 4) fs -= 0.5;
+      ops.push(opTxt(s, x + 2, Hh - (y + (h - fs * 0.72) / 2), fs));
+    });
+    return { unit: 'pt', taille: [W, Hh], pages: pages };
   }
 
   /* ------------------------------------------------------------ RC66 et RC66SCH (Agence du revenu du Canada) */
@@ -819,19 +871,39 @@
   function nomBase(s, defaut) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase() || defaut; }
 
   // Lettres libres : identifiants des réponses manquantes ou invalides. champs : liste des champs du modèle (definitions)
+  function telValide(x) { var t = String(x).replace(/\D/g, ''); if (t.length === 11 && t.charAt(0) === '1') t = t.slice(1); return t.length === 10; }
+  // NAS : 9 chiffres et clé de contrôle (Luhn)
+  function nasValide(x) {
+    var t = String(x).replace(/\D/g, ''), s = 0, i, d; if (t.length !== 9) return false;
+    for (i = 0; i < 9; i++) { d = +t.charAt(i); if (i % 2) { d *= 2; if (d > 9) d -= 9; } s += d; }
+    return s % 10 === 0;
+  }
   function manquesLettre(champs, v, o) {
     o = o || {};
-    var rv = lecteur(v), r = ['exp_nom', 'exp_ligne', 'exp_ville', 'exp_prov', 'exp_cp', 'dest_nom', 'dest_ligne', 'dest_ville', 'dest_prov', 'dest_cp', 'date_lettre'], manque = [];
-    (champs || []).forEach(function (c) { if (c.requis || c.req) r.push(c.id); });
+    var rv0 = lecteur(v), r = ['exp_nom', 'exp_ligne', 'exp_ville', 'exp_prov', 'exp_cp', 'dest_nom', 'dest_ligne', 'dest_ville', 'dest_prov', 'dest_cp', 'date_lettre'], manque = [];
+    var parId = {}; (champs || []).forEach(function (c) { parId[c.id] = c; });
+    var rv = function (id) { var x = rv0(id); if (x) return x; var c = parId[id]; return c && c.defaut != null && c.defaut !== '' ? String(c.defaut) : ''; };
+    var visible = function (c) { return !c.visibleSi || rv(c.visibleSi.champ) === String(c.visibleSi.egal); };
+    (champs || []).forEach(function (c) {
+      if (!visible(c)) return;
+      if (c.requis || c.req) r.push(c.id);
+      else if (c.requisSi && rv(c.requisSi.champ) === String(c.requisSi.egal)) r.push(c.id);
+    });
     r.forEach(function (id) {
-      var ok = !!rv(id), c = null;
-      (champs || []).forEach(function (x) { if (x.id === id) c = x; });
+      var ok = !!rv(id), c = parId[id] || null;
+      if (c && !visible(c)) return;
       if (ok && c && c.type === 'montant') ok = nombre(rv(id)) !== null && nombre(rv(id)) > 0;
       if (ok && c && c.type === 'nombre') ok = parseInt(rv(id), 10) > 0;
       if (ok && c && c.type === 'choix') { ok = false; (c.options || []).forEach(function (x) { if (x.valeur === rv(id)) ok = true; }); }
-      if (!ok) manque.push(id);
+      if (!ok && manque.indexOf(id) === -1) manque.push(id);
     });
     ['exp_cp', 'dest_cp'].forEach(function (id) { if (rv(id) && !cpValide(rv(id)) && manque.indexOf(id) === -1) manque.push(id); });
+    (champs || []).forEach(function (c) {
+      var x = rv(c.id); if (!x || manque.indexOf(c.id) !== -1 || !visible(c)) return;
+      if (c.type === 'tel' && !telValide(x)) manque.push(c.id);
+      if (c.type === 'nas' && !nasValide(x)) manque.push(c.id);
+      if (c.type === 'cp' && !cpValide(x)) manque.push(c.id);
+    });
     return manque;
   }
 
@@ -1152,7 +1224,7 @@
     nettoyer: nettoyer, hexRgb: hexRgb, dimSig: dimSig, dateTexte: dateTexte, nombre: nombre, montantTexte: montantTexte, cpNormal: cpNormal, cpValide: cpValide,
     chiffres: chiffres, dateIso: dateIso, mots: mots, aujourdhuiIso: aujourdhuiIso, prov: prov, provRc: provRc, nomBase: nomBase,
     // lettres libres
-    enregistrer: enregistrer, definitionDe: defDe, composerLettre: composerLettre, disposerLettre: disposerLettre, planLettre: planLettre, manquesLettre: manquesLettre,
+    enregistrer: enregistrer, definitionDe: defDe, composerLettre: composerLettre, disposerLettre: disposerLettre, planLettre: planLettre, manquesLettre: manquesLettre, telValide: telValide, nasValide: nasValide, valeurZone: valeurZone,
     // RC66
     ctxRc: ctxRc, planRc66: planRc66, rcEtapesActives: rcEtapesActives, rcManquesEtape: rcManquesEtape, docsRc66: docsRc66, rcFlags: rcFlags,
     // contestation de crédit

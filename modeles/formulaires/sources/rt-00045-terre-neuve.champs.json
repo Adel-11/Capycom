@@ -1,0 +1,156 @@
+[
+ {
+  "nom": "Landlord Name",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 37.6,
+   "y": 654,
+   "w": 537.1,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Name Tenant 1",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 37.6,
+   "y": 597.7,
+   "w": 267.3,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Name Tenant 2",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 306.9,
+   "y": 597.7,
+   "w": 267.8,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Street Number and Name",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 38,
+   "y": 541.4,
+   "w": 373.5,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Apartment Number",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 414.6,
+   "y": 541.4,
+   "w": 160.1,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "City or Town",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 37.7,
+   "y": 506.2,
+   "w": 262.6,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Postal Code",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 413.7,
+   "y": 506.2,
+   "w": 161.5,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Date month day year",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 303,
+   "y": 446.2,
+   "w": 271.5,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Week to week Section 181a allows the tenant to move out not less than 7 days before",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 55.8,
+   "y": 364.8,
+   "w": 14.4,
+   "h": 14.4
+  }
+ },
+ {
+  "nom": "Month to month Section 181b allows the tenant to move out not less than 1 month",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 55.8,
+   "y": 321.3,
+   "w": 14.4,
+   "h": 14.4
+  }
+ },
+ {
+  "nom": "Fixed Term Section 181c allows the tenant to move out not less than 2 months before",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 55.8,
+   "y": 277.7,
+   "w": 14.4,
+   "h": 14.4
+  }
+ },
+ {
+  "nom": "Mobile Home Site Section 183a allows the tenant to move out not less than 1 month",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 55.8,
+   "y": 234.2,
+   "w": 14.4,
+   "h": 14.4
+  }
+ },
+ {
+  "nom": "Date month day year_2",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 397,
+   "y": 145.1,
+   "w": 178,
+   "h": 21.6
+  }
+ },
+ {
+  "nom": "Signature1",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 36.9,
+   "y": 144.8,
+   "w": 358,
+   "h": 21.6
+  }
+ }
+]

@@ -9,6 +9,7 @@ function charger(dossier) {
   lire('rc66').forEach(function (u, i) { f['rc66:' + i] = u; });
   lire('sch').forEach(function (u, i) { f['sch:' + i] = u; });
   var cr = lire('credit'); Object.keys(cr).forEach(function (k) { cr[k].forEach(function (u, i) { f['cr.' + k + ':' + i] = u; }); });
+  var fm = lire('formulaires'); Object.keys(fm).forEach(function (k) { fm[k].forEach(function (u, i) { f['f.' + k + ':' + i] = u; }); });
   return f;
 }
 module.exports = { charger: charger };

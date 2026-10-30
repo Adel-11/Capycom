@@ -1,0 +1,20 @@
+{
+  "exp_nom": "Julie Tremblay",
+  "exp_ligne": "55 Duckworth Street",
+  "exp_ville": "St. John’s",
+  "exp_prov": "Terre-Neuve-et-Labrador",
+  "exp_cp": "A1C 1E3",
+  "dest_nom": "Avalon Rentals Inc.",
+  "dest_ligne": "10 Harbour Drive",
+  "dest_ville": "St. John’s",
+  "dest_prov": "Terre-Neuve-et-Labrador",
+  "dest_cp": "A1C 6H1",
+  "date_lettre": "2026-11-02",
+  "type_location": "mois",
+  "log_ligne": "25 Water Street",
+  "log_apt": "4",
+  "log_ville": "St. John’s",
+  "log_cp": "A1C 1A1",
+  "autres_locataires": "Marc Dubois",
+  "date_fin": "2027-01-31"
+}

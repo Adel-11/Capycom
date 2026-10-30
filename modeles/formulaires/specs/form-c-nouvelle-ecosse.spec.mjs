@@ -1,0 +1,72 @@
+import { T } from '../../outils/formulaire-generer.mjs';
+const champ = (id, type, requis, max, fr, en, exFr, exEn, extra) => Object.assign({ id, type, requis, max, libelle: T(fr, en), exemple: T(exFr || '', exEn || exFr || '') }, extra || {});
+const dep = { champ: 'depot', egal: 'adresse' };
+const URL = 'https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c';
+export default {
+  id: 'form-c-nouvelle-ecosse',
+  source: { pdf: 'form-c-nouvelle-ecosse.pdf', url: URL, consulte: '2026-10-30' },
+  pages: [2],
+  def: {
+    section: 'logement',
+    titre: T('Avis de départ du locataire (Nouvelle-Écosse, formulaire C)', 'Tenant’s notice to quit (Nova Scotia, Form C)'),
+    description: T('Remplir le formulaire C du Residential Tenancies Program de la Nouvelle-Écosse pour quitter votre logement à la fin du bail. Prêt à signer et à poster au propriétaire.', 'Fill in Nova Scotia Residential Tenancies Program Form C to leave your rental unit at the end of the lease term. Ready to sign and mail to your landlord.'),
+    seo: {
+      slug: T('avis-depart-locataire-nouvelle-ecosse-formulaire-c', 'nova-scotia-form-c-tenant-notice-to-quit'),
+      titre: T('Formulaire C de la Nouvelle-Écosse : avis de départ du locataire | Capycom', 'Nova Scotia Form C: tenant’s notice to quit | Capycom'),
+      description: T('Outil gratuit : répondez à quelques questions et obtenez le formulaire C de la Nouvelle-Écosse rempli, prêt à signer. Envoi par la poste possible.', 'Free tool: answer a few questions and get Nova Scotia Form C filled in, ready to sign. Mailing available.'),
+      h1: T('Formulaire C : avis de départ du locataire (Nouvelle-Écosse)', 'Form C: Tenant’s Notice to Quit (Nova Scotia)'),
+    },
+    champs: [
+      champ('type_location', 'choix', true, 2, 'Type de location', 'Type of tenancy', '', '', { options: [
+        { valeur: 'annee', texteOfficiel: 'Year to year', fr: 'D’année en année (bail annuel)', en: 'Year to year', aide: T('L’avis doit être remis au propriétaire au moins 3 mois avant la fin du bail (alinéa 10(1)(a) de la loi).', 'The notice must reach your landlord at least 3 months before the end of the lease (clause 10(1)(a) of the Act).') },
+        { valeur: 'mois', texteOfficiel: 'Month to month', fr: 'De mois en mois', en: 'Month to month', aide: T('L’avis doit être remis au moins 1 mois avant la fin d’un mois, avant le jour du mois où le loyer est payable (alinéa 10(1)(b)).', 'The notice must be given at least 1 month before the end of a month, before the day of the month the rent is payable (clause 10(1)(b)).') },
+        { valeur: 'semaine', texteOfficiel: 'Week to week', fr: 'De semaine en semaine', en: 'Week to week', aide: T('L’avis doit être remis au moins 1 semaine avant la fin d’une semaine (alinéa 10(1)(c)).', 'The notice must be given at least 1 week before the end of a week (clause 10(1)(c)).') },
+        { valeur: 'maison', texteOfficiel: 'Manufactured home', fr: 'Maison mobile (terrain ou maison préfabriquée)', en: 'Manufactured home', aide: T('L’avis doit être remis au moins 1 mois avant la fin de la location (alinéa 10(3)(b)).', 'The notice must be given at least 1 month before the tenancy ends (clause 10(3)(b)).') },
+      ] }),
+      champ('log_ligne', 'texte', true, 90, 'Numéro et rue du logement (adresse civique)', 'Street number and name of the rental unit (civic address)', 'ex. 1234 Barrington Street', 'e.g. 1234 Barrington Street'),
+      champ('log_apt', 'texte', false, 20, 'Appartement', 'Apartment', 'ex. 4', 'e.g. 4'),
+      champ('log_ville', 'texte', true, 60, 'Ville du logement', 'City or town of the rental unit', 'ex. Halifax', 'e.g. Halifax'),
+      champ('log_cp', 'cp', true, 7, 'Code postal du logement', 'Postal code of the rental unit', 'B3J 1Y5', 'B3J 1Y5'),
+      champ('autres_locataires', 'texte', false, 120, 'Autres locataires au bail, s’il y en a', 'Other tenants on the lease, if any', 'ex. Marie Tremblay', 'e.g. Marie Tremblay'),
+      champ('date_fin', 'date', true, 10, 'Date à laquelle vous quittez le logement', 'Date you will leave', '', ''),
+      champ('depot', 'choix', false, 2, 'Dépôt de garantie', 'Security deposit', '', '', { defaut: 'plus-tard', options: [
+        { valeur: 'plus-tard', texteOfficiel: 'I will make arrangements', fr: 'Je m’entendrai plus tard avec le propriétaire', en: 'I will make arrangements later' },
+        { valeur: 'adresse', texteOfficiel: 'Please return my security deposit', fr: 'Renvoyez mon dépôt à mon adresse de réexpédition', en: 'Return my deposit to my forwarding address', aide: T('L’adresse de réexpédition est celle de la carte « Vous » plus bas.', 'The forwarding address is the one in the “You” card below.') },
+        { valeur: 'rien', fr: 'Ne cocher aucune case', en: 'Tick neither box' },
+      ] }),
+      champ('tel', 'tel', false, 20, 'Votre téléphone (adresse de réexpédition)', 'Your phone (forwarding address)', '902 555 1234', '902 555 1234', { visibleSi: dep }),
+      champ('courriel', 'texte', false, 80, 'Votre courriel (adresse de réexpédition)', 'Your email (forwarding address)', 'nom@exemple.ca', 'name@example.ca', { visibleSi: dep }),
+    ],
+    destinataire: T('Libre : indiquez le nom et l’adresse de votre propriétaire (dest_*). Le formulaire lui est remis ; il n’est pas envoyé au Residential Tenancies Program.', 'Free: give your landlord’s name and address (dest_*). The form is given to your landlord; it is not sent to the Residential Tenancies Program.'),
+    liens: [{ cle: 'page', fr: URL, en: URL, but: 'Formulaire C (gouvernement de la Nouvelle-Écosse)' }],
+    avertsPlus: [
+      T('Le formulaire C sert à quitter le logement à la fin d’un terme de bail. Le délai dépend du type de location (3 mois, 1 mois ou 1 semaine) : vérifiez-le sur la page officielle avant de signer.', 'Form C is for leaving at the end of a lease term. The notice time depends on the type of tenancy (3 months, 1 month or 1 week): check it on the official page before you sign.'),
+      T('Il faut remettre l’original au propriétaire : en main propre, dans sa boîte aux lettres, par courrier recommandé ou par messagerie, ou par voie électronique si le bail prévoit une adresse électronique. Gardez une copie. Par courrier, l’avis est réputé remis le 3e jour suivant l’envoi.', 'The original must be served on your landlord: by hand, in the mailbox, by registered mail or courier, or electronically if the lease gives an electronic address. Keep a copy. By mail, the notice is deemed served on the 3rd day after mailing.'),
+    ],
+  },
+  exemple: { exp_nom: 'Julie Tremblay', exp_ligne: '77 Spring Garden Road', exp_ville: 'Halifax', exp_prov: 'Nouvelle-Écosse', exp_cp: 'B3J 3Z8', dest_nom: 'Atlantic Property Management Ltd.', dest_ligne: '1 Water Street', dest_ville: 'Halifax', dest_prov: 'Nouvelle-Écosse', dest_cp: 'B3J 1A1', date_lettre: '2026-11-02', type_location: 'mois', log_ligne: '1234 Barrington Street', log_apt: '4', log_ville: 'Halifax', log_cp: 'B3J 1Y5', autres_locataires: 'Marc Dubois', date_fin: '2027-01-31', depot: 'adresse', tel: '902 555 1234', courriel: 'julie@exemple.ca' },
+  zones: [
+    { w: 'LandName', lab: 'landlord', champ: 'dest_nom', fs: 11 },
+    { w: 'TenName', champs: ['exp_nom', 'autres_locataires'], fs: 11 },
+    { w: 'StreetFiled', champ: 'log_ligne', fs: 10 },
+    { w: 'ApartFiled', champ: 'log_apt', fs: 10 },
+    { w: 'CityFiled', champ: 'log_ville', fs: 10 },
+    { w: 'ProvinceFiled', texte: 'Nova Scotia', fs: 10 },
+    { w: 'PostalFiled', champ: 'log_cp', fmt: 'cp', fs: 10 },
+    { w: 'Ten', i: 0, k: 'x', champ: 'type_location', egal: 'annee', labD: 'Year to year' },
+    { w: 'Ten', i: 1, k: 'x', champ: 'type_location', egal: 'mois', labD: 'Month to month' },
+    { w: 'Ten', i: 2, k: 'x', champ: 'type_location', egal: 'semaine', labD: 'Week to week' },
+    { w: 'Ten', i: 3, k: 'x', champ: 'type_location', egal: 'maison', labD: 'Manufactured home' },
+    { w: 'TermDate', champ: 'date_fin', fmt: 'aaaa mm jj', fs: 11 },
+    { w: 'Deposit', i: 0, k: 'x', champ: 'depot', egal: 'plus-tard', labD: 'I will make arrangements' },
+    { w: 'Deposit', i: 1, k: 'x', champ: 'depot', egal: 'adresse', labD: 'Please return my security deposit' },
+    { w: 'StreetFiled2', champ: 'exp_ligne', si: dep, fs: 10 },
+    { w: 'CityFiled2', champ: 'exp_ville', si: dep, fs: 10 },
+    { w: 'ProvinceFiled2', champ: 'exp_prov', fmt: 'prov-en', si: dep, fs: 10 },
+    { w: 'PostalFiled2', champ: 'exp_cp', fmt: 'cp', si: dep, fs: 10 },
+    { w: 'PhoneFiled', champ: 'tel', fmt: 'tel-tiret', si: dep, fs: 10 },
+    { w: 'EmailFiled', champ: 'courriel', si: dep, fs: 10 },
+    { w: 'LandSign', k: 'sig' },
+    { w: 'DateSignedLand', champ: 'date_lettre', fmt: 'aaaa mm jj', fs: 10 },
+  ],
+};

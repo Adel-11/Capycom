@@ -1,0 +1,640 @@
+{
+  "version": 1,
+  "id": "form-c-nouvelle-ecosse",
+  "section": "logement",
+  "titre": {
+    "fr": "Avis de départ du locataire (Nouvelle-Écosse, formulaire C)",
+    "en": "Tenant’s notice to quit (Nova Scotia, Form C)"
+  },
+  "description": {
+    "fr": "Remplir le formulaire C du Residential Tenancies Program de la Nouvelle-Écosse pour quitter votre logement à la fin du bail. Prêt à signer et à poster au propriétaire.",
+    "en": "Fill in Nova Scotia Residential Tenancies Program Form C to leave your rental unit at the end of the lease term. Ready to sign and mail to your landlord."
+  },
+  "seo": {
+    "slug": {
+      "fr": "avis-depart-locataire-nouvelle-ecosse-formulaire-c",
+      "en": "nova-scotia-form-c-tenant-notice-to-quit"
+    },
+    "titre": {
+      "fr": "Formulaire C de la Nouvelle-Écosse : avis de départ du locataire | Capycom",
+      "en": "Nova Scotia Form C: tenant’s notice to quit | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à quelques questions et obtenez le formulaire C de la Nouvelle-Écosse rempli, prêt à signer. Envoi par la poste possible.",
+      "en": "Free tool: answer a few questions and get Nova Scotia Form C filled in, ready to sign. Mailing available."
+    },
+    "h1": {
+      "fr": "Formulaire C : avis de départ du locataire (Nouvelle-Écosse)",
+      "en": "Form C: Tenant’s Notice to Quit (Nova Scotia)"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remplir le formulaire C du Residential Tenancies Program de la Nouvelle-Écosse pour quitter votre logement à la fin du bail. Prêt à signer et à poster au propriétaire.",
+    "en": "Fill in Nova Scotia Residential Tenancies Program Form C to leave your rental unit at the end of the lease term. Ready to sign and mail to your landlord."
+  },
+  "avertissement": {
+    "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+    "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+  },
+  "champs": [
+    {
+      "id": "type_location",
+      "type": "choix",
+      "requis": true,
+      "max": 2,
+      "libelle": {
+        "fr": "Type de location",
+        "en": "Type of tenancy"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "annee",
+          "texteOfficiel": "Year to year",
+          "fr": "D’année en année (bail annuel)",
+          "en": "Year to year",
+          "aide": {
+            "fr": "L’avis doit être remis au propriétaire au moins 3 mois avant la fin du bail (alinéa 10(1)(a) de la loi).",
+            "en": "The notice must reach your landlord at least 3 months before the end of the lease (clause 10(1)(a) of the Act)."
+          }
+        },
+        {
+          "valeur": "mois",
+          "texteOfficiel": "Month to month",
+          "fr": "De mois en mois",
+          "en": "Month to month",
+          "aide": {
+            "fr": "L’avis doit être remis au moins 1 mois avant la fin d’un mois, avant le jour du mois où le loyer est payable (alinéa 10(1)(b)).",
+            "en": "The notice must be given at least 1 month before the end of a month, before the day of the month the rent is payable (clause 10(1)(b))."
+          }
+        },
+        {
+          "valeur": "semaine",
+          "texteOfficiel": "Week to week",
+          "fr": "De semaine en semaine",
+          "en": "Week to week",
+          "aide": {
+            "fr": "L’avis doit être remis au moins 1 semaine avant la fin d’une semaine (alinéa 10(1)(c)).",
+            "en": "The notice must be given at least 1 week before the end of a week (clause 10(1)(c))."
+          }
+        },
+        {
+          "valeur": "maison",
+          "texteOfficiel": "Manufactured home",
+          "fr": "Maison mobile (terrain ou maison préfabriquée)",
+          "en": "Manufactured home",
+          "aide": {
+            "fr": "L’avis doit être remis au moins 1 mois avant la fin de la location (alinéa 10(3)(b)).",
+            "en": "The notice must be given at least 1 month before the tenancy ends (clause 10(3)(b))."
+          }
+        }
+      ]
+    },
+    {
+      "id": "log_ligne",
+      "type": "texte",
+      "requis": true,
+      "max": 90,
+      "libelle": {
+        "fr": "Numéro et rue du logement (adresse civique)",
+        "en": "Street number and name of the rental unit (civic address)"
+      },
+      "exemple": {
+        "fr": "ex. 1234 Barrington Street",
+        "en": "e.g. 1234 Barrington Street"
+      }
+    },
+    {
+      "id": "log_apt",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Appartement",
+        "en": "Apartment"
+      },
+      "exemple": {
+        "fr": "ex. 4",
+        "en": "e.g. 4"
+      }
+    },
+    {
+      "id": "log_ville",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Ville du logement",
+        "en": "City or town of the rental unit"
+      },
+      "exemple": {
+        "fr": "ex. Halifax",
+        "en": "e.g. Halifax"
+      }
+    },
+    {
+      "id": "log_cp",
+      "type": "cp",
+      "requis": true,
+      "max": 7,
+      "libelle": {
+        "fr": "Code postal du logement",
+        "en": "Postal code of the rental unit"
+      },
+      "exemple": {
+        "fr": "B3J 1Y5",
+        "en": "B3J 1Y5"
+      }
+    },
+    {
+      "id": "autres_locataires",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Autres locataires au bail, s’il y en a",
+        "en": "Other tenants on the lease, if any"
+      },
+      "exemple": {
+        "fr": "ex. Marie Tremblay",
+        "en": "e.g. Marie Tremblay"
+      }
+    },
+    {
+      "id": "date_fin",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date à laquelle vous quittez le logement",
+        "en": "Date you will leave"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "depot",
+      "type": "choix",
+      "requis": false,
+      "max": 2,
+      "libelle": {
+        "fr": "Dépôt de garantie",
+        "en": "Security deposit"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "plus-tard",
+      "options": [
+        {
+          "valeur": "plus-tard",
+          "texteOfficiel": "I will make arrangements",
+          "fr": "Je m’entendrai plus tard avec le propriétaire",
+          "en": "I will make arrangements later"
+        },
+        {
+          "valeur": "adresse",
+          "texteOfficiel": "Please return my security deposit",
+          "fr": "Renvoyez mon dépôt à mon adresse de réexpédition",
+          "en": "Return my deposit to my forwarding address",
+          "aide": {
+            "fr": "L’adresse de réexpédition est celle de la carte « Vous » plus bas.",
+            "en": "The forwarding address is the one in the “You” card below."
+          }
+        },
+        {
+          "valeur": "rien",
+          "fr": "Ne cocher aucune case",
+          "en": "Tick neither box"
+        }
+      ]
+    },
+    {
+      "id": "tel",
+      "type": "tel",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Votre téléphone (adresse de réexpédition)",
+        "en": "Your phone (forwarding address)"
+      },
+      "exemple": {
+        "fr": "902 555 1234",
+        "en": "902 555 1234"
+      },
+      "visibleSi": {
+        "champ": "depot",
+        "egal": "adresse"
+      }
+    },
+    {
+      "id": "courriel",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "Votre courriel (adresse de réexpédition)",
+        "en": "Your email (forwarding address)"
+      },
+      "exemple": {
+        "fr": "nom@exemple.ca",
+        "en": "name@example.ca"
+      },
+      "visibleSi": {
+        "champ": "depot",
+        "egal": "adresse"
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de votre propriétaire (dest_*). Le formulaire lui est remis ; il n’est pas envoyé au Residential Tenancies Program.",
+    "en": "Free: give your landlord’s name and address (dest_*). The form is given to your landlord; it is not sent to the Residential Tenancies Program."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "form-c-nouvelle-ecosse_page",
+      "fr": "https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c",
+      "en": "https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c",
+      "but": "Formulaire C (gouvernement de la Nouvelle-Écosse)"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+      "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+    },
+    {
+      "fr": "Le formulaire C sert à quitter le logement à la fin d’un terme de bail. Le délai dépend du type de location (3 mois, 1 mois ou 1 semaine) : vérifiez-le sur la page officielle avant de signer.",
+      "en": "Form C is for leaving at the end of a lease term. The notice time depends on the type of tenancy (3 months, 1 month or 1 week): check it on the official page before you sign."
+    },
+    {
+      "fr": "Il faut remettre l’original au propriétaire : en main propre, dans sa boîte aux lettres, par courrier recommandé ou par messagerie, ou par voie électronique si le bail prévoit une adresse électronique. Gardez une copie. Par courrier, l’avis est réputé remis le 3e jour suivant l’envoi.",
+      "en": "The original must be served on your landlord: by hand, in the mailbox, by registered mail or courier, or electronically if the lease gives an electronic address. Keep a copy. By mail, the notice is deemed served on the 3rd day after mailing."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"form-c-nouvelle-ecosse\", reponses, options)",
+    "sortie": {
+      "fr": "Le formulaire officiel rempli, en PDF, prêt à relire, signer et poster.",
+      "en": "The official form filled in, as a PDF, ready to review, sign and mail."
+    }
+  },
+  "formulaire": {
+    "fonds": "f.form-c-nouvelle-ecosse",
+    "pages": 1,
+    "pagesSource": 3,
+    "pagesGardees": [
+      2
+    ],
+    "taille": [
+      612,
+      792
+    ],
+    "source": {
+      "pdf": "formulaires/sources/form-c-nouvelle-ecosse.pdf",
+      "url": "https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c",
+      "consulte": "2026-10-30",
+      "sha256": "14ce332d4bbe72a156625d50d58fa4cbdd8fd733b695a4f6b5d7659b0695955a"
+    },
+    "zones": [
+      {
+        "p": 0,
+        "r": [
+          93,
+          650.1,
+          473.7,
+          16.9
+        ],
+        "k": "t",
+        "champ": "dest_nom",
+        "fs": 11,
+        "w": "LandName",
+        "lab": "landlord",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          90.2,
+          605.8,
+          485.3,
+          16.9
+        ],
+        "k": "t",
+        "champs": [
+          "exp_nom",
+          "autres_locataires"
+        ],
+        "fs": 11,
+        "w": "TenName",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          187.4,
+          554.9,
+          260.8,
+          16.9
+        ],
+        "k": "t",
+        "champ": "log_ligne",
+        "fs": 10,
+        "w": "StreetFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          510.7,
+          554.9,
+          65.2,
+          16.9
+        ],
+        "k": "t",
+        "champ": "log_apt",
+        "fs": 10,
+        "w": "ApartFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          148.1,
+          534.6,
+          133.2,
+          16.9
+        ],
+        "k": "t",
+        "champ": "log_ville",
+        "fs": 10,
+        "w": "CityFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          334,
+          534.6,
+          113.6,
+          16.9
+        ],
+        "k": "t",
+        "fs": 10,
+        "texte": "Nova Scotia",
+        "w": "ProvinceFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          516.6,
+          534.6,
+          59.6,
+          16.9
+        ],
+        "k": "t",
+        "champ": "log_cp",
+        "fmt": "cp",
+        "fs": 10,
+        "w": "PostalFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          490.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "Year to year",
+        "champ": "type_location",
+        "egal": "annee",
+        "i": 0,
+        "w": "Ten",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          458.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "Month to month",
+        "champ": "type_location",
+        "egal": "mois",
+        "i": 1,
+        "w": "Ten",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          426.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "Week to week",
+        "champ": "type_location",
+        "egal": "semaine",
+        "i": 2,
+        "w": "Ten",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          394.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "Manufactured home",
+        "champ": "type_location",
+        "egal": "maison",
+        "i": 3,
+        "w": "Ten",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          333.9,
+          351.6,
+          229.7,
+          16.9
+        ],
+        "k": "t",
+        "champ": "date_fin",
+        "fmt": "aaaa mm jj",
+        "fs": 11,
+        "w": "TermDate",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          239.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "I will make arrangements",
+        "champ": "depot",
+        "egal": "plus-tard",
+        "i": 0,
+        "w": "Deposit",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          89.5,
+          222.6,
+          13.4,
+          13.4
+        ],
+        "k": "x",
+        "labD": "Please return my security deposit",
+        "champ": "depot",
+        "egal": "adresse",
+        "i": 1,
+        "w": "Deposit",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          187.4,
+          186.9,
+          260.8,
+          16.9
+        ],
+        "k": "t",
+        "champ": "exp_ligne",
+        "fs": 10,
+        "w": "StreetFiled2",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          148.1,
+          166.6,
+          133.2,
+          16.9
+        ],
+        "k": "t",
+        "champ": "exp_ville",
+        "fs": 10,
+        "w": "CityFiled2",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          334,
+          166.6,
+          113.6,
+          16.9
+        ],
+        "k": "t",
+        "champ": "exp_prov",
+        "fmt": "prov-en",
+        "fs": 10,
+        "w": "ProvinceFiled2",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          516.6,
+          166.6,
+          59.6,
+          16.9
+        ],
+        "k": "t",
+        "champ": "exp_cp",
+        "fmt": "cp",
+        "fs": 10,
+        "w": "PostalFiled2",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          160.1,
+          146,
+          122.2,
+          16.9
+        ],
+        "k": "t",
+        "champ": "tel",
+        "fmt": "tel-tiret",
+        "fs": 10,
+        "w": "PhoneFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          318,
+          146,
+          259.1,
+          16.9
+        ],
+        "k": "t",
+        "champ": "courriel",
+        "fs": 10,
+        "w": "EmailFiled",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          177,
+          79.6,
+          173.5,
+          19.3
+        ],
+        "k": "sig",
+        "w": "LandSign",
+        "ps": 2
+      },
+      {
+        "p": 0,
+        "r": [
+          456.9,
+          79.6,
+          108.1,
+          16.2
+        ],
+        "k": "t",
+        "champ": "date_lettre",
+        "fmt": "aaaa mm jj",
+        "fs": 10,
+        "w": "DateSignedLand",
+        "ps": 2
+      }
+    ]
+  }
+}

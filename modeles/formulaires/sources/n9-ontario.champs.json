@@ -1,0 +1,211 @@
+[
+ {
+  "nom": "form1[0].#subform[0].Notice_Name_and_Address[0].TO_TenameName[0]",
+  "p": 0,
+  "i": 0,
+  "rect": {
+   "x": 28,
+   "y": 676.9,
+   "w": 275.1,
+   "h": 33.9
+  }
+ },
+ {
+  "nom": "form1[0].#subform[0].Notice_Name_and_Address[0].From_LandlordName[0]",
+  "p": 0,
+  "i": 0,
+  "rect": {
+   "x": 308.8,
+   "y": 676.9,
+   "w": 275.1,
+   "h": 33.9
+  }
+ },
+ {
+  "nom": "form1[0].#subform[0].Notice_Name_and_Address[0].RentalUnitAddress[0]",
+  "p": 0,
+  "i": 0,
+  "rect": {
+   "x": 28,
+   "y": 622.9,
+   "w": 555.9,
+   "h": 33.9
+  }
+ },
+ {
+  "nom": "form1[0].#subform[0].TerminationDate[0]",
+  "p": 0,
+  "i": 0,
+  "rect": {
+   "x": 230.7,
+   "y": 562.5,
+   "w": 138.3,
+   "h": 18.8
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].SelectSign[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 143.7,
+   "y": 742.4,
+   "w": 12,
+   "h": 12
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].SelectSign[0]",
+  "p": 2,
+  "i": 1,
+  "rect": {
+   "x": 255.7,
+   "y": 742.4,
+   "w": 12,
+   "h": 12
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].Signature_for_Notice[0].RFirstName[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 28,
+   "y": 704.4,
+   "w": 555.9,
+   "h": 20.3
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].Signature_for_Notice[0].RLastName[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 28,
+   "y": 668.8,
+   "w": 555.9,
+   "h": 20.3
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].Signature_for_Notice[0].RDayPhone[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 28,
+   "y": 632.8,
+   "w": 181.5,
+   "h": 20.3
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].Signature_for_Notice[0].Signature[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 28.2,
+   "y": 577.6,
+   "w": 242.1,
+   "h": 19.8
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].Signature_for_Notice[0].SignDate[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 283.1,
+   "y": 577.6,
+   "w": 142,
+   "h": 19.8
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].FileNumber[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 210.6,
+   "y": 60.9,
+   "w": 215.8,
+   "h": 18.4
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 101.7,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 1,
+  "rect": {
+   "x": 163.3,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 2,
+  "rect": {
+   "x": 204.1,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 3,
+  "rect": {
+   "x": 257.1,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 4,
+  "rect": {
+   "x": 303.1,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].DeliveryMethod[0]",
+  "p": 2,
+  "i": 5,
+  "rect": {
+   "x": 343.9,
+   "y": 43.3,
+   "w": 11,
+   "h": 11
+  }
+ },
+ {
+  "nom": "form1[0].#subform[4].office_use_only_2[0].FilingLocation[0]",
+  "p": 2,
+  "i": 0,
+  "rect": {
+   "x": 407.5,
+   "y": 40.2,
+   "w": 25.9,
+   "h": 17
+  }
+ }
+]

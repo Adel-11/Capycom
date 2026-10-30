@@ -63,7 +63,10 @@
         "adresse",
         "depot",
         "reparations",
-        "preavis-depart"
+        "preavis-depart",
+        "n9-ontario",
+        "form-c-nouvelle-ecosse",
+        "rt-00045-terre-neuve"
       ],
       "slug": {
         "fr": "adresse-et-logement",
@@ -85,7 +88,8 @@
         "en": "Government applications"
       },
       "modeles": [
-        "rc66"
+        "rc66",
+        "rc325-changement-adresse"
       ],
       "slug": {
         "fr": "demarches-gouvernementales",
@@ -277,6 +281,31 @@
         "fr": "Yukon : dépôts de garantie",
         "en": "Yukon: security deposits"
       }
+    },
+    "n9-ontario_page": {
+      "fr": "https://tribunalsontario.ca/ltb/forms/",
+      "en": "https://tribunalsontario.ca/ltb/forms/",
+      "but": "Formulaires de la Commission de la location immobilière (N9)"
+    },
+    "form-c-nouvelle-ecosse_page": {
+      "fr": "https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c",
+      "en": "https://www.novascotia.ca/tenants-notice-quit-leave-end-lease-term-form-c",
+      "but": "Formulaire C (gouvernement de la Nouvelle-Écosse)"
+    },
+    "rt-00045-terre-neuve_page": {
+      "fr": "https://www.gov.nl.ca/dgsnl/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "en": "https://www.gov.nl.ca/dgsnl/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "but": "Formulaire RT-2018-00045 (gouvernement de Terre-Neuve-et-Labrador)"
+    },
+    "rc325-changement-adresse_page": {
+      "fr": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-address.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-address.html",
+      "but": "Changer votre adresse auprès de l’ARC (canada.ca)"
+    },
+    "rc325-changement-adresse_bureaux": {
+      "fr": "https://www.canada.ca/cra-offices",
+      "en": "https://www.canada.ca/cra-offices",
+      "but": "Adresses de l’ARC (canada.ca/cra-offices)"
     }
   },
   "centres": {

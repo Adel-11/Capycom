@@ -1,0 +1,339 @@
+{
+  "version": 1,
+  "id": "n9-ontario",
+  "section": "logement",
+  "titre": {
+    "fr": "Avis de fin de bail du locataire (Ontario, N9)",
+    "en": "Tenant’s notice to end the tenancy (Ontario, N9)"
+  },
+  "description": {
+    "fr": "Remplir le formulaire N9 de la Commission de la location immobilière de l’Ontario pour quitter votre logement. Formulaire prêt à signer et à poster au propriétaire.",
+    "en": "Fill in the Ontario Landlord and Tenant Board form N9 to move out of your rental unit. Ready to sign and mail to your landlord."
+  },
+  "seo": {
+    "slug": {
+      "fr": "avis-fin-de-bail-ontario-n9",
+      "en": "ontario-n9-tenant-notice-to-end-tenancy"
+    },
+    "titre": {
+      "fr": "Formulaire N9 de l’Ontario : avis de fin de bail du locataire | Capycom",
+      "en": "Ontario form N9: tenant’s notice to end the tenancy | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à quelques questions et obtenez le formulaire N9 rempli, prêt à signer. Envoi par la poste possible.",
+      "en": "Free tool: answer a few questions and get form N9 filled in, ready to sign. Mailing available."
+    },
+    "h1": {
+      "fr": "Formulaire N9 : avis de fin de bail du locataire (Ontario)",
+      "en": "Form N9: Tenant’s Notice to End the Tenancy (Ontario)"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remplir le formulaire N9 de la Commission de la location immobilière de l’Ontario pour quitter votre logement. Formulaire prêt à signer et à poster au propriétaire.",
+    "en": "Fill in the Ontario Landlord and Tenant Board form N9 to move out of your rental unit. Ready to sign and mail to your landlord."
+  },
+  "avertissement": {
+    "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+    "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+  },
+  "champs": [
+    {
+      "id": "adresse_logement",
+      "type": "texte",
+      "requis": true,
+      "max": 160,
+      "libelle": {
+        "fr": "Adresse du logement que vous quittez",
+        "en": "Address of the rental unit you are leaving"
+      },
+      "exemple": {
+        "fr": "ex. 25, rue Rideau, app. 4, Ottawa ON K1N 5X8",
+        "en": "e.g. 25 Rideau Street, Unit 4, Ottawa ON K1N 5X8"
+      }
+    },
+    {
+      "id": "autres_locataires",
+      "type": "texte",
+      "requis": false,
+      "max": 120,
+      "libelle": {
+        "fr": "Autres locataires au bail, s’il y en a",
+        "en": "Other tenants on the lease, if any"
+      },
+      "exemple": {
+        "fr": "ex. Marie Tremblay",
+        "en": "e.g. Marie Tremblay"
+      }
+    },
+    {
+      "id": "date_fin",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Dernier jour de votre location (date de fin)",
+        "en": "Last day of your tenancy (termination date)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "tel",
+      "type": "tel",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Votre numéro de téléphone",
+        "en": "Your phone number"
+      },
+      "exemple": {
+        "fr": "613 555 1234",
+        "en": "613 555 1234"
+      }
+    },
+    {
+      "id": "sig_prenom",
+      "type": "texte",
+      "requis": false,
+      "max": 40,
+      "libelle": {
+        "fr": "Prénom à inscrire dans la section signature (si le découpage automatique du nom ne convient pas)",
+        "en": "First name to write in the signature section (if the automatic split of your name is wrong)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "sig_nom",
+      "type": "texte",
+      "requis": false,
+      "max": 40,
+      "libelle": {
+        "fr": "Nom de famille à inscrire dans la section signature (si le découpage automatique ne convient pas)",
+        "en": "Last name to write in the signature section (if the automatic split is wrong)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Libre : indiquez le nom et l’adresse de votre propriétaire (dest_*). Le N9 doit lui être remis ; la Commission ne le reçoit pas.",
+    "en": "Free: give your landlord’s name and address (dest_*). The N9 must be given to your landlord; the Board does not receive it."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "n9-ontario_page",
+      "fr": "https://tribunalsontario.ca/ltb/forms/",
+      "en": "https://tribunalsontario.ca/ltb/forms/",
+      "but": "Formulaires de la Commission de la location immobilière (N9)"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+      "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+    },
+    {
+      "fr": "Pour la plupart des locations (par exemple au mois), la date de fin doit tomber au moins 60 jours après la remise de l’avis et correspondre au dernier jour d’une période de location (par exemple le dernier jour du mois). Des exceptions existent (location à la journée ou à la semaine, bail à durée fixe, avis de 10 jours après un N12 ou un N13, résidence de soins). Lisez les renseignements imprimés au dos du formulaire.",
+      "en": "For most tenancies (for example monthly), the termination date must be at least 60 days after you give the notice and be the last day of a rental period (for example the last day of the month). Exceptions exist (daily or weekly tenancy, fixed term lease, 10 days’ notice after an N12 or N13, care home). Read the information printed on the form."
+    },
+    {
+      "fr": "Le N9 doit être signé, puis remis au propriétaire : la date de fin est calculée à partir du jour où il le reçoit.",
+      "en": "The N9 must be signed and given to your landlord: the termination date counts from the day he or she receives it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"n9-ontario\", reponses, options)",
+    "sortie": {
+      "fr": "Le formulaire officiel rempli, en PDF, prêt à relire, signer et poster.",
+      "en": "The official form filled in, as a PDF, ready to review, sign and mail."
+    }
+  },
+  "formulaire": {
+    "fonds": "f.n9-ontario",
+    "pages": 3,
+    "pagesSource": 3,
+    "pagesGardees": [
+      0,
+      1,
+      2
+    ],
+    "taille": [
+      612,
+      792
+    ],
+    "source": {
+      "pdf": "formulaires/sources/n9-ontario.pdf",
+      "url": "https://tribunalsontario.ca/ltb/forms/",
+      "consulte": "2026-10-30",
+      "sha256": "809abe88bf8ce9ed79b90042a6c8411afccebbf0c4b6f91cab8bb70ec0a16c5d"
+    },
+    "zones": [
+      {
+        "p": 0,
+        "r": [
+          28,
+          676.9,
+          275.1,
+          33.9
+        ],
+        "k": "t",
+        "champ": "dest_nom",
+        "fs": 11,
+        "w": "TO_TenameName",
+        "lab": "To",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          308.8,
+          676.9,
+          275.1,
+          33.9
+        ],
+        "k": "t",
+        "champs": [
+          "exp_nom",
+          "autres_locataires"
+        ],
+        "fs": 11,
+        "w": "From_LandlordName",
+        "lab": "From",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          28,
+          622.9,
+          555.9,
+          33.9
+        ],
+        "k": "t",
+        "champ": "adresse_logement",
+        "fs": 11,
+        "w": "RentalUnitAddress",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          230.7,
+          562.5,
+          138.3,
+          18.8
+        ],
+        "k": "comb",
+        "champ": "date_fin",
+        "fmt": "jjmmaaaa",
+        "motif": "__/__/____",
+        "fs": 11,
+        "w": "TerminationDate",
+        "ps": 0
+      },
+      {
+        "p": 2,
+        "r": [
+          143.7,
+          742.4,
+          12,
+          12
+        ],
+        "k": "x",
+        "labD": "Tenant",
+        "toujours": true,
+        "i": 0,
+        "w": "SelectSign",
+        "ps": 2
+      },
+      {
+        "p": 2,
+        "r": [
+          28,
+          704.4,
+          555.9,
+          20.3
+        ],
+        "k": "comb",
+        "champ": "exp_nom",
+        "pref": "sig_prenom",
+        "fmt": "prenom",
+        "n": 40,
+        "fs": 11,
+        "w": "RFirstName",
+        "ps": 2
+      },
+      {
+        "p": 2,
+        "r": [
+          28,
+          668.8,
+          555.9,
+          20.3
+        ],
+        "k": "comb",
+        "champ": "exp_nom",
+        "pref": "sig_nom",
+        "fmt": "nom",
+        "n": 40,
+        "fs": 11,
+        "w": "RLastName",
+        "ps": 2
+      },
+      {
+        "p": 2,
+        "r": [
+          28,
+          632.8,
+          181.5,
+          20.3
+        ],
+        "k": "comb",
+        "champ": "tel",
+        "fmt": "tel10",
+        "motif": "(___)___-____",
+        "fs": 11,
+        "w": "RDayPhone",
+        "ps": 2
+      },
+      {
+        "p": 2,
+        "r": [
+          28.2,
+          577.6,
+          242.1,
+          19.8
+        ],
+        "k": "sig",
+        "w": "Signature",
+        "ps": 2
+      },
+      {
+        "p": 2,
+        "r": [
+          283.1,
+          577.6,
+          142,
+          19.8
+        ],
+        "k": "t",
+        "champ": "date_lettre",
+        "fmt": "jj/mm/aaaa",
+        "fs": 11,
+        "w": "SignDate",
+        "ps": 2
+      }
+    ]
+  }
+}

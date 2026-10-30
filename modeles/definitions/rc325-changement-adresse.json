@@ -1,0 +1,1388 @@
+{
+  "version": 1,
+  "id": "rc325-changement-adresse",
+  "section": "gouv",
+  "titre": {
+    "fr": "Changement d’adresse à l’ARC (RC325)",
+    "en": "Address change with the CRA (RC325)"
+  },
+  "description": {
+    "fr": "Remplir le formulaire RC325 de l’Agence du revenu du Canada pour changer votre adresse postale, votre adresse du domicile et vos numéros de téléphone. Prêt à signer et à poster au centre fiscal.",
+    "en": "Fill in Canada Revenue Agency form RC325 to change your mailing address, home address and phone numbers. Ready to sign and mail to the tax centre."
+  },
+  "seo": {
+    "slug": {
+      "fr": "changement-adresse-arc-rc325",
+      "en": "cra-change-of-address-rc325"
+    },
+    "titre": {
+      "fr": "Changement d’adresse à l’ARC : remplir le formulaire RC325 gratuitement | Capycom",
+      "en": "CRA change of address: fill in form RC325 for free | Capycom"
+    },
+    "description": {
+      "fr": "Outil gratuit : répondez à des questions simples et obtenez le formulaire RC325 de changement d’adresse de l’ARC, prêt à signer. Envoi par la poste possible.",
+      "en": "Free tool: answer simple questions and get CRA form RC325, change of address, ready to sign. Mailing available."
+    },
+    "h1": {
+      "fr": "Changement d’adresse à l’ARC (formulaire RC325)",
+      "en": "CRA Change of Address (Form RC325)"
+    }
+  },
+  "type": "lettre",
+  "usage": {
+    "fr": "Remplir le formulaire RC325 de l’Agence du revenu du Canada pour changer votre adresse postale, votre adresse du domicile et vos numéros de téléphone. Prêt à signer et à poster au centre fiscal.",
+    "en": "Fill in Canada Revenue Agency form RC325 to change your mailing address, home address and phone numbers. Ready to sign and mail to the tax centre."
+  },
+  "avertissement": {
+    "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+    "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+  },
+  "champs": [
+    {
+      "id": "prenom_form",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Prénom et initiale tels qu’ils doivent figurer sur le formulaire (si le découpage automatique de votre nom ne convient pas)",
+        "en": "First name and initial as they should appear on the form (if the automatic split of your name is wrong)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "nom_form",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Nom de famille tel qu’il doit figurer sur le formulaire (si le découpage automatique ne convient pas)",
+        "en": "Last name as it should appear on the form (if the automatic split is wrong)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "nas",
+      "type": "nas",
+      "requis": true,
+      "max": 11,
+      "libelle": {
+        "fr": "Numéro d’assurance sociale (NAS)",
+        "en": "Social insurance number (SIN)"
+      },
+      "exemple": {
+        "fr": "046 454 286",
+        "en": "046 454 286"
+      }
+    },
+    {
+      "id": "naissance",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date de naissance",
+        "en": "Date of birth"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "ac_ligne",
+      "type": "texte",
+      "requis": false,
+      "max": 90,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : no d’appartement, no et nom de la rue",
+        "en": "Current mailing address on file with the CRA: apartment, street number and name"
+      },
+      "exemple": {
+        "fr": "ex. 4-25 rue Rideau",
+        "en": "e.g. 4-25 Rideau Street"
+      }
+    },
+    {
+      "id": "ac_bp",
+      "type": "texte",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : case postale",
+        "en": "Current mailing address on file with the CRA: PO box"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "ac_rr",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : route rurale (RR)",
+        "en": "Current mailing address on file with the CRA: rural route (RR)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "ac_ville",
+      "type": "texte",
+      "requis": true,
+      "max": 60,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : ville",
+        "en": "Current mailing address on file with the CRA: city"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "ac_prov",
+      "type": "province",
+      "requis": true,
+      "max": 30,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : province ou territoire",
+        "en": "Current mailing address on file with the CRA: province or territory"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "ac_cp",
+      "type": "cp",
+      "requis": true,
+      "max": 7,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : code postal",
+        "en": "Current mailing address on file with the CRA: postal code"
+      },
+      "exemple": {
+        "fr": "K1A 0B1",
+        "en": "K1A 0B1"
+      }
+    },
+    {
+      "id": "ac_pays",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Adresse postale actuelle au dossier de l’ARC : pays, État, code postal (hors Canada)",
+        "en": "Current mailing address on file with the CRA: country, state, zip code (outside Canada)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "nv_bp",
+      "type": "texte",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Nouvelle adresse postale : case postale",
+        "en": "New mailing address: PO box"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "nv_rr",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Nouvelle adresse postale : route rurale (RR)",
+        "en": "New mailing address: rural route (RR)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "nv_pays",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Nouvelle adresse postale : pays, État, code postal (hors Canada)",
+        "en": "New mailing address: country, state, zip code (outside Canada)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "date_effet",
+      "type": "date",
+      "requis": true,
+      "max": 10,
+      "libelle": {
+        "fr": "Date d’entrée en vigueur de la nouvelle adresse",
+        "en": "Effective date of the new address"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "co",
+      "type": "texte",
+      "requis": false,
+      "max": 80,
+      "libelle": {
+        "fr": "À l’attention de (c/o), personne ou organisme",
+        "en": "Care of (c/o), individual or organization"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "tel_dom",
+      "type": "tel",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Nouveau téléphone, domicile",
+        "en": "New phone number, home"
+      },
+      "exemple": {
+        "fr": "613 555 1234",
+        "en": "613 555 1234"
+      }
+    },
+    {
+      "id": "tel_trav",
+      "type": "tel",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Nouveau téléphone, travail",
+        "en": "New phone number, work"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "tel_autre",
+      "type": "tel",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Nouveau téléphone, autre",
+        "en": "New phone number, other"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "domicile",
+      "type": "choix",
+      "requis": false,
+      "max": 2,
+      "libelle": {
+        "fr": "Votre adresse du domicile est-elle la même que votre adresse postale ?",
+        "en": "Is your home address the same as your mailing address?"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "defaut": "meme",
+      "options": [
+        {
+          "valeur": "meme",
+          "texteOfficiel": "My home address is the same",
+          "fr": "Oui, la même",
+          "en": "Yes, the same"
+        },
+        {
+          "valeur": "different",
+          "fr": "Non, elle est différente",
+          "en": "No, it is different"
+        }
+      ]
+    },
+    {
+      "id": "da_ligne",
+      "type": "texte",
+      "requis": false,
+      "max": 90,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : no d’appartement, no et nom de la rue",
+        "en": "Current home address on file: apartment, street number and name"
+      },
+      "exemple": {
+        "fr": "ex. 4-25 rue Rideau",
+        "en": "e.g. 4-25 Rideau Street"
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_bp",
+      "type": "texte",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : case postale",
+        "en": "Current home address on file: PO box"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_rr",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : route rurale (RR)",
+        "en": "Current home address on file: rural route (RR)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_ville",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : ville",
+        "en": "Current home address on file: city"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_prov",
+      "type": "province",
+      "requis": false,
+      "max": 30,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : province ou territoire",
+        "en": "Current home address on file: province or territory"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_cp",
+      "type": "cp",
+      "requis": false,
+      "max": 7,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : code postal",
+        "en": "Current home address on file: postal code"
+      },
+      "exemple": {
+        "fr": "K1A 0B1",
+        "en": "K1A 0B1"
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "da_pays",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Adresse du domicile actuelle au dossier : pays, État, code postal (hors Canada)",
+        "en": "Current home address on file: country, state, zip code (outside Canada)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_ligne",
+      "type": "texte",
+      "requis": false,
+      "max": 90,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : no d’appartement, no et nom de la rue",
+        "en": "New home address: apartment, street number and name"
+      },
+      "exemple": {
+        "fr": "ex. 4-25 rue Rideau",
+        "en": "e.g. 4-25 Rideau Street"
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_bp",
+      "type": "texte",
+      "requis": false,
+      "max": 12,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : case postale",
+        "en": "New home address: PO box"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_rr",
+      "type": "texte",
+      "requis": false,
+      "max": 20,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : route rurale (RR)",
+        "en": "New home address: rural route (RR)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_ville",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : ville",
+        "en": "New home address: city"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_prov",
+      "type": "province",
+      "requis": false,
+      "max": 30,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : province ou territoire",
+        "en": "New home address: province or territory"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_cp",
+      "type": "cp",
+      "requis": false,
+      "max": 7,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : code postal",
+        "en": "New home address: postal code"
+      },
+      "exemple": {
+        "fr": "K1A 0B1",
+        "en": "K1A 0B1"
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "dn_pays",
+      "type": "texte",
+      "requis": false,
+      "max": 60,
+      "libelle": {
+        "fr": "Nouvelle adresse du domicile : pays, État, code postal (hors Canada)",
+        "en": "New home address: country, state, zip code (outside Canada)"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "date_demenag",
+      "type": "date",
+      "requis": false,
+      "max": 10,
+      "libelle": {
+        "fr": "Date du déménagement",
+        "en": "Date of move"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "visibleSi": {
+        "champ": "domicile",
+        "egal": "different"
+      },
+      "requisSi": {
+        "champ": "domicile",
+        "egal": "different"
+      }
+    },
+    {
+      "id": "centre",
+      "type": "choix",
+      "requis": true,
+      "max": 2,
+      "libelle": {
+        "fr": "Centre fiscal où envoyer le formulaire",
+        "en": "Tax centre to mail the form to"
+      },
+      "exemple": {
+        "fr": "",
+        "en": ""
+      },
+      "options": [
+        {
+          "valeur": "jonquiere",
+          "fr": "Centre fiscal de Jonquière",
+          "en": "Jonquière Tax Centre",
+          "dest": {
+            "nom": "Centre fiscal de Jonquière, Agence du revenu du Canada",
+            "service": "Changement d’adresse (RC325)",
+            "ligne": "PO Box 1900 Stn LCD",
+            "ville": "Jonquière",
+            "prov": "QC",
+            "cp": "G7S 5J1"
+          },
+          "aide": {
+            "fr": "Adresse imprimée à la page 2 du formulaire RC325 officiel (consulté le 30 octobre 2026). Le formulaire ne dit pas quel centre sert quelle province : vérifiez-le sur canada.ca/cra-offices avant l’envoi.",
+            "en": "Address printed on page 2 of the official RC325 form (checked on October 30, 2026). The form does not say which centre serves which province: check canada.ca/cra-offices before you mail it."
+          }
+        },
+        {
+          "valeur": "winnipeg",
+          "fr": "Centre fiscal de Winnipeg",
+          "en": "Winnipeg Tax Centre",
+          "dest": {
+            "nom": "Centre fiscal de Winnipeg, Agence du revenu du Canada",
+            "service": "Changement d’adresse (RC325)",
+            "ligne": "PO Box 14005 Stn Main",
+            "ville": "Winnipeg",
+            "prov": "MB",
+            "cp": "R3C 0E3"
+          },
+          "aide": {
+            "fr": "Adresse imprimée à la page 2 du formulaire RC325 officiel (consulté le 30 octobre 2026). Le formulaire ne dit pas quel centre sert quelle province : vérifiez-le sur canada.ca/cra-offices avant l’envoi.",
+            "en": "Address printed on page 2 of the official RC325 form (checked on October 30, 2026). The form does not say which centre serves which province: check canada.ca/cra-offices before you mail it."
+          }
+        },
+        {
+          "valeur": "sudbury",
+          "fr": "Centre fiscal de Sudbury",
+          "en": "Sudbury Tax Centre",
+          "dest": {
+            "nom": "Centre fiscal de Sudbury, Agence du revenu du Canada",
+            "service": "Changement d’adresse (RC325)",
+            "ligne": "PO Box 20000 Stn A",
+            "ville": "Sudbury",
+            "prov": "ON",
+            "cp": "P3A 5C1"
+          },
+          "aide": {
+            "fr": "Adresse imprimée à la page 2 du formulaire RC325 officiel (consulté le 30 octobre 2026). Le formulaire ne dit pas quel centre sert quelle province : vérifiez-le sur canada.ca/cra-offices avant l’envoi.",
+            "en": "Address printed on page 2 of the official RC325 form (checked on October 30, 2026). The form does not say which centre serves which province: check canada.ca/cra-offices before you mail it."
+          }
+        }
+      ]
+    }
+  ],
+  "champsCommuns": "commun.champsLettre",
+  "destinataire": {
+    "fr": "Choisissez le centre fiscal de l’ARC ; son adresse est inscrite au formulaire officiel. L’adresse de retour est la vôtre (« Vous »).",
+    "en": "Choose the CRA tax centre; its address is printed on the official form. The return address is yours (“You”)."
+  },
+  "piecesJointes": [],
+  "liensOfficiels": [
+    {
+      "cle": "rc325-changement-adresse_page",
+      "fr": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-address.html",
+      "en": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-address.html",
+      "but": "Changer votre adresse auprès de l’ARC (canada.ca)"
+    },
+    {
+      "cle": "rc325-changement-adresse_bureaux",
+      "fr": "https://www.canada.ca/cra-offices",
+      "en": "https://www.canada.ca/cra-offices",
+      "but": "Adresses de l’ARC (canada.ca/cra-offices)"
+    }
+  ],
+  "avertissements": [
+    {
+      "fr": "Ce formulaire est rempli à partir de vos réponses. Il ne remplace pas l’avis d’un avocat ou d’un organisme officiel. Les règles et les formulaires changent : relisez le formulaire et vérifiez les délais sur le site officiel avant de signer et d’envoyer.",
+      "en": "This form is filled in from your answers. It does not replace advice from a lawyer or an official body. Rules and forms change: review the form and check the deadlines on the official website before you sign and send it."
+    },
+    {
+      "fr": "Le formulaire se remplit pour vous-même : si vous signez comme représentant légal (exécuteur, procuration, tuteur), utilisez le formulaire officiel et joignez la pièce qui vous autorise.",
+      "en": "This tool fills the form for yourself: if you sign as a legal representative (executor, power of attorney, guardian), use the official form and attach the document that authorizes you."
+    },
+    {
+      "fr": "Vous pouvez aussi changer votre adresse en ligne dans Mon dossier de l’ARC, sans formulaire papier. Le formulaire ne sert pas à changer votre nom ni votre date de naissance, ni si vous n’avez jamais produit de déclaration de revenus.",
+      "en": "You can also change your address online in My Account, with no paper form. The form cannot be used to change your name or date of birth, or if you have never filed a tax return."
+    },
+    {
+      "fr": "La nouvelle adresse postale est celle de la carte « Vous » (adresse de retour). Pour une case postale ou une route rurale, indiquez-la dans les champs prévus et laissez la rue vide si elle ne s’applique pas.",
+      "en": "The new mailing address is the one in the “You” card (return address). For a PO box or rural route, use the fields provided and leave the street empty if it does not apply."
+    },
+    {
+      "fr": "Le formulaire contient un renseignement protégé (NAS). Il est créé dans votre navigateur ; il est transmis à Capycom seulement si vous choisissez l’envoi par la poste.",
+      "en": "The form holds protected information (SIN). It is created in your browser; it is sent to Capycom only if you choose to mail it."
+    }
+  ],
+  "production": {
+    "mode": "moteur",
+    "fonction": "plansDe(\"rc325-changement-adresse\", reponses, options)",
+    "sortie": {
+      "fr": "Le formulaire officiel rempli, en PDF, prêt à relire, signer et poster.",
+      "en": "The official form filled in, as a PDF, ready to review, sign and mail."
+    }
+  },
+  "formulaire": {
+    "fonds": "f.rc325-changement-adresse",
+    "pages": 2,
+    "pagesSource": 2,
+    "pagesGardees": [
+      0,
+      1
+    ],
+    "taille": [
+      612,
+      792
+    ],
+    "source": {
+      "pdf": "formulaires/sources/rc325-changement-adresse.pdf",
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-address.html",
+      "consulte": "2026-10-30",
+      "sha256": "6f815c77f67bdcda0d5fa81ede3c59f0414ab3f465917f764f8235739c0fae3a"
+    },
+    "zones": [
+      {
+        "p": 0,
+        "r": [
+          36,
+          598.1,
+          200.9,
+          12.5
+        ],
+        "k": "t",
+        "champ": "exp_nom",
+        "pref": "prenom_form",
+        "fmt": "prenom",
+        "fs": 10,
+        "w": "Information_about_you.First_Name_and_Initial",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.5,
+          598.1,
+          201.5,
+          12.5
+        ],
+        "k": "t",
+        "champ": "exp_nom",
+        "pref": "nom_form",
+        "fmt": "nom",
+        "fs": 10,
+        "w": "Information_about_you.Last_Name",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          446.4,
+          597.4,
+          129.6,
+          13
+        ],
+        "k": "comb",
+        "champ": "nas",
+        "fmt": "nas",
+        "n": 9,
+        "fs": 10,
+        "w": "SIN_Field_and_Lines.SIN_Field",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          116.2,
+          574.4,
+          113.2,
+          12.2
+        ],
+        "k": "comb",
+        "champ": "naissance",
+        "fmt": "aaaammjj",
+        "n": 8,
+        "fs": 10,
+        "w": "Part1_BirthDate.Part1_BirthDate_Comb",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          533.1,
+          343.5,
+          12.4
+        ],
+        "k": "t",
+        "champ": "ac_ligne",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_Apartment_No",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          380.2,
+          533.1,
+          71.2,
+          12.4
+        ],
+        "k": "t",
+        "champ": "ac_bp",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_POBox",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          452.2,
+          533.1,
+          123.8,
+          12.4
+        ],
+        "k": "t",
+        "champ": "ac_rr",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_RR",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          509.1,
+          200.9,
+          12.5
+        ],
+        "k": "t",
+        "champ": "ac_ville",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_City",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.6,
+          509.1,
+          252.6,
+          12.5
+        ],
+        "k": "t",
+        "champ": "ac_prov",
+        "fmt": "prov-code",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_Province_Territory",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          490.2,
+          509.1,
+          85.8,
+          12.5
+        ],
+        "k": "comb",
+        "champ": "ac_cp",
+        "fmt": "cp-sans-espace",
+        "n": 6,
+        "fs": 10,
+        "w": "Current_Mailing_Address_PostalCode_Field_and_Lines.Current_Mailing_Address_PostalCode",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          485.1,
+          540,
+          12.5
+        ],
+        "k": "t",
+        "champ": "ac_pays",
+        "fs": 9,
+        "w": "Current_Mailing_Address.Current_Mailing_Address_County_State_ZIP",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          441.9,
+          343.5,
+          12.4
+        ],
+        "k": "t",
+        "champ": "exp_ligne",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_Apartment_No",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          380.2,
+          441.9,
+          71.2,
+          12.4
+        ],
+        "k": "t",
+        "champ": "nv_bp",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_POBox",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          452.2,
+          441.9,
+          123.8,
+          12.4
+        ],
+        "k": "t",
+        "champ": "nv_rr",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_RR",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          417.9,
+          200.9,
+          12.5
+        ],
+        "k": "t",
+        "champ": "exp_ville",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_City",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.6,
+          417.9,
+          252.6,
+          12.5
+        ],
+        "k": "t",
+        "champ": "exp_prov",
+        "fmt": "prov-code",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_Province_Territory",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          490.2,
+          417.9,
+          85.8,
+          12.5
+        ],
+        "k": "comb",
+        "champ": "exp_cp",
+        "fmt": "cp-sans-espace",
+        "n": 6,
+        "fs": 10,
+        "w": "New_Mailing_Address_PostalCode_Field_and_Lines.New_Mailing_Address_PostalCode",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          393.9,
+          540,
+          12.5
+        ],
+        "k": "t",
+        "champ": "nv_pays",
+        "fs": 9,
+        "w": "New_Mailing_Address.New_Mailing_Address_County_State_ZIP",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          234.2,
+          343.5,
+          12.4
+        ],
+        "k": "t",
+        "champ": "da_ligne",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_Apartment_No",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          380.3,
+          234.2,
+          71.2,
+          12.4
+        ],
+        "k": "t",
+        "champ": "da_bp",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_POBox",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          452.3,
+          234.2,
+          123.8,
+          12.4
+        ],
+        "k": "t",
+        "champ": "da_rr",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_RR",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          210.1,
+          200.9,
+          12.5
+        ],
+        "k": "t",
+        "champ": "da_ville",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_City",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.6,
+          210.1,
+          252.6,
+          12.5
+        ],
+        "k": "t",
+        "champ": "da_prov",
+        "fmt": "prov-code",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_Province_Territory",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          490.2,
+          210.1,
+          85.8,
+          12.5
+        ],
+        "k": "comb",
+        "champ": "da_cp",
+        "fmt": "cp-sans-espace",
+        "n": 6,
+        "fs": 10,
+        "w": "Current_Home_Address_PostalCode_Field_and_Lines.Current_Home_Address_PostalCode",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          186.1,
+          540,
+          12.5
+        ],
+        "k": "t",
+        "champ": "da_pays",
+        "fs": 9,
+        "w": "Current_Home_Address.Current_Home_Address_County_State_ZIP",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          142.3,
+          343.5,
+          12.4
+        ],
+        "k": "t",
+        "champ": "dn_ligne",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_Apartment_No",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          380.3,
+          142.3,
+          71.2,
+          12.4
+        ],
+        "k": "t",
+        "champ": "dn_bp",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_POBox",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          452.3,
+          142.3,
+          123.8,
+          12.4
+        ],
+        "k": "t",
+        "champ": "dn_rr",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_RR",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          118.3,
+          200.9,
+          12.5
+        ],
+        "k": "t",
+        "champ": "dn_ville",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_City",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.6,
+          118.3,
+          252.6,
+          12.5
+        ],
+        "k": "t",
+        "champ": "dn_prov",
+        "fmt": "prov-code",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_Province_Territory",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          490.2,
+          118.3,
+          85.8,
+          12.5
+        ],
+        "k": "comb",
+        "champ": "dn_cp",
+        "fmt": "cp-sans-espace",
+        "n": 6,
+        "fs": 10,
+        "w": "New_Home_Address_PostalCode_Field_and_Lines.New_Home_Address_PostalCode",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          36,
+          94.3,
+          540,
+          12.5
+        ],
+        "k": "t",
+        "champ": "dn_pays",
+        "fs": 9,
+        "w": "New_Home_Address.New_Home_Address_County_State_ZIP",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          104.4,
+          369.1,
+          115.2,
+          12.8
+        ],
+        "k": "comb",
+        "champ": "date_effet",
+        "fmt": "aaaammjj",
+        "n": 8,
+        "fs": 10,
+        "w": "New_Mailing_Address_Effective_Date_Field_and_Lines.New_Mailing_Address_Effective_Date_Field",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.7,
+          369.8,
+          338.6,
+          12.5
+        ],
+        "k": "t",
+        "champ": "co",
+        "fs": 9,
+        "w": "New_Mailing_Address_Effective_Date.Care_of",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          35.6,
+          327,
+          200.2,
+          12.5
+        ],
+        "k": "t",
+        "champ": "tel_dom",
+        "fmt": "tel-tiret",
+        "fs": 10,
+        "w": "Home_Telephone_Number",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          237.2,
+          327,
+          175.7,
+          12.5
+        ],
+        "k": "t",
+        "champ": "tel_trav",
+        "fmt": "tel-tiret",
+        "fs": 10,
+        "w": "Work_Telephone_Number",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          414.4,
+          327,
+          162.2,
+          12.5
+        ],
+        "k": "t",
+        "champ": "tel_autre",
+        "fmt": "tel-tiret",
+        "fs": 10,
+        "w": "Other_Telephone_Number",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          35.6,
+          301.1,
+          12,
+          12
+        ],
+        "k": "x",
+        "labD": "My home address is the same",
+        "champ": "domicile",
+        "egal": "meme",
+        "w": "Home_same_as_mailing_address",
+        "ps": 0
+      },
+      {
+        "p": 0,
+        "r": [
+          115.2,
+          69.6,
+          115.2,
+          13.2
+        ],
+        "k": "comb",
+        "champ": "date_demenag",
+        "fmt": "aaaammjj",
+        "n": 8,
+        "fs": 10,
+        "w": "New_Home_Address_Date_Of_Move_Field_and_Lines.New_Home_Address_Date_Of_Move_Field",
+        "ps": 0
+      },
+      {
+        "p": 1,
+        "r": [
+          35.8,
+          585.9,
+          343.5,
+          15.3
+        ],
+        "k": "t",
+        "champ": "exp_nom",
+        "fs": 10,
+        "w": "Certification.New_Home_Address_Apartment_No",
+        "ps": 1
+      },
+      {
+        "p": 1,
+        "r": [
+          429.5,
+          584.3,
+          115.2,
+          13.2
+        ],
+        "k": "comb",
+        "champ": "date_lettre",
+        "fmt": "aaaammjj",
+        "n": 8,
+        "fs": 10,
+        "w": "Cerification_Date_Field_and_Lines.Cerification_Date_Field",
+        "ps": 1
+      },
+      {
+        "p": 1,
+        "r": [
+          36,
+          555,
+          330,
+          20
+        ],
+        "k": "sig",
+        "ps": 1
+      }
+    ]
+  },
+  "destinataireDepuis": "centre"
+}

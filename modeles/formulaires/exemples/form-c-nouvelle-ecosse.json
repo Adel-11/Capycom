@@ -1,0 +1,23 @@
+{
+  "exp_nom": "Julie Tremblay",
+  "exp_ligne": "77 Spring Garden Road",
+  "exp_ville": "Halifax",
+  "exp_prov": "Nouvelle-Écosse",
+  "exp_cp": "B3J 3Z8",
+  "dest_nom": "Atlantic Property Management Ltd.",
+  "dest_ligne": "1 Water Street",
+  "dest_ville": "Halifax",
+  "dest_prov": "Nouvelle-Écosse",
+  "dest_cp": "B3J 1A1",
+  "date_lettre": "2026-11-02",
+  "type_location": "mois",
+  "log_ligne": "1234 Barrington Street",
+  "log_apt": "4",
+  "log_ville": "Halifax",
+  "log_cp": "B3J 1Y5",
+  "autres_locataires": "Marc Dubois",
+  "date_fin": "2027-01-31",
+  "depot": "adresse",
+  "tel": "902 555 1234",
+  "courriel": "julie@exemple.ca"
+}
